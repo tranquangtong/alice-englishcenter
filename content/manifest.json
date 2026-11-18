@@ -1,0 +1,10 @@
+[
+  {"id":"home","title":"Chào mừng bạn","group":"Bắt đầu","path":"content/home.md"},
+  {"id":"exam-structure","title":"Cấu trúc đề thi","group":"Bắt đầu","path":"docs/exam-structure.md"},
+  {"id":"syllabus","title":"Tổng quan ôn thi","group":"Đề cương ôn thi","path":"content/syllabus/00-overview.md"},
+  {"id":"listening","title":"Listening · Nghe","group":"Đề cương ôn thi","path":"content/syllabus/01-listening.md"},
+  {"id":"reading","title":"Reading · Đọc","group":"Đề cương ôn thi","path":"content/syllabus/02-reading.md"},
+  {"id":"writing","title":"Writing · Viết","group":"Đề cương ôn thi","path":"content/syllabus/03-writing.md"},
+  {"id":"speaking","title":"Speaking · Nói","group":"Đề cương ôn thi","path":"content/syllabus/04-speaking.md"},
+  {"id":"teacher-student","title":"Lộ trình nền tảng Teacher–Student","group":"Cùng phát triển","path":"content/roadmap-teacher-student.md"}
+]
