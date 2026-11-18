@@ -23,16 +23,16 @@ Theo cấu trúc bài thi mẫu chuẩn hóa nội bộ (ielts.app):
 
 ---
 
-## 2. Bốn Tiêu chí Chấm điểm Dưới Góc nhìn Thuật toán AI
+## 2. Bốn Tiêu chí Chấm điểm Speaking
 
-Hệ thống AI sử dụng công nghệ Xử lý Ngôn ngữ Tự nhiên (NLP) kết hợp với Nhận diện Giọng nói Tự động (Automated Speech Recognition - ASR) để chấm điểm:
+Hệ thống chấm thi đánh giá dựa trên đúng 4 tiêu chí chuẩn của kỳ thi IELTS:
 
-| Tiêu chí | Bản chất Tiêu chí | Cách Thuật toán AI Đo lường | Mục tiêu Band 6.0 – 7.0 |
+| Tiêu chí | Bản chất Tiêu chí | Lưu ý Thực hành khi Thi | Mục tiêu Band 6.0 – 7.0 |
 |---|---|---|---|
-| **Fluency & Coherence (FC)** | Độ trôi chảy, tốc độ nói và tính liên kết của câu trả lời. | AI tính toán tốc độ từ trên phút (Words Per Minute - WPM) và độ dài khoảng lặng (Pause Duration). Khoảng lặng ngập ngừng > 3 giây sẽ bị trừ điểm nặng. | Duy trì tốc độ nói đều đặn (110–130 wpm); không ngập ngừng quá lâu; sử dụng từ nối chuyển ý tự nhiên. |
-| **Lexical Resource (LR)** | Vốn từ vựng, tính chính xác và độ đa dạng theo chủ đề. | Đối chiếu từ ngữ trong transcript với cơ sở dữ liệu từ vựng học thuật CEFR (B2 – C1); phát hiện lặp từ hoặc dùng từ sai ngữ cảnh. | Sử dụng linh hoạt collocations học thuật và công sở; diễn đạt lại ý bằng từ đồng nghĩa thay vì lặp từ câu hỏi. |
-| **Grammatical Range & Accuracy (GRA)** | Cấu trúc câu đơn, câu phức và độ chính xác của ngữ pháp. | Thuật toán phân tích cú pháp câu; đếm số lượng câu phức (mệnh đề quan hệ, câu điều kiện); bắt lỗi chia thì và chia động từ. | Trên 60% số câu nói đúng ngữ pháp; sử dụng thành thạo thì hiện tại hoàn thành, quá khứ đơn và mệnh đề chỉ nguyên nhân/kết quả. |
-| **Pronunciation (PR)** | Độ chuẩn xác của âm, trọng âm từ, ngữ điệu và độ rõ ràng. | Nhận diện sóng âm (acoustic model); đối chiếu các âm vị (phonemes), phụ âm cuối (/s/, /z/, /t/, /d/) và trường độ nguyên âm. | Phát âm tròn vành rõ chữ; không nuốt phụ âm cuối; nhấn đúng trọng âm từ và ngắt nhịp theo cụm ý (*chunking*). |
+| **Fluency & Coherence (FC)** | Độ trôi chảy, tốc độ nói và tính liên kết của câu trả lời. | Duy trì mạch nói đều đặn; hạn chế ngập ngừng hoặc ngắt quãng kéo dài; sử dụng từ nối chuyển ý tự nhiên. | Tốc độ nói vừa phải, ổn định; không ngập ngừng quá lâu; liên kết câu mạch lạc. |
+| **Lexical Resource (LR)** | Vốn từ vựng, tính chính xác và độ đa dạng theo chủ đề. | Tránh lặp lại nguyên văn từ ngữ trong câu hỏi; sử dụng từ ngữ chính xác theo ngữ cảnh; kết hợp collocations tự nhiên. | Sử dụng linh hoạt collocations học thuật và công sở; diễn đạt lại ý bằng từ đồng nghĩa thay vì lặp từ câu hỏi. |
+| **Grammatical Range & Accuracy (GRA)** | Cấu trúc câu đơn, câu phức và độ chính xác của ngữ pháp. | Kết hợp linh hoạt các câu đơn và câu phức (mệnh đề quan hệ, câu điều kiện); kiểm soát tốt các thì cơ bản và chia động từ. | Đa số các câu diễn đạt đúng ngữ pháp; sử dụng thành thạo thì hiện tại hoàn thành, quá khứ đơn và mệnh đề chỉ nguyên nhân/kết quả. |
+| **Pronunciation (PR)** | Độ chuẩn xác của âm, trọng âm từ, ngữ điệu và độ rõ ràng. | Phát âm rõ ràng, đặc biệt là các phụ âm cuối (/s/, /z/, /t/, /d/) và nguyên âm; giữ khoảng cách micro phù hợp để hệ thống thu âm trọn vẹn. | Phát âm tròn vành rõ chữ; không nuốt phụ âm cuối; nhấn đúng trọng âm từ và ngắt nhịp theo cụm ý (*chunking*). |
 
 ---
 
@@ -66,7 +66,7 @@ Câu hỏi Part 3 mang tính chất vĩ mô, thảo luận về xã hội và xu
 
 ## 4. Bộ Cụm từ Câu Giờ Tự Nhiên (Fluency Fillers)
 
-Khi gặp câu hỏi khó hoặc bất ngờ, thay vì im lặng (khiến AI trừ điểm Fluency), hãy dùng các cụm từ đệm tự nhiên sau để "mua" 2–3 giây suy nghĩ:
+Khi gặp câu hỏi khó hoặc bất ngờ, thay vì im lặng làm giảm điểm Fluency, hãy dùng các cụm từ đệm tự nhiên sau để có thêm 2–3 giây suy nghĩ:
 
 - **Khi cần thêm thời gian suy nghĩ về chủ đề:**
   - *"Well, to be perfectly honest, that’s quite an intriguing question that I haven't really pondered before."*
@@ -84,16 +84,16 @@ Khi gặp câu hỏi khó hoặc bất ngờ, thay vì im lặng (khiến AI tr�
 
 ## 5. Trọng tâm Phát âm Dành Riêng cho Người Việt (Pronunciation Focus)
 
-Hệ thống chấm AI cực kỳ nhạy cảm với các lỗi phát âm đặc trưng của người Việt Nam:
+Hệ thống chấm tự động ghi nhận rất rõ các lỗi phát âm đặc trưng của người Việt Nam:
 
 ### 5.1. Xử lý Triệt để Phụ Âm Cuối (Final Sounds)
-Người Việt có thói quen phát âm tiếng mẹ đẻ không có phụ âm cuối bật hơi, dẫn đến việc nuốt âm trong tiếng Anh. Điều này khiến thuật toán ASR của AI hiểu nhầm hoàn toàn sang từ khác:
-- **Âm `/s/` và `/z/`:** Cực kỳ quan trọng để máy nhận diện danh từ số nhiều (*clients, projects*) và động từ ngôi thứ ba số ít (*works, manages*).
-- **Âm `/t/` và `/d/`:** Cốt tử để AI nhận diện đuôi quá khứ `-ed` (*worked, developed, organized*). Nếu nói *I work yesterday*, AI sẽ chấm lỗi ngữ pháp GRA ngay lập tức!
+Người Việt có thói quen phát âm tiếng mẹ đẻ không có phụ âm cuối bật hơi, dẫn đến việc nuốt âm trong tiếng Anh. Điều này khiến hệ thống chấm tự động dễ nhận diện nhầm sang từ khác:
+- **Âm `/s/` và `/z/`:** Cực kỳ quan trọng để hệ thống nhận diện danh từ số nhiều (*clients, projects*) và động từ ngôi thứ ba số ít (*works, manages*).
+- **Âm `/t/` và `/d/`:** Cốt tử để nhận diện đuôi quá khứ `-ed` (*worked, developed, organized*). Nếu nói *I work yesterday*, câu trả lời sẽ bị ghi nhận lỗi ngữ pháp GRA.
 - **Âm bật `/k/` và `/ks/`:** Chú ý các từ như *task, desk, aspect, six, tax*.
 
 ### 5.2. Trọng âm Từ (Word Stress)
-Nhấn sai trọng âm từ khiến sóng âm bị biến dạng, làm máy chấm điểm Pronunciation thấp:
+Nhấn sai trọng âm từ làm giảm độ rõ ràng của từ, ảnh hưởng xấu đến điểm Pronunciation:
 - **Các từ có 3–4 âm tiết nơi công sở:**
   - `TECH-nology` (trọng âm rơi vào âm tiết thứ 2: /tekˈnɒlədʒi/, KHÔNG đọc là tec-no-lo-gy đều đều).
   - `DE-velopment` (nhấn âm 2: /dɪˈveləpmənt/).
@@ -104,15 +104,15 @@ Nhấn sai trọng âm từ khiến sóng âm bị biến dạng, làm máy ch�
 ### 5.3. Ngắt Cụm Ý (Chunking) & Ngữ điệu (Intonation)
 - Không nói theo kiểu từng từ rời rạc như rô-bốt. Hãy ngắt giọng theo từng cụm nghĩa (*thought groups*):  
   `[In my current department,] [we hold weekly stand-up meetings] [to review our project milestones.]`
-- Xuống giọng ở cuối câu trần thuật để báo hiệu câu nói đã kết thúc rõ ràng cho AI ghi nhận.
+- Xuống giọng ở cuối câu trần thuật để tạo ngữ điệu tự nhiên và báo hiệu ý diễn đạt đã hoàn chỉnh.
 
 ---
 
 ## 6. Lời khuyên Sống còn khi Tương tác với Giám khảo AI
 
-1. **Nói to, rõ ràng và dứt khoát:** Luôn quan sát vạch âm lượng (Volume Indicator) để đảm bảo âm thanh ở vùng màu xanh lá cây. Nếu bạn nói lí nhí hoặc để micro quá xa miệng, AI sẽ bỏ lỡ âm cuối và chấm điểm PR dưới 5.0.
+1. **Nói to, rõ ràng và dứt khoát:** Luôn quan sát vạch âm lượng (Volume Indicator) để đảm bảo âm thanh ở vùng màu xanh lá cây. Nếu bạn nói lí nhí hoặc để micro quá xa miệng, hệ thống sẽ khó bắt được âm thanh chuẩn xác và ảnh hưởng đến điểm Pronunciation.
 2. **Tận dụng quyền bấm nghe lại:** Bạn được bấm nghe lại câu hỏi tối đa **3 lần**. Nếu âm thanh bị giật hoặc bạn chưa kịp nghe rõ từ khóa, hãy click nút Replay ngay lập tức.
-3. **Tuyệt đối không im lặng quá 4 giây:** Nếu bạn ngập ngừng quá lâu, thuật toán AI sẽ tự động phán đoán rằng bạn đã kết thúc câu trả lời và chuyển sang câu hỏi tiếp theo, khiến bạn mất điểm oan.
+3. **Tận dụng thời gian và chủ động bấm chuyển câu:** Sau khi hoàn thành câu trả lời, hãy chủ động bấm "Next question" để chuyển tiếp; mỗi Part có đồng hồ đếm ngược riêng và sẽ tự động chuyển khi hết giờ của Part đó. Không nên dừng lại quá sớm, hãy tận dụng thời gian để phát triển ý trọn vẹn, chỉ bấm Next khi đã hoàn thành câu trả lời và luôn quan sát đồng hồ của từng Part.
 4. **Giữ tư thế ngồi thẳng, nhìn vào webcam:** Dù là giám khảo AI, việc duy trì ánh mắt hướng về ống kính giúp cột hơi mở rộng, phát âm tự tin và vang hơn.
 
 ---
@@ -247,7 +247,7 @@ Khi phỏng vấn học viên trong buổi sinh hoạt nhóm, Mentor sử dụng
 |---|---|---|---|
 | **Fluency (Độ trôi chảy)** | Ngập ngừng > 4 giây; nói giật cục từng từ; dưới 90 wpm. | Tốc độ đều (100–120 wpm); ngập ngừng dưới 2s; dùng được fillers cơ bản. | Phản xạ tự nhiên (120–140 wpm); duy trì bài nói Part 2 đủ 2 phút không hụt hơi. |
 | **Lexical (Từ vựng)** | Lặp lại từ trong câu hỏi; chỉ dùng từ đơn giản (*good, nice, difficult*). | Dùng được từ vựng theo chủ đề; giải thích được khi quên từ (*paraphrase*). | Sử dụng chính xác collocations học thuật và thành ngữ tự nhiên (*idiomatic language*). |
-| **Grammar (Ngữ pháp)** | Chỉ dùng câu đơn; sai thì quá khứ; chia sai động từ số ít/nhiều. | Kết hợp câu ghép và câu phức (*because, although, if*); trên 50% câu chuẩn. | Sử dụng linh hoạt mệnh đề quan hệ, câu điều kiện loại 2/3; rất hiếm lỗi sai. |
+| **Grammar (Ngữ pháp)** | Chỉ dùng câu đơn; sai thì quá khứ; chia sai động từ số ít/nhiều. | Kết hợp câu ghép và câu phức (*because, although, if*); đa số các câu chuẩn ngữ pháp. | Sử dụng linh hoạt mệnh đề quan hệ, câu điều kiện loại 2/3; rất hiếm lỗi sai. |
 | **Pronunciation (Phát âm)** | Nuốt âm cuối `/s/, /t/, /d/`; nói đều đều như đọc tiếng Việt; sai trọng âm. | Bật rõ âm cuối; nhấn đúng trọng âm của các từ 2–3 âm tiết thông dụng. | Ngữ điệu tự nhiên (*intonation*); nối âm mượt mà; ngắt cụm ý (*chunking*) rõ ràng. |
 
 ---

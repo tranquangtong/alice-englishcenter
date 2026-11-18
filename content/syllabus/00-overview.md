@@ -14,11 +14,11 @@ Tài liệu này được biên soạn cho đối tượng học viên là ngư�
 - **Học cùng Mentor:** Tự học kiến thức nền tảng trong tuần và tận dụng tối đa 60–90 phút sinh hoạt nhóm hàng tuần với Mentor để thực hành Speaking, giải đáp thắc mắc và sửa bài Writing.
 - **Phân bổ thời gian thực tế:** Xác định rõ lịch làm việc cá nhân, tận dụng các "vi mô thời gian" (micro-moments) như 15 phút đầu giờ sáng, giờ nghỉ trưa hoặc trên xe buýt để nghe podcast tiếng Anh hoặc ôn từ vựng.
 
-### 1.2. Hiểu đúng về Cơ chế Chấm điểm bằng Trí tuệ Nhân tạo (AI Grading)
-Bài thi nội bộ sử dụng công nghệ xử lý ngôn ngữ tự nhiên (Natural Language Processing - NLP) và nhận diện giọng nói tự động (Automated Speech Recognition - ASR). Hiểu cách máy chấm sẽ giúp bạn tối ưu hóa điểm số:
-- **Tính minh bạch và cấu trúc tường minh:** AI chấm Writing và Speaking dựa trên các mô hình ngôn ngữ lớn đã được huấn luyện trên hàng triệu bài thi chuẩn. AI cực kỳ nhạy bén với cấu trúc bài rõ ràng (Topic sentence, Signposting words như *Furthermore, However, Consequently*). Tránh viết câu lòng vòng không rõ chủ vị.
-- **Nhận diện âm thanh (ASR):** AI không "nghe cảm tính" như người. Máy nhận diện sóng âm của các phụ âm cuối (/s/, /z/, /t/, /d/) và trường độ nguyên âm. Nếu bạn nuốt âm cuối, AI sẽ hiểu nhầm sang từ khác hoặc trừ điểm Pronunciation.
-- **Độ trôi chảy liên tục:** AI đo lường độ trôi chảy (Fluency) qua tỷ lệ từ trên phút (WPM) và độ dài khoảng lặng (Pause Duration). Tránh những khoảng ngập ngừng quá 3 giây.
+### 1.2. Lưu ý Thực hành khi Thi với Hệ thống Chấm Tự động
+Hệ thống chấm tự động nên: nói/viết rõ cấu trúc, phát âm rõ, đủ âm lượng, hạn chế ngập ngừng dài. Cụ thể:
+- **Nói/viết rõ cấu trúc:** Trình bày bài thi mạch lạc với câu chủ đề (Topic sentence) và các từ nối chuyển ý rõ ràng (*Furthermore, However, Consequently*); tránh viết hoặc nói câu lòng vòng, thiếu chủ vị.
+- **Phát âm rõ, đủ âm lượng:** Phát âm đầy đủ các phụ âm cuối (/s/, /z/, /t/, /d/) và trường độ nguyên âm; giữ khoảng cách micro phù hợp và duy trì âm lượng ổn định để hệ thống thu âm trọn vẹn.
+- **Hạn chế ngập ngừng dài:** Duy trì mạch nói đều đặn, tránh những khoảng im lặng kéo dài khiến bài nói bị đứt quãng.
 
 ---
 
@@ -119,7 +119,7 @@ Giao diện thi trực tuyến chấm AI (ielts.app) có những đặc thù k�
 
 ### 6.1. Kỹ năng gõ phím tiếng Anh
 - **Tắt toàn bộ bộ gõ tiếng Việt (Unikey / EVKey):** Đây là lỗi phổ biến nhất khiến bài thi Writing bị trừ điểm nặng do từ bị nhảy dấu vô nghĩa (ví dụ: gõ `the` bị biến thành `thê`, gõ `status` bị thành `statús`). Hãy chuyển icon bộ gõ dưới thanh taskbar về chữ **E (English)** trước khi mở bài thi.
-- **Tốc độ gõ mục tiêu:** Cần đạt tối thiểu **28 – 35 từ/phút (wpm)** để hoàn thành cả 2 bài viết (tổng cộng ít nhất 400 từ) trong 60 phút mà vẫn còn 5 phút đọc lại rà soát lỗi chính tả.
+- **Tốc độ gõ mục tiêu:** Mục tiêu ~25 wpm là đủ, vì thời gian chủ yếu dành cho suy nghĩ; luyện gõ không nhìn phím để tập trung vào việc hình thành ý tưởng.
 - **Kiểm soát bộ đếm từ tự động (Word Count):** Giao diện luôn hiển thị số lượng từ đã viết ở góc dưới khung nhập văn bản. Cần đảm bảo Task 1 đạt từ 155–170 từ và Task 2 đạt từ 260–280 từ.
 
 ### 6.2. Quy định Toàn màn hình (Fullscreen) & Chống gian lận
@@ -136,7 +136,7 @@ Giao diện thi trực tuyến chấm AI (ielts.app) có những đặc thù k�
 - **Thử thiết bị ban đầu:** Trước khi vào thi Speaking, hệ thống sẽ yêu cầu đọc thử 1 câu mẫu và nghe lại. Hãy đảm bảo giọng nghe lại rõ ràng, ấm, không bị rè hay lẫn tiếng ồn văn phòng.
 - **Quan sát vạch đo âm lượng (Volume Indicator):** Giữ âm lượng giọng nói luôn nằm ở mức màu xanh lá cây; tránh nói quá nhỏ (vạch màu xám) khiến AI không bắt được âm, hoặc quá to làm vỡ tiếng (vạch màu đỏ).
 - **Quyền nghe lại câu hỏi:** Mỗi câu hỏi của AI bạn được quyền bấm nghe lại tối đa **3 lần**. Nếu gặp câu hỏi có từ mới hoặc chưa bắt kịp câu hỏi ở lần nghe đầu tiên, hãy bình tĩnh bấm nghe lại ngay.
-- **Tránh khoảng lặng quá dài:** AI phân tích độ dài khoảng lặng (pause duration). Nếu im lặng quá 4–5 giây, thuật toán có thể phán đoán bạn đã kết thúc câu trả lời và tự động chuyển sang câu tiếp theo.
+- **Chủ động quản lý thời gian và nút chuyển câu:** Sau khi trả lời xong câu hỏi, thí sinh chủ động bấm "Next question" để chuyển tiếp; mỗi Part có đồng hồ đếm ngược riêng và chỉ tự động chuyển khi hết thời gian của Part đó. Không nên dừng lại quá sớm, hãy tận dụng thời gian để phát triển ý trọn vẹn; chỉ bấm Next khi đã hoàn thành câu trả lời và luôn quan sát đồng hồ của từng Part.
 
 ### 6.5. Xử lý Sự cố Kỹ thuật Thường gặp trong Phòng thi
 - **Rớt kết nối mạng (Internet Disconnection):** Hệ thống thường lưu tạm dữ liệu trên bộ nhớ trình duyệt (LocalStorage). Giữ bình tĩnh, không tắt tab trình duyệt, cắm lại dây mạng hoặc kết nối lại Wi-Fi và bấm F5 để tải lại phiên làm việc nếu được phép.

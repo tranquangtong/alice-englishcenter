@@ -92,7 +92,7 @@ Thường gặp ở Part 2 (giới thiệu tiện ích, dự án công cộng) h
 - **Quy tắc số 0:** Trong số điện thoại, số `0` có thể được đọc là *oh* hoặc *zero*; hai số giống nhau đọc là *double* (ví dụ: 77 đọc là *double seven*).
 
 ### Bẫy 3: Bẫy Thiếu/Thừa Đuôi Số Nhiều (`-s` / `-es`)
-- Máy chấm tự động (AI) kiểm tra chính xác từng ký tự. Nếu trong bài nói là danh từ số nhiều `projects` mà bạn gõ `project`, câu trả lời sẽ bị tính là sai hoàn toàn.
+- Hệ thống chấm thi tự động kiểm tra chính xác từng ký tự. Nếu trong bài nói là danh từ số nhiều `projects` mà bạn gõ `project`, câu trả lời sẽ bị tính là sai.
 - **Cách khắc phục:** Dựa vào ngữ pháp của câu để suy luận (có mạo từ `a/an` phía trước không? Động từ phía sau chia ở số ít hay số nhiều?).
 
 ### Bẫy 4: Bẫy Từ gây nhiễu Liệt kê (Distractor Listing)
