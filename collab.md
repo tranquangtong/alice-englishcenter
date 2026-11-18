@@ -14,6 +14,8 @@
 - lead: whoever the user is chatting with
 - codex: implementation with tests, build/CI fixes, review every diff before merge
 - agy: UI/HTML/CSS, content and copy (English-learning material), docs, research
+  - models: prefer `gemini-4-hydrogen-high` / `gemini-4-argon-high` (or `claude-opus-5-5-*`,
+    `claude-sonnet-5-5-*`); avoid old models (gemini-3.x Flash/Pro) unless the user asks.
 
 ## Permissions
 - codex: may edit (worktree, -w)
