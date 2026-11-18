@@ -429,6 +429,7 @@ main {
 
 .menu-toggle:hover,
 .aero-btn:hover {
+  color: var(--gel-ink);
   background: linear-gradient(180deg, var(--gel-hover-top) 0%, var(--gel-mid) 52%, var(--gel-hover-bottom) 100%);
   transform: translateY(-1px);
   box-shadow: inset 0 1px 0 rgb(255 255 255 / .68), 0 6px 18px rgb(8 75 125 / .34);
@@ -607,6 +608,7 @@ main {
   border-color: var(--pill-active-edge);
   color: var(--pill-active-ink);
   font-weight: 800;
+  isolation: isolate;
   box-shadow: var(--glass-highlight), 0 4px 12px rgb(21 147 214 / .16);
 }
 
@@ -628,6 +630,7 @@ main {
   background: linear-gradient(110deg, transparent 20%, rgb(255 255 255 / .42) 50%, transparent 80%);
   transform: translateX(-130%);
   pointer-events: none;
+  z-index: -1;
   transition: transform .55s ease;
 }
 
