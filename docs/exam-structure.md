@@ -26,7 +26,7 @@
 | Speaking | ~11–14 phút | Part 1 – Part 2 – Part 3 | P1 Introduction & Interview: ~12 câu (tên, quê, đi làm/đi học, âm nhạc ×5, cửa hàng nhỏ ×4) · P2 Individual Long Turn: cue card "Describe a character from a film" (4 gợi ý), có thời gian chuẩn bị đếm ngược, nói tối đa ~2' · P3 Two-way Discussion: ~5 câu mở rộng chủ đề phim/diễn viên. Mỗi câu được nghe lại tối đa 3 lần; có chỉ báo âm lượng |
 
 Thang điểm quan sát được: Listening 26/40 → 6.0; Reading 25/40 → 6.0 (trùng bảng quy đổi **Academic**;
-với GT 25/40 chỉ ≈ 5.5). Overall = trung bình 4 kỹ năng làm tròn.
+với GT 25/40 chỉ ≈ 5.0). Overall = trung bình 4 kỹ năng làm tròn.
 
 ## 3. So sánh với IELTS General Training (GT)
 
