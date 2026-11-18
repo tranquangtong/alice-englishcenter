@@ -25,7 +25,7 @@ Thang điểm chấm Reading của hệ thống AI tuân thủ nghiêm ngặt b�
 |---|---|---|
 | **15 – 18 câu** | 5.0 | Đọc hiểu được các ý tường minh; gặp bế tắc với câu phức và từ vựng chuyên ngành. |
 | **19 – 22 câu** | 5.5 | Làm tốt các câu hỏi chi tiết ở Passage 1; Passage 2 & 3 thường bị thiếu thời gian. |
-| **23 – 26 câu** | 6.0 | **Mục tiêu tối thiểu:** Đạt chuẩn Academic (25/40 = 6.0; trong khi GT 25/40 chỉ đạt 5.5). |
+| **23 – 26 câu** | 6.0 | **Mục tiêu tối thiểu:** Đạt chuẩn Academic (25/40 = 6.0; trong khi GT 25/40 ≈ 5.0). |
 | **27 – 29 câu** | 6.5 | Xử lý tốt dạng T/F/NG và Matching Information ở cả 3 bài đọc. |
 | **30 – 32 câu** | 7.0 | **Mục tiêu nâng cao:** Nắm vững cấu trúc câu phức tạp; phân biệt chuẩn xác sắc thái nghĩa. |
 | **33 – 35 câu** | 7.5 | Khả năng đọc lướt và suy luận học thuật xuất sắc; tốc độ đọc đạt ≥ 220 từ/phút. |
@@ -209,7 +209,7 @@ D. frequent intervals    E. posture variation     F. technical training
 
 - **Official IELTS Sample Reading Papers (ielts.org):** Nguồn đề thi thử chuẩn xác nhất để kiểm tra tốc độ và định vị bẫy.
 - **British Council LearnEnglish - Reading Zone:** Các bài đọc phân cấp từ B1 đến C1 có bài tập trắc nghiệm và từ vựng đi kèm.
-- **The Conversation (theconversation.com):** Trang tin học thuật do các giáo sư và nhà nghiên cứu đại học viết cho đại chúng; văn phong và độ dài tương đồng 100% với IELTS Academic Reading.
+- **The Conversation (theconversation.com):** Trang tin học thuật do các giáo sư và nhà nghiên cứu đại học viết cho đại chúng; văn phong và độ dài khá giống với IELTS Academic Reading.
 - **Smithsonian Magazine (smithsonianmag.com):** Nguồn đọc tuyệt vời cho các chủ đề lịch sử, khảo cổ học, tự nhiên và sinh thái học.
 
 ---

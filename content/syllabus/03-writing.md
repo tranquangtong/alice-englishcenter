@@ -14,8 +14,8 @@ Theo cấu trúc bài thi mẫu chuẩn hóa nội bộ (ielts.app):
   - **Task 2 (Academic Essay):** Yêu cầu viết tối thiểu **250 từ** (thời gian khuyến nghị: **40 phút**, chiếm 2/3 tổng điểm Writing). Đề thi mẫu là dạng **Agree / Disagree** về công nghệ liên lạc và các mối quan hệ xã hội.
 - **Đặc thù thi trên máy tính:**
   - Bộ đếm từ tự động (**Word Counter**) hiển thị trực tiếp góc dưới khung nhập văn bản.
-  - Thao tác gõ phím, bôi đen, sao chép (`Ctrl + C`) và dán (`Ctrl + V`) hoạt động bình thường, giúp chỉnh sửa cấu trúc câu nhanh hơn nhiều so với thi trên giấy.
-  - **Lưu ý:** Không có tính năng tự động sửa lỗi chính tả (Spell-check) hay gạch chân đỏ như trong Microsoft Word.
+  - Nhiều khả năng các thao tác gõ phím, bôi đen, sao chép (`Ctrl + C`) và dán (`Ctrl + V`) sẽ hoạt động bình thường (tương tự bài thi IELTS trên máy tính chính thức), giúp chỉnh sửa cấu trúc câu nhanh hơn so với thi trên giấy.
+  - **Lưu ý:** Tương tự như kỳ thi IELTS trên máy tính chính thức, hệ thống nhiều khả năng sẽ không có tính năng tự động sửa lỗi chính tả (Spell-check) hay gạch chân đỏ như trong Microsoft Word.
 
 ---
 
@@ -28,7 +28,7 @@ Hệ thống AI chấm bài dựa trên đúng 4 tiêu chí chuẩn của kỳ t
 | **Task Achievement (T1) / Task Response (T2)** | Hoàn thành yêu cầu đề bài; độ dài bài viết; tính thuyết phục của luận điểm. | Đạt độ dài (≥150 & ≥250 từ); Task 1 có **Overview rõ ràng**; Task 2 có lập trường xuyên suốt, trả lời đủ các vế câu hỏi. | Task 1 làm nổi bật các điểm dữ liệu cốt lõi; Task 2 triển khai luận điểm sâu sắc, có ví dụ minh họa xác đáng và chặt chẽ. |
 | **Coherence & Cohesion (CC)** | Tính mạch lạc của ý tưởng và độ kết dính giữa các câu, các đoạn. | Chia 4 đoạn văn rõ ràng; sử dụng từ nối cơ bản (*However, In addition, Consequently*); mạch ý dễ theo dõi. | Chuyển đoạn và chuyển ý tự nhiên; sử dụng thuần thục phép quy chiếu đại từ (*this, these developments*); tránh lạm dụng từ nối cơ học. |
 | **Lexical Resource (LR)** | Vốn từ vựng, độ chính xác của ngữ cảnh và collocations. | Sử dụng vốn từ đủ để diễn đạt ý; có nỗ lực dùng từ học thuật; một số lỗi chính tả hoặc dùng từ chưa tự nhiên nhưng không gây hiểu lầm. | Dùng thành thạo các cụm từ học thuật ít phổ biến (*less common lexical items*); kết hợp từ chính xác (*collocations*); hiếm khi sai chính tả. |
-| **Grammatical Range & Accuracy (GRA)** | Độ đa dạng và độ chính xác của các cấu trúc ngữ pháp. | Kết hợp câu đơn và câu phức; trên 50% câu viết đúng ngữ pháp; lỗi chia động từ hoặc mạo từ nhỏ không làm cản trở nghĩa. | Sử dụng linh hoạt nhiều dạng câu phức (mệnh đề quan hệ, đảo ngữ, câu bị động, điều kiện); kiểm soát ngữ pháp xuất sắc; câu hầu như không lỗi. |
+| **Grammatical Range & Accuracy (GRA)** | Độ đa dạng và độ chính xác của các cấu trúc ngữ pháp. | Kết hợp các câu đơn và câu phức; có thể còn mắc một số lỗi ngữ pháp nhưng hiếm khi làm cản trở giao tiếp. | Sử dụng linh hoạt nhiều dạng câu phức (mệnh đề quan hệ, đảo ngữ, câu bị động, điều kiện); kiểm soát ngữ pháp xuất sắc; câu hầu như không lỗi. |
 
 ---
 
@@ -40,7 +40,7 @@ Hệ thống AI chấm bài dựa trên đúng 4 tiêu chí chuẩn của kỳ t
 - **Đoạn 3 (Body Paragraph 1):** Mô tả chi tiết nhóm số liệu/bước đầu tiên có kèm bằng chứng cụ thể (3–4 câu).
 - **Đoạn 4 (Body Paragraph 2):** Mô tả chi tiết nhóm số liệu/bước còn lại và so sánh tương quan (3–4 câu).
 
-> **Cảnh báo sống còn:** Trong Task 1, nếu bài viết **không có đoạn Overview rõ ràng**, máy chấm tự động sẽ **khóa trần điểm Task Achievement ở mức tối đa Band 5.0**, bất kể ngữ pháp và từ vựng của bạn có xuất sắc đến đâu.
+> **Cảnh báo sống còn:** Theo bảng mô tả thang điểm (Band Descriptors) chính thức của IELTS, trong Task 1 nếu bài viết **không có đoạn Overview rõ ràng**, điểm Task Achievement thường **không thể vượt quá Band 5.0**, bất kể ngữ pháp và từ vựng của bạn có xuất sắc đến đâu.
 
 ### 3.2. Chiến lược Từng Dạng Bài Task 1
 
@@ -70,7 +70,7 @@ Hệ thống AI chấm bài dựa trên đúng 4 tiêu chí chuẩn của kỳ t
 *The diagram illustrates the process of recycling discarded lithium-ion batteries from electronic devices to produce new energy storage cells. Summarize the information by selecting and reporting the main features, and make comparisons where relevant.*
 
 #### Bài viết Mẫu (172 từ)
-The flow chart illustrates the sequential stages involved in the recycling of discarded lithium-ion batteries from consumer electronics to manufacture new energy storage units.
+The diagram illustrates the sequential stages involved in the recycling of discarded lithium-ion batteries from consumer electronics to manufacture new energy storage units.
 
 Overall, the entire procedure comprises five principal phases, commencing with the initial collection and sorting of obsolete electronic waste and culminating in the assembly of certified commercial-grade battery packs.
 
@@ -135,10 +135,10 @@ Mỗi đoạn thân bài nên có độ dài khoảng 80–100 từ, tuân theo 
 ### 5.3. Bài Luận Mẫu Task 2 Hoàn chỉnh Gốc (Original Model Essay)
 
 **Đề bài:**  
-*Some people believe that the proliferation of modern digital communication tools in corporate settings has enhanced workplace productivity but significantly undermined interpersonal relationships among employees. To what extent do you agree or disagree?*
+*Modern digital communication tools have made workplaces more productive, but some people say they have damaged relationships between colleagues. Do the advantages of these tools outweigh the disadvantages?*
 
-#### Bài viết Mẫu (273 từ)
-In recent years, modern communication applications such as instant messaging platforms and video-conferencing software have become ubiquitous in corporate environments. While some critics argue that these digital channels diminish meaningful human connections among colleagues, I firmly agree that although virtual communication may reduce spontaneous social interactions, its overall contribution to operational efficiency and structured collaboration far outweighs any interpersonal drawbacks.
+#### Bài viết Mẫu (270 từ)
+In recent years, modern communication applications such as instant messaging platforms and video-conferencing software have become ubiquitous in corporate environments. While some critics argue that these digital channels diminish meaningful human connections among colleagues, I believe that although virtual communication may reduce spontaneous social interactions, its overall contribution to operational efficiency and structured collaboration far outweighs any interpersonal drawbacks.
 
 On the one hand, excessive reliance on digital messaging can undoubtedly erode the warmth of traditional workplace camaraderie. When office workers communicate predominantly through abbreviated text messages and automated task notifications, informal conversations—such as casual exchanges by the water cooler—are drastically curtailed. This continuous physical isolation may lead to a transactional working culture, where employees view coworkers merely as task assignees rather than professional companions. Consequently, team members who work in entirely virtual settings frequently report feelings of emotional detachment and professional loneliness.
 
@@ -147,10 +147,10 @@ Nevertheless, digital tools have undeniably transformed corporate collaboration 
 In conclusion, while the transition toward digital communication may diminish spontaneous personal encounters at the office, I believe that its enormous benefits in streamlining corporate operations, enhancing scheduling flexibility, and fostering transparent global collaboration represent an overwhelmingly positive evolution for modern business.
 
 #### Phân tích Tiêu chí Chấm điểm (Band 7.0 – 7.5)
-- **Task Response (Độ dài: 273 từ):** Trả lời trực tiếp và rõ ràng câu hỏi của đề bài; có lập trường xuyên suốt (*"I firmly agree that..."* từ Mở bài tới Kết bài); phân tích sâu sắc cả 2 mặt của vấn đề với các luận điểm công sở thực tế.
+- **Task Response (Độ dài: 270 từ):** Trả lời trực tiếp và rõ ràng câu hỏi của đề bài dạng Advantages & Disadvantages; có lập trường xuyên suốt (*"I believe that... its benefits... far outweigh..."* từ Mở bài tới Kết bài); phân tích sâu sắc cả hai mặt của vấn đề với các luận điểm công sở thực tế.
 - **Coherence & Cohesion:** Bố cục 4 đoạn chuẩn xác. Các cụm từ liên kết chuyển ý tinh tế (*On the one hand, Consequently, Nevertheless, Furthermore, In conclusion*).
 - **Lexical Resource:** Vốn từ vựng công sở và học thuật C1 vượt trội (*ubiquitous, spontaneous social interactions, operational efficiency, transactional working culture, professional companions, emotional detachment, operational bottlenecks, team solidarity*).
-- **Grammatical Range & Accuracy:** Sử dụng đa dạng câu phức, cấu trúc nhượng bộ (*While some critics argue that..., I firmly agree that...*), mệnh đề quan hệ và đảo ngữ nhẹ (*When utilized deliberately...*). Hoàn toàn không mắc lỗi ngữ pháp cơ bản.
+- **Grammatical Range & Accuracy:** Sử dụng đa dạng câu phức, cấu trúc nhượng bộ (*While some critics argue that...*), mệnh đề quan hệ và mệnh đề rút gọn (*When utilized deliberately...*). Hoàn toàn không mắc lỗi ngữ pháp cơ bản.
 
 ---
 
@@ -198,7 +198,7 @@ Khi nhận bài viết của học viên, Mentor nên đánh giá dựa trên Ph
 - **Task Achievement / Response (Điểm: /9):** Bài có đủ số từ không? Có đoạn Overview rõ ràng ở Task 1 không? Task 2 có trả lời trọn vẹn mọi vế của đề bài không?
 - **Coherence & Cohesion (Điểm: /9):** Bài có chia 4 đoạn cân đối không? Câu chủ đề (Topic sentence) có rõ ràng không? Các ý tưởng có mạch lạc logic không?
 - **Lexical Resource (Điểm: /9):** Học viên có sử dụng được 3–5 cụm collocations học thuật không? Có bị lặp từ cơ bản (*good, bad, a lot*) không?
-- **Grammatical Range & Accuracy (Điểm: /9):** Tỷ lệ câu đúng ngữ pháp đạt trên 70% không? Có lỗi thì hoặc lỗi chia động từ số ít/nhiều không?
+- **Grammatical Range & Accuracy (Điểm: /9):** Lỗi ngữ pháp có thường xuyên không, có gây khó hiểu không? Có lỗi thì hoặc lỗi chia động từ số ít/nhiều không?
 - **Hành động Cải thiện Tiếp theo (Next Action Item):** Chỉ định 1 lỗi ngữ pháp trọng tâm hoặc 1 dạng câu phức mà học viên bắt buộc phải viết lại trong tuần tới.
 
 
@@ -244,10 +244,12 @@ Học viên có thể học thuộc và vận dụng linh hoạt các bộ khung
 
 Nâng cấp điểm Lexical Resource (từ Band 5.5 lên 7.0) bằng các cụm từ kết hợp tự nhiên:
 
+> **Lưu ý:** Thí sinh nên dùng từ học thuật tự nhiên, không nhồi từ "đao to búa lớn" vì có thể bị trừ điểm Lexical Resource nếu dùng gượng ép hoặc sai ngữ cảnh.
+
 | Cụm từ cơ bản (Band 5.0) | Cụm từ nâng cấp Học thuật (Band 6.5 – 7.5) | Ý nghĩa trong Ngữ cảnh Công sở |
 |---|---|---|
-| *work hard* | *exert considerable professional effort* | Nỗ lực làm việc chuyên nghiệp |
-| *have a good result* | *yield tangible operational outcomes* | Mang lại kết quả hoạt động rõ rệt |
+| *work hard* | *put in considerable effort* | Nỗ lực làm việc đáng kể |
+| *have a good result* | *achieve positive results* | Đạt được kết quả tích cực |
 | *make communication easy* | *facilitate seamless organizational communication* | Tạo điều kiện giao tiếp thông suốt |
 | *solve the problem* | *address the underlying issue / mitigate bottlenecks* | Giải quyết vấn đề gốc rễ / điểm nghẽn |
 | *many people leave work* | *high rate of employee turnover* | Tỷ lệ nhân viên nghỉ việc cao |
@@ -255,7 +257,7 @@ Nâng cấp điểm Lexical Resource (từ Band 5.5 lên 7.0) bằng các cụm 
 | *help workers feel good* | *enhance employee job satisfaction and morale* | Nâng cao tinh thần và độ hài lòng |
 | *a busy work schedule* | *a demanding professional schedule* | Lịch làm việc dày đặc, nhiều áp lực |
 | *save a lot of money* | *achieve substantial cost reductions* | Đạt mức cắt giảm chi phí đáng kể |
-| *work together well* | *foster synergistic teamwork* | Thúc đẩy tinh thần đồng đội cộng hưởng |
+| *work together well* | *collaborate effectively* | Hợp tác làm việc hiệu quả |
 
 ---
 
