@@ -14,8 +14,7 @@
 - lead: whoever the user is chatting with
 - codex: implementation with tests, build/CI fixes, review every diff before merge
 - agy: UI/HTML/CSS, content and copy (English-learning material), docs, research
-  - models: prefer `gemini-4-hydrogen-high` / `gemini-4-argon-high` (or `claude-opus-5-5-*`,
-    `claude-sonnet-5-5-*`); avoid old models (gemini-3.x Flash/Pro) unless the user asks.
+  - models: the newest Gemini Pro / Claude Opus/Sonnet from `agy models` (global rule: never Flash or Gemini 3.x Pro); no fixed ids here.
 
 ## Permissions
 - codex: may edit (worktree, -w)
@@ -25,6 +24,10 @@
 ## Project rules
 - Definition of done: lint + tests pass (once they exist); the lead verifies before reporting.
 - Keep learner-facing content accurate and consistent; Codex reviews code, the lead reviews content.
+- **UI design gene = Frutiger Aero (mandatory).** Every UI change — redesign, new page or feature
+  (login, teacher/student dashboards, quizzes…) — must follow `docs/design-system.md` (tokens,
+  glass panels, gel buttons, a11y rules) and pass its review checklist. Changing the gene needs
+  the user's approval and an update to that file first.
 
 ## Collaboration
 - Lead plans, routes, checks results; steps in only when really needed (both teammates blocked,

@@ -50,3 +50,7 @@ Giữ file `.nojekyll` ở root. Tất cả tài nguyên dùng đường dẫn t
 Tạo file Markdown và thêm một entry có `id` duy nhất vào manifest. Viết liên kết `.md` tương đối từ file nội dung; nếu file đích nằm trong manifest, ứng dụng tự chuyển thành SPA route. Ảnh tương đối cũng được tính từ file Markdown. Link mục lục có dạng `#/id?section=ten-de-muc` để có thể chia sẻ trực tiếp.
 
 Khi tài liệu trong manifest trả về HTTP 404, trang hiển thị **Đang soạn**. Các lỗi tải khác hiển thị hướng dẫn thử lại. Đây là website tài liệu tĩnh; chức năng tài khoản và vai trò Teacher–Student thuộc lộ trình tương lai.
+
+## Design
+
+Giao diện tuân theo design gene **Frutiger Aero** — bắt buộc cho mọi thay đổi UI sau này. Xem [docs/design-system.md](docs/design-system.md).
