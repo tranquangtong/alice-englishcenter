@@ -11,6 +11,9 @@
   const menu = document.querySelector('.menu-toggle');
   let pages = [];
   let request = 0;
+  let listeningRequest;
+  let previousHash = location.hash;
+  let reverting = false;
 
   function routeURL(id, section = '') {
     return `#/${encodeURIComponent(id)}${section ? `?section=${encodeURIComponent(section)}` : ''}`;
@@ -44,6 +47,11 @@
 
   function buildNav() {
     nav.replaceChildren();
+    const general = document.createElement('a');
+    general.href = '#/ielts-gt';
+    general.textContent = 'IELTS General';
+    general.dataset.page = 'ielts-gt';
+    nav.append(general);
     const groups = new Map();
     for (const page of pages) {
       if (!groups.has(page.group)) {
@@ -140,8 +148,17 @@
   }
 
   async function render() {
+    if (reverting) { reverting = false; return; }
     // Native skip links must not be interpreted as document routes.
     if (location.hash && !location.hash.startsWith('#/') && content.childElementCount) return;
+    if (location.hash !== previousHash && window.Listening && !window.Listening.allowLeave()) {
+      reverting = true;
+      location.replace(previousHash || '#/home');
+      return;
+    }
+    previousHash = location.hash;
+    listeningRequest?.abort();
+    window.Listening?.dispose();
     const current = ++request;
     const route = location.hash.startsWith('#/') ? location.hash.slice(2) : '';
     const [rawId, query = ''] = route.split('?');
@@ -150,9 +167,29 @@
     const page = pages.find(entry => entry.id === id);
     closeMenu();
     nav.querySelectorAll('a').forEach(link => {
-      if (link.dataset.page === id) link.setAttribute('aria-current', 'page');
+      if (link.dataset.page === id || (link.dataset.page === 'ielts-gt' && id.startsWith('ielts-gt/'))) link.setAttribute('aria-current', 'page');
       else link.removeAttribute('aria-current');
     });
+    toc.closest('aside').hidden = id === 'ielts-gt' || id.startsWith('ielts-gt/');
+    if (id === 'ielts-gt' || /^ielts-gt\/(?:listening(?:\/[^/]+)?|reading|writing|speaking)$/.test(id)) {
+      listeningRequest = new AbortController();
+      main.setAttribute('aria-busy', 'true');
+      status.textContent = 'Đang tải IELTS General…';
+      document.title = 'IELTS General · Alice English Center';
+      toc.replaceChildren();
+      try {
+        await window.Listening.render({ id, query, content, signal: listeningRequest.signal });
+        if (current !== request) return;
+        status.textContent = 'IELTS General';
+        window.scrollTo(0, 0);
+        main.focus({ preventScroll: true });
+      } catch (error) {
+        if (current !== request || error.name === 'AbortError') return;
+        message('Chưa tải được bài thi', error.message);
+        status.textContent = 'Có lỗi tải bài thi';
+      } finally { if (current === request) main.removeAttribute('aria-busy'); }
+      return;
+    }
     if (!page) {
       main.removeAttribute('aria-busy');
       message('Không tìm thấy trang', 'Hãy chọn một tài liệu trong danh mục học tập để tiếp tục.');

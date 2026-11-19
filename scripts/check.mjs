@@ -2,6 +2,8 @@ import { readFile, readdir, stat } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { spawnSync } from 'node:child_process';
+import { existsSync } from 'node:fs';
+import { safePath, validateTest, validateExternal } from '../assets/js/listening-core.js';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 let errors = 0;
@@ -100,6 +102,32 @@ for (const file of files) {
     for (const match of source.matchAll(/<(\.{1,2}\/[^<>\s]+)>/g)) links.push(match[1]);
   }
   for (const link of new Set(links)) await checkLink(link, file);
+}
+const listeningDirectory = 'content/ielts-gt/listening/';
+const listeningIndex = path.join(root, listeningDirectory, 'index.json');
+if (!await exists(listeningIndex)) console.log('NOTE: Listening index.json not present yet; skipping test catalogue validation.');
+else {
+  try {
+    const catalog = JSON.parse(await readFile(listeningIndex, 'utf8'));
+    if (!Array.isArray(catalog.tests)) throw new Error('tests array required');
+    const ids = new Set();
+    for (const entry of catalog.tests) {
+      if (!entry || !/^[a-z0-9-]+$/.test(entry.id) || ids.has(entry.id) || !safePath(entry.file) || !entry.file.startsWith(listeningDirectory) || !entry.file.endsWith('.json')) {
+        report('Listening index: invalid or duplicate test id/path'); continue;
+      }
+      ids.add(entry.id);
+      try {
+        const test = JSON.parse(await readFile(path.join(root, entry.file), 'utf8'));
+        if (test.id !== entry.id) report(`${entry.file}: id differs from index`);
+        for (const issue of validateTest(test, { imageExists: image => existsSync(path.join(root, image)) })) report(`${entry.file}: ${issue}`);
+      } catch (error) { report(`${entry.file}: ${error.message}`); }
+    }
+  } catch (error) { report(`Listening index: ${error.message}`); }
+}
+const externalFile = path.join(root, listeningDirectory, 'external.json');
+if (await exists(externalFile)) {
+  try { for (const issue of validateExternal(JSON.parse(await readFile(externalFile, 'utf8')))) report(`Listening external.json: ${issue}`); }
+  catch (error) { report(`Listening external.json: ${error.message}`); }
 }
 console.log(`Checked ${files.length} files, ${checkedLinks} relative links. ${errors} error(s), ${warnings} warning(s).`);
 process.exitCode = errors ? 1 : 0;
