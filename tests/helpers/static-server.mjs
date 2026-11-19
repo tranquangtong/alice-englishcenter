@@ -13,14 +13,14 @@ function silenceWave(seconds = 50) {
   buffer.writeUInt32LE(48000, 28); buffer.writeUInt16LE(2, 32); buffer.writeUInt16LE(16, 34);
   buffer.write('data', 36); buffer.writeUInt32LE(size, 40); return buffer;
 }
-export async function serveFixture() {
+export async function serveFixture({ real = false } = {}) {
   const server = http.createServer(async (req, res) => {
     try {
       let name = decodeURIComponent(new URL(req.url, 'http://localhost').pathname).replace(/^\//, '') || 'index.html';
       let body, type = mime[path.extname(name)] || 'application/octet-stream';
-      if (name === 'content/ielts-gt/listening/index.json') body = Buffer.from(JSON.stringify({ tests: [{ id: fixture.id, title: fixture.title, file: 'content/ielts-gt/listening/sample-listening.json', summary: 'Original fixture', difficulty: 'Software tests' }] }));
-      else if (name === 'content/ielts-gt/listening/sample-listening.json') body = Buffer.from(JSON.stringify(fixture));
-      else if (name === 'content/ielts-gt/listening/external.json') body = Buffer.from(JSON.stringify({ sites: [{ site: 'Fixture links', home: 'https://example.com', tests: [{ title: 'External fixture', url: 'https://example.com/practice' }] }] }));
+      if (!real && name === 'content/ielts-gt/listening/index.json') body = Buffer.from(JSON.stringify({ tests: [{ id: fixture.id, title: fixture.title, file: 'content/ielts-gt/listening/sample-listening.json', summary: 'Original fixture', difficulty: 'Software tests' }] }));
+      else if (!real && name === 'content/ielts-gt/listening/sample-listening.json') body = Buffer.from(JSON.stringify(fixture));
+      else if (!real && name === 'content/ielts-gt/listening/external.json') body = Buffer.from(JSON.stringify({ sites: [{ site: 'Fixture links', home: 'https://example.com', tests: [{ title: 'External fixture', url: 'https://example.com/practice' }] }] }));
       else {
         const vendor = { '__vendor/marked.js': 'node_modules/marked/marked.min.js', '__vendor/purify.js': 'node_modules/dompurify/dist/purify.min.js' };
         name = vendor[name] || name;

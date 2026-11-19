@@ -16,11 +16,20 @@ export function normalize(value) {
 }
 export function withinLimit(value, group) {
   if (!GAP_TYPES.includes(group.type)) return true;
-  const tokens = normalize(value).split(' ').filter(Boolean);
+  const tokens = answerTokens(value, group.allowNumber);
   // A number is an extra permitted token only for AND/OR A NUMBER instructions.
-  const numbers = tokens.filter(token => /^\d+(?:[.:/-]\d+)*$/.test(token));
+  const numbers = tokens.filter(token => numberToken.test(token));
   return group.allowNumber ? numbers.length <= 1 && tokens.length - numbers.length <= group.wordLimit : tokens.length <= group.wordLimit;
 }
+const numberToken = /^\d+(?:[-.,:/]\d+)*$/;
+function answerTokens(value, allowNumber) {
+  let text = normalize(value);
+  // Only whole numeric runs compact: letters still separate numbers, and
+  // punctuation inside words (e.g. "river-bank") remains significant.
+  if (allowNumber) text = text.replace(/(?<!\S)\d+(?:[-.,:/\s]+\d+)*(?!\S)/g, number => number.replace(/\s+|,/g, ''));
+  return text.split(' ').filter(Boolean);
+}
+const normalizeAnswer = (value, group) => answerTokens(value, GAP_TYPES.includes(group.type) && group.allowNumber).join(' ');
 export function bandFor(score) {
   return [[39, 9], [37, 8.5], [35, 8], [32, 7.5], [30, 7], [26, 6.5], [23, 6], [18, 5.5],
     [16, 5], [13, 4.5], [10, 4], [8, 3.5], [6, 3], [4, 2.5], [0, 2]].find(([min]) => score >= min)?.[1] ?? 2;
@@ -40,7 +49,7 @@ export function grade(test, answers) {
       });
     } else for (const question of group.questions) {
       const given = String(answers[question.n] ?? '');
-      const correct = !!normalize(given) && withinLimit(given, group) && question.answer.some(answer => normalize(answer) === normalize(given));
+      const correct = !!normalize(given) && withinLimit(given, group) && question.answer.some(answer => normalizeAnswer(answer, group) === normalizeAnswer(given, group));
       questions[question.n] = { correct, given, answer: question.answer.join(' / ') };
       if (correct) score++;
     }

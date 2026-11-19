@@ -18,8 +18,28 @@ test('word limits allow an optional single number, but reject extra words/number
   assert.ok(withinLimit('12 river', group));
   assert.ok(withinLimit('1,200', group));
   assert.ok(!withinLimit('river bank', group));
-  assert.ok(!withinLimit('12 13', group));
+  assert.ok(withinLimit('12 13', group));
+  assert.ok(!withinLimit('12 river 13', group));
   assert.ok(!withinLimit('12 river', { ...group, allowNumber: false }));
+});
+
+test('numeric runs count as one number and spaced phone variants grade both ways', () => {
+  const group = { type: 'form', wordLimit: 1, allowNumber: true };
+  for (const value of ['07492 618305', '07492-618305', '07492 - 618305', '1.25', '1,200', '1, 200', '09:30', '09 : 30', '15/03', '15 March']) assert.ok(withinLimit(value, group), value);
+  assert.ok(!withinLimit('07492 618305', { ...group, allowNumber: false }));
+  assert.ok(!withinLimit('15 March 2026', group));
+  assert.ok(!withinLimit('07492 river bank', group));
+  for (const [accepted, given] of [['07492 618305', '07492618305'], ['07492618305', '07492 618305']]) {
+    const sample = clone();
+    Object.assign(sample.parts[0].groups[0], group);
+    sample.parts[0].groups[0].questions[0].answer = [accepted];
+    assert.deepEqual(validateTest(sample), []);
+    assert.ok(grade(sample, { 1: given }).questions[1].correct);
+    assert.ok(!grade(sample, { 1: '07492 618306' }).questions[1].correct);
+  }
+  const sample = clone();
+  sample.parts[0].groups[0].questions[0].answer = ['1200'];
+  assert.ok(grade(sample, { 1: '1, 200' }).questions[1].correct);
 });
 test('accepted variants score, blanks and excessive answers do not', () => {
   const sample = clone(); sample.parts[0].groups[0].questions[0].answer.push('Hollins');
