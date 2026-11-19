@@ -1,0 +1,1244 @@
+{
+  "id": "gt-l-04",
+  "title": "Practice Test 4",
+  "parts": [
+    {
+      "part": 1,
+      "title": "Part 1 — Reporting lost property on a train",
+      "context": "A telephone conversation between a rail lost property agent and a passenger who left a backpack on a morning commuter train.",
+      "audio": "assets/audio/ielts-gt/listening/gt-l-04/part1.mp3",
+      "script": [
+        {
+          "speaker": "Narrator",
+          "voice": "en-GB-narrator",
+          "text": "Part 1. You will hear a woman phoning a railway lost property office to report a missing bag. First, you have some time to look at questions 1 to 6."
+        },
+        {
+          "pause": 30,
+          "note": "Reading time for questions 1–6"
+        },
+        {
+          "speaker": "Agent",
+          "voice": "en-GB-male-1",
+          "text": "Northern Rail Lost Property Office, Owen speaking. How can I help you?"
+        },
+        {
+          "speaker": "Passenger",
+          "voice": "en-US-female-1",
+          "text": "Hi Owen. I stepped off my commuter train about twenty minutes ago and suddenly realised I'd left my backpack behind. Can I log a report right now?"
+        },
+        {
+          "speaker": "Agent",
+          "voice": "en-GB-male-1",
+          "text": "Of course—the quicker we log it, the better chance our station staff have of grabbing it before the train goes back into service. Let's start with your full name."
+        },
+        {
+          "speaker": "Passenger",
+          "voice": "en-US-female-1",
+          "text": "It's Claire Delgado."
+        },
+        {
+          "speaker": "Agent",
+          "voice": "en-GB-male-1",
+          "text": "Claire Delgardo—that's with an R after the A, right?"
+        },
+        {
+          "speaker": "Passenger",
+          "voice": "en-US-female-1",
+          "text": "No, actually there's no R—just D-E-L-G-A-D-O."
+        },
+        {
+          "speaker": "Agent",
+          "voice": "en-GB-male-1",
+          "text": "Thanks for clarifying, D-E-L-G-A-D-O. And what's the best mobile number to text you on if we find it?"
+        },
+        {
+          "speaker": "Passenger",
+          "voice": "en-US-female-1",
+          "text": "Sure, it's 07700 942681—oh wait, sorry, I reversed the last two digits! I'm still a bit flustered from rushing out of the station. It's 07700 942618."
+        },
+        {
+          "speaker": "Agent",
+          "voice": "en-GB-male-1",
+          "text": "Don't worry at all, happens to people every morning. Let me read that back: 07700 942618. Got it. Now, which train service were you travelling on today?"
+        },
+        {
+          "speaker": "Passenger",
+          "voice": "en-US-female-1",
+          "text": "Normally I catch the 7.45 from King's Cross, though I missed it today because of a late bus. So I took the 8.15 instead, which pulled in just after nine—at 9.05, I think."
+        },
+        {
+          "speaker": "Agent",
+          "voice": "en-GB-male-1",
+          "text": "Okay, the 8.15 departure—that's the Cambridge express service. Did you travel all the way to Cambridge?"
+        },
+        {
+          "speaker": "Passenger",
+          "voice": "en-US-female-1",
+          "text": "No, I got off earlier at Harlow—that's H-A-R-L-O-W—for a client meeting."
+        },
+        {
+          "speaker": "Agent",
+          "voice": "en-GB-male-1",
+          "text": "Right, Harlow. And can you remember which carriage you were sitting in?"
+        },
+        {
+          "speaker": "Passenger",
+          "voice": "en-US-female-1",
+          "text": "Let me think... my seat reservation was in Carriage B, near the coffee trolley, but it was completely packed with school kids, so I walked two coaches down to the quiet zone in Carriage D and found a spare window seat there."
+        },
+        {
+          "speaker": "Agent",
+          "voice": "en-GB-male-1",
+          "text": "Carriage D, quiet zone—that narrows it down nicely. And roughly where in the seating area did you leave the bag?"
+        },
+        {
+          "speaker": "Passenger",
+          "voice": "en-US-female-1",
+          "text": "Well, I definitely checked under my seat and on the table when we pulled into the platform, and grabbed my umbrella. It wasn't until I reached the ticket barrier that I remembered I'd lifted the backpack up onto the overhead rack."
+        },
+        {
+          "speaker": "Narrator",
+          "voice": "en-GB-narrator",
+          "text": "Before you hear the rest of the conversation, you have some time to look at questions 7 to 10."
+        },
+        {
+          "pause": 20,
+          "note": "Reading time for questions 7–10"
+        },
+        {
+          "speaker": "Agent",
+          "voice": "en-GB-male-1",
+          "text": "Okay, now let's get a clear description of the bag so the crew at Cambridge can spot it straight away. You mentioned it's a backpack—what colour and material is it? Black nylon or leather?"
+        },
+        {
+          "speaker": "Passenger",
+          "voice": "en-US-female-1",
+          "text": "Neither, actually—it's a dark green canvas backpack, quite boxy, with brown straps."
+        },
+        {
+          "speaker": "Agent",
+          "voice": "en-GB-male-1",
+          "text": "Dark green canvas, great, that stands out well. Are there any distinctive marks, badges, or keyrings attached to the outside?"
+        },
+        {
+          "speaker": "Passenger",
+          "voice": "en-US-female-1",
+          "text": "I used to have a blue ribbon tied to the handle, though that came off last month. What is on there right now is a bright yellow luggage tag clipped onto the front zip—it doesn't have my address on it, just my initials."
+        },
+        {
+          "speaker": "Agent",
+          "voice": "en-GB-male-1",
+          "text": "A bright yellow luggage tag on the front zip—noted. And for verification when you collect it, could you tell me two or three things inside the bag?"
+        },
+        {
+          "speaker": "Passenger",
+          "voice": "en-US-female-1",
+          "text": "Thankfully I always keep my wallet and phone in my coat pocket, so at least those are safe. Inside the main compartment there's a silver tablet in a grey sleeve, a paperback novel, and a pair of woollen gloves."
+        },
+        {
+          "speaker": "Agent",
+          "voice": "en-GB-male-1",
+          "text": "Right—silver tablet and gloves. I'll send an alert through to the terminus team at Cambridge immediately. Just so you know how collection works: once we confirm we've got it, we can either post it to your home for £20, or you can pick it up in person from our central desk. If you collect it within seven days, there's a standard £12 handling fee; after a week, storage adds £5 per extra week."
+        },
+        {
+          "speaker": "Passenger",
+          "voice": "en-US-female-1",
+          "text": "Twelve pounds is fine—I'll definitely come in person as soon as I get your text. Do I need to bring photo ID and my train ticket when I collect it?"
+        },
+        {
+          "speaker": "Agent",
+          "voice": "en-GB-male-1",
+          "text": "Just a piece of photo ID like a driving licence or passport, plus the reference code we text you. Fingers crossed we'll message you before lunchtime. Have a good day, Claire."
+        },
+        {
+          "speaker": "Narrator",
+          "voice": "en-GB-narrator",
+          "text": "That is the end of Part 1. You now have half a minute to check your answers to Part 1."
+        },
+        {
+          "pause": 30,
+          "note": "Checking time for Part 1"
+        }
+      ],
+      "groups": [
+        {
+          "range": [1, 6],
+          "type": "form",
+          "title": "Rail Lost Property Report",
+          "instructions": "Complete the form below. Write ONE WORD AND/OR A NUMBER for each answer.",
+          "wordLimit": 1,
+          "allowNumber": true,
+          "questions": [
+            {
+              "n": 1,
+              "prompt": "Passenger surname: Claire {{blank}}",
+              "answer": ["Delgado"],
+              "explanation": "Claire sửa lại cách viết họ của mình là Delgado (không có chữ R) và đánh vần D-E-L-G-A-D-O.",
+              "evidence": "No, actually there's no R—just D-E-L-G-A-D-O.",
+              "distractors": [
+                {
+                  "text": "Delgardo",
+                  "why": "Nhân viên Owen đoán nhầm có chữ R sau chữ A nhưng Claire đã đính chính."
+                }
+              ]
+            },
+            {
+              "n": 2,
+              "prompt": "Contact mobile: 07700 {{blank}}",
+              "answer": ["942618"],
+              "explanation": "Claire nhận ra mình đọc ngược hai số cuối và sửa lại thành 07700 942618.",
+              "evidence": "It's 07700 942618.",
+              "distractors": [
+                {
+                  "text": "942681",
+                  "why": "Đây là dãy số Claire lỡ đọc nhầm hai chữ số cuối trước khi tự sửa."
+                }
+              ]
+            },
+            {
+              "n": 3,
+              "prompt": "Train departure time: {{blank}} a.m.",
+              "answer": ["8.15", "8:15"],
+              "explanation": "Hôm nay Claire lỡ chuyến quen thuộc nên đi chuyến khởi hành lúc 8.15 sáng.",
+              "evidence": "So I took the 8.15 instead, which pulled in just after nine—at 9.05, I think.",
+              "distractors": [
+                {
+                  "text": "7.45",
+                  "why": "7.45 là chuyến tàu cô thường đi hằng ngày nhưng sáng nay bị lỡ vì xe buýt trễ."
+                },
+                {
+                  "text": "9.05",
+                  "why": "9.05 là giờ tàu đến nơi (pulled in), không phải giờ khởi hành (departure time)."
+                }
+              ]
+            },
+            {
+              "n": 4,
+              "prompt": "Station where passenger alighted: {{blank}}",
+              "answer": ["Harlow"],
+              "explanation": "Claire xuống tàu sớm hơn ở ga Harlow ('alighted' = 'got off') và đánh vần H-A-R-L-O-W.",
+              "evidence": "No, I got off earlier at Harlow—that's H-A-R-L-O-W—for a client meeting.",
+              "distractors": [
+                {
+                  "text": "Cambridge",
+                  "why": "Cambridge là ga cuối của chuyến tàu, không phải nơi Claire xuống."
+                }
+              ]
+            },
+            {
+              "n": 5,
+              "prompt": "Carriage letter: {{blank}}",
+              "answer": ["D"],
+              "explanation": "Claire di chuyển sang khu vực yên tĩnh ở toa D (Carriage D) để ngồi.",
+              "evidence": "so I walked two coaches down to the quiet zone in Carriage D and found a spare window seat there.",
+              "distractors": [
+                {
+                  "text": "B",
+                  "why": "Toa B là nơi có ghế đặt trước nhưng quá đông học sinh nên cô không ngồi ở đó."
+                }
+              ]
+            },
+            {
+              "n": 6,
+              "prompt": "Exact place left: on the overhead {{blank}}",
+              "answer": ["rack"],
+              "explanation": "Claire nhớ ra mình đã nhấc ba lô đặt lên giá hành lý phía trên đầu (overhead rack).",
+              "evidence": "It wasn't until I reached the ticket barrier that I remembered I'd lifted the backpack up onto the overhead rack.",
+              "distractors": [
+                {
+                  "text": "seat",
+                  "why": "Cô đã kiểm tra dưới ghế ngồi trước khi xuống tàu."
+                },
+                {
+                  "text": "table",
+                  "why": "Cô cũng đã nhìn trên bàn trước khi rời khỏi chỗ."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "range": [7, 10],
+          "type": "table",
+          "title": "Missing Bag Details",
+          "instructions": "Complete the table below. Write ONE WORD AND/OR A NUMBER for each answer.",
+          "wordLimit": 1,
+          "allowNumber": true,
+          "questions": [
+            {
+              "n": 7,
+              "prompt": "Bag material & colour | Dark green {{blank}} backpack",
+              "answer": ["canvas"],
+              "explanation": "Claire phủ nhận chất liệu ni-lông và da, cho biết ba lô làm bằng vải bố (canvas) màu xanh lá đậm.",
+              "evidence": "Neither, actually—it's a dark green canvas backpack, quite boxy, with brown straps.",
+              "distractors": [
+                {
+                  "text": "nylon",
+                  "why": "Owen hỏi dò xem có phải vải ni-lông không và Claire đã bác bỏ ('Neither')."
+                },
+                {
+                  "text": "leather",
+                  "why": "Chất liệu da cũng bị Claire phủ nhận."
+                }
+              ]
+            },
+            {
+              "n": 8,
+              "prompt": "Identifying mark | Bright yellow luggage {{blank}} on front zip",
+              "answer": ["tag"],
+              "explanation": "Dấu hiệu nhận diện hiện tại là thẻ hành lý màu vàng tươi (bright yellow luggage tag) kẹp ở khóa kéo trước.",
+              "evidence": "What is on there right now is a bright yellow luggage tag clipped onto the front zip—it doesn't have my address on it, just my initials.",
+              "distractors": [
+                {
+                  "text": "ribbon",
+                  "why": "Dải ruy-băng xanh dương từng buộc trên quai nhưng đã rơi mất từ tháng trước."
+                }
+              ]
+            },
+            {
+              "n": 9,
+              "prompt": "Main contents | A silver tablet, a novel, and a pair of {{blank}}",
+              "answer": ["gloves"],
+              "explanation": "Bên trong ngăn chính có máy tính bảng màu bạc, cuốn tiểu thuyết và một đôi găng tay len (woollen gloves).",
+              "evidence": "Inside the main compartment there's a silver tablet in a grey sleeve, a paperback novel, and a pair of woollen gloves.",
+              "distractors": [
+                {
+                  "text": "wallet",
+                  "why": "Claire luôn để ví tiền trong túi áo khoác nên không bị thất lạc."
+                },
+                {
+                  "text": "phone",
+                  "why": "Điện thoại cũng nằm trong túi áo khoác của cô."
+                }
+              ]
+            },
+            {
+              "n": 10,
+              "prompt": "Collection fee | £{{blank}} if picked up in person within 7 days",
+              "answer": ["12"],
+              "explanation": "Nếu đến nhận trực tiếp tại quầy trong vòng 7 ngày, phí xử lý tiêu chuẩn là £12.",
+              "evidence": "If you collect it within seven days, there's a standard £12 handling fee; after a week, storage adds £5 per extra week.",
+              "distractors": [
+                {
+                  "text": "20",
+                  "why": "£20 là phí gửi trả qua đường bưu điện về tận nhà."
+                },
+                {
+                  "text": "5",
+                  "why": "£5 chỉ là phụ phí lưu kho mỗi tuần sau khi quá hạn 7 ngày."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "title": "Part 2 — Induction talk for new supermarket staff",
+      "context": "A deputy store manager welcomes a group of newly hired assistants at FreshVale Supermarket and explains store procedures and department duties.",
+      "audio": "assets/audio/ielts-gt/listening/gt-l-04/part2.mp3",
+      "script": [
+        {
+          "speaker": "Narrator",
+          "voice": "en-GB-narrator",
+          "text": "Part 2. You will hear a deputy supermarket manager giving an induction talk to new staff members. First, you have some time to look at questions 11 to 15."
+        },
+        {
+          "pause": 30,
+          "note": "Reading time for questions 11–15"
+        },
+        {
+          "speaker": "Manager",
+          "voice": "en-GB-female-1",
+          "text": "Morning, everyone, and a warm welcome to FreshVale Supermarket. I'm Priya, the deputy manager here. Before we tour the aisles, I'll run through our everyday rules so your first week feels smooth. First, punctuality and reporting absence. If you're delayed by traffic or feeling unwell, please don't text your team leader—supervisors aren't allowed to carry personal mobiles on the shop floor, so they won't see it. And while our staff scheduling app is great for requesting shift swaps forty-eight hours in advance, it isn't monitored for same-day issues. You must phone the duty manager's desk directly on the store landline at least an hour before your shift begins."
+        },
+        {
+          "speaker": "Manager",
+          "voice": "en-GB-female-1",
+          "text": "Next, uniforms. Today we'll issue you three green polo shirts, a washable apron, and your printed name badge. You'll also get a fleece jacket if you work in the warehouse or on the drafty front checkouts—so it's not restricted to warehouse staff. You're welcome to take your name badge home with your uniform; only store headsets and locker keys stay behind at the end of a shift. The one item you do need to supply yourself is plain black trousers—no jeans or leggings—along with dark closed-toe shoes."
+        },
+        {
+          "speaker": "Manager",
+          "voice": "en-GB-female-1",
+          "text": "When you arrive for a shift, you'll need somewhere safe for your coat and bag. Please never leave personal items in the small cupboards behind the customer service desk—those are strictly for spare till rolls and customer lost property. You might spot a row of unlocked lockers in the upstairs corridor too, though those belong to our overnight cleaning contractors. All store assistants use the numbered lockers in the ground-floor staff room right next to the kettle; they run on a simple four-digit code, so no coins needed."
+        },
+        {
+          "speaker": "Manager",
+          "voice": "en-GB-female-1",
+          "text": "Now, a perk everyone asks about: the fifteen percent staff discount card. A few people expect a temporary voucher on their first day, which we don't offer, and you'll also need to finish your online health-and-safety quiz during week one—though that doesn't unlock the discount either. Your permanent discount card activates automatically as soon as you complete your four-week probation period, and it works across every FreshVale branch nationwide."
+        },
+        {
+          "speaker": "Manager",
+          "voice": "en-GB-female-1",
+          "text": "One final store-wide routine to recognise is our six p.m. green-sticker round. You'll see several coloured tags around the shop—blue shelf tags flag items that are temporarily out of stock, and brown wooden signs highlight organic produce all day long. At six o'clock sharp each evening, our fresh-food team applies bright green stickers to reduce prices on bakery loaves, chilled meals, and fruit nearing their sell-by date so good food doesn't end up wasted."
+        },
+        {
+          "speaker": "Narrator",
+          "voice": "en-GB-narrator",
+          "text": "Before you hear the rest of the talk, you have some time to look at questions 16 to 20."
+        },
+        {
+          "pause": 25,
+          "note": "Reading time for questions 16–20"
+        },
+        {
+          "speaker": "Manager",
+          "voice": "en-GB-female-1",
+          "text": "Over your first fortnight, you'll shadow experienced colleagues across five different departments so you learn how the whole store ticks. Each section has one top daily priority I want you to remember. Starting at the bakery counter: all our loaves and pastries are priced per item rather than by weight, so you won't be weighing anything on scales there. Because customers lean right over the counter, flour dust and fingerprints build up fast—your main job before the eight a.m. doors open is to wipe down the display glass until it's spotless."
+        },
+        {
+          "speaker": "Manager",
+          "voice": "en-GB-female-1",
+          "text": "Moving to the dairy aisle, people often assume staff have to walk round logging fridge temperatures every two hours, yet our chilled cabinets are fitted with automated sensors monitored at head office. What makes or breaks dairy sales is stock rotation: whenever you unpack fresh deliveries, always pull older milk cartons and yoghurts to the front of the shelf and stack newer dates behind them."
+        },
+        {
+          "speaker": "Manager",
+          "voice": "en-GB-female-1",
+          "text": "At the checkout lanes, you'll mostly be scanning and chatting warmly with shoppers—damaged items are usually caught out on the aisles beforehand. Your absolute number-one legal responsibility at the till is our Challenge Twenty-Five policy: always ask customers for photo ID to verify their age whenever they buy restricted goods such as alcohol, scissors, or high-caffeine energy drinks."
+        },
+        {
+          "speaker": "Manager",
+          "voice": "en-GB-female-1",
+          "text": "In dry groceries—tins, pasta, and cereal—shelf lives run for months, so date rotation is much less urgent. The biggest headache during daytime restocking is narrow walkways, so make sure you keep the aisles completely clear of empty cardboard cages while you work, especially near the end displays."
+        },
+        {
+          "speaker": "Manager",
+          "voice": "en-GB-female-1",
+          "text": "Finally, frozen foods. Again, automated alarms watch the freezer temperatures around the clock, so you don't need clipboards. However, icy cartons get brittle in transit, so keep a sharp eye out and report any damaged packaging—like split pea bags or crushed pizza boxes—immediately so we can remove them from sale. Right, let's grab our high-vis vests and head onto the shop floor!"
+        },
+        {
+          "speaker": "Narrator",
+          "voice": "en-GB-narrator",
+          "text": "That is the end of Part 2. You now have half a minute to check your answers to Part 2."
+        },
+        {
+          "pause": 30,
+          "note": "Checking time for Part 2"
+        }
+      ],
+      "groups": [
+        {
+          "range": [11, 15],
+          "type": "mcq",
+          "instructions": "Choose the correct letter, A, B or C.",
+          "questions": [
+            {
+              "n": 11,
+              "prompt": "What should new staff do if they are going to be late for a shift?",
+              "options": [
+                { "key": "A", "text": "Send a text message to their team leader" },
+                { "key": "B", "text": "Phone the duty manager's desk directly" },
+                { "key": "C", "text": "Update their status on the staff scheduling app" }
+              ],
+              "answer": ["B"],
+              "explanation": "Nhân viên bắt buộc gọi điện trực tiếp vào số máy bàn ở quầy quản lý trực ca (duty manager's desk) ít nhất một tiếng trước giờ làm.",
+              "evidence": "You must phone the duty manager's desk directly on the store landline at least an hour before your shift begins.",
+              "distractors": [
+                {
+                  "text": "A",
+                  "why": "Trưởng nhóm không được mang điện thoại cá nhân ra khu bán hàng nên sẽ không thấy tin nhắn."
+                },
+                {
+                  "text": "C",
+                  "why": "Ứng dụng xếp lịch chỉ dùng để xin đổi ca trước 48 tiếng, không theo dõi sự cố phát sinh trong ngày."
+                }
+              ]
+            },
+            {
+              "n": 12,
+              "prompt": "What is the rule regarding staff uniforms?",
+              "options": [
+                { "key": "A", "text": "Employees must provide their own black trousers." },
+                { "key": "B", "text": "Fleece jackets are issued only to warehouse staff." },
+                { "key": "C", "text": "Name badges must be left at the store after work." }
+              ],
+              "answer": ["A"],
+              "explanation": "Cửa hàng phát áo polo, tạp dề và bảng tên; món đồ duy nhất nhân viên phải tự chuẩn bị là quần dài đen trơn ('provide their own' = 'supply yourself').",
+              "evidence": "The one item you do need to supply yourself is plain black trousers—no jeans or leggings—along with dark closed-toe shoes.",
+              "distractors": [
+                {
+                  "text": "B",
+                  "why": "Áo khoác nỉ (fleece jacket) cũng được phát cho nhân viên thu ngân ở khu cửa trước bị gió lùa, không chỉ riêng kho."
+                },
+                {
+                  "text": "C",
+                  "why": "Nhân viên được mang bảng tên về nhà; chỉ tai nghe và chìa khóa tủ mới để lại cửa hàng."
+                }
+              ]
+            },
+            {
+              "n": 13,
+              "prompt": "Where should store assistants keep personal belongings during a shift?",
+              "options": [
+                { "key": "A", "text": "In the cupboards behind the customer service desk" },
+                { "key": "B", "text": "In the unlocked lockers along the upstairs corridor" },
+                { "key": "C", "text": "In a numbered locker in the ground-floor staff room" }
+              ],
+              "answer": ["C"],
+              "explanation": "Tất cả nhân viên bán hàng dùng các tủ khóa đánh số trong phòng nhân viên ở tầng trệt (ground-floor staff room).",
+              "evidence": "All store assistants use the numbered lockers in the ground-floor staff room right next to the kettle; they run on a simple four-digit code, so no coins needed.",
+              "distractors": [
+                {
+                  "text": "A",
+                  "why": "Các tủ nhỏ sau quầy chăm sóc khách hàng chỉ dành cho cuộn giấy in hóa đơn và đồ thất lạc của khách."
+                },
+                {
+                  "text": "B",
+                  "why": "Hàng tủ không khóa ở hành lang tầng trên thuộc về đội vệ sinh ca đêm."
+                }
+              ]
+            },
+            {
+              "n": 14,
+              "prompt": "When does the 15% staff discount card become active?",
+              "options": [
+                { "key": "A", "text": "On the very first day of employment" },
+                { "key": "B", "text": "After completing the four-week probation period" },
+                { "key": "C", "text": "Once the online safety quiz has been passed" }
+              ],
+              "answer": ["B"],
+              "explanation": "Thẻ giảm giá chính thức sẽ tự động kích hoạt ngay khi nhân viên hoàn thành thời gian thử việc bốn tuần (four-week probation period).",
+              "evidence": "Your permanent discount card activates automatically as soon as you complete your four-week probation period, and it works across every FreshVale branch nationwide.",
+              "distractors": [
+                {
+                  "text": "A",
+                  "why": "Cửa hàng không cấp phiếu giảm giá tạm thời vào ngày đi làm đầu tiên."
+                },
+                {
+                  "text": "C",
+                  "why": "Bài kiểm tra an toàn trực tuyến phải làm trong tuần đầu nhưng không phải điều kiện mở thẻ giảm giá."
+                }
+              ]
+            },
+            {
+              "n": 15,
+              "prompt": "What is the purpose of the 'green sticker' routine at 6 p.m.?",
+              "options": [
+                { "key": "A", "text": "To mark shelves where stock has run out" },
+                { "key": "B", "text": "To advertise organic produce to evening shoppers" },
+                { "key": "C", "text": "To discount fresh products approaching their sell-by date" }
+              ],
+              "answer": ["C"],
+              "explanation": "Nhãn xanh lá lúc 6 giờ chiều dùng để giảm giá thực phẩm tươi sống sắp hết hạn bán ('discount' = 'reduce prices') nhằm tránh lãng phí.",
+              "evidence": "At six o'clock sharp each evening, our fresh-food team applies bright green stickers to reduce prices on bakery loaves, chilled meals, and fruit nearing their sell-by date so good food doesn't end up wasted.",
+              "distractors": [
+                {
+                  "text": "A",
+                  "why": "Hàng tạm hết trên kệ được đánh dấu bằng thẻ màu xanh dương (blue shelf tags)."
+                },
+                {
+                  "text": "B",
+                  "why": "Nông sản hữu cơ dùng biển gỗ màu nâu suốt cả ngày."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "range": [16, 20],
+          "type": "matching",
+          "title": "Supermarket Departments — Key Daily Priority",
+          "instructions": "What is the main priority new staff are asked to focus on in each department? Choose FIVE answers from the box and write the correct letter, A–G, next to Questions 16–20.",
+          "options": [
+            { "key": "A", "text": "Check fridge temperatures every two hours" },
+            { "key": "B", "text": "Rotate older stock to the front of shelves" },
+            { "key": "C", "text": "Keep walkways clear of cardboard cages" },
+            { "key": "D", "text": "Ask customers for age verification on restricted items" },
+            { "key": "E", "text": "Weigh loose items accurately before labelling" },
+            { "key": "F", "text": "Wipe down display glass before opening" },
+            { "key": "G", "text": "Report any damaged packaging immediately" }
+          ],
+          "questions": [
+            {
+              "n": 16,
+              "prompt": "Bakery counter",
+              "answer": ["F"],
+              "explanation": "Ở quầy bánh mì, công việc chính trước khi mở cửa lúc 8 giờ sáng là lau sạch kính trưng bày bám bụi bột và dấu vân tay (F).",
+              "evidence": "Because customers lean right over the counter, flour dust and fingerprints build up fast—your main job before the eight a.m. doors open is to wipe down the display glass until it's spotless.",
+              "distractors": [
+                {
+                  "text": "E",
+                  "why": "Bánh mì và bánh ngọt được bán theo chiếc chứ không cân ký."
+                }
+              ]
+            },
+            {
+              "n": 17,
+              "prompt": "Dairy aisle",
+              "answer": ["B"],
+              "explanation": "Tại quầy sữa, ưu tiên sống còn là đảo hàng (stock rotation): kéo sữa và sữa chua cận hạn hơn ra phía trước kệ (B).",
+              "evidence": "What makes or breaks dairy sales is stock rotation: whenever you unpack fresh deliveries, always pull older milk cartons and yoghurts to the front of the shelf and stack newer dates behind them.",
+              "distractors": [
+                {
+                  "text": "A",
+                  "why": "Nhiệt độ tủ mát đã có cảm biến tự động truyền về trụ sở chính, nhân viên không cần đo hai tiếng một lần."
+                }
+              ]
+            },
+            {
+              "n": 18,
+              "prompt": "Checkout lanes",
+              "answer": ["D"],
+              "explanation": "Ở quầy thanh toán, trách nhiệm pháp lý số một là kiểm tra giấy tờ tùy thân để xác minh độ tuổi khách mua hàng giới hạn tuổi (D).",
+              "evidence": "Your absolute number-one legal responsibility at the till is our Challenge Twenty-Five policy: always ask customers for photo ID to verify their age whenever they buy restricted goods such as alcohol, scissors, or high-caffeine energy drinks.",
+              "distractors": [
+                {
+                  "text": "G",
+                  "why": "Hàng hư hỏng thường đã được phát hiện ngoài lối đi trước khi tới quầy thu ngân."
+                }
+              ]
+            },
+            {
+              "n": 19,
+              "prompt": "Dry groceries",
+              "answer": ["C"],
+              "explanation": "Ở khu thực phẩm khô, lối đi hẹp nên ưu tiên là giữ lối đi thông thoáng, không để xe lồng đựng bìa carton chắn đường (C).",
+              "evidence": "The biggest headache during daytime restocking is narrow walkways, so make sure you keep the aisles completely clear of empty cardboard cages while you work, especially near the end displays.",
+              "distractors": [
+                {
+                  "text": "B",
+                  "why": "Đồ hộp và thực phẩm khô có hạn sử dụng nhiều tháng nên việc đảo hàng ít cấp bách hơn."
+                }
+              ]
+            },
+            {
+              "n": 20,
+              "prompt": "Frozen foods",
+              "answer": ["G"],
+              "explanation": "Ở quầy đồ đông lạnh, nhân viên cần để ý và báo ngay mọi bao bì bị rách hoặc móp méo để gỡ khỏi kệ bán (G).",
+              "evidence": "However, icy cartons get brittle in transit, so keep a sharp eye out and report any damaged packaging—like split pea bags or crushed pizza boxes—immediately so we can remove them from sale.",
+              "distractors": [
+                {
+                  "text": "A",
+                  "why": "Tủ đông cũng có hệ thống báo động nhiệt độ tự động hoạt động 24/7."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "part": 3,
+      "title": "Part 3 — Evening photography course project",
+      "context": "Two evening-class photography students, Nadia and Sam, meet their tutor Martin to review their photos and finalise plans for the end-of-term exhibition.",
+      "audio": "assets/audio/ielts-gt/listening/gt-l-04/part3.mp3",
+      "script": [
+        {
+          "speaker": "Narrator",
+          "voice": "en-GB-narrator",
+          "text": "Part 3. You will hear two students on an evening photography course, Nadia and Sam, talking with their tutor Martin about their joint exhibition project. First, you have some time to look at questions 21 to 25."
+        },
+        {
+          "pause": 30,
+          "note": "Reading time for questions 21–25"
+        },
+        {
+          "speaker": "Tutor",
+          "voice": "en-GB-male-1",
+          "text": "Come in, Nadia, Sam—spread your contact sheets out on the light table. I'm really intrigued that you both settled on 'Night Markets' for your exhibition theme, especially after I'd nudged you towards architectural bridges last month!"
+        },
+        {
+          "speaker": "Nadia",
+          "voice": "en-AU-female-1",
+          "text": "Haha, sorry Martin! People assume we picked a night theme because we both work nine-to-five, though Sam actually works rotating shifts and has free mornings. Honestly, we wanted to stretch ourselves technically—juggling harsh neon signs, deep shadows, and slow shutter speeds in tricky lighting."
+        },
+        {
+          "speaker": "Sam",
+          "voice": "en-US-male-1",
+          "text": "Yeah, shooting in flat daylight felt too safe. Though our first night at the Riverside Market didn't go entirely to plan for Nadia."
+        },
+        {
+          "speaker": "Nadia",
+          "voice": "en-AU-female-1",
+          "text": "Tell me about it! It drizzled slightly, which actually gave us gorgeous reflections on the wet tarmac, and it was Sam who forgot his spare battery, not me. My headache was setting up my full-size tripod by the spice stalls—within five minutes, a market security guard politely told me tripods weren't allowed because they tripped up shoppers in the narrow lanes."
+        },
+        {
+          "speaker": "Tutor",
+          "voice": "en-GB-male-1",
+          "text": "Classic street-photography lesson—you end up leaning against lampposts instead! Now let's look at Sam's black-and-white portraits of the stallholders. Sam, you wrote a note asking if you should crop in much tighter on their faces. Don't touch them—leave that breathing room! The out-of-focus lanterns and stalls behind them add atmosphere rather than clutter. What really elevates these frames is how relaxed and completely unposed the traders look."
+        },
+        {
+          "speaker": "Sam",
+          "voice": "en-US-male-1",
+          "text": "Oh, that's a relief—I chatted with each of them for ten minutes before lifting the camera. Moving on to the colour shots, Martin, Nadia and I could use a tie-breaker. We both agree on including three wide landscape frames, and we definitely want matte paper rather than glossy so the corridor spotlights don't glare off the prints."
+        },
+        {
+          "speaker": "Nadia",
+          "voice": "en-AU-female-1",
+          "text": "Where we're clashing is the editing. Sam's cranked the colour saturation right up to make the neon pop, whereas I feel pushing the saturation that hard turns people's skin tones weirdly orange."
+        },
+        {
+          "speaker": "Tutor",
+          "voice": "en-GB-male-1",
+          "text": "Nadia has a point—dial the reds and oranges back ten percent, Sam, and you'll keep the punch without sacrificing natural skin. Before we review the remaining prints, have you drafted your exhibition captions?"
+        },
+        {
+          "speaker": "Sam",
+          "voice": "en-US-male-1",
+          "text": "We wondered about listing the exact lens, aperture, and ISO under each photo—or even asking the stallholders to write a short quote of their own."
+        },
+        {
+          "speaker": "Tutor",
+          "voice": "en-GB-male-1",
+          "text": "General visitors glaze over at technical camera data, and chasing signed quotes before Friday's deadline would drive you mad. Keep every caption to one crisp sentence naming the stall and moment—brief text supports the photograph without competing with it for attention."
+        },
+        {
+          "speaker": "Narrator",
+          "voice": "en-GB-narrator",
+          "text": "Before you hear the rest of the discussion, you have some time to look at questions 26 to 30."
+        },
+        {
+          "pause": 25,
+          "note": "Reading time for questions 26–30"
+        },
+        {
+          "speaker": "Tutor",
+          "voice": "en-GB-male-1",
+          "text": "Okay, let's check the final cut. I noticed you crossed out this gorgeous shot of the flower stall. Why drop it? The tulips are pin-sharp, and that blurred commuter striding across the bottom edge actually adds lovely energy."
+        },
+        {
+          "speaker": "Nadia",
+          "voice": "en-AU-female-1",
+          "text": "I know, it broke my heart to pull it! But when I checked my notebook afterwards, I saw the florist had explicitly asked not to have her face displayed at a public exhibition, so we have to respect that."
+        },
+        {
+          "speaker": "Tutor",
+          "voice": "en-GB-male-1",
+          "text": "One hundred percent the right call—consent always comes first. Now, let's think about the hanging sequence on the gallery wall. Some students group all their portraits at one end and wide scenes at the other, or stick rigidly to the clock order they shot them in. Neither creates much rhythm. I'd open on the left with your quietest early-dusk setup frames and gradually build up to the busiest peak-hour crowd scenes on the right."
+        },
+        {
+          "speaker": "Sam",
+          "voice": "en-US-male-1",
+          "text": "Oh, like a mini story unfolding across the wall—I love that. Next question: printing. The college printer downstairs only goes up to A4, which is way too tiny for the wall. We looked at a cheap online printing lab, except standard delivery takes five working days and we'd be cutting it way too close."
+        },
+        {
+          "speaker": "Nadia",
+          "voice": "en-AU-female-1",
+          "text": "So we're going to use that local specialist photo shop next to the station. They offer a twenty percent evening-student discount and let us inspect a test colour proof on the spot before running the big prints."
+        },
+        {
+          "speaker": "Tutor",
+          "voice": "en-GB-male-1",
+          "text": "Smart move—their paper quality is superb. Just to divide the remaining jobs before Wednesday's class: I've already measured your display panel in the corridor at two point four metres wide, so that's ticked off."
+        },
+        {
+          "speaker": "Nadia",
+          "voice": "en-AU-female-1",
+          "text": "And since I do graphic layout in my day job, I'll design the promotional postcard for the open night and email you the PDF tomorrow."
+        },
+        {
+          "speaker": "Sam",
+          "voice": "en-US-male-1",
+          "text": "Which leaves the hands-on stuff for me—I'll trim the foam mounting boards to size and sort out all the metal hanging clips before Wednesday evening."
+        },
+        {
+          "speaker": "Tutor",
+          "voice": "en-GB-male-1",
+          "text": "Brilliant teamwork. How are you both feeling about Friday's open night? The local arts newsletter listed it, so we're expecting a lively crowd."
+        },
+        {
+          "speaker": "Sam",
+          "voice": "en-US-male-1",
+          "text": "Honestly, I'm buzzing—I'm really confident our night-market panel is going to stand out."
+        },
+        {
+          "speaker": "Nadia",
+          "voice": "en-AU-female-1",
+          "text": "I'm glad one of us is calm! I'm not worried about turnout at all, I'm just genuinely nervous about standing next to my prints and answering questions from strangers about why I framed something a certain way."
+        },
+        {
+          "speaker": "Tutor",
+          "voice": "en-GB-male-1",
+          "text": "You'll be amazed how friendly visitors are once you tell them the story behind the stalls. See you both on Wednesday!"
+        },
+        {
+          "speaker": "Narrator",
+          "voice": "en-GB-narrator",
+          "text": "That is the end of Part 3. You now have half a minute to check your answers to Part 3."
+        },
+        {
+          "pause": 30,
+          "note": "Checking time for Part 3"
+        }
+      ],
+      "groups": [
+        {
+          "range": [21, 25],
+          "type": "mcq",
+          "instructions": "Choose the correct letter, A, B or C.",
+          "questions": [
+            {
+              "n": 21,
+              "prompt": "Why did Nadia and Sam choose 'Night Markets' as their exhibition theme?",
+              "options": [
+                { "key": "A", "text": "Neither of them was free to take photos during the daytime." },
+                { "key": "B", "text": "They wanted to practise handling challenging lighting conditions." },
+                { "key": "C", "text": "Martin suggested it as a popular topic for visitors." }
+              ],
+              "answer": ["B"],
+              "explanation": "Nadia giải thích cả hai muốn thử thách kỹ thuật của mình trong điều kiện ánh sáng khó với đèn neon chói, bóng tối sâu và tốc độ màn trập chậm ('challenging lighting conditions' = 'tricky lighting').",
+              "evidence": "Honestly, we wanted to stretch ourselves technically—juggling harsh neon signs, deep shadows, and slow shutter speeds in tricky lighting.",
+              "distractors": [
+                {
+                  "text": "A",
+                  "why": "Sam làm việc theo ca xoay nên thực ra vẫn rảnh vào các buổi sáng."
+                },
+                {
+                  "text": "C",
+                  "why": "Martin trước đó gợi ý chủ đề kiến trúc những cây cầu, không phải chợ đêm."
+                }
+              ]
+            },
+            {
+              "n": 22,
+              "prompt": "What problem did Nadia experience during her first shoot at the market?",
+              "options": [
+                { "key": "A", "text": "Market security did not allow her to use a tripod." },
+                { "key": "B", "text": "Rain spoiled the quality of her street photographs." },
+                { "key": "C", "text": "Her camera battery ran out halfway through the evening." }
+              ],
+              "answer": ["A"],
+              "explanation": "Bảo vệ chợ yêu cầu Nadia cất chân máy ảnh (tripod) vì không được phép dựng do cản trở người đi lại trong lối hẹp.",
+              "evidence": "My headache was setting up my full-size tripod by the spice stalls—within five minutes, a market security guard politely told me tripods weren't allowed because they tripped up shoppers in the narrow lanes.",
+              "distractors": [
+                {
+                  "text": "B",
+                  "why": "Mưa phùn nhẹ thực tế lại tạo hiệu ứng phản chiếu rất đẹp trên mặt đường ướt."
+                },
+                {
+                  "text": "C",
+                  "why": "Người quên pin dự phòng là Sam, không phải Nadia."
+                }
+              ]
+            },
+            {
+              "n": 23,
+              "prompt": "How does Martin react to Sam's black-and-white portraits of stallholders?",
+              "options": [
+                { "key": "A", "text": "He feels the busy backgrounds distract from the subjects." },
+                { "key": "B", "text": "He advises Sam to crop the images more tightly." },
+                { "key": "C", "text": "He praises the natural expressions Sam captured." }
+              ],
+              "answer": ["C"],
+              "explanation": "Martin đặc biệt khen ngợi biểu cảm tự nhiên, thoải mái không gượng gạo của những người bán hàng ('natural expressions' = 'how relaxed and completely unposed the traders look').",
+              "evidence": "What really elevates these frames is how relaxed and completely unposed the traders look.",
+              "distractors": [
+                {
+                  "text": "A",
+                  "why": "Martin cho rằng hậu cảnh mờ nhòe của đèn lồng và gian hàng tạo không khí tốt chứ không hề gây rối."
+                },
+                {
+                  "text": "B",
+                  "why": "Chính Sam tự hỏi có nên cắt cúp chặt hơn không, nhưng Martin khuyên giữ nguyên khoảng thở."
+                }
+              ]
+            },
+            {
+              "n": 24,
+              "prompt": "What do Nadia and Sam disagree about regarding their colour photographs?",
+              "options": [
+                { "key": "A", "text": "Whether to increase the colour saturation when editing" },
+                { "key": "B", "text": "How many wide landscape shots to include" },
+                { "key": "C", "text": "Which type of printing paper to select" }
+              ],
+              "answer": ["A"],
+              "explanation": "Hai bạn bất đồng ở khâu hậu kỳ: Sam tăng mạnh độ bão hòa màu (saturation) cho đèn neon nổi bật, còn Nadia thấy làm vậy khiến tông da bị cam giả tạo.",
+              "evidence": "Where we're clashing is the editing. Sam's cranked the colour saturation right up to make the neon pop, whereas I feel pushing the saturation that hard turns people's skin tones weirdly orange.",
+              "distractors": [
+                {
+                  "text": "B",
+                  "why": "Cả hai đều đồng thuận chọn đúng ba tấm góc rộng."
+                },
+                {
+                  "text": "C",
+                  "why": "Cả hai cũng nhất trí dùng giấy mờ (matte) thay vì giấy bóng để tránh lóa đèn hành lang."
+                }
+              ]
+            },
+            {
+              "n": 25,
+              "prompt": "What advice does Martin give about writing captions for the exhibition?",
+              "options": [
+                { "key": "A", "text": "List the technical camera settings beneath each print." },
+                { "key": "B", "text": "Keep the wording short so it does not compete with the photo." },
+                { "key": "C", "text": "Include short quotations written by the stallholders." }
+              ],
+              "answer": ["B"],
+              "explanation": "Martin khuyên mỗi chú thích chỉ nên là một câu súc tích ngắn gọn để hỗ trợ bức ảnh mà không tranh giành sự chú ý với hình ảnh.",
+              "evidence": "Keep every caption to one crisp sentence naming the stall and moment—brief text supports the photograph without competing with it for attention.",
+              "distractors": [
+                {
+                  "text": "A",
+                  "why": "Martin nói khách tham quan phổ thông thường thấy chán thông số kỹ thuật máy ảnh."
+                },
+                {
+                  "text": "C",
+                  "why": "Việc đi xin câu trích dẫn có chữ ký của chủ quầy trước hạn thứ Sáu là quá gấp gáp và mệt mỏi."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "range": [26, 30],
+          "type": "mcq",
+          "instructions": "Choose the correct letter, A, B or C.",
+          "questions": [
+            {
+              "n": 26,
+              "prompt": "Why did the students decide to exclude the photograph of the flower stall?",
+              "options": [
+                { "key": "A", "text": "The flowers in the foreground were slightly blurred." },
+                { "key": "B", "text": "A passer-by accidentally stepped into the shot." },
+                { "key": "C", "text": "The stallholder did not consent to it being exhibited." }
+              ],
+              "answer": ["C"],
+              "explanation": "Nadia kiểm tra sổ ghi chép thấy cô bán hoa đã yêu cầu rõ không trưng bày gương mặt mình ở triển lãm công cộng nên họ phải tôn trọng quyền đồng ý của nhân vật.",
+              "evidence": "But when I checked my notebook afterwards, I saw the florist had explicitly asked not to have her face displayed at a public exhibition, so we have to respect that.",
+              "distractors": [
+                {
+                  "text": "A",
+                  "why": "Martin khen những bông hoa tulip cực kỳ sắc nét (pin-sharp)."
+                },
+                {
+                  "text": "B",
+                  "why": "Bóng người đi ngang bị nhòe thực ra lại tạo cảm giác chuyển động rất đẹp."
+                }
+              ]
+            },
+            {
+              "n": 27,
+              "prompt": "How does Martin suggest arranging the photographs on the gallery wall?",
+              "options": [
+                { "key": "A", "text": "Start with quiet scenes and build up to the busiest ones." },
+                { "key": "B", "text": "Separate all the portraits from the wider street views." },
+                { "key": "C", "text": "Display the prints strictly in the order they were taken." }
+              ],
+              "answer": ["A"],
+              "explanation": "Martin gợi ý bắt đầu bên trái bằng những cảnh yên tĩnh lúc chập tối và tăng dần nhịp điệu tới cảnh đông đúc giờ cao điểm ở bên phải.",
+              "evidence": "I'd open on the left with your quietest early-dusk setup frames and gradually build up to the busiest peak-hour crowd scenes on the right.",
+              "distractors": [
+                {
+                  "text": "B",
+                  "why": "Martin cho rằng tách riêng ảnh chân dung và ảnh toàn cảnh không tạo được nhịp điệu thị giác tốt."
+                },
+                {
+                  "text": "C",
+                  "why": "Sắp xếp cứng nhắc theo thứ tự thời gian chụp cũng bị Martin chê là thiếu nhịp điệu."
+                }
+              ]
+            },
+            {
+              "n": 28,
+              "prompt": "Where will Nadia and Sam get their large exhibition prints made?",
+              "options": [
+                { "key": "A", "text": "At the college print room downstairs" },
+                { "key": "B", "text": "Through an online printing service" },
+                { "key": "C", "text": "At a local specialist shop near the station" }
+              ],
+              "answer": ["C"],
+              "explanation": "Họ chọn cửa hàng in ảnh chuyên nghiệp địa phương ngay cạnh nhà ga vì có giảm giá 20% cho học viên và được xem bản in thử màu tại chỗ.",
+              "evidence": "So we're going to use that local specialist photo shop next to the station.",
+              "distractors": [
+                {
+                  "text": "A",
+                  "why": "Máy in ở trường chỉ in tối đa khổ A4, quá nhỏ cho triển lãm."
+                },
+                {
+                  "text": "B",
+                  "why": "Dịch vụ in trực tuyến mất tới 5 ngày làm việc giao hàng nên quá sát hạn."
+                }
+              ]
+            },
+            {
+              "n": 29,
+              "prompt": "What does Sam agree to prepare before Wednesday's class?",
+              "options": [
+                { "key": "A", "text": "Measurements of the corridor display wall" },
+                { "key": "B", "text": "The promotional postcard for the open night" },
+                { "key": "C", "text": "The mounting boards and metal hanging clips" }
+              ],
+              "answer": ["C"],
+              "explanation": "Sam nhận phần việc thủ công: cắt tấm xốp bồi ảnh (mounting boards) đúng kích cỡ và chuẩn bị các kẹp treo kim loại (hanging clips).",
+              "evidence": "Which leaves the hands-on stuff for me—I'll trim the foam mounting boards to size and sort out all the metal hanging clips before Wednesday evening.",
+              "distractors": [
+                {
+                  "text": "A",
+                  "why": "Thầy Martin đã đo sẵn bảng trưng bày ở hành lang là 2,4 mét rồi."
+                },
+                {
+                  "text": "B",
+                  "why": "Nadia làm thiết kế đồ họa nên cô nhận thiết kế tấm bưu thiếp quảng bá."
+                }
+              ]
+            },
+            {
+              "n": 30,
+              "prompt": "How does Nadia feel about Friday's exhibition open night?",
+              "options": [
+                { "key": "A", "text": "Concerned that attendance might be disappointing" },
+                { "key": "B", "text": "Nervous about answering questions from visitors she does not know" },
+                { "key": "C", "text": "Confident that their display will be the strongest one" }
+              ],
+              "answer": ["B"],
+              "explanation": "Nadia thừa nhận cô lo lắng khi phải đứng cạnh tác phẩm và trả lời câu hỏi của những người lạ về cách chọn bố cục ảnh.",
+              "evidence": "I'm not worried about turnout at all, I'm just genuinely nervous about standing next to my prints and answering questions from strangers about why I framed something a certain way.",
+              "distractors": [
+                {
+                  "text": "A",
+                  "why": "Nadia nói rõ cô hoàn toàn không lo về lượng khách tham dự (turnout)."
+                },
+                {
+                  "text": "C",
+                  "why": "Người tự tin rằng gian trưng bày sẽ nổi bật là Sam, không phải Nadia."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "part": 4,
+      "title": "Part 4 — Coral reef restoration",
+      "context": "A marine biologist gives a general-interest talk explaining why coral reefs are declining and how modern restoration projects help rebuild them.",
+      "audio": "assets/audio/ielts-gt/listening/gt-l-04/part4.mp3",
+      "script": [
+        {
+          "speaker": "Narrator",
+          "voice": "en-GB-narrator",
+          "text": "Part 4. You will hear a marine biologist giving a talk about coral reef restoration. First, you have some time to look at questions 31 to 40."
+        },
+        {
+          "pause": 40,
+          "note": "Reading time for questions 31–40"
+        },
+        {
+          "speaker": "Speaker",
+          "voice": "en-US-female-1",
+          "text": "Hello everyone, and thank you for coming along today. Whenever people see underwater photography of tropical coral reefs, they're struck by the sheer burst of colour and movement. Yet many don't realise just how disproportionate their ecological value really is. Although coral reefs occupy less than one percent of the ocean floor, they provide food and shelter for roughly a quarter of all marine species—from tiny clownfish to migrating sea turtles."
+        },
+        {
+          "speaker": "Speaker",
+          "voice": "en-US-female-1",
+          "text": "Their benefits extend well above the waterline too. Hundreds of millions of people live in low-lying coastal towns that face severe cyclones every year. While reefs obviously cannot stop high winds or heavy rainfall, their rigid limestone structures act like natural breakwaters, absorbing up to ninety percent of the force of storm waves before they strike beaches and harbours."
+        },
+        {
+          "speaker": "Speaker",
+          "voice": "en-US-female-1",
+          "text": "Unfortunately, reefs worldwide are under intense pressure. The biggest driver is rising ocean temperature. Healthy corals live in close partnership with microscopic algae inside their tissues. A common misconception is that corals rely on those algae mainly for oxygen; in fact, the algae give corals their vivid colours and produce most of their nutrients through photosynthesis. When seawater stays unusually warm for several weeks, stressed corals expel those algae, turning ghostly white in an event called bleaching."
+        },
+        {
+          "speaker": "Speaker",
+          "voice": "en-US-female-1",
+          "text": "Local human activity compounds the heat stress. Plastic litter and anchored tourist boats certainly inflict damage, yet two broader local threats do far more harm: nutrient-heavy agricultural runoff washing off coastal farms, and careless fishing practices such as dragging weighted nets directly across fragile coral branches. Once a reef weakens and dies back, bare limestone rarely stays empty for long. Sponges and barnacles appear in small patches, but what rapidly takes over an unattended damaged reef is fast-spreading seaweed, which smothers the rock and prevents baby coral larvae from attaching."
+        },
+        {
+          "pause": 5,
+          "note": "Short pause between sections"
+        },
+        {
+          "speaker": "Speaker",
+          "voice": "en-US-female-1",
+          "text": "The encouraging news is that restoration science has progressed dramatically over the past decade. One widely adopted method is called coral gardening. Early teams tried cementing coral snippets onto heavy concrete blocks or tucking them inside wire cages, which often trapped silt. Nowadays, divers commonly suspend tiny healthy fragments from floating underwater frames shaped like trees, where circulating currents help them thrive before they're transplanted back onto degraded reefs."
+        },
+        {
+          "speaker": "Speaker",
+          "voice": "en-US-female-1",
+          "text": "For slow-growing boulder corals that normally take decades to expand, scientists developed an ingenious shortcut called micro-fragmentation. Using a diamond saw, technicians slice a coral colony into fingernail-sized pieces. You might expect all that cutting to invite disease, yet the opposite happens: the cut edges trigger a rapid healing response that accelerates their growth up to twenty times faster than normal. Once planted side by side, matching fragments actually fuse back together into a single adult dome within two years."
+        },
+        {
+          "speaker": "Speaker",
+          "voice": "en-US-female-1",
+          "text": "Other teams focus on future-proofing reefs against warmer oceans through selective breeding. Because open-sea nurseries can't control water temperature, researchers bring naturally heat-tolerant corals into specialised coastal tanks, where they cross-breed tough parent colonies and raise more resilient offspring."
+        },
+        {
+          "speaker": "Speaker",
+          "voice": "en-US-female-1",
+          "text": "Even sound plays a surprising role in recovery. A vibrant reef is remarkably noisy—crackling with snapping shrimp—whereas a bleached reef falls eerily silent, apart from distant boat engines. Through a technique called acoustic enrichment, biologists place underwater loudspeakers on dying patches to replay recordings of healthy reefs, which draws young fish back to settle and graze away competing algae."
+        },
+        {
+          "speaker": "Speaker",
+          "voice": "en-US-female-1",
+          "text": "Volunteer divers and local conservation funding are making real local victories possible. Still, every marine scientist will tell you the same bottom line: active reef repair buys precious time, but long-term survival depends on pairing restoration with global reductions in carbon emissions. Thank you very much."
+        },
+        {
+          "speaker": "Narrator",
+          "voice": "en-GB-narrator",
+          "text": "That is the end of Part 4. You now have half a minute to check your answers to Part 4."
+        },
+        {
+          "pause": 30,
+          "note": "Checking time for Part 4"
+        }
+      ],
+      "groups": [
+        {
+          "range": [31, 35],
+          "type": "summary",
+          "title": "Why Coral Reefs Matter and Why They Are Declining",
+          "instructions": "Complete the summary below. Write ONE WORD ONLY for each answer.",
+          "wordLimit": 1,
+          "allowNumber": false,
+          "questions": [
+            {
+              "n": 31,
+              "prompt": "Although coral reefs cover less than one percent of the ocean floor, they support roughly a quarter of all marine {{blank}}.",
+              "answer": ["species"],
+              "explanation": "Dù chiếm chưa tới 1% đáy đại dương, rạn san hô là nguồn thức ăn và nơi trú ẩn cho khoảng 1/4 tổng số loài sinh vật biển ('support' = 'provide food and shelter for').",
+              "evidence": "Although coral reefs occupy less than one percent of the ocean floor, they provide food and shelter for roughly a quarter of all marine species—from tiny clownfish to migrating sea turtles.",
+              "distractors": [
+                {
+                  "text": "turtles",
+                  "why": "Rùa biển và cá hề chỉ là hai ví dụ minh họa nằm trong tổng số các loài biển."
+                }
+              ]
+            },
+            {
+              "n": 32,
+              "prompt": "Reefs also shield coastal towns by absorbing much of the energy of storm {{blank}}.",
+              "answer": ["waves"],
+              "explanation": "Cấu trúc đá vôi của rạn san hô đóng vai trò đê chắn sóng tự nhiên, hấp thụ tới 90% sức mạnh của sóng bão (storm waves).",
+              "evidence": "While reefs obviously cannot stop high winds or heavy rainfall, their rigid limestone structures act like natural breakwaters, absorbing up to ninety percent of the force of storm waves before they strike beaches and harbours.",
+              "distractors": [
+                {
+                  "text": "winds",
+                  "why": "Diễn giả nói rõ rạn san hô không thể chặn gió lớn (high winds) hay mưa to."
+                },
+                {
+                  "text": "rainfall",
+                  "why": "Mưa lớn cũng được nêu là yếu tố rạn san hô không thể ngăn chặn."
+                }
+              ]
+            },
+            {
+              "n": 33,
+              "prompt": "Unusually warm seawater causes corals to expel the algae that supply their colour and {{blank}}.",
+              "answer": ["nutrients"],
+              "explanation": "Tảo siêu nhỏ mang lại màu sắc rực rỡ và tạo ra phần lớn chất dinh dưỡng (nutrients) cho san hô.",
+              "evidence": "in fact, the algae give corals their vivid colours and produce most of their nutrients through photosynthesis.",
+              "distractors": [
+                {
+                  "text": "oxygen",
+                  "why": "Cho rằng tảo chủ yếu cung cấp oxy cho san hô là một hiểu lầm phổ biến (common misconception)."
+                }
+              ]
+            },
+            {
+              "n": 34,
+              "prompt": "Major local threats include agricultural runoff and careless {{blank}} practices.",
+              "answer": ["fishing"],
+              "explanation": "Hai mối đe dọa địa phương lớn hơn là dòng chảy nông nghiệp và hoạt động đánh bắt cẩu thả (careless fishing practices) như kéo lưới nặng qua san hô.",
+              "evidence": "yet two broader local threats do far more harm: nutrient-heavy agricultural runoff washing off coastal farms, and careless fishing practices such as dragging weighted nets directly across fragile coral branches.",
+              "distractors": [
+                {
+                  "text": "litter",
+                  "why": "Rác nhựa và tàu du lịch có gây hại nhưng hai mối đe dọa lớn hơn là nông nghiệp và đánh bắt."
+                }
+              ]
+            },
+            {
+              "n": 35,
+              "prompt": "Without intervention, weakened reefs are rapidly overgrown by fast-spreading {{blank}}.",
+              "answer": ["seaweed"],
+              "explanation": "Khi rạn suy yếu không được can thiệp, rong biển lan nhanh (fast-spreading seaweed) sẽ phủ kín đá và ngăn ấu trùng san hô bám vào.",
+              "evidence": "Sponges and barnacles appear in small patches, but what rapidly takes over an unattended damaged reef is fast-spreading seaweed, which smothers the rock and prevents baby coral larvae from attaching.",
+              "distractors": [
+                {
+                  "text": "sponges",
+                  "why": "Bọt biển chỉ xuất hiện thành những mảng nhỏ chứ không chiếm lĩnh toàn bộ rạn."
+                },
+                {
+                  "text": "barnacles",
+                  "why": "Con hà cũng chỉ mọc ở các mảng nhỏ."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "range": [36, 40],
+          "type": "note",
+          "title": "Modern Restoration Techniques",
+          "instructions": "Complete the notes below. Write ONE WORD ONLY for each answer.",
+          "wordLimit": 1,
+          "allowNumber": false,
+          "questions": [
+            {
+              "n": 36,
+              "prompt": "Coral gardening: small fragments grow on underwater frames shaped like {{blank}}.",
+              "answer": ["trees"],
+              "explanation": "Thợ lặn treo các nhánh san hô khỏe lên những khung nổi dưới nước có hình dạng như cái cây (shaped like trees).",
+              "evidence": "Nowadays, divers commonly suspend tiny healthy fragments from floating underwater frames shaped like trees, where circulating currents help them thrive before they're transplanted back onto degraded reefs.",
+              "distractors": [
+                {
+                  "text": "blocks",
+                  "why": "Khối bê tông là cách thử nghiệm cũ thường gây đọng bùn."
+                },
+                {
+                  "text": "cages",
+                  "why": "Lồng dây thép cũng là phương pháp cũ dễ bị lắng bùn."
+                }
+              ]
+            },
+            {
+              "n": 37,
+              "prompt": "Micro-fragmentation: slicing slow-growing corals into tiny pieces dramatically speeds up their {{blank}}.",
+              "answer": ["growth"],
+              "explanation": "Việc cắt nhỏ kích thích phản ứng tự chữa lành, giúp tốc độ tăng trưởng (growth) nhanh gấp 20 lần bình thường ('speeds up' = 'accelerates').",
+              "evidence": "the cut edges trigger a rapid healing response that accelerates their growth up to twenty times faster than normal.",
+              "distractors": [
+                {
+                  "text": "disease",
+                  "why": "Nhiều người tưởng cắt nhỏ sẽ tăng nguy cơ bệnh tật, nhưng thực tế lại xảy ra điều ngược lại."
+                }
+              ]
+            },
+            {
+              "n": 38,
+              "prompt": "Selective breeding: heat-tolerant corals are cross-bred in controlled coastal {{blank}}.",
+              "answer": ["tanks"],
+              "explanation": "Vì vườn ươm ngoài biển mở không kiểm soát được nhiệt độ nước, các nhà khoa học lai tạo san hô chịu nhiệt trong các bể chuyên dụng ven biển (coastal tanks).",
+              "evidence": "researchers bring naturally heat-tolerant corals into specialised coastal tanks, where they cross-breed tough parent colonies and raise more resilient offspring.",
+              "distractors": [
+                {
+                  "text": "nurseries",
+                  "why": "Vườn ươm ngoài biển mở (open-sea nurseries) không thể điều chỉnh nhiệt độ nước."
+                }
+              ]
+            },
+            {
+              "n": 39,
+              "prompt": "Acoustic enrichment: replaying healthy reef sounds attracts young {{blank}} back to damaged sites.",
+              "answer": ["fish"],
+              "explanation": "Phát lại âm thanh của rạn san hô khỏe mạnh qua loa dưới nước giúp thu hút cá non (young fish) quay về sinh sống ('attracts' = 'draws').",
+              "evidence": "Through a technique called acoustic enrichment, biologists place underwater loudspeakers on dying patches to replay recordings of healthy reefs, which draws young fish back to settle and graze away competing algae.",
+              "distractors": [
+                {
+                  "text": "shrimp",
+                  "why": "Tôm gõ mõ (snapping shrimp) là nguồn phát ra âm thanh rạn khỏe, không phải loài được thu hút quay về trong câu hỏi."
+                }
+              ]
+            },
+            {
+              "n": 40,
+              "prompt": "Long-term survival depends on pairing restoration with global cuts in carbon {{blank}}.",
+              "answer": ["emissions"],
+              "explanation": "Phục hồi rạn chỉ giúp kéo dài thời gian; sự tồn tại lâu dài đòi hỏi kết hợp với việc cắt giảm lượng khí thải carbon (carbon emissions) trên toàn cầu ('cuts' = 'reductions').",
+              "evidence": "Still, every marine scientist will tell you the same bottom line: active reef repair buys precious time, but long-term survival depends on pairing restoration with global reductions in carbon emissions.",
+              "distractors": [
+                {
+                  "text": "funding",
+                  "why": "Nguồn quỹ bảo tồn địa phương có ích nhưng không phải yếu tố toàn cầu đi sau từ 'carbon'."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

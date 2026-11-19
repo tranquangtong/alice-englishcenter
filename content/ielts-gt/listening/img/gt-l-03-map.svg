@@ -1,0 +1,190 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 540" role="img" aria-labelledby="map-title map-desc">
+  <title id="map-title">Meadowbrook Food Festival — Riverside Park Map</title>
+  <desc id="map-desc">Site plan of Riverside Park showing Willow River on the west, Old Stone Wall and Bandstand on the north, Orchard Woods on the east, River Road and Main Entrance on the south, Fountain Circle in the centre, and eight lettered zones labelled A through H.</desc>
+  <defs>
+    <linearGradient id="riverGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#5ec4f2"/>
+      <stop offset="55%" stop-color="#87dcfb"/>
+      <stop offset="100%" stop-color="#69caf4"/>
+    </linearGradient>
+    <linearGradient id="badgeGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#35b0ec"/>
+      <stop offset="100%" stop-color="#117ec2"/>
+    </linearGradient>
+    <linearGradient id="parkBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#effae9"/>
+      <stop offset="100%" stop-color="#e3f5e4"/>
+    </linearGradient>
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2.5" flood-color="#0b2a3c" flood-opacity="0.14"/>
+    </filter>
+  </defs>
+
+  <!-- Outer park ground -->
+  <rect x="8" y="8" width="784" height="524" rx="18" fill="url(#parkBg)" stroke="#9fcab2" stroke-width="2"/>
+
+  <!-- Willow River (West edge) -->
+  <path d="M 8 26 Q 16 14 28 14 L 92 14 C 102 120 82 200 94 280 C 104 350 86 410 92 465 L 8 465 Z" fill="url(#riverGrad)"/>
+  <path d="M 32 55 C 40 95 28 135 38 175 M 64 95 C 72 135 58 175 68 215 M 36 315 C 46 355 32 395 42 435 M 68 335 C 76 370 64 405 72 440" fill="none" stroke="#ffffff" stroke-opacity="0.55" stroke-width="2" stroke-linecap="round"/>
+  <text x="52" y="152" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="700" fill="#0b3c5d" text-anchor="middle" transform="rotate(-90 52 152)">Willow River</text>
+
+  <!-- Old Stone Wall (North boundary) -->
+  <rect x="108" y="26" width="582" height="12" rx="3" fill="#8b969c" stroke="#5b676e" stroke-width="1.5"/>
+  <line x1="150" y1="26" x2="150" y2="38" stroke="#c8d0d4" stroke-width="1"/>
+  <line x1="210" y1="26" x2="210" y2="38" stroke="#c8d0d4" stroke-width="1"/>
+  <line x1="270" y1="26" x2="270" y2="38" stroke="#c8d0d4" stroke-width="1"/>
+  <line x1="480" y1="26" x2="480" y2="38" stroke="#c8d0d4" stroke-width="1"/>
+  <line x1="540" y1="26" x2="540" y2="38" stroke="#c8d0d4" stroke-width="1"/>
+  <line x1="600" y1="26" x2="600" y2="38" stroke="#c8d0d4" stroke-width="1"/>
+  <text x="295" y="21" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="700" fill="#374b57" text-anchor="middle">Old Stone Wall</text>
+
+  <!-- Orchard Woods (East edge) -->
+  <g fill="#74c977" stroke="#3c9644" stroke-width="1.5">
+    <circle cx="718" cy="74" r="22"/>
+    <circle cx="752" cy="96" r="24"/>
+    <circle cx="722" cy="126" r="21"/>
+    <circle cx="756" cy="156" r="23"/>
+    <circle cx="720" cy="186" r="22"/>
+    <circle cx="754" cy="216" r="24"/>
+    <circle cx="722" cy="250" r="21"/>
+    <circle cx="756" cy="282" r="24"/>
+    <circle cx="720" cy="316" r="22"/>
+    <circle cx="754" cy="348" r="23"/>
+    <circle cx="722" cy="382" r="21"/>
+    <circle cx="754" cy="408" r="20"/>
+  </g>
+  <rect x="703" y="214" width="76" height="44" rx="8" fill="#ffffff" fill-opacity="0.88" stroke="#3c9644" stroke-width="1"/>
+  <text x="741" y="233" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="700" fill="#1b5e23" text-anchor="middle">Orchard</text>
+  <text x="741" y="249" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="700" fill="#1b5e23" text-anchor="middle">Woods</text>
+
+  <!-- Park Footpaths -->
+  <g fill="#ffffff" stroke="#b8d4c3" stroke-width="2">
+    <!-- Central Avenue -->
+    <rect x="370" y="106" width="30" height="360"/>
+    <!-- West Path -->
+    <rect x="96" y="242" width="276" height="26"/>
+    <!-- East Path -->
+    <rect x="398" y="242" width="290" height="26"/>
+  </g>
+  <!-- Clean intersections -->
+  <rect x="371" y="243" width="28" height="24" fill="#ffffff"/>
+
+  <!-- Path labels -->
+  <text x="385" y="340" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="700" fill="#3d5b6c" text-anchor="middle" transform="rotate(-90 385 340)">Central Avenue</text>
+  <text x="235" y="259" font-family="Inter, system-ui, sans-serif" font-size="11.5" font-weight="700" fill="#3d5b6c" text-anchor="middle">West Path</text>
+  <text x="545" y="259" font-family="Inter, system-ui, sans-serif" font-size="11.5" font-weight="700" fill="#3d5b6c" text-anchor="middle">East Path</text>
+
+  <!-- Footbridge over Willow River -->
+  <g filter="url(#softShadow)">
+    <rect x="18" y="237" width="90" height="36" rx="4" fill="#d9b282" stroke="#8a6235" stroke-width="2"/>
+    <line x1="34" y1="237" x2="34" y2="273" stroke="#9e7445" stroke-width="1.5"/>
+    <line x1="52" y1="237" x2="52" y2="273" stroke="#9e7445" stroke-width="1.5"/>
+    <line x1="70" y1="237" x2="70" y2="273" stroke="#9e7445" stroke-width="1.5"/>
+    <line x1="88" y1="237" x2="88" y2="273" stroke="#9e7445" stroke-width="1.5"/>
+  </g>
+  <rect x="20" y="279" width="84" height="20" rx="5" fill="#ffffff" fill-opacity="0.92" stroke="#8a6235" stroke-width="1"/>
+  <text x="62" y="293" font-family="Inter, system-ui, sans-serif" font-size="11.5" font-weight="700" fill="#4f3518" text-anchor="middle">Footbridge</text>
+
+  <!-- Fountain Circle (Centre) -->
+  <circle cx="385" cy="255" r="38" fill="#ffffff" stroke="#98c4b0" stroke-width="2" filter="url(#softShadow)"/>
+  <circle cx="385" cy="255" r="16" fill="#6fd0f7" stroke="#1593d6" stroke-width="2"/>
+  <circle cx="385" cy="255" r="5" fill="#ffffff"/>
+  <rect x="330" y="296" width="110" height="20" rx="6" fill="#ffffff" fill-opacity="0.94" stroke="#98c4b0" stroke-width="1"/>
+  <text x="385" y="310" font-family="Inter, system-ui, sans-serif" font-size="11.5" font-weight="700" fill="#0b2a3c" text-anchor="middle">Fountain Circle</text>
+
+  <!-- Bandstand (North-centre) -->
+  <g filter="url(#softShadow)">
+    <polygon points="385,48 418,62 424,96 398,116 372,116 346,96 352,62" fill="#fff7e2" stroke="#b88a3c" stroke-width="2"/>
+  </g>
+  <text x="385" y="87" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="700" fill="#5e4011" text-anchor="middle">Bandstand</text>
+
+  <!-- Information Hut (inside Main Entrance, west of Central Avenue) -->
+  <g filter="url(#softShadow)">
+    <rect x="258" y="388" width="98" height="54" rx="8" fill="#e6f5ff" stroke="#1593d6" stroke-width="2"/>
+  </g>
+  <text x="307" y="411" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="700" fill="#0b2a3c" text-anchor="middle">Information</text>
+  <text x="307" y="427" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="700" fill="#0b2a3c" text-anchor="middle">Hut</text>
+
+  <!-- River Road (South edge) -->
+  <rect x="8" y="465" width="784" height="55" fill="#cfdce4"/>
+  <line x1="20" y1="493" x2="780" y2="493" stroke="#ffffff" stroke-width="2.5" stroke-dasharray="14 10"/>
+  <text x="210" y="510" font-family="Inter, system-ui, sans-serif" font-size="13.5" font-weight="700" fill="#0b2a3c" text-anchor="middle">River Road</text>
+
+  <!-- South fence & Gates -->
+  <line x1="94" y1="465" x2="352" y2="465" stroke="#4c6b58" stroke-width="3.5"/>
+  <line x1="418" y1="465" x2="672" y2="465" stroke="#4c6b58" stroke-width="3.5"/>
+  <line x1="734" y1="465" x2="788" y2="465" stroke="#4c6b58" stroke-width="3.5"/>
+
+  <!-- Main Entrance badge -->
+  <rect x="333" y="454" width="104" height="24" rx="12" fill="#237a2b" filter="url(#softShadow)"/>
+  <text x="385" y="470" font-family="Inter, system-ui, sans-serif" font-size="11.5" font-weight="700" fill="#ffffff" text-anchor="middle">Main Entrance</text>
+
+  <!-- Service Gate badge -->
+  <rect x="658" y="454" width="90" height="24" rx="12" fill="#5b676e" filter="url(#softShadow)"/>
+  <text x="703" y="470" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="700" fill="#ffffff" text-anchor="middle">Service Gate</text>
+
+  <!-- Compass Rose (Top-right) -->
+  <g transform="translate(744 50)" filter="url(#softShadow)">
+    <circle cx="0" cy="0" r="24" fill="#ffffff" fill-opacity="0.95" stroke="#1593d6" stroke-width="1.8"/>
+    <polygon points="0,-15 5,0 0,-3 -5,0" fill="#1593d6"/>
+    <polygon points="0,15 5,0 0,3 -5,0" fill="#9eb6c4"/>
+  </g>
+  <text x="744" y="21" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="800" fill="#0b2a3c" text-anchor="middle">N</text>
+
+  <!-- Lettered Festival Zones A–H -->
+  <!-- Zone A (SW corner) -->
+  <g filter="url(#softShadow)">
+    <rect x="122" y="376" width="114" height="68" rx="12" fill="#ffffff" fill-opacity="0.92" stroke="#1593d6" stroke-width="2" stroke-dasharray="6 4"/>
+    <circle cx="179" cy="410" r="19" fill="url(#badgeGrad)"/>
+    <text x="179" y="416" font-family="Noto Sans, Inter, sans-serif" font-size="18" font-weight="800" fill="#ffffff" text-anchor="middle">A</text>
+  </g>
+
+  <!-- Zone B (Mid-west, north of West Path beside Footbridge) -->
+  <g filter="url(#softShadow)">
+    <rect x="122" y="160" width="114" height="66" rx="12" fill="#ffffff" fill-opacity="0.92" stroke="#1593d6" stroke-width="2" stroke-dasharray="6 4"/>
+    <circle cx="179" cy="193" r="19" fill="url(#badgeGrad)"/>
+    <text x="179" y="199" font-family="Noto Sans, Inter, sans-serif" font-size="18" font-weight="800" fill="#ffffff" text-anchor="middle">B</text>
+  </g>
+
+  <!-- Zone C (NW corner, between Willow River and Bandstand against Old Stone Wall) -->
+  <g filter="url(#softShadow)">
+    <rect x="122" y="52" width="134" height="74" rx="12" fill="#ffffff" fill-opacity="0.92" stroke="#1593d6" stroke-width="2" stroke-dasharray="6 4"/>
+    <circle cx="189" cy="89" r="19" fill="url(#badgeGrad)"/>
+    <text x="189" y="95" font-family="Noto Sans, Inter, sans-serif" font-size="18" font-weight="800" fill="#ffffff" text-anchor="middle">C</text>
+  </g>
+
+  <!-- Zone D (North of East Path, between Bandstand/Central Ave and Orchard Woods) -->
+  <g filter="url(#softShadow)">
+    <rect x="434" y="134" width="108" height="82" rx="12" fill="#ffffff" fill-opacity="0.92" stroke="#1593d6" stroke-width="2" stroke-dasharray="6 4"/>
+    <circle cx="488" cy="175" r="19" fill="url(#badgeGrad)"/>
+    <text x="488" y="181" font-family="Noto Sans, Inter, sans-serif" font-size="18" font-weight="800" fill="#ffffff" text-anchor="middle">D</text>
+  </g>
+
+  <!-- Zone E (Far NE corner, against Orchard Woods and Old Stone Wall) -->
+  <g filter="url(#softShadow)">
+    <rect x="568" y="52" width="112" height="86" rx="12" fill="#ffffff" fill-opacity="0.92" stroke="#1593d6" stroke-width="2" stroke-dasharray="6 4"/>
+    <circle cx="624" cy="95" r="19" fill="url(#badgeGrad)"/>
+    <text x="624" y="101" font-family="Noto Sans, Inter, sans-serif" font-size="18" font-weight="800" fill="#ffffff" text-anchor="middle">E</text>
+  </g>
+
+  <!-- Zone F (Mid-east, immediately south of East Path against Orchard Woods) -->
+  <g filter="url(#softShadow)">
+    <rect x="568" y="284" width="112" height="82" rx="12" fill="#ffffff" fill-opacity="0.92" stroke="#1593d6" stroke-width="2" stroke-dasharray="6 4"/>
+    <circle cx="624" cy="325" r="19" fill="url(#badgeGrad)"/>
+    <text x="624" y="331" font-family="Noto Sans, Inter, sans-serif" font-size="18" font-weight="800" fill="#ffffff" text-anchor="middle">F</text>
+  </g>
+
+  <!-- Zone G (South-central-east, right side of Central Avenue before Fountain Circle) -->
+  <g filter="url(#softShadow)">
+    <rect x="420" y="328" width="108" height="84" rx="12" fill="#ffffff" fill-opacity="0.92" stroke="#1593d6" stroke-width="2" stroke-dasharray="6 4"/>
+    <circle cx="474" cy="370" r="19" fill="url(#badgeGrad)"/>
+    <text x="474" y="376" font-family="Noto Sans, Inter, sans-serif" font-size="18" font-weight="800" fill="#ffffff" text-anchor="middle">G</text>
+  </g>
+
+  <!-- Zone H (SE corner, near Service Gate and River Road) -->
+  <g filter="url(#softShadow)">
+    <rect x="568" y="384" width="104" height="62" rx="12" fill="#ffffff" fill-opacity="0.92" stroke="#1593d6" stroke-width="2" stroke-dasharray="6 4"/>
+    <circle cx="620" cy="415" r="19" fill="url(#badgeGrad)"/>
+    <text x="620" y="421" font-family="Noto Sans, Inter, sans-serif" font-size="18" font-weight="800" fill="#ffffff" text-anchor="middle">H</text>
+  </g>
+</svg>
