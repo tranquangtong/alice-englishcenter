@@ -1,5 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import { createHash } from 'node:crypto';
 import { mkdtemp, mkdir, readFile, rm, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import path from 'node:path';
@@ -41,8 +42,31 @@ test('CSS check catches missing/stale builds, including comment-only source edit
   assert.match((await checkCSS(root)).errors.join('\n'), /missing or stale/);
   await writeFile(target, (await cssOutputs(root))[0].contents);
   assert.deepEqual((await checkCSS(root)).errors, []);
-  await writeFile(target, (await readFile(target, 'utf8')) + ' '.repeat(40_000));
+  await writeFile(target, (await readFile(target, 'utf8')) + ' '.repeat(60_000));
   const result = await checkCSS(root);
   assert.match(result.errors.join('\n'), /budget/);
   assert.ok(result.gzip < result.raw);
+});
+
+test('CSS budgets enforce combined loaded raw bytes and separately compressed gzip bytes', async t => {
+  const root = await mkdtemp(path.join(tmpdir(), 'alice-css-budget-'));
+  t.after(() => rm(root, { recursive: true, force: true }));
+  await mkdir(path.join(root, 'assets/css'), { recursive: true });
+  await writeFile(path.join(root, 'index.html'), '<link rel="stylesheet" href="a.min.css"><link rel="stylesheet" href="b.min.css">');
+  const a = path.join(root, 'a.min.css');
+  const b = path.join(root, 'b.min.css');
+  await writeFile(a, ' '.repeat(30_000));
+  await writeFile(b, ' '.repeat(29_999));
+  assert.deepEqual((await checkCSS(root)).errors, []);
+  await writeFile(b, ' '.repeat(30_000));
+  assert.match((await checkCSS(root)).errors.join('\n'), /<60,000-byte raw budget: 60000 bytes/);
+  // Deterministic, poorly compressible text isolates gzip failure below the raw limit.
+  const text = Array.from({ length: 750 }, (_, i) => createHash('sha256').update(String(i)).digest('hex')).join('');
+  await writeFile(a, text.slice(0, 24_000));
+  await writeFile(b, text.slice(24_000));
+  const result = await checkCSS(root);
+  assert.ok(result.raw < 60_000);
+  assert.ok(result.gzip >= 15_000);
+  assert.equal(result.errors.length, 1);
+  assert.match(result.errors[0], /<15,000-byte gzip budget/);
 });

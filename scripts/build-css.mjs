@@ -104,7 +104,8 @@ export async function checkCSS(siteRoot = root) {
   }
   const raw = files.reduce((sum, file) => sum + file.raw, 0);
   const gzip = files.reduce((sum, file) => sum + file.gzip, 0);
-  if (raw >= 40_000) errors.push(`Loaded CSS exceeds the <40,000-byte budget: ${raw} bytes`);
+  if (raw >= 60_000) errors.push(`Loaded CSS exceeds the <60,000-byte raw budget: ${raw} bytes`);
+  if (gzip >= 15_000) errors.push(`Loaded CSS exceeds the <15,000-byte gzip budget: ${gzip} bytes`);
   return { errors, files, raw, gzip };
 }
 

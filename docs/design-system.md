@@ -83,7 +83,7 @@ Tránh: flat design phẳng lì, màu xám buồn, brutalism, neon cyberpunk, g�
 
 - Tương phản chữ ≥ **WCAG AA** (4.5:1) — đo trên nền kính *xấu nhất* (vùng sáng nhất của trời).
 - Tôn trọng `prefers-reduced-motion` (tắt bong bóng bay / shimmer) và `prefers-color-scheme`.
-- Không dùng ảnh nặng: trang trí bằng CSS/SVG inline; tổng CSS gọn (< ~40 KB).
+- Không dùng ảnh nặng: trang trí bằng CSS/SVG inline; tổng CSS đã minify gọn (< ~60 KB, gzip < ~15 KB).
 - Font: chỉ font hệ thống hoặc Google Fonts (hiện dùng Inter + Noto Sans, một link Google Fonts có
   hỗ trợ tiếng Việt, `display=swap`); không tải font từ nguồn khác.
 - Mobile 360px: không cuộn ngang, nút ≥ 44px chạm được, blur nặng có thể giảm trên mobile.
