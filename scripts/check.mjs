@@ -9,7 +9,7 @@ import { checkCSS } from './build-css.mjs';
 const root = fileURLToPath(new URL('../', import.meta.url));
 let errors = 0;
 let warnings = 0;
-const pending = relative => /^content\/syllabus\/[^/]+\.md$/.test(relative) || relative === 'content/roadmap-teacher-student.md';
+const pending = relative => /^content\/syllabus\/[^/]+\.md$/.test(relative);
 function report(message, warning = false) {
   if (warning) warnings++; else errors++;
   console[warning ? 'warn' : 'error'](`${warning ? 'WARNING' : 'ERROR'}: ${message}`);

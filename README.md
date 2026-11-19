@@ -48,7 +48,7 @@ Giữ file `.nojekyll` ở root. Tất cả tài nguyên dùng đường dẫn t
 - `content/manifest.json`: danh mục `{id, title, group, path}`; thứ tự trong file quyết định thứ tự điều hướng.
 - `content/home.md`: lời giới thiệu.
 - `content/syllabus/`: các đề cương kỹ năng do nhóm nội dung bổ sung.
-- `content/roadmap-teacher-student.md`: lộ trình phát triển do nhóm nội dung bổ sung.
+- `docs/roadmap-teacher-student.md` là lộ trình phát triển nội bộ, không hiển thị trong menu trang học.
 - `docs/`: tài liệu tham khảo, bao gồm [cấu trúc đề thi](docs/exam-structure.md).
 - `scripts/check.mjs`: kiểm tra cục bộ không cần dependencies.
 

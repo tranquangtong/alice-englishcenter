@@ -5,6 +5,5 @@
   {"id":"listening","title":"Listening · Nghe","group":"Đề cương ôn thi","path":"content/syllabus/01-listening.md"},
   {"id":"reading","title":"Reading · Đọc","group":"Đề cương ôn thi","path":"content/syllabus/02-reading.md"},
   {"id":"writing","title":"Writing · Viết","group":"Đề cương ôn thi","path":"content/syllabus/03-writing.md"},
-  {"id":"speaking","title":"Speaking · Nói","group":"Đề cương ôn thi","path":"content/syllabus/04-speaking.md"},
-  {"id":"teacher-student","title":"Lộ trình nền tảng Teacher–Student","group":"Cùng phát triển","path":"content/roadmap-teacher-student.md"}
+  {"id":"speaking","title":"Speaking · Nói","group":"Đề cương ôn thi","path":"content/syllabus/04-speaking.md"}
 ]

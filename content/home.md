@@ -16,4 +16,4 @@ Dành một khoảng thời gian cố định để nghe, đọc, viết hoặc 
 
 ## Học và chia sẻ
 
-Bạn có thể dùng mục lục để tìm nhanh nội dung hoặc in trang đang đọc để ghi chú. [Lộ trình nền tảng Teacher–Student](roadmap-teacher-student.md) giới thiệu hướng phát triển không gian học tập trong tương lai.
+Bạn có thể dùng mục lục để tìm nhanh nội dung hoặc in trang đang đọc để ghi chú.
