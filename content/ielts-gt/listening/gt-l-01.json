@@ -1097,7 +1097,7 @@
         {
           "speaker": "Speaker",
           "voice": "en-US-female-1",
-          "text": "And honeybees are not the ones losing that battle. A single managed hive can house fifty thousand workers capable of stripping a city park of pollen within hours. While migratory insects like painted lady butterflies pass through briefly, recent surveys in Paris and Montreal show that high honeybee density places severe strain on native species—particularly solitary bumblebees and mason bees that cannot fly far to find alternative food."
+          "text": "And honeybees are not the ones losing that battle. A single managed hive can house fifty thousand workers capable of stripping a city park of pollen within hours. While migratory insects like painted lady butterflies pass through briefly, recent surveys in Paris and Montreal show that high honeybee density places severe strain on native species—particularly wild bumblebees and solitary bees such as mason bees—that cannot fly far to find alternative food."
         },
         {
           "speaker": "Speaker",
@@ -1205,14 +1205,18 @@
             },
             {
               "n": 36,
-              "prompt": "High honeybee density puts pressure on {{blank}} species such as solitary bumblebees.",
+              "prompt": "High honeybee density puts pressure on {{blank}} species such as wild bumblebees and mason bees.",
               "answer": ["native"],
-              "explanation": "Mật độ ong mật cao gây áp lực nặng nề lên các loài bản địa ('native species') như ong nghệ sống đơn độc.",
-              "evidence": "While migratory insects like painted lady butterflies pass through briefly, recent surveys in Paris and Montreal show that high honeybee density places severe strain on native species—particularly solitary bumblebees and mason bees that cannot fly far to find alternative food.",
+              "explanation": "Mật độ ong mật cao gây áp lực nặng nề lên các loài bản địa ('native species') — đặc biệt là ong nghệ hoang dã và các loài ong sống đơn độc như ong thợ nề (mason bees).",
+              "evidence": "While migratory insects like painted lady butterflies pass through briefly, recent surveys in Paris and Montreal show that high honeybee density places severe strain on native species—particularly wild bumblebees and solitary bees such as mason bees—that cannot fly far to find alternative food.",
               "distractors": [
                 {
                   "text": "migratory",
                   "why": "Các loài côn trùng di cư ('migratory insects') như bướm chỉ bay ngang qua trong thời gian ngắn nên không chịu áp lực tương tự."
+                },
+                {
+                  "text": "solitary",
+                  "why": "Từ 'solitary' chỉ mô tả nhóm ong sống đơn độc như ong thợ nề (mason bees), không bao gồm ong nghệ hoang dã (wild bumblebees) và không đi trực tiếp với 'species' trong bài nghe."
                 }
               ]
             },

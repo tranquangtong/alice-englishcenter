@@ -396,7 +396,7 @@
         {
           "speaker": "Manager",
           "voice": "en-GB-female-1",
-          "text": "At the checkout lanes, you'll mostly be scanning and chatting warmly with shoppers—damaged items are usually caught out on the aisles beforehand. Your absolute number-one legal responsibility at the till is our Challenge Twenty-Five policy: always ask customers for photo ID to verify their age whenever they buy restricted goods such as alcohol, scissors, or high-caffeine energy drinks."
+          "text": "At the checkout lanes, you'll mostly be scanning and chatting warmly with shoppers—damaged items are usually caught out on the aisles beforehand. Your absolute number-one priority at the till is our Challenge Twenty-Five policy: always ask customers for photo ID to verify their age whenever they buy age-restricted goods such as alcohol, tobacco, and knives—and, as our store's own rule, high-caffeine energy drinks too."
         },
         {
           "speaker": "Manager",
@@ -581,12 +581,12 @@
               "n": 18,
               "prompt": "Checkout lanes",
               "answer": ["D"],
-              "explanation": "Ở quầy thanh toán, trách nhiệm pháp lý số một là kiểm tra giấy tờ tùy thân để xác minh độ tuổi khách mua hàng giới hạn tuổi (D).",
-              "evidence": "Your absolute number-one legal responsibility at the till is our Challenge Twenty-Five policy: always ask customers for photo ID to verify their age whenever they buy restricted goods such as alcohol, scissors, or high-caffeine energy drinks.",
+              "explanation": "Ở quầy thanh toán, ưu tiên số một là thực hiện chính sách Challenge Twenty-Five: luôn yêu cầu khách xuất trình giấy tờ tùy thân có ảnh để xác minh độ tuổi khi mua các mặt hàng giới hạn độ tuổi như rượu bia, thuốc lá, dao — và theo quy định riêng của cửa hàng, cả nước tăng lực hàm lượng caffeine cao (D).",
+              "evidence": "Your absolute number-one priority at the till is our Challenge Twenty-Five policy: always ask customers for photo ID to verify their age whenever they buy age-restricted goods such as alcohol, tobacco, and knives—and, as our store's own rule, high-caffeine energy drinks too.",
               "distractors": [
                 {
                   "text": "G",
-                  "why": "Hàng hư hỏng thường đã được phát hiện ngoài lối đi trước khi tới quầy thu ngân."
+                  "why": "Hàng hư hỏng thường đã được phát hiện ngoài lối đi trước khi tới quầy thu ngân nên không phải ưu tiên hàng đầu tại quầy thanh toán."
                 }
               ]
             },
