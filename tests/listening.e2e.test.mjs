@@ -31,7 +31,10 @@ test('Edge: listening player, exam guards, routing and responsive layout', { tim
   await page.locator('.top-menu__btn').click(); assert.equal(await page.locator('.top-menu__panel').isVisible(), true);
   await page.keyboard.press('Escape'); assert.equal(await page.locator('.top-menu__btn').getAttribute('aria-expanded'), 'false');
   await page.locator('.top-menu__btn').press('ArrowDown'); assert.equal(await page.locator('.top-menu__panel a').first().evaluate(a => a === document.activeElement), true);
-  await page.locator('main').click({ position: { x: 10, y: 10 } }); assert.equal(await page.locator('.top-menu__panel').isVisible(), false);
+  // The Aero dropdown overlays main's top-left corner; click its far edge to
+  // exercise a real outside pointer event without clicking through the menu.
+  const mainBox = await page.locator('main').boundingBox();
+  await page.locator('main').click({ position: { x: mainBox.width - 10, y: 10 } }); assert.equal(await page.locator('.top-menu__panel').isVisible(), false);
   await route('#/ielts-gt'); assert.equal(await page.locator('.gt-skill').count(), 4);
   await page.locator('.gt-skill--soon').first().click(); await page.waitForFunction(() => document.querySelector('#page-content h1')?.textContent === 'reading');
   assert.equal(await page.getByText('Sắp ra mắt', { exact: true }).count(), 1);
