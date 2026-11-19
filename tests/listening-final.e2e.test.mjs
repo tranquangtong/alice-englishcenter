@@ -58,11 +58,12 @@ function inspect() {
   const bar = document.querySelector('.lt-audio')?.getBoundingClientRect();
   const controls = [...document.querySelectorAll('.site-header a, .site-header button, #page-content a, #page-content button, #page-content input:not(:disabled), #page-content select')].filter(visible);
   const targets = controls.map(el => {
-    const target = el.matches('[type="checkbox"], [type="radio"]') ? el.closest('label') : el;
+    const target = el.matches('.top-menu__btn') ? el.closest('.top-menu') :
+      el.matches('[type="checkbox"], [type="radio"]') ? el.closest('label') : el;
     const r = target.getBoundingClientRect();
     return { text: el.textContent.trim().slice(0, 40) || el.getAttribute('aria-label'), width: r.width, height: r.height };
   });
-  const text = [...document.querySelectorAll('.site-header button, .top-menu__panel a, #page-content p, #page-content label, #page-content legend, #page-content a, #page-content button, .lt-distractors strong, .lt-transcript strong, mark.lt-hl')].filter(el => visible(el) && el.textContent.trim()).map(contrast);
+  const text = [...document.querySelectorAll('.site-header button, .top-menu__panel a, .sidebar h2, .sidebar a, .sidebar__soon, .sidebar__soon small, #page-content p, #page-content label, #page-content legend, #page-content a, #page-content button, .lt-distractors strong, .lt-transcript strong, mark.lt-hl')].filter(el => visible(el) && el.textContent.trim()).map(contrast);
   return {
     viewport: innerWidth, scrollWidth: Math.max(document.documentElement.scrollWidth, document.body.scrollWidth),
     header: header.toJSON(), heading: heading.toJSON(), audio: bar?.toJSON(),

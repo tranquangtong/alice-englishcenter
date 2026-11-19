@@ -10,12 +10,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400..800&family=Noto+Sans:wght@500..800&display=swap">
-  <link rel="stylesheet" href="assets/css/style.min.css?v=6">
-  <link rel="stylesheet" href="assets/css/listening.min.css?v=3">
+  <link rel="stylesheet" href="assets/css/style.min.css?v=7">
+  <link rel="stylesheet" href="assets/css/listening.min.css?v=4">
   <script defer src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/dompurify@3.1.6/dist/purify.min.js"></script>
-  <script defer src="assets/js/listening.js?v=3"></script>
-  <script defer src="assets/js/app.js?v=4"></script>
+  <script defer src="assets/js/listening.js?v=4"></script>
+  <script defer src="assets/js/app.js?v=5"></script>
 </head>
 <body>
   <div class="aero-bg" aria-hidden="true">
@@ -32,8 +32,9 @@
   <header class="site-header">
     <a class="brand" href="#/home"><span class="brand-mark" aria-hidden="true">a.</span><span>Alice English Center</span></a>
     <nav class="top-menu" aria-label="IELTS General">
-      <button class="top-menu__btn aero-btn" type="button" aria-expanded="false" aria-controls="gt-menu-panel">IELTS General</button>
+      <button class="top-menu__btn aero-btn" type="button" aria-label="IELTS General" aria-expanded="false" aria-controls="gt-menu-panel"><span class="top-menu__label">IELTS<span class="top-menu__full-label"> General</span></span></button>
       <div class="top-menu__panel" id="gt-menu-panel" hidden>
+        <a href="#/ielts-gt">Tổng quan IELTS General</a>
         <a href="#/ielts-gt/listening">Listening</a>
         <a href="#/ielts-gt/reading">Reading</a>
         <a href="#/ielts-gt/writing">Writing</a>
