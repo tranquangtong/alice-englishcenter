@@ -35,15 +35,17 @@
   Lead steps in only if both teammates fail after fix-up rounds or the user asks; says why.
 - **Every task ships with tests.** The prompt lists acceptance checks; the result is not done until:
   1. `node scripts/check.mjs` → 0 errors;
-  2. UI changes: codex serves the site locally (`python -m http.server`) and verifies in headless
-     Edge/Chrome (measure positions/sizes, screenshot desktop 1600px + mobile 390px);
+  2. UI changes: codex serves the site with a tiny node static server (no Python installed) and
+     verifies in headless Edge (`--no-sandbox`, temp `--user-data-dir` outside the repo; or
+     `npx playwright-core` with channel msedge): measure positions/sizes, screenshot 1600px + 390px;
   3. codex reviews the diff vs `docs/design-system.md` checklist.
   agy work → codex runs 1–3 afterwards. Lead re-runs 1 before merge and reports results.
 - Blocked teammate: give the cause + a workaround and try it; `NEEDS USER:` for steps only the
   user can do; `SUGGEST codex|agy:` when the other teammate has a better tool.
 - Fallbacks: agy edits UI/content (no shell) → codex runs lint/tests on it; content in Google
   Docs/Sheets/Slides or Canva → agy (codex has no such plugins); bulk reading of lesson
-  material → agy; codex blocked by no network (e.g. installs) → `NEEDS USER:`.
+  material → agy. Codex has bash, node, npm/npx (network on), headless Edge; it must not
+  `git commit` (bridge auto-commits). agy stays file-edits only (user choice).
 
 ## Workflow
 - Global workflow applies. Note: `-w` needs at least one commit on `main`.
