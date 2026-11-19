@@ -1,0 +1,1224 @@
+{
+  "id": "gt-l-03",
+  "title": "Practice Test 3",
+  "parts": [
+    {
+      "part": 1,
+      "title": "Part 1 — Joining a community car-share scheme",
+      "context": "A telephone conversation between a coordinator at a local car-share club and a resident who wants to join.",
+      "audio": "assets/audio/ielts-gt/listening/gt-l-03/part1.mp3",
+      "script": [
+        {
+          "speaker": "Narrator",
+          "voice": "en-GB-narrator",
+          "text": "Part 1. You will hear a man phoning a local community car-share scheme to apply for membership. First, you have some time to look at questions 1 to 6."
+        },
+        {
+          "pause": 30,
+          "note": "Reading time for questions 1–6"
+        },
+        {
+          "speaker": "Coordinator",
+          "voice": "en-GB-female-1",
+          "text": "Good morning, Westbridge Community Car-Share, Hannah speaking. How can I help you today?"
+        },
+        {
+          "speaker": "Caller",
+          "voice": "en-AU-male-1",
+          "text": "Hi Hannah. I've just moved into town and I'm keen to join the car-share club rather than buying a second car. Could I sign up over the phone?"
+        },
+        {
+          "speaker": "Coordinator",
+          "voice": "en-GB-female-1",
+          "text": "You certainly can. I'll open a new member form now and take your details. First of all, can I take your full name, please?"
+        },
+        {
+          "speaker": "Caller",
+          "voice": "en-AU-male-1",
+          "text": "Sure, it's Liam Cromwell."
+        },
+        {
+          "speaker": "Coordinator",
+          "voice": "en-GB-female-1",
+          "text": "Liam Cornwell—that's C-O-R-N-W-E-L-L, is it?"
+        },
+        {
+          "speaker": "Caller",
+          "voice": "en-AU-male-1",
+          "text": "Ah, people often hear that, but it's actually Cromwell with an M. So that's C-R-O-M-W-E-L-L."
+        },
+        {
+          "speaker": "Coordinator",
+          "voice": "en-GB-female-1",
+          "text": "Got it, thank you—C-R-O-M-W-E-L-L. And what's your current street address here in Westbridge?"
+        },
+        {
+          "speaker": "Caller",
+          "voice": "en-AU-male-1",
+          "text": "It's 36—oh, hang on, sorry, that was my old flat before the move! We only unpacked last Friday. The new place is 48 Birch Lane."
+        },
+        {
+          "speaker": "Coordinator",
+          "voice": "en-GB-female-1",
+          "text": "No problem at all, moving always scrambles your memory for a week or two. Forty-eight Birch Lane. And do you know the postcode for that street?"
+        },
+        {
+          "speaker": "Caller",
+          "voice": "en-AU-male-1",
+          "text": "Let me just check the letter on my desk so I don't give you my work one by mistake—that ends in 4LP. Right, here it is: WB6 9TR. That's nine, T for tango, R for Romeo."
+        },
+        {
+          "speaker": "Coordinator",
+          "voice": "en-GB-female-1",
+          "text": "Lovely, WB6 9TR. Now, for our insurance records, I need to check how long you've held a full driving licence."
+        },
+        {
+          "speaker": "Caller",
+          "voice": "en-AU-male-1",
+          "text": "Well, I got my learner permit nine years ago back in Melbourne, and I moved over to the UK three years ago, when I swapped to a British licence. I've held my full licence for 7 years in total, with no penalty points."
+        },
+        {
+          "speaker": "Coordinator",
+          "voice": "en-GB-female-1",
+          "text": "Brilliant, we just require a minimum of two years, so seven is plenty. Next, we have three membership plans. Commuter is £25 a month with lower weekday hourly rates, Flexi is £12 a month with flat pricing all week, and Weekend is £8 a month if you only drive on Saturdays and Sundays."
+        },
+        {
+          "speaker": "Caller",
+          "voice": "en-AU-male-1",
+          "text": "Hmm, I cycle to work, so I definitely don't need Commuter. At first I thought Weekend sounded ideal because I visit my sister on Sundays, but actually I'll probably need a hatchback on Wednesday evenings to pick up furniture and DIY supplies. Let's go with Flexi."
+        },
+        {
+          "speaker": "Coordinator",
+          "voice": "en-GB-female-1",
+          "text": "Good choice—you can always switch plans later with thirty days' notice. Let me check your closest parking bay. Normally folks on Birch Lane use the bay right outside the cinema, though that car park is closed until next month while the council repairs the drainage. So your nearest active vehicle bay is the one behind the library, about four minutes' walk from you."
+        },
+        {
+          "speaker": "Caller",
+          "voice": "en-AU-male-1",
+          "text": "Oh, behind the library is actually right on my route home from the station. That works out really well."
+        },
+        {
+          "speaker": "Narrator",
+          "voice": "en-GB-narrator",
+          "text": "Before you hear the rest of the conversation, you have some time to look at questions 7 to 10."
+        },
+        {
+          "pause": 20,
+          "note": "Reading time for questions 7–10"
+        },
+        {
+          "speaker": "Coordinator",
+          "voice": "en-GB-female-1",
+          "text": "Great. Let's go through the joining costs and how you get started. There's a refundable security deposit when you register. Normally that's £100, plus a one-off £15 smart-card fee. However, because we're running a green-travel promotion this month, anyone who holds a local bus or rail pass pays a reduced deposit of £75 instead."
+        },
+        {
+          "speaker": "Caller",
+          "voice": "en-AU-male-1",
+          "text": "Oh, fantastic—I've got an annual local rail pass, so £75 is a nice saving. How quickly will my smart card arrive? I'm hoping to book a car this Saturday morning."
+        },
+        {
+          "speaker": "Coordinator",
+          "voice": "en-GB-female-1",
+          "text": "Right, well, standard Royal Mail post usually takes four to five working days, which would cut it too fine for Saturday. Since you live right in Westbridge, I can send it out tomorrow morning by local courier at no extra cost—it'll be through your letterbox before noon."
+        },
+        {
+          "speaker": "Caller",
+          "voice": "en-AU-male-1",
+          "text": "That's really helpful, thanks. Is there anything else I need to do before my first booking?"
+        },
+        {
+          "speaker": "Coordinator",
+          "voice": "en-GB-female-1",
+          "text": "Just a quick fifteen-minute in-person induction so we can show you the fuel card, the keypad inside the glovebox, and how to report any scratches. Let's see what slots we have this week. Tuesday evening is already fully booked, I'm afraid. We've got Thursday at 6 p.m. or Friday at 5.30."
+        },
+        {
+          "speaker": "Caller",
+          "voice": "en-AU-male-1",
+          "text": "Ah, Friday is tricky—I've got a dentist appointment across town at five. Could you put me down for Thursday, please?"
+        },
+        {
+          "speaker": "Coordinator",
+          "voice": "en-GB-female-1",
+          "text": "Thursday at 6 p.m. it is—meet me by the blue hybrid car in the bay behind the library. One last thing: besides your driving licence, please bring proof of your new address."
+        },
+        {
+          "speaker": "Caller",
+          "voice": "en-AU-male-1",
+          "text": "Sure, should I bring my passport or a mobile phone bill?"
+        },
+        {
+          "speaker": "Coordinator",
+          "voice": "en-GB-female-1",
+          "text": "You only need a passport if you're using an overseas licence, and our insurers stopped accepting phone bills last year. A recent bank statement showing your Birch Lane address is perfect."
+        },
+        {
+          "speaker": "Caller",
+          "voice": "en-AU-male-1",
+          "text": "No worries, I printed one off yesterday. Thanks very much for your help, Hannah."
+        },
+        {
+          "speaker": "Coordinator",
+          "voice": "en-GB-female-1",
+          "text": "My pleasure, Liam. See you on Thursday!"
+        },
+        {
+          "speaker": "Narrator",
+          "voice": "en-GB-narrator",
+          "text": "That is the end of Part 1. You now have half a minute to check your answers to Part 1."
+        },
+        {
+          "pause": 30,
+          "note": "Checking time for Part 1"
+        }
+      ],
+      "groups": [
+        {
+          "range": [1, 6],
+          "type": "form",
+          "title": "Westbridge Car-Share — New Member Application",
+          "instructions": "Complete the form below. Write ONE WORD AND/OR A NUMBER for each answer.",
+          "wordLimit": 1,
+          "allowNumber": true,
+          "questions": [
+            {
+              "n": 1,
+              "prompt": "Full name: Liam {{blank}}",
+              "answer": ["Cromwell"],
+              "explanation": "Người gọi đính chính họ của mình là Cromwell (có chữ M) và đánh vần từng chữ cái C-R-O-M-W-E-L-L.",
+              "evidence": "Ah, people often hear that, but it's actually Cromwell with an M. So that's C-R-O-M-W-E-L-L.",
+              "distractors": [
+                {
+                  "text": "Cornwell",
+                  "why": "Nhân viên Hannah nghe nhầm thành Cornwell (có chữ N) nhưng Liam đã sửa lại ngay sau đó."
+                }
+              ]
+            },
+            {
+              "n": 2,
+              "prompt": "Street address: {{blank}} Birch Lane",
+              "answer": ["48"],
+              "explanation": "Liam tự sửa sau khi lỡ đọc số nhà cũ, xác nhận địa chỉ mới là 48 Birch Lane.",
+              "evidence": "The new place is 48 Birch Lane.",
+              "distractors": [
+                {
+                  "text": "36",
+                  "why": "Đây là số căn hộ cũ của Liam trước khi chuyển nhà tuần trước."
+                }
+              ]
+            },
+            {
+              "n": 3,
+              "prompt": "Postcode: WB6 {{blank}}",
+              "answer": ["9TR"],
+              "explanation": "Liam kiểm tra thư trên bàn và đọc rõ mã bưu điện nhà mới là WB6 9TR.",
+              "evidence": "Right, here it is: WB6 9TR.",
+              "distractors": [
+                {
+                  "text": "4LP",
+                  "why": "4LP là phần cuối mã bưu điện nơi làm việc của Liam, không phải địa chỉ nhà."
+                }
+              ]
+            },
+            {
+              "n": 4,
+              "prompt": "Driving licence held for: {{blank}} years",
+              "answer": ["7", "seven"],
+              "explanation": "Liam cho biết anh đã có bằng lái chính thức (full licence) được tổng cộng 7 năm.",
+              "evidence": "I've held my full licence for 7 years in total, with no penalty points.",
+              "distractors": [
+                {
+                  "text": "9",
+                  "why": "9 năm là thời điểm anh lấy giấy phép tập lái (learner permit), chưa phải bằng chính thức."
+                },
+                {
+                  "text": "3",
+                  "why": "3 năm chỉ là thời gian anh chuyển sang Anh sống và đổi sang bằng lái Anh."
+                },
+                {
+                  "text": "2",
+                  "why": "2 năm là yêu cầu tối thiểu của câu lạc bộ, không phải số năm của Liam."
+                }
+              ]
+            },
+            {
+              "n": 5,
+              "prompt": "Preferred membership plan: {{blank}}",
+              "answer": ["Flexi"],
+              "explanation": "Vì cần mượn xe vào tối thứ Tư trong tuần bên cạnh cuối tuần, Liam chọn gói Flexi.",
+              "evidence": "Let's go with Flexi.",
+              "distractors": [
+                {
+                  "text": "Commuter",
+                  "why": "Liam đi làm bằng xe đạp nên loại ngay gói Commuter."
+                },
+                {
+                  "text": "Weekend",
+                  "why": "Ban đầu anh thấy gói Weekend hợp lý, nhưng đổi ý vì cần xe cả vào tối thứ Tư."
+                }
+              ]
+            },
+            {
+              "n": 6,
+              "prompt": "Nearest vehicle bay: behind the {{blank}}",
+              "answer": ["library"],
+              "explanation": "Bãi đậu xe gần nhất đang hoạt động nằm phía sau thư viện (behind the library).",
+              "evidence": "So your nearest active vehicle bay is the one behind the library, about four minutes' walk from you.",
+              "distractors": [
+                {
+                  "text": "cinema",
+                  "why": "Bãi đậu xe trước rạp chiếu phim đang đóng cửa sửa hệ thống thoát nước đến tận tháng sau."
+                },
+                {
+                  "text": "station",
+                  "why": "Nhà ga chỉ được nhắc đến như tuyến đường Liam hay đi bộ ngang qua thư viện."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "range": [7, 10],
+          "type": "form",
+          "title": "Joining Fees & Induction",
+          "instructions": "Complete the form below. Write ONE WORD AND/OR A NUMBER for each answer.",
+          "wordLimit": 1,
+          "allowNumber": true,
+          "questions": [
+            {
+              "n": 7,
+              "prompt": "Refundable security deposit: £{{blank}}",
+              "answer": ["75"],
+              "explanation": "Nhờ có vé tàu năm địa phương, Liam được hưởng mức tiền cọc ưu đãi là £75.",
+              "evidence": "However, because we're running a green-travel promotion this month, anyone who holds a local bus or rail pass pays a reduced deposit of £75 instead.",
+              "distractors": [
+                {
+                  "text": "100",
+                  "why": "£100 là mức đặt cọc tiêu chuẩn khi không có thẻ giao thông công cộng."
+                },
+                {
+                  "text": "15",
+                  "why": "£15 là phí làm thẻ thông minh đóng một lần, không phải tiền cọc hoàn lại."
+                }
+              ]
+            },
+            {
+              "n": 8,
+              "prompt": "Smart card delivered by: {{blank}}",
+              "answer": ["courier"],
+              "explanation": "Để kịp cho thứ Bảy, Hannah gửi thẻ vào sáng mai qua dịch vụ giao hàng địa phương (courier).",
+              "evidence": "Since you live right in Westbridge, I can send it out tomorrow morning by local courier at no extra cost—it'll be through your letterbox before noon.",
+              "distractors": [
+                {
+                  "text": "post",
+                  "why": "Gửi qua đường bưu điện thường (Royal Mail post) mất 4–5 ngày làm việc, không kịp thứ Bảy."
+                }
+              ]
+            },
+            {
+              "n": 9,
+              "prompt": "Short induction session day: {{blank}}",
+              "answer": ["Thursday"],
+              "explanation": "Liam chọn lịch hướng dẫn ngắn vào 6 giờ tối thứ Năm (Thursday).",
+              "evidence": "Could you put me down for Thursday, please?",
+              "distractors": [
+                {
+                  "text": "Tuesday",
+                  "why": "Buổi tối thứ Ba đã kín chỗ."
+                },
+                {
+                  "text": "Friday",
+                  "why": "Thứ Sáu bị trùng với lịch khám nha sĩ của Liam lúc 5 giờ."
+                },
+                {
+                  "text": "Saturday",
+                  "why": "Thứ Bảy là ngày Liam dự định đặt xe lần đầu, không phải ngày hướng dẫn."
+                }
+              ]
+            },
+            {
+              "n": 10,
+              "prompt": "Proof of address to bring: a recent {{blank}} statement",
+              "answer": ["bank"],
+              "explanation": "Hannah yêu cầu Liam mang theo sao kê ngân hàng gần đây (bank statement) có địa chỉ Birch Lane.",
+              "evidence": "A recent bank statement showing your Birch Lane address is perfect.",
+              "distractors": [
+                {
+                  "text": "passport",
+                  "why": "Hộ chiếu chỉ cần thiết với người dùng bằng lái nước ngoài."
+                },
+                {
+                  "text": "phone",
+                  "why": "Bên bảo hiểm đã ngừng chấp nhận hóa đơn điện thoại từ năm ngoái."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "title": "Part 2 — Meadowbrook Harvest Food Festival",
+      "context": "A local radio presenter gives information and a site tour for an upcoming town food festival.",
+      "audio": "assets/audio/ielts-gt/listening/gt-l-03/part2.mp3",
+      "script": [
+        {
+          "speaker": "Narrator",
+          "voice": "en-GB-narrator",
+          "text": "Part 2. You will hear a radio presenter talking about the annual Meadowbrook Harvest Food Festival. First, you have some time to look at questions 11 to 14."
+        },
+        {
+          "pause": 30,
+          "note": "Reading time for questions 11–14"
+        },
+        {
+          "speaker": "Presenter",
+          "voice": "en-GB-male-1",
+          "text": "Welcome to Meadowbrook FM. This weekend sees our annual Meadowbrook Harvest Food Festival, open ten to six on Saturday and Sunday. Regular visitors will spot one big change: instead of the old market square, we've moved to Riverside Park. Some listeners assumed the square was closed for resurfacing, though those roadworks finished last autumn. Nor is it about parking—there's actually less parking by the river. The real reason for the switch is sheer popularity: ninety-five local growers, bakers, and cheesemakers applied for pitches this year, and Riverside Park is the only spot large enough to fit them all comfortably."
+        },
+        {
+          "speaker": "Presenter",
+          "voice": "en-GB-male-1",
+          "text": "Saturday morning's opening event is a real highlight. Tickets are £5 for adults—under-twelves enter free, though not local residents generally, despite an online rumour. Make sure you arrive before half past ten on Saturday if you want a front-row view, because television chef Nadia Patel is opening the festival by judging our annual sourdough and savoury pie contest. Meanwhile, the children's pizza-making workshop runs on Sunday afternoon."
+        },
+        {
+          "speaker": "Presenter",
+          "voice": "en-GB-male-1",
+          "text": "For travel, please avoid driving. The organisers are strongly encouraging everyone to leave the car at home and hop on the free electric shuttle bus leaving every fifteen minutes from Meadowbrook rail station. Cycling along the canal towpath is tricky right now, as the timber bridge halfway along is partly fenced off for repairs. And please don't park at the sports centre—those spaces are reserved strictly for stallholders and volunteers."
+        },
+        {
+          "speaker": "Presenter",
+          "voice": "en-GB-male-1",
+          "text": "One practical tip: paying for snacks is much smoother this year. Cash is still welcome at most pitches, so there's no cashless ban. And those plastic festival tokens we trialled two years ago caused long queues at the gate, so they're gone. Instead, the town council has set up a dedicated portable Wi-Fi network across the grass, meaning every single stall on site now accepts contactless cards."
+        },
+        {
+          "speaker": "Narrator",
+          "voice": "en-GB-narrator",
+          "text": "Before you hear the rest of the broadcast, you have some time to look at questions 15 to 20."
+        },
+        {
+          "pause": 25,
+          "note": "Reading time for questions 15–20"
+        },
+        {
+          "speaker": "Presenter",
+          "voice": "en-GB-male-1",
+          "text": "Now let's look at the Riverside Park site map. Entering from River Road through the Main Entrance brings you north along Central Avenue towards Fountain Circle. Just inside on your left is the Information Hut. Keep walking straight up Central Avenue past the hut, and a few paces further on your right—before you get to Fountain Circle—you'll see a large timber pavilion. That's the Artisan Cheese Barn, housing fourteen independent dairies."
+        },
+        {
+          "speaker": "Presenter",
+          "voice": "en-GB-male-1",
+          "text": "If you want hot dishes, continue north past Fountain Circle towards the Bandstand. Last year our hot food vans were squeezed right next to the Footbridge, which created a bottleneck, so this year we've relocated the entire Street Food Court into the north-west corner, tucked neatly between Willow River and the Bandstand against the Old Stone Wall."
+        },
+        {
+          "speaker": "Presenter",
+          "voice": "en-GB-male-1",
+          "text": "For cooking inspiration, take East Path from Fountain Circle until you meet Orchard Woods, then turn left and follow the trees north to the Old Stone Wall. Tucked into that sheltered north-east corner is our Cookery Demonstration Stage, with tiered seating for eighty people."
+        },
+        {
+          "speaker": "Presenter",
+          "voice": "en-GB-male-1",
+          "text": "For local craft drinks, head west from Fountain Circle along West Path towards Willow River. Just before you step onto the Footbridge, look to your right on the northern side of the path—that riverside lawn is the Cider and Juice Garden, complete with hay-bale benches."
+        },
+        {
+          "speaker": "Presenter",
+          "voice": "en-GB-male-1",
+          "text": "For a calm spot to sit with the family, go back through Fountain Circle and east along East Path. Where the path meets Orchard Woods, look immediately to your right—on the southern side of the path—for a shady grassy patch. That's our Family Picnic Lawn, safely tucked away from the delivery vans using the Service Gate further south."
+        },
+        {
+          "speaker": "Presenter",
+          "voice": "en-GB-male-1",
+          "text": "Finally, on your way out, visit the Craft Pottery Stalls. Walk back down Central Avenue towards the Main Entrance, go past the Information Hut—which will now be on your right as you face River Road—and continue into the south-west corner right beside Willow River and River Road. Enjoy the festival!"
+        },
+        {
+          "speaker": "Narrator",
+          "voice": "en-GB-narrator",
+          "text": "That is the end of Part 2. You now have half a minute to check your answers to Part 2."
+        },
+        {
+          "pause": 30,
+          "note": "Checking time for Part 2"
+        }
+      ],
+      "groups": [
+        {
+          "range": [11, 14],
+          "type": "mcq",
+          "instructions": "Choose the correct letter, A, B or C.",
+          "questions": [
+            {
+              "n": 11,
+              "prompt": "Why has the festival moved to Riverside Park this year?",
+              "options": [
+                { "key": "A", "text": "To offer visitors more free parking spaces" },
+                { "key": "B", "text": "Because the old market square is being resurfaced" },
+                { "key": "C", "text": "To allow more local stalls to participate" }
+              ],
+              "answer": ["C"],
+              "explanation": "Lý do thực sự là số lượng gian hàng đăng ký tăng kỷ lục lên 95 nhà sản xuất địa phương, nên cần không gian rộng hơn ở Riverside Park ('allow more local stalls to participate' diễn đạt lại 'ninety-five local growers... only spot large enough to fit them all').",
+              "evidence": "The real reason for the switch is sheer popularity: ninety-five local growers, bakers, and cheesemakers applied for pitches this year, and Riverside Park is the only spot large enough to fit them all comfortably.",
+              "distractors": [
+                {
+                  "text": "A",
+                  "why": "Người dẫn nói rõ bãi đỗ xe gần sông thực ra còn ít chỗ hơn (less parking)."
+                },
+                {
+                  "text": "B",
+                  "why": "Việc trải lại mặt đường ở quảng trường cũ đã hoàn thành từ mùa thu năm ngoái, không phải năm nay."
+                }
+              ]
+            },
+            {
+              "n": 12,
+              "prompt": "What is special about Saturday morning's opening event?",
+              "options": [
+                { "key": "A", "text": "Entry is free for all residents before 11 a.m." },
+                { "key": "B", "text": "A celebrity chef will judge the baking contest." },
+                { "key": "C", "text": "Children can take part in a cooking workshop." }
+              ],
+              "answer": ["B"],
+              "explanation": "Đầu bếp truyền hình Nadia Patel ('celebrity chef' = 'television chef') sẽ khai mạc bằng việc làm giám khảo cuộc thi nướng bánh mì và bánh mặn lúc 10:30 sáng thứ Bảy.",
+              "evidence": "Make sure you arrive before half past ten on Saturday if you want a front-row view, because television chef Nadia Patel is opening the festival by judging our annual sourdough and savoury pie contest.",
+              "distractors": [
+                {
+                  "text": "A",
+                  "why": "Chỉ trẻ em dưới 12 tuổi được miễn phí vé, không phải toàn bộ cư dân địa phương."
+                },
+                {
+                  "text": "C",
+                  "why": "Lớp làm pizza cho trẻ em diễn ra vào chiều Chủ nhật, không phải sáng thứ Bảy."
+                }
+              ]
+            },
+            {
+              "n": 13,
+              "prompt": "How does the organiser recommend travelling to the festival?",
+              "options": [
+                { "key": "A", "text": "By taking the electric shuttle from the rail station" },
+                { "key": "B", "text": "By cycling along the canal towpath" },
+                { "key": "C", "text": "By parking at the sports centre and walking" }
+              ],
+              "answer": ["A"],
+              "explanation": "Ban tổ chức khuyến khích mọi người đi xe buýt điện trung chuyển miễn phí từ ga tàu Meadowbrook chạy mỗi 15 phút.",
+              "evidence": "The organisers are strongly encouraging everyone to leave the car at home and hop on the free electric shuttle bus leaving every fifteen minutes from Meadowbrook rail station.",
+              "distractors": [
+                {
+                  "text": "B",
+                  "why": "Cây cầu gỗ hẹp trên lối đi ven kênh đang bị rào chắn một phần để sửa chữa."
+                },
+                {
+                  "text": "C",
+                  "why": "Bãi đậu xe của trung tâm thể thao chỉ dành riêng cho chủ gian hàng và tình nguyện viên."
+                }
+              ]
+            },
+            {
+              "n": 14,
+              "prompt": "What change has been made to payment methods this year?",
+              "options": [
+                { "key": "A", "text": "Cash is no longer accepted anywhere on site." },
+                { "key": "B", "text": "Visitors buy reusable tokens at the entrance." },
+                { "key": "C", "text": "Every stall now accepts contactless cards." }
+              ],
+              "answer": ["C"],
+              "explanation": "Nhờ mạng Wi-Fi di động mới, tất cả các gian hàng năm nay đều chấp nhận thanh toán thẻ không tiếp xúc (contactless cards).",
+              "evidence": "Instead, the town council has set up a dedicated portable Wi-Fi network across the grass, meaning every single stall on site now accepts contactless cards.",
+              "distractors": [
+                {
+                  "text": "A",
+                  "why": "Tiền mặt vẫn được chấp nhận ở hầu hết các gian hàng, không có lệnh cấm tiền mặt."
+                },
+                {
+                  "text": "B",
+                  "why": "Hệ thống xu nhựa (tokens) từng thử nghiệm cách đây hai năm nhưng đã bị bỏ vì gây xếp hàng dài."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "range": [15, 20],
+          "type": "map",
+          "title": "Meadowbrook Food Festival — Riverside Park Map",
+          "instructions": "Label the map below. Write the correct letter, A–H, next to Questions 15–20.",
+          "image": "content/ielts-gt/listening/img/gt-l-03-map.svg",
+          "options": [
+            { "key": "A", "text": "A" },
+            { "key": "B", "text": "B" },
+            { "key": "C", "text": "C" },
+            { "key": "D", "text": "D" },
+            { "key": "E", "text": "E" },
+            { "key": "F", "text": "F" },
+            { "key": "G", "text": "G" },
+            { "key": "H", "text": "H" }
+          ],
+          "questions": [
+            {
+              "n": 15,
+              "prompt": "Artisan Cheese Barn",
+              "answer": ["G"],
+              "explanation": "Đi thẳng từ Main Entrance theo Central Avenue, qua Information Hut bên trái, đi thêm vài bước nhìn sang phải trước khi tới Fountain Circle là khu G.",
+              "evidence": "Keep walking straight up Central Avenue past the hut, and a few paces further on your right—before you get to Fountain Circle—you'll see a large timber pavilion. That's the Artisan Cheese Barn, housing fourteen independent dairies.",
+              "distractors": [
+                {
+                  "text": "A",
+                  "why": "Khu A nằm bên trái phía sau Information Hut, ngược hướng so với 'on your right'."
+                },
+                {
+                  "text": "D",
+                  "why": "Khu D nằm phía bắc Fountain Circle, trong khi bài nói rõ là 'before you get to Fountain Circle'."
+                }
+              ]
+            },
+            {
+              "n": 16,
+              "prompt": "Street Food Court",
+              "answer": ["C"],
+              "explanation": "Năm nay Street Food Court được chuyển lên góc tây bắc (north-west corner), nằm giữa Willow River và Bandstand, sát Old Stone Wall — chính là khu C.",
+              "evidence": "Last year our hot food vans were squeezed right next to the Footbridge, which created a bottleneck, so this year we've relocated the entire Street Food Court into the north-west corner, tucked neatly between Willow River and the Bandstand against the Old Stone Wall.",
+              "distractors": [
+                {
+                  "text": "B",
+                  "why": "Gần Footbridge là vị trí cũ của năm ngoái, năm nay đã dời đi."
+                },
+                {
+                  "text": "D",
+                  "why": "Khu D nằm phía đông Bandstand, không phải góc tây bắc sát sông."
+                }
+              ]
+            },
+            {
+              "n": 17,
+              "prompt": "Cookery Demonstration Stage",
+              "answer": ["E"],
+              "explanation": "Từ Fountain Circle đi East Path sang đông tới Orchard Woods, rẽ trái đi lên sát Old Stone Wall ở góc đông bắc (north-east corner) — đó là khu E.",
+              "evidence": "Tucked into that sheltered north-east corner is our Cookery Demonstration Stage, with tiered seating for eighty people.",
+              "distractors": [
+                {
+                  "text": "D",
+                  "why": "Khu D nằm giữa Central Avenue và Orchard Woods, không sát hàng cây và góc đông bắc."
+                },
+                {
+                  "text": "F",
+                  "why": "Khu F nằm phía nam East Path (rẽ phải), còn sân khấu này cần rẽ trái đi lên phía bắc."
+                }
+              ]
+            },
+            {
+              "n": 18,
+              "prompt": "Cider and Juice Garden",
+              "answer": ["B"],
+              "explanation": "Từ Fountain Circle đi theo West Path về phía Willow River, ngay trước Footbridge nhìn sang phải (bờ bắc của lối đi) chính là khu B.",
+              "evidence": "Just before you step onto the Footbridge, look to your right on the northern side of the path—that riverside lawn is the Cider and Juice Garden, complete with hay-bale benches.",
+              "distractors": [
+                {
+                  "text": "C",
+                  "why": "Khu C ở tận góc tây bắc sát tường đá, không nằm ngay cạnh Footbridge."
+                },
+                {
+                  "text": "A",
+                  "why": "Khu A nằm ở góc tây nam sát đường River Road, không phải phía bắc West Path."
+                }
+              ]
+            },
+            {
+              "n": 19,
+              "prompt": "Family Picnic Lawn",
+              "answer": ["F"],
+              "explanation": "Đi East Path sang đông tới Orchard Woods rồi nhìn ngay sang phải (phía nam lối đi) là khu F, tách xa Service Gate ở sâu phía nam.",
+              "evidence": "Where the path meets Orchard Woods, look immediately to your right—on the southern side of the path—for a shady grassy patch. That's our Family Picnic Lawn, safely tucked away from the delivery vans using the Service Gate further south.",
+              "distractors": [
+                {
+                  "text": "H",
+                  "why": "Khu H nằm sát Service Gate ở phía nam, nơi có xe giao hàng ra vào."
+                },
+                {
+                  "text": "E",
+                  "why": "Khu E nằm phía bắc East Path, đối diện sang bên trái."
+                }
+              ]
+            },
+            {
+              "n": 20,
+              "prompt": "Craft Pottery Stalls",
+              "answer": ["A"],
+              "explanation": "Quay lại xuống Central Avenue hướng về Main Entrance, đi qua Information Hut (lúc này ở bên phải) vào góc tây nam sát Willow River và River Road — đó là khu A.",
+              "evidence": "Walk back down Central Avenue towards the Main Entrance, go past the Information Hut—which will now be on your right as you face River Road—and continue into the south-west corner right beside Willow River and River Road.",
+              "distractors": [
+                {
+                  "text": "H",
+                  "why": "Khu H là góc đông nam, không phải góc tây nam sát Willow River."
+                },
+                {
+                  "text": "G",
+                  "why": "Khu G nằm bên phía đông của Central Avenue, không ở góc tây nam."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "part": 3,
+      "title": "Part 3 — Planning a workplace recycling presentation",
+      "context": "Two engineering apprentices, Maya and Callum, discuss their workplace waste audit and plan a short presentation for staff.",
+      "audio": "assets/audio/ielts-gt/listening/gt-l-03/part3.mp3",
+      "script": [
+        {
+          "speaker": "Narrator",
+          "voice": "en-GB-narrator",
+          "text": "Part 3. You will hear two engineering apprentices, Maya and Callum, planning a staff presentation on workplace recycling. First, you have some time to look at questions 21 to 24."
+        },
+        {
+          "pause": 30,
+          "note": "Reading time for questions 21–24"
+        },
+        {
+          "speaker": "Maya",
+          "voice": "en-GB-female-1",
+          "text": "Right, Callum, we've got our ten-minute slot at Friday's all-staff briefing to present the results of our recycling audit. Shall we double-check the main issues we actually found before we build the slides?"
+        },
+        {
+          "speaker": "Callum",
+          "voice": "en-US-male-1",
+          "text": "Yeah, definitely. I have to admit, before we walked round the factory floor, I was sure there simply weren't enough bins in the assembly area. Turns out you counted fourteen of them!"
+        },
+        {
+          "speaker": "Maya",
+          "voice": "en-GB-female-1",
+          "text": "Fourteen, yeah—so quantity isn't the problem at all. And remember how we thought the colour-coded stickers might be faded and unreadable? Facilities actually replaced every single label last month, so they're bright and spotless."
+        },
+        {
+          "speaker": "Callum",
+          "voice": "en-US-male-1",
+          "text": "True. What really shocked me was peering into the dry-paper and plastic bins. Almost half of them had greasy lunch wrappers and half-eaten sandwiches dumped straight on top, which ruins the whole batch for recycling."
+        },
+        {
+          "speaker": "Maya",
+          "voice": "en-GB-female-1",
+          "text": "And everyone in the workshop kept telling us there was no point sorting anything because the night cleaners just threw all the bags into one general skip. I'm so glad you checked with the cleaning supervisor."
+        },
+        {
+          "speaker": "Callum",
+          "voice": "en-US-male-1",
+          "text": "Me too—she showed me their logbook and the separate bays. That rumour is completely false. The other huge issue we saw was with cardboard. Nobody's flattening delivery cartons before tossing them in, so the big cardboard skip is overflowing with empty air by Wednesday morning."
+        },
+        {
+          "speaker": "Maya",
+          "voice": "en-GB-female-1",
+          "text": "Right, so food contamination in dry bins and unflattened boxes are our top two findings. Now, what should we actually put into the presentation so people pay attention?"
+        },
+        {
+          "speaker": "Callum",
+          "voice": "en-US-male-1",
+          "text": "Earlier I wondered about filming a quick video clip out in the loading bay, though come to think of it, the meeting room projector has terrible speakers, and we'd need health-and-safety sign-off to film near the forklifts."
+        },
+        {
+          "speaker": "Maya",
+          "voice": "en-GB-female-1",
+          "text": "Good point, let's skip video. What about those photos we took on Tuesday—the close-ups of actual contaminated bin bags from our own workshop? Nothing naming individuals, obviously, just showing what gets rejected."
+        },
+        {
+          "speaker": "Callum",
+          "voice": "en-US-male-1",
+          "text": "Yes! Seeing real photos from our own site hits home far harder than stock clipart. I also pulled the invoice figures from finance—a simple bar chart showing how much money the company loses each month paying landfill penalties for rejected loads would really wake people up."
+        },
+        {
+          "speaker": "Maya",
+          "voice": "en-GB-female-1",
+          "text": "Love that idea—clear numbers work way better than putting up quotes from senior managers, which I'd originally jotted down. People tend to tune those out."
+        },
+        {
+          "speaker": "Callum",
+          "voice": "en-US-male-1",
+          "text": "Agreed, drop the management quotes. And I guess my idea of running a live quiz with chocolate bars as prizes is out too, since we only have ten minutes total."
+        },
+        {
+          "speaker": "Maya",
+          "voice": "en-GB-female-1",
+          "text": "Afraid so—save the quiz for the staff newsletter! Let's focus our final slides on practical fixes for each area of the building."
+        },
+        {
+          "speaker": "Narrator",
+          "voice": "en-GB-narrator",
+          "text": "Before you hear the rest of the discussion, you have some time to look at questions 25 to 30."
+        },
+        {
+          "pause": 25,
+          "note": "Reading time for questions 25–30"
+        },
+        {
+          "speaker": "Callum",
+          "voice": "en-US-male-1",
+          "text": "Okay, let's go area by area so our recommendations are super specific. First, the staff canteen. The signs above the bins there are already really clear with icons, so signage isn't the issue. The biggest waste mountain is those plastic-lined disposable coffee cups."
+        },
+        {
+          "speaker": "Maya",
+          "voice": "en-GB-female-1",
+          "text": "Exactly—hardly anyone realises they can't go in normal paper recycling. Let's propose giving every employee a reusable company mug and phasing out paper cups altogether."
+        },
+        {
+          "speaker": "Callum",
+          "voice": "en-US-male-1",
+          "text": "Brilliant, that's an easy win. Next up, the packing station. That's where all the bulky cardboard comes from. The supervisor mentioned booking an extra mid-week waste collection, which would cost a fortune over a year."
+        },
+        {
+          "speaker": "Maya",
+          "voice": "en-GB-female-1",
+          "text": "Right, far cheaper in the long run to install a small foot-operated metal compactor by the wall so packers can squash boxes flat in two seconds."
+        },
+        {
+          "speaker": "Callum",
+          "voice": "en-US-male-1",
+          "text": "Makes complete sense. What about the maintenance room? At first I thought we needed lockable lids on their crates, until Dave showed me what's actually landing in the general bin: spent AA batteries from torches and snipped offcuts of copper cable."
+        },
+        {
+          "speaker": "Maya",
+          "voice": "en-GB-female-1",
+          "text": "Ooh, hazardous and recyclable! Let's recommend putting a small dedicated battery and cable drop-box right next to the workbench."
+        },
+        {
+          "speaker": "Callum",
+          "voice": "en-US-male-1",
+          "text": "Got it. Now for the main office. Someone suggested removing desk bins and pushing everything next to the exit door, though the admin team said that would cause chaos during busy mornings. What if we simply switch to transparent bin liners? When you can see through the bag, people think twice before dropping a yoghurt pot into paper."
+        },
+        {
+          "speaker": "Maya",
+          "voice": "en-GB-female-1",
+          "text": "Oh, clever—and it costs almost nothing. Transparent liners for the main office it is. Then there's the outdoor yard, where wind keeps blowing shrink-wrap film out of the open plastic crates into the hedge."
+        },
+        {
+          "speaker": "Callum",
+          "voice": "en-US-male-1",
+          "text": "Definitely not worth paying for extra pickups there either—replacing those open crates with lockable lids will keep the plastic trapped even in a gale."
+        },
+        {
+          "speaker": "Maya",
+          "voice": "en-GB-female-1",
+          "text": "Last one: goods reception. Visiting delivery drivers are from dozens of outside haulage firms, and many don't read long English instructions, so moving bins around won't help. If we put big, clear picture guides right above each bin showing exactly what goes where, anyone can understand in a second."
+        },
+        {
+          "speaker": "Callum",
+          "voice": "en-US-male-1",
+          "text": "Spot on. That's a super tight plan—let's draft the slides now."
+        },
+        {
+          "speaker": "Narrator",
+          "voice": "en-GB-narrator",
+          "text": "That is the end of Part 3. You now have half a minute to check your answers to Part 3."
+        },
+        {
+          "pause": 30,
+          "note": "Checking time for Part 3"
+        }
+      ],
+      "groups": [
+        {
+          "range": [21, 22],
+          "type": "mcq-multi",
+          "title": "Workplace Bin Audit — Main Findings",
+          "instructions": "Choose TWO letters, A–E. Which TWO problems did Maya and Callum discover during their audit of the factory bins?",
+          "options": [
+            { "key": "A", "text": "There were too few bins in the assembly area." },
+            { "key": "B", "text": "Food waste was frequently thrown into dry recycling bins." },
+            { "key": "C", "text": "Colour-coded labels had faded and were hard to read." },
+            { "key": "D", "text": "Cleaning staff mixed separated bags together at night." },
+            { "key": "E", "text": "Cardboard boxes were not being flattened before disposal." }
+          ],
+          "questions": [
+            {
+              "n": 21,
+              "answer": ["B", "E"],
+              "explanation": "Đáp án là B và E (không phân biệt thứ tự). Callum phát hiện gần một nửa thùng tái chế khô (giấy và nhựa) bị vứt vỏ bọc đồ ăn dính dầu mỡ và bánh mì ăn dở vào (B).",
+              "evidence": "Almost half of them had greasy lunch wrappers and half-eaten sandwiches dumped straight on top, which ruins the whole batch for recycling.",
+              "distractors": [
+                {
+                  "text": "A",
+                  "why": "Callum từng tưởng thiếu thùng rác, nhưng Maya đếm được tới 14 thùng ở khu lắp ráp nên số lượng không phải vấn đề."
+                },
+                {
+                  "text": "C",
+                  "why": "Bộ phận cơ sở vật chất vừa thay mới toàn bộ nhãn màu tháng trước nên nhãn rất sáng rõ."
+                },
+                {
+                  "text": "D",
+                  "why": "Giám sát đội vệ sinh đã cho xem sổ ghi chép và khu chứa riêng, xác nhận tin đồn trộn rác là sai sự thật."
+                }
+              ]
+            },
+            {
+              "n": 22,
+              "answer": ["B", "E"],
+              "explanation": "Đáp án thứ hai là E: không ai ép phẳng thùng carton giao hàng trước khi bỏ vào thùng nên thùng chứa đầy tràn từ sáng thứ Tư.",
+              "evidence": "Nobody's flattening delivery cartons before tossing them in, so the big cardboard skip is overflowing with empty air by Wednesday morning.",
+              "distractors": []
+            }
+          ]
+        },
+        {
+          "range": [23, 24],
+          "type": "mcq-multi",
+          "title": "Presentation Content",
+          "instructions": "Choose TWO letters, A–E. Which TWO elements do Maya and Callum agree to include in their presentation?",
+          "options": [
+            { "key": "A", "text": "A short video filmed in the loading bay" },
+            { "key": "B", "text": "Photos of real contaminated bin bags from the site" },
+            { "key": "C", "text": "A chart comparing monthly waste disposal costs" },
+            { "key": "D", "text": "Quotes from interviews with senior managers" },
+            { "key": "E", "text": "A live quiz with small prizes for staff" }
+          ],
+          "questions": [
+            {
+              "n": 23,
+              "answer": ["B", "C"],
+              "explanation": "Đáp án là B và C (không phân biệt thứ tự). Hai bạn đồng ý đưa ảnh chụp thực tế các túi rác bị lẫn tạp chất ngay tại xưởng (B) để tăng tính thuyết phục.",
+              "evidence": "What about those photos we took on Tuesday—the close-ups of actual contaminated bin bags from our own workshop?",
+              "distractors": [
+                {
+                  "text": "A",
+                  "why": "Họ bỏ ý tưởng quay video vì loa phòng họp rất tệ và phải xin phép an toàn lao động gần xe nâng."
+                },
+                {
+                  "text": "D",
+                  "why": "Maya thừa nhận nhân viên thường bỏ qua các câu trích dẫn từ quản lý cấp cao nên họ bỏ đi."
+                },
+                {
+                  "text": "E",
+                  "why": "Thời lượng thuyết trình chỉ có 10 phút nên không đủ thời gian tổ chức trò chơi đố vui."
+                }
+              ]
+            },
+            {
+              "n": 24,
+              "answer": ["B", "C"],
+              "explanation": "Đáp án thứ hai là C: Callum đề xuất biểu đồ cột đơn giản so sánh khoản tiền công ty mất hàng tháng vì phí chôn lấp rác tái chế bị trả về, và Maya hoàn toàn tán thành.",
+              "evidence": "I also pulled the invoice figures from finance—a simple bar chart showing how much money the company loses each month paying landfill penalties for rejected loads would really wake people up.",
+              "distractors": []
+            }
+          ]
+        },
+        {
+          "range": [25, 30],
+          "type": "matching",
+          "title": "Proposed Improvements by Workplace Area",
+          "instructions": "What recycling improvement do Maya and Callum agree to recommend for each area? Choose SIX answers from the box and write the correct letter, A–H, next to Questions 25–30.",
+          "options": [
+            { "key": "A", "text": "Install a foot-operated metal compactor" },
+            { "key": "B", "text": "Replace open crates with lockable lids" },
+            { "key": "C", "text": "Put clear picture guides above each bin" },
+            { "key": "D", "text": "Move bins closer to the exit door" },
+            { "key": "E", "text": "Provide reusable mugs instead of paper cups" },
+            { "key": "F", "text": "Set up a battery and cable drop-box" },
+            { "key": "G", "text": "Switch to transparent bin liners" },
+            { "key": "H", "text": "Schedule an extra mid-week collection" }
+          ],
+          "questions": [
+            {
+              "n": 25,
+              "prompt": "Staff canteen",
+              "answer": ["E"],
+              "explanation": "Ở căng-tin nhân viên, hai bạn đề xuất phát cốc dùng nhiều lần in logo công ty và loại bỏ dần cốc giấy tráng nhựa (E).",
+              "evidence": "Let's propose giving every employee a reusable company mug and phasing out paper cups altogether.",
+              "distractors": [
+                {
+                  "text": "C",
+                  "why": "Biển hướng dẫn có hình minh họa ở căng-tin vốn đã rất rõ ràng rồi."
+                }
+              ]
+            },
+            {
+              "n": 26,
+              "prompt": "Packing station",
+              "answer": ["A"],
+              "explanation": "Tại khu đóng gói, Maya đề xuất lắp máy ép kim loại đạp chân nhỏ để ép phẳng hộp carton nhanh chóng (A).",
+              "evidence": "Right, far cheaper in the long run to install a small foot-operated metal compactor by the wall so packers can squash boxes flat in two seconds.",
+              "distractors": [
+                {
+                  "text": "H",
+                  "why": "Đặt thêm chuyến thu gom giữa tuần quá tốn kém về lâu dài."
+                }
+              ]
+            },
+            {
+              "n": 27,
+              "prompt": "Maintenance room",
+              "answer": ["F"],
+              "explanation": "Trong phòng bảo trì, họ thống nhất đặt hộp thu gom chuyên dụng cho pin cũ và dây cáp đồng vụn ngay cạnh bàn thao tác (F).",
+              "evidence": "Let's recommend putting a small dedicated battery and cable drop-box right next to the workbench.",
+              "distractors": [
+                {
+                  "text": "B",
+                  "why": "Callum ban đầu nghĩ tới nắp khóa cho thùng ở đây, nhưng đổi ý khi biết vấn đề thực sự là pin và dây cáp."
+                }
+              ]
+            },
+            {
+              "n": 28,
+              "prompt": "Main office",
+              "answer": ["G"],
+              "explanation": "Ở văn phòng chính, họ chọn chuyển sang túi lót thùng trong suốt (transparent bin liners) để mọi người dễ nhìn thấy và phân loại đúng (G).",
+              "evidence": "Transparent liners for the main office it is.",
+              "distractors": [
+                {
+                  "text": "D",
+                  "why": "Nhóm hành chính phản đối việc bỏ thùng dưới bàn và gom hết ra gần cửa thoát vì sẽ gây bất tiện vào buổi sáng bận rộn."
+                }
+              ]
+            },
+            {
+              "n": 29,
+              "prompt": "Outdoor yard",
+              "answer": ["B"],
+              "explanation": "Ngoài sân, gió thường thổi bay màng bọc nhựa khỏi các thùng hở nên họ đề nghị đổi sang loại thùng có nắp khóa (B).",
+              "evidence": "Definitely not worth paying for extra pickups there either—replacing those open crates with lockable lids will keep the plastic trapped even in a gale.",
+              "distractors": [
+                {
+                  "text": "H",
+                  "why": "Callum khẳng định cũng không đáng tốn tiền đặt thêm chuyến thu gom ở khu vực này."
+                }
+              ]
+            },
+            {
+              "n": 30,
+              "prompt": "Goods reception",
+              "answer": ["C"],
+              "explanation": "Tại khu nhận hàng, tài xế giao hàng đến từ nhiều nơi và không đọc hướng dẫn tiếng Anh dài dòng, nên họ đề xuất dán bảng hình ảnh hướng dẫn rõ ràng phía trên từng thùng (C).",
+              "evidence": "If we put big, clear picture guides right above each bin showing exactly what goes where, anyone can understand in a second.",
+              "distractors": [
+                {
+                  "text": "D",
+                  "why": "Maya nói rõ việc di chuyển vị trí các thùng rác sẽ không giải quyết được vấn đề ngôn ngữ với tài xế bên ngoài."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "part": 4,
+      "title": "Part 4 — Sleep and shift work",
+      "context": "An occupational health researcher gives a public talk on how shift work affects sleep and practical ways to reduce fatigue.",
+      "audio": "assets/audio/ielts-gt/listening/gt-l-03/part4.mp3",
+      "script": [
+        {
+          "speaker": "Narrator",
+          "voice": "en-GB-narrator",
+          "text": "Part 4. You will hear an occupational health researcher giving a talk about sleep and shift work. First, you have some time to look at questions 31 to 40."
+        },
+        {
+          "pause": 40,
+          "note": "Reading time for questions 31–40"
+        },
+        {
+          "speaker": "Speaker",
+          "voice": "en-AU-female-1",
+          "text": "Good evening, everyone. Tonight I want to talk about something that affects almost one in five working adults in industrialised countries: shift work, and specifically what it does to our sleep. Whether you're a hospital nurse, a warehouse packer, or a long-distance driver, working outside the traditional nine-to-five window asks your biology to push against millions of years of evolution."
+        },
+        {
+          "speaker": "Speaker",
+          "voice": "en-AU-female-1",
+          "text": "To see why night shifts feel so exhausting, we have to look at the circadian rhythm—our internal twenty-four-hour body clock. While changes in room temperature and regular meal times do act as secondary signals, this internal clock is primarily regulated by exposure to natural light. Receptors at the back of the eye detect daylight and tell the brain to stay awake, even when you've just come off a twelve-hour shift and desperately want to sleep."
+        },
+        {
+          "speaker": "Speaker",
+          "voice": "en-AU-female-1",
+          "text": "As a result, studies consistently show that night-shift workers get roughly two hours less sleep per day than daytime employees. Many people assume that's just because household noise or passing traffic wakes them early. Those certainly play a part, yet sleep-lab recordings reveal a deeper problem: daytime sleep is chemically much more shallow than night-time sleep, meaning the brain spends less time in its deepest restorative stages."
+        },
+        {
+          "speaker": "Speaker",
+          "voice": "en-AU-female-1",
+          "text": "Over months and years, that ongoing sleep debt has measurable effects on the job. Workers often complain of fuzzy memory or slipping concentration, and our laboratory tests confirm that chronic disruption lowers alertness and noticeably slows down reaction times. That delay of even half a second is a major safety concern for anyone operating heavy machinery or driving home at dawn. Beyond safety, shifting your meals to three in the morning confuses the gut's own rhythms. Although headaches and weight gain are common, the single most frequent physical complaint reported in our occupational health clinic is poor digestion."
+        },
+        {
+          "pause": 5,
+          "note": "Short pause between sections"
+        },
+        {
+          "speaker": "Speaker",
+          "voice": "en-AU-female-1",
+          "text": "So, what can employers do to make shift work safer? First, look closely at roster design. Decades ago, many factories rotated staff backwards—from night shifts to afternoons and then mornings—which leaves the body feeling permanently jet-lagged. Modern research strongly favours moving rotating shifts forward in a clockwise direction: morning shifts, followed by evenings, and finally nights. Because the human body clock naturally prefers to stretch slightly longer than twenty-four hours, delaying bedtime is far easier than forcing yourself to sleep earlier."
+        },
+        {
+          "speaker": "Speaker",
+          "voice": "en-AU-female-1",
+          "text": "Second, forward-thinking workplaces are rethinking break policies during the low-energy hours between two and four a.m. Reaching for another strong coffee at that hour usually backfires, leaving you wired when you finally get home. Instead, allowing short, planned naps of around twenty minutes during quiet night hours has been shown to restore focus without causing heavy grogginess afterwards. Lighting inside the building matters too. Employers are now encouraged to install bright overhead lighting during the first half of a night shift specifically to reduce fatigue, before dimming the lights gradually in the final couple of hours so workers can unwind afterwards."
+        },
+        {
+          "speaker": "Speaker",
+          "voice": "en-AU-female-1",
+          "text": "Of course, habits outside the workplace are just as crucial. One surprisingly effective tip starts before you even get through your front door. Wearing earplugs on the bus can help you relax, certainly, but the real game-changer is putting on wrap-around dark sunglasses for your commute home to block morning sunlight. If bright blue sky hits your retina at seven a.m., your brain immediately resets into daytime mode."
+        },
+        {
+          "speaker": "Speaker",
+          "voice": "en-AU-female-1",
+          "text": "Once you're home, treat your bedroom like a cave. Keep the room cool—around eighteen degrees is ideal. Plenty of workers try fabric eye masks, though most end up pulling them off half-asleep; fitting heavy curtains across the window blocks glare far more reliably. Finally, avoid diving straight into bed the second you take off your boots. Some people swear by a warm shower, others by a cup of herbal tea, and both are fine—what actually trains the brain to switch off is maintaining a consistent pre-sleep routine every single day, no matter what hour the clock shows. Thank you for listening, and I'd be happy to take your questions."
+        },
+        {
+          "speaker": "Narrator",
+          "voice": "en-GB-narrator",
+          "text": "That is the end of Part 4. You now have half a minute to check your answers to Part 4."
+        },
+        {
+          "pause": 30,
+          "note": "Checking time for Part 4"
+        }
+      ],
+      "groups": [
+        {
+          "range": [31, 40],
+          "type": "note",
+          "title": "Sleep and Shift Work: Health Effects and Coping Strategies",
+          "instructions": "Complete the notes below. Write ONE WORD ONLY for each answer.",
+          "wordLimit": 1,
+          "allowNumber": false,
+          "questions": [
+            {
+              "n": 31,
+              "prompt": "How shift work disrupts the body — The internal body clock is mainly regulated by exposure to natural {{blank}}.",
+              "answer": ["light"],
+              "explanation": "Diễn giả giải thích đồng hồ sinh học chủ yếu được điều chỉnh bởi việc tiếp xúc với ánh sáng tự nhiên ('mainly regulated' = 'primarily regulated').",
+              "evidence": "While changes in room temperature and regular meal times do act as secondary signals, this internal clock is primarily regulated by exposure to natural light.",
+              "distractors": [
+                {
+                  "text": "temperature",
+                  "why": "Nhiệt độ phòng chỉ đóng vai trò tín hiệu phụ (secondary signals), không phải yếu tố chính."
+                }
+              ]
+            },
+            {
+              "n": 32,
+              "prompt": "Night workers sleep less because daytime sleep is much more {{blank}}.",
+              "answer": ["shallow"],
+              "explanation": "Kết quả phòng thí nghiệm cho thấy giấc ngủ ban ngày nông hơn nhiều về mặt sinh hóa ('shallow') nên kém phục hồi hơn.",
+              "evidence": "Those certainly play a part, yet sleep-lab recordings reveal a deeper problem: daytime sleep is chemically much more shallow than night-time sleep, meaning the brain spends less time in its deepest restorative stages.",
+              "distractors": [
+                {
+                  "text": "noise",
+                  "why": "Tiếng ồn sinh hoạt và giao thông chỉ góp một phần, không phải tính từ điền vào chỗ trống mô tả chất lượng giấc ngủ."
+                }
+              ]
+            },
+            {
+              "n": 33,
+              "prompt": "Ongoing disruption lowers alertness and slows down {{blank}} times.",
+              "answer": ["reaction"],
+              "explanation": "Thiếu ngủ kéo dài làm giảm sự tỉnh táo và làm chậm thời gian phản xạ (reaction times).",
+              "evidence": "Workers often complain of fuzzy memory or slipping concentration, and our laboratory tests confirm that chronic disruption lowers alertness and noticeably slows down reaction times.",
+              "distractors": [
+                {
+                  "text": "memory",
+                  "why": "Trí nhớ kém được nhắc đến trước đó nhưng không đi với từ 'times'."
+                },
+                {
+                  "text": "concentration",
+                  "why": "Sự tập trung cũng được nhắc đến nhưng không ghép với 'times'."
+                }
+              ]
+            },
+            {
+              "n": 34,
+              "prompt": "Eating at irregular hours most frequently causes poor {{blank}}.",
+              "answer": ["digestion"],
+              "explanation": "Phàn nàn thể chất phổ biến nhất tại phòng khám sức khỏe nghề nghiệp là hệ tiêu hóa kém (poor digestion).",
+              "evidence": "Although headaches and weight gain are common, the single most frequent physical complaint reported in our occupational health clinic is poor digestion.",
+              "distractors": [
+                {
+                  "text": "headaches",
+                  "why": "Đau đầu có phổ biến nhưng không phải vấn đề số một do ăn lệch giờ."
+                },
+                {
+                  "text": "weight",
+                  "why": "Tăng cân cũng chỉ được nêu như triệu chứng đi kèm, không phải từ sau 'poor'."
+                }
+              ]
+            },
+            {
+              "n": 35,
+              "prompt": "Workplace scheduling — Rotating shifts should move forward in a {{blank}} direction (morning to evening to night).",
+              "answer": ["clockwise"],
+              "explanation": "Nghiên cứu hiện đại ủng hộ việc xoay ca tiến về phía trước theo chiều kim đồng hồ (clockwise): sáng → chiều tối → đêm.",
+              "evidence": "Modern research strongly favours moving rotating shifts forward in a clockwise direction: morning shifts, followed by evenings, and finally nights.",
+              "distractors": [
+                {
+                  "text": "backwards",
+                  "why": "Xoay ca ngược (backwards) là cách làm cũ khiến cơ thể luôn cảm thấy lệch múi giờ."
+                }
+              ]
+            },
+            {
+              "n": 36,
+              "prompt": "Short, planned {{blank}} during quiet night hours help restore focus.",
+              "answer": ["naps"],
+              "explanation": "Cho phép chợp mắt ngắn có kế hoạch khoảng 20 phút (planned naps) giúp khôi phục sự tập trung.",
+              "evidence": "Instead, allowing short, planned naps of around twenty minutes during quiet night hours has been shown to restore focus without causing heavy grogginess afterwards.",
+              "distractors": [
+                {
+                  "text": "coffee",
+                  "why": "Uống thêm cà phê lúc 2–4 giờ sáng thường phản tác dụng, gây khó ngủ khi về nhà."
+                }
+              ]
+            },
+            {
+              "n": 37,
+              "prompt": "Bright overhead lighting in the first half of a night shift helps reduce {{blank}}.",
+              "answer": ["fatigue"],
+              "explanation": "Ánh sáng trần sáng mạnh trong nửa đầu ca đêm được dùng riêng để giảm mệt mỏi (reduce fatigue).",
+              "evidence": "Employers are now encouraged to install bright overhead lighting during the first half of a night shift specifically to reduce fatigue, before dimming the lights gradually in the final couple of hours so workers can unwind afterwards.",
+              "distractors": [
+                {
+                  "text": "grogginess",
+                  "why": "Từ 'grogginess' xuất hiện ở câu trước nói về giấc ngủ ngắn, không phải tác dụng của hệ thống đèn."
+                }
+              ]
+            },
+            {
+              "n": 38,
+              "prompt": "Habits at home — Wear dark sunglasses on the commute home to block morning {{blank}}.",
+              "answer": ["sunlight"],
+              "explanation": "Đeo kính râm tối màu trên đường về giúp chặn ánh nắng buổi sáng (morning sunlight) đánh thức đồng hồ sinh học.",
+              "evidence": "Wearing earplugs on the bus can help you relax, certainly, but the real game-changer is putting on wrap-around dark sunglasses for your commute home to block morning sunlight.",
+              "distractors": [
+                {
+                  "text": "earplugs",
+                  "why": "Nút tai giúp giảm ồn trên xe buýt, không phải thứ bị kính râm chắn lại."
+                }
+              ]
+            },
+            {
+              "n": 39,
+              "prompt": "Keep the bedroom cool and fit heavy {{blank}} to keep out glare.",
+              "answer": ["curtains"],
+              "explanation": "Lắp rèm dày (heavy curtains) cản ánh sáng chói hiệu quả và đáng tin cậy hơn bịt mắt vải.",
+              "evidence": "Plenty of workers try fabric eye masks, though most end up pulling them off half-asleep; fitting heavy curtains across the window blocks glare far more reliably.",
+              "distractors": [
+                {
+                  "text": "masks",
+                  "why": "Bịt mắt vải (eye masks) thường bị người ngủ vô thức giật ra giữa chừng."
+                }
+              ]
+            },
+            {
+              "n": 40,
+              "prompt": "Maintain a consistent pre-sleep {{blank}} to signal to the brain that it is time to rest.",
+              "answer": ["routine"],
+              "explanation": "Điều thực sự rèn cho não biết đã đến lúc nghỉ ngơi là duy trì thói quen trước khi ngủ nhất quán (consistent pre-sleep routine).",
+              "evidence": "what actually trains the brain to switch off is maintaining a consistent pre-sleep routine every single day, no matter what hour the clock shows.",
+              "distractors": [
+                {
+                  "text": "shower",
+                  "why": "Tắm nước ấm chỉ là một ví dụ hoạt động nhỏ, không phải yếu tố cốt lõi đi sau 'consistent pre-sleep'."
+                },
+                {
+                  "text": "tea",
+                  "why": "Trà thảo mộc cũng chỉ là ví dụ minh họa, không phải đáp án."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
