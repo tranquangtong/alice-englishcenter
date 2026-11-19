@@ -30,8 +30,15 @@
   the user's approval and an update to that file first.
 
 ## Collaboration
-- Lead plans, routes, checks results; steps in only when really needed (both teammates blocked,
-  fix-up rounds used up, or tiny task) and says why.
+- **Lead never implements, however small the task** (user rule). Every change (CSS tweak, copy
+  edit, one-liner) goes to a teammate: UI/CSS/content → agy `-w`; JS/scripts/tests → codex `-w`.
+  Lead steps in only if both teammates fail after fix-up rounds or the user asks; says why.
+- **Every task ships with tests.** The prompt lists acceptance checks; the result is not done until:
+  1. `node scripts/check.mjs` → 0 errors;
+  2. UI changes: codex serves the site locally (`python -m http.server`) and verifies in headless
+     Edge/Chrome (measure positions/sizes, screenshot desktop 1600px + mobile 390px);
+  3. codex reviews the diff vs `docs/design-system.md` checklist.
+  agy work → codex runs 1–3 afterwards. Lead re-runs 1 before merge and reports results.
 - Blocked teammate: give the cause + a workaround and try it; `NEEDS USER:` for steps only the
   user can do; `SUGGEST codex|agy:` when the other teammate has a better tool.
 - Fallbacks: agy edits UI/content (no shell) → codex runs lint/tests on it; content in Google
