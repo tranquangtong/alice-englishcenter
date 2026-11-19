@@ -1,8 +1,8 @@
 # Listening final QA — 19 November 2026
 
 All 30 automated tests pass, including real-content/real-MP3 e2e. The requested
-screen checks pass after minimal CSS corrections. The full design checklist has
-two open findings: SVG badge contrast and the combined CSS size budget.
+screen checks pass after minimal CSS corrections. Both full-design-checklist
+findings are resolved: SVG badge contrast and the combined CSS size budget.
 Changes are uncommitted for bridge handoff.
 
 ## Changes
@@ -89,26 +89,22 @@ No general refactor was made.
 |---|---|
 | Five Aero genes | Present: sky/water background, grass states, gloss/glass panels, rounded gel controls, shared heading/body font families. No gene change. |
 | Tokens | New listening semantic colours live in `:root` with dark overrides; components reuse shared surface, type, border and gel tokens. Standalone SVG maps contain their own palette. No new colour literal introduced by this QA round. |
-| AA / themes / motion / mobile / print | Screen DOM text, both schemes, 360/390px layout, focus, target size, motion and tested print panels pass after the fixes above. SVG badge text still fails AA; see below. |
+| AA / themes / motion / mobile / print | Screen DOM text, both schemes, 360/390px layout, focus, target size, motion and tested print panels pass after the fixes above. SVG badge text now passes AA; see resolved finding #1 below. |
 | Component reuse | Listening cards, controls, tabs, feedback and dropdown reuse the glass/gel vocabulary; existing JS selectors remain compatible. Glass fallbacks are present before `@supports`. |
-| CSS size / assets | Open budget finding: both stylesheets together are approximately 77.7KB uncompressed, exceeding the guide's approximate 40KB total budget. CSS/SVG decoration remains lightweight relative to raster assets. |
+| CSS size / assets | Resolved with user approval: loaded minified stylesheets total 56,359 bytes raw / 12,677 bytes gzip, down from 77,675 raw bytes, within the revised <60,000-byte raw / <15,000-byte gzip budgets. |
 
-### Open findings
+### Resolved findings
 
-1. **SVG map badges fail the 4.5:1 text requirement.**
-   `content/ielts-gt/listening/img/gt-l-01-map.svg:13` and `:32` define bright
-   aqua badge gradients with white 16px lettering. Across the rendered letter
-   bounding box, computed gradient contrast is **2.94–4.32:1**.
-   `content/ielts-gt/listening/img/gt-l-03-map.svg:10` and `:139` have the same
-   issue with 18px lettering: **2.67–3.85:1**. These are source-SVG pixel sizes;
-   scaling down the images makes the letters smaller. A follow-up should darken
-   badge fills or change lettering colour and recheck both maps. External SVG
-   image text cannot be fixed by the page stylesheet; left for the requested
-   full-diff findings report rather than changing content assets in this CSS QA.
-   Exact glyph bounds and contrast bounds: `test-artifacts/final/map-contrast.json`.
-2. **CSS budget exceeded.** `assets/css/style.css` plus
-   `assets/css/listening.css` total roughly 77.7KB. Consolidation/minification
-   needs a separate scoped change; no refactor in this round.
+1. **SVG map badges — resolved.** Badge gradients in
+   `content/ielts-gt/listening/img/gt-l-01-map.svg` and
+   `content/ielts-gt/listening/img/gt-l-03-map.svg` were darkened on main to
+   **#0c6aa6 → #085080 → #0b649e**. Rendered glyph-box contrast is now
+   **6.50–8.58:1**, exceeding the 4.5:1 text requirement.
+2. **CSS budget — resolved with user approval.** Shared
+   component declarations and generated minified files reduce loaded CSS from
+   **77,675 to 56,359 raw bytes** (27.4% smaller), **12,677 bytes gzip**. The
+   user-approved budget of **<60,000 raw bytes / <15,000 gzip bytes** now applies
+   to total loaded minified CSS, and both limits pass. See the follow-up below.
 
 The earlier content findings in `docs/listening-phase-b-validation.md` are
 historical: the two merged content corrections and regenerated audio address
@@ -116,7 +112,83 @@ them. Schema/evidence checks and real-test scoring remain green; this round
 does not claim a fresh human pronunciation review or independent fact-check of
 every lesson claim.
 
-## Validation and artifacts
+## CSS budget follow-up — resolved with user approval
+
+Readable CSS remains in `assets/css/style.css` and `assets/css/listening.css`.
+Shared grid layouts, glass surfaces and answer-state declarations are grouped;
+gel gradients use shared tokens. No content SVG was edited. The five Aero genes,
+existing colours, selectors, glass fallbacks and print rules remain intact.
+
+`node scripts/build-css.mjs` (also `npm run css`) generates the checked-in
+`.min.css` files without dependencies. It preserves quoted strings, SVG URLs,
+escapes, descendant pseudo selectors and calc spacing. `index.html` now loads
+`style.min.css?v=6` and `listening.min.css?v=3`. Source hashes and deterministic
+output comparisons make missing/stale builds fail `scripts/check.mjs`, including
+comment-only source edits. Line endings are normalized for cross-platform checks.
+The checker enforces both revised budgets: **<60,000 raw bytes** and
+**<15,000 gzip bytes**, summed across loaded stylesheets. The user approved
+raising the budget instead of further CSS refactoring; current totals pass.
+
+| Loaded file | Raw bytes | Gzip bytes |
+|---|---:|---:|
+| `assets/css/style.min.css` | 26,853 | 6,697 |
+| `assets/css/listening.min.css` | 29,506 | 5,980 |
+| **Total** | **56,359** | **12,677** |
+
+Gzip uses Node's default gzip level, compressing each file separately. The two
+readable sources still total 76,873 bytes. Comment/whitespace minification of
+the original sources alone produced 57,083 bytes. Further structural CSS
+consolidation is not required under the approved budget.
+
+Before any source edit, the existing final e2e captured its 32 screenshots in
+`test-artifacts/css-budget/before/`. Independent stabilized source/generated
+e2e runs are in `source/` and `after/`, with exact pixel counts in
+`pixel-diff.json`. A repeat using the unchanged original sources is in
+`before-repeat/`, with `control-pixel-diff.json`. The repeat reproduced the
+42,608-pixel dark footer difference and the mobile result/player paint region;
+these large cross-run differences therefore also occur without a CSS change.
+
+An additional comparison applied original and updated styles to the **same DOM,
+viewport and browser context**, across all 28 states, taking paired screenshots
+and comparing every standard computed property on every element and its
+`::before`/`::after`. All 28 states had **zero computed-property differences**.
+Paired exact pixel counts (no tolerance applied):
+
+| State | Light 1600 | Light 390 | Dark 1600 | Dark 390 |
+|---|---:|---:|---:|---:|
+| Hub | 4 | 0 | 2 | 0 |
+| List | 0 | 0 | 0 | 0 |
+| Practice | 0 | 1 | 0 | 3 |
+| Practice, scrolled | 2 | 0 | 1 | 0 |
+| Exam | 0 | 1 | 0 | 3 |
+| Result | 0 | 1 | 0 | 3 |
+| Dropdown | 7 | 12 | 4 | 15 |
+
+Every nonzero paired difference is only **1–2 channel levels** (of 255), at
+glass/bubble or antialiased brand edges; the largest is **15 pixels / 0.004557%**.
+Together with unchanged computed styles and the original-source repeat, this
+supports browser raster/compositor variability rather than a layout/style
+change. Paired PNGs and JSON reports are in `test-artifacts/css-budget/paired/`.
+Both independent e2e runs still pass layout, contrast, focus, target, motion,
+360px and print assertions.
+
+To reproduce source/generated e2e captures, set `CSS_QA_STYLESHEETS=source` and
+`CSS_QA_OUTPUT=test-artifacts/css-budget/source` for the first run of
+`node --test tests/listening-final.e2e.test.mjs`; unset the stylesheet override
+and choose a different output directory for the generated-file run. An optional
+`CSS_QA_SOURCE_DIRECTORY` selects a saved source directory relative to the repo.
+Compare directories with
+`node tests/helpers/compare-screenshots.mjs BEFORE AFTER REPORT.json`.
+
+Earlier CSS follow-up validation: `node --test` **32/32 pass** (the original 30
+plus two CSS build tests); `git diff --check` clean. The former <40,000-byte raw
+budget produced one error. The approved limits now close finding #2; regression
+coverage checks combined raw and separately compressed gzip budgets.
+Approved-budget validation: `node scripts/check.mjs` **0 errors, 0 warnings**;
+`node --test` **33/33 pass**, including the new budget regression and Edge e2e;
+`git diff --check` clean.
+
+## Original QA validation and artifacts
 
 - `node --test`: **30 tests, 30 pass, 0 fail**, including fixture e2e, final QA,
   and all four real tests/real audio, 40/40 → Band 9 and 0/40 paths, exam guards,

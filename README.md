@@ -21,6 +21,13 @@ node scripts/check.mjs
 node --check assets/js/app.js
 ```
 
+Khi sửa CSS, chỉnh `assets/css/style.css` hoặc `assets/css/listening.css`, rồi chạy
+`node scripts/build-css.mjs` (hoặc `npm run css`) để tạo lại các file `.min.css`
+mà `index.html` tải. Commit cả nguồn dễ đọc và file sinh ra; không sửa trực tiếp
+file `.min.css`. Script không cần cài package. GitHub Pages dùng các file đã tạo
+sẵn, không cần chạy build khi triển khai. `node scripts/check.mjs` kiểm tra file
+sinh ra có khớp nguồn và báo tổng byte CSS được tải.
+
 Bộ kiểm tra xác thực manifest, file nội dung, liên kết tương đối trong Markdown/HTML và cú pháp JavaScript. File syllabus/roadmap chưa xuất bản được báo `WARNING`; các lỗi khác khiến lệnh trả về exit code 1. Bộ kiểm tra không truy cập liên kết Internet hoặc xác thực fragment/anchor trong tài liệu.
 
 ## Triển khai GitHub Pages

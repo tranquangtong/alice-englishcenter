@@ -4,6 +4,7 @@ import { fileURLToPath } from 'node:url';
 import { spawnSync } from 'node:child_process';
 import { existsSync } from 'node:fs';
 import { safePath, validateTest, validateExternal } from '../assets/js/listening-core.js';
+import { checkCSS } from './build-css.mjs';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 let errors = 0;
@@ -129,5 +130,10 @@ if (await exists(externalFile)) {
   try { for (const issue of validateExternal(JSON.parse(await readFile(externalFile, 'utf8')))) report(`Listening external.json: ${issue}`); }
   catch (error) { report(`Listening external.json: ${error.message}`); }
 }
+try {
+  const css = await checkCSS(root);
+  for (const issue of css.errors) report(issue);
+  console.log(`Loaded CSS: ${css.raw} bytes raw, ${css.gzip} bytes gzip (files compressed separately).`);
+} catch (error) { report(`CSS build: ${error.message}`); }
 console.log(`Checked ${files.length} files, ${checkedLinks} relative links. ${errors} error(s), ${warnings} warning(s).`);
 process.exitCode = errors ? 1 : 0;
