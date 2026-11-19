@@ -1,0 +1,968 @@
+{
+  "id": "sample-listening",
+  "title": "Original engine fixture",
+  "parts": [
+    {
+      "part": 1,
+      "title": "Part 1 — Community centre fixture",
+      "context": "A short original exercise for software testing.",
+      "audio": "scripts/fixtures/audio/part1.mp3",
+      "script": [
+        {
+          "speaker": "Narrator",
+          "voice": "en-GB-narrator",
+          "text": "Part 1. You will hear a short community centre exercise."
+        },
+        {
+          "pause": 20,
+          "note": "Read the questions."
+        },
+        {
+          "speaker": "Receptionist",
+          "voice": "en-GB-female-1",
+          "text": "The new surname is Hollis, the colour is green, and the fee is 1,200 pounds. The library desk is at B; the garden desk is at A."
+        }
+      ],
+      "groups": [
+        {
+          "range": [
+            1,
+            3
+          ],
+          "type": "form",
+          "instructions": "Write ONE WORD AND/OR A NUMBER for each answer.",
+          "wordLimit": 1,
+          "allowNumber": true,
+          "questions": [
+            {
+              "n": 1,
+              "prompt": "Item 1: {{blank}}",
+              "answer": [
+                "Hollis"
+              ],
+              "explanation": "Nghe rõ thông tin: Hollis.",
+              "evidence": "The new surname is Hollis, the colour is green, and the fee is 1,200 pounds.",
+              "distractors": [
+                {
+                  "text": "old entry",
+                  "why": "Thông tin cũ đã được thay thế."
+                }
+              ]
+            },
+            {
+              "n": 2,
+              "prompt": "Item 2: {{blank}}",
+              "answer": [
+                "green"
+              ],
+              "explanation": "Nghe rõ thông tin: green.",
+              "evidence": "The new surname is Hollis, the colour is green, and the fee is 1,200 pounds.",
+              "distractors": [
+                {
+                  "text": "old entry",
+                  "why": "Thông tin cũ đã được thay thế."
+                }
+              ]
+            },
+            {
+              "n": 3,
+              "prompt": "Item 3: {{blank}}",
+              "answer": [
+                "1200"
+              ],
+              "explanation": "Nghe rõ thông tin: 1200.",
+              "evidence": "The new surname is Hollis, the colour is green, and the fee is 1,200 pounds.",
+              "distractors": [
+                {
+                  "text": "old entry",
+                  "why": "Thông tin cũ đã được thay thế."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "range": [
+            4,
+            6
+          ],
+          "type": "note",
+          "instructions": "Write ONE WORD AND/OR A NUMBER for each answer.",
+          "wordLimit": 1,
+          "allowNumber": true,
+          "questions": [
+            {
+              "n": 4,
+              "prompt": "Item 4: {{blank}}",
+              "answer": [
+                "green"
+              ],
+              "explanation": "Nghe rõ thông tin: green.",
+              "evidence": "The new surname is Hollis, the colour is green, and the fee is 1,200 pounds.",
+              "distractors": [
+                {
+                  "text": "old entry",
+                  "why": "Thông tin cũ đã được thay thế."
+                }
+              ]
+            },
+            {
+              "n": 5,
+              "prompt": "Item 5: {{blank}}",
+              "answer": [
+                "green"
+              ],
+              "explanation": "Nghe rõ thông tin: green.",
+              "evidence": "The new surname is Hollis, the colour is green, and the fee is 1,200 pounds.",
+              "distractors": [
+                {
+                  "text": "old entry",
+                  "why": "Thông tin cũ đã được thay thế."
+                }
+              ]
+            },
+            {
+              "n": 6,
+              "prompt": "Item 6: {{blank}}",
+              "answer": [
+                "green"
+              ],
+              "explanation": "Nghe rõ thông tin: green.",
+              "evidence": "The new surname is Hollis, the colour is green, and the fee is 1,200 pounds.",
+              "distractors": [
+                {
+                  "text": "old entry",
+                  "why": "Thông tin cũ đã được thay thế."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "range": [
+            7,
+            8
+          ],
+          "type": "mcq",
+          "instructions": "Choose the correct letter.",
+          "questions": [
+            {
+              "n": 7,
+              "prompt": "Choose the location for item 7.",
+              "options": [
+                {
+                  "key": "A",
+                  "text": "Garden desk"
+                },
+                {
+                  "key": "B",
+                  "text": "Library desk"
+                },
+                {
+                  "key": "C",
+                  "text": "Cafe desk"
+                }
+              ],
+              "answer": [
+                "B"
+              ],
+              "explanation": "Câu nói xác nhận vị trí thư viện.",
+              "evidence": "The library desk is at B; the garden desk is at A.",
+              "distractors": [
+                {
+                  "text": "C",
+                  "why": "Quán cà phê không phải địa điểm được chọn."
+                }
+              ]
+            },
+            {
+              "n": 8,
+              "prompt": "Choose the location for item 8.",
+              "options": [
+                {
+                  "key": "A",
+                  "text": "Garden desk"
+                },
+                {
+                  "key": "B",
+                  "text": "Library desk"
+                },
+                {
+                  "key": "C",
+                  "text": "Cafe desk"
+                }
+              ],
+              "answer": [
+                "B"
+              ],
+              "explanation": "Câu nói xác nhận vị trí thư viện.",
+              "evidence": "The library desk is at B; the garden desk is at A.",
+              "distractors": [
+                {
+                  "text": "C",
+                  "why": "Quán cà phê không phải địa điểm được chọn."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "range": [
+            9,
+            10
+          ],
+          "type": "mcq-multi",
+          "instructions": "Choose TWO letters.",
+          "questions": [
+            {
+              "n": 9,
+              "prompt": "Choose the location for item 9.",
+              "answer": [
+                "A",
+                "B"
+              ],
+              "explanation": "Câu nói xác nhận vị trí thư viện.",
+              "evidence": "The library desk is at B; the garden desk is at A.",
+              "distractors": [
+                {
+                  "text": "C",
+                  "why": "Quán cà phê không phải địa điểm được chọn."
+                }
+              ]
+            },
+            {
+              "n": 10,
+              "prompt": "Choose the location for item 10.",
+              "answer": [
+                "A",
+                "B"
+              ],
+              "explanation": "Câu nói xác nhận vị trí thư viện.",
+              "evidence": "The library desk is at B; the garden desk is at A.",
+              "distractors": [
+                {
+                  "text": "C",
+                  "why": "Quán cà phê không phải địa điểm được chọn."
+                }
+              ]
+            }
+          ],
+          "options": [
+            {
+              "key": "A",
+              "text": "Garden desk"
+            },
+            {
+              "key": "B",
+              "text": "Library desk"
+            },
+            {
+              "key": "C",
+              "text": "Cafe desk"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "title": "Part 2 — Community centre fixture",
+      "context": "A short original exercise for software testing.",
+      "audio": "scripts/fixtures/audio/part2.mp3",
+      "script": [
+        {
+          "speaker": "Narrator",
+          "voice": "en-GB-narrator",
+          "text": "Part 2. You will hear a short community centre exercise."
+        },
+        {
+          "pause": 20,
+          "note": "Read the questions."
+        },
+        {
+          "speaker": "Receptionist",
+          "voice": "en-AU-male-1",
+          "text": "The library desk is at B; the garden desk is at A."
+        }
+      ],
+      "groups": [
+        {
+          "range": [
+            11,
+            15
+          ],
+          "type": "map",
+          "instructions": "Choose the correct letter.",
+          "questions": [
+            {
+              "n": 11,
+              "prompt": "Choose the location for item 11.",
+              "answer": [
+                "B"
+              ],
+              "explanation": "Câu nói xác nhận vị trí thư viện.",
+              "evidence": "The library desk is at B; the garden desk is at A.",
+              "distractors": [
+                {
+                  "text": "C",
+                  "why": "Quán cà phê không phải địa điểm được chọn."
+                }
+              ]
+            },
+            {
+              "n": 12,
+              "prompt": "Choose the location for item 12.",
+              "answer": [
+                "B"
+              ],
+              "explanation": "Câu nói xác nhận vị trí thư viện.",
+              "evidence": "The library desk is at B; the garden desk is at A.",
+              "distractors": [
+                {
+                  "text": "C",
+                  "why": "Quán cà phê không phải địa điểm được chọn."
+                }
+              ]
+            },
+            {
+              "n": 13,
+              "prompt": "Choose the location for item 13.",
+              "answer": [
+                "B"
+              ],
+              "explanation": "Câu nói xác nhận vị trí thư viện.",
+              "evidence": "The library desk is at B; the garden desk is at A.",
+              "distractors": [
+                {
+                  "text": "C",
+                  "why": "Quán cà phê không phải địa điểm được chọn."
+                }
+              ]
+            },
+            {
+              "n": 14,
+              "prompt": "Choose the location for item 14.",
+              "answer": [
+                "B"
+              ],
+              "explanation": "Câu nói xác nhận vị trí thư viện.",
+              "evidence": "The library desk is at B; the garden desk is at A.",
+              "distractors": [
+                {
+                  "text": "C",
+                  "why": "Quán cà phê không phải địa điểm được chọn."
+                }
+              ]
+            },
+            {
+              "n": 15,
+              "prompt": "Choose the location for item 15.",
+              "answer": [
+                "B"
+              ],
+              "explanation": "Câu nói xác nhận vị trí thư viện.",
+              "evidence": "The library desk is at B; the garden desk is at A.",
+              "distractors": [
+                {
+                  "text": "C",
+                  "why": "Quán cà phê không phải địa điểm được chọn."
+                }
+              ]
+            }
+          ],
+          "options": [
+            {
+              "key": "A",
+              "text": "Garden desk"
+            },
+            {
+              "key": "B",
+              "text": "Library desk"
+            },
+            {
+              "key": "C",
+              "text": "Cafe desk"
+            }
+          ],
+          "image": "scripts/fixtures/sample-map.svg",
+          "title": "Community centre plan"
+        },
+        {
+          "range": [
+            16,
+            20
+          ],
+          "type": "matching",
+          "instructions": "Choose the correct letter.",
+          "questions": [
+            {
+              "n": 16,
+              "prompt": "Choose the location for item 16.",
+              "answer": [
+                "B"
+              ],
+              "explanation": "Câu nói xác nhận vị trí thư viện.",
+              "evidence": "The library desk is at B; the garden desk is at A.",
+              "distractors": [
+                {
+                  "text": "C",
+                  "why": "Quán cà phê không phải địa điểm được chọn."
+                }
+              ]
+            },
+            {
+              "n": 17,
+              "prompt": "Choose the location for item 17.",
+              "answer": [
+                "B"
+              ],
+              "explanation": "Câu nói xác nhận vị trí thư viện.",
+              "evidence": "The library desk is at B; the garden desk is at A.",
+              "distractors": [
+                {
+                  "text": "C",
+                  "why": "Quán cà phê không phải địa điểm được chọn."
+                }
+              ]
+            },
+            {
+              "n": 18,
+              "prompt": "Choose the location for item 18.",
+              "answer": [
+                "B"
+              ],
+              "explanation": "Câu nói xác nhận vị trí thư viện.",
+              "evidence": "The library desk is at B; the garden desk is at A.",
+              "distractors": [
+                {
+                  "text": "C",
+                  "why": "Quán cà phê không phải địa điểm được chọn."
+                }
+              ]
+            },
+            {
+              "n": 19,
+              "prompt": "Choose the location for item 19.",
+              "answer": [
+                "B"
+              ],
+              "explanation": "Câu nói xác nhận vị trí thư viện.",
+              "evidence": "The library desk is at B; the garden desk is at A.",
+              "distractors": [
+                {
+                  "text": "C",
+                  "why": "Quán cà phê không phải địa điểm được chọn."
+                }
+              ]
+            },
+            {
+              "n": 20,
+              "prompt": "Choose the location for item 20.",
+              "answer": [
+                "B"
+              ],
+              "explanation": "Câu nói xác nhận vị trí thư viện.",
+              "evidence": "The library desk is at B; the garden desk is at A.",
+              "distractors": [
+                {
+                  "text": "C",
+                  "why": "Quán cà phê không phải địa điểm được chọn."
+                }
+              ]
+            }
+          ],
+          "options": [
+            {
+              "key": "A",
+              "text": "Garden desk"
+            },
+            {
+              "key": "B",
+              "text": "Library desk"
+            },
+            {
+              "key": "C",
+              "text": "Cafe desk"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "part": 3,
+      "title": "Part 3 — Community centre fixture",
+      "context": "A short original exercise for software testing.",
+      "audio": "scripts/fixtures/audio/part3.mp3",
+      "script": [
+        {
+          "speaker": "Narrator",
+          "voice": "en-GB-narrator",
+          "text": "Part 3. You will hear a short community centre exercise."
+        },
+        {
+          "pause": 20,
+          "note": "Read the questions."
+        },
+        {
+          "speaker": "Receptionist",
+          "voice": "en-US-female-1",
+          "text": "Write river for each item in this short exercise."
+        }
+      ],
+      "groups": [
+        {
+          "range": [
+            21,
+            24
+          ],
+          "type": "table",
+          "instructions": "Write ONE WORD AND/OR A NUMBER for each answer.",
+          "wordLimit": 1,
+          "allowNumber": true,
+          "questions": [
+            {
+              "n": 21,
+              "prompt": "Item 21: {{blank}}",
+              "answer": [
+                "river"
+              ],
+              "explanation": "Nghe rõ thông tin: river.",
+              "evidence": "Write river for each item in this short exercise.",
+              "distractors": [
+                {
+                  "text": "old entry",
+                  "why": "Thông tin cũ đã được thay thế."
+                }
+              ]
+            },
+            {
+              "n": 22,
+              "prompt": "Item 22: {{blank}}",
+              "answer": [
+                "river"
+              ],
+              "explanation": "Nghe rõ thông tin: river.",
+              "evidence": "Write river for each item in this short exercise.",
+              "distractors": [
+                {
+                  "text": "old entry",
+                  "why": "Thông tin cũ đã được thay thế."
+                }
+              ]
+            },
+            {
+              "n": 23,
+              "prompt": "Item 23: {{blank}}",
+              "answer": [
+                "river"
+              ],
+              "explanation": "Nghe rõ thông tin: river.",
+              "evidence": "Write river for each item in this short exercise.",
+              "distractors": [
+                {
+                  "text": "old entry",
+                  "why": "Thông tin cũ đã được thay thế."
+                }
+              ]
+            },
+            {
+              "n": 24,
+              "prompt": "Item 24: {{blank}}",
+              "answer": [
+                "river"
+              ],
+              "explanation": "Nghe rõ thông tin: river.",
+              "evidence": "Write river for each item in this short exercise.",
+              "distractors": [
+                {
+                  "text": "old entry",
+                  "why": "Thông tin cũ đã được thay thế."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "range": [
+            25,
+            27
+          ],
+          "type": "sentence",
+          "instructions": "Write ONE WORD AND/OR A NUMBER for each answer.",
+          "wordLimit": 1,
+          "allowNumber": true,
+          "questions": [
+            {
+              "n": 25,
+              "prompt": "Item 25: {{blank}}",
+              "answer": [
+                "river"
+              ],
+              "explanation": "Nghe rõ thông tin: river.",
+              "evidence": "Write river for each item in this short exercise.",
+              "distractors": [
+                {
+                  "text": "old entry",
+                  "why": "Thông tin cũ đã được thay thế."
+                }
+              ]
+            },
+            {
+              "n": 26,
+              "prompt": "Item 26: {{blank}}",
+              "answer": [
+                "river"
+              ],
+              "explanation": "Nghe rõ thông tin: river.",
+              "evidence": "Write river for each item in this short exercise.",
+              "distractors": [
+                {
+                  "text": "old entry",
+                  "why": "Thông tin cũ đã được thay thế."
+                }
+              ]
+            },
+            {
+              "n": 27,
+              "prompt": "Item 27: {{blank}}",
+              "answer": [
+                "river"
+              ],
+              "explanation": "Nghe rõ thông tin: river.",
+              "evidence": "Write river for each item in this short exercise.",
+              "distractors": [
+                {
+                  "text": "old entry",
+                  "why": "Thông tin cũ đã được thay thế."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "range": [
+            28,
+            30
+          ],
+          "type": "summary",
+          "instructions": "Write ONE WORD AND/OR A NUMBER for each answer.",
+          "wordLimit": 1,
+          "allowNumber": true,
+          "questions": [
+            {
+              "n": 28,
+              "prompt": "Item 28: {{blank}}",
+              "answer": [
+                "river"
+              ],
+              "explanation": "Nghe rõ thông tin: river.",
+              "evidence": "Write river for each item in this short exercise.",
+              "distractors": [
+                {
+                  "text": "old entry",
+                  "why": "Thông tin cũ đã được thay thế."
+                }
+              ]
+            },
+            {
+              "n": 29,
+              "prompt": "Item 29: {{blank}}",
+              "answer": [
+                "river"
+              ],
+              "explanation": "Nghe rõ thông tin: river.",
+              "evidence": "Write river for each item in this short exercise.",
+              "distractors": [
+                {
+                  "text": "old entry",
+                  "why": "Thông tin cũ đã được thay thế."
+                }
+              ]
+            },
+            {
+              "n": 30,
+              "prompt": "Item 30: {{blank}}",
+              "answer": [
+                "river"
+              ],
+              "explanation": "Nghe rõ thông tin: river.",
+              "evidence": "Write river for each item in this short exercise.",
+              "distractors": [
+                {
+                  "text": "old entry",
+                  "why": "Thông tin cũ đã được thay thế."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "part": 4,
+      "title": "Part 4 — Community centre fixture",
+      "context": "A short original exercise for software testing.",
+      "audio": "scripts/fixtures/audio/part4.mp3",
+      "script": [
+        {
+          "speaker": "Narrator",
+          "voice": "en-GB-narrator",
+          "text": "Part 4. You will hear a short community centre exercise."
+        },
+        {
+          "pause": 20,
+          "note": "Read the questions."
+        },
+        {
+          "speaker": "Receptionist",
+          "voice": "en-GB-male-1",
+          "text": "Choose the library desk, letter B, and write river for the final five items."
+        }
+      ],
+      "groups": [
+        {
+          "range": [
+            31,
+            35
+          ],
+          "type": "mcq",
+          "instructions": "Choose the correct letter.",
+          "questions": [
+            {
+              "n": 31,
+              "prompt": "Choose the location for item 31.",
+              "options": [
+                {
+                  "key": "A",
+                  "text": "Garden desk"
+                },
+                {
+                  "key": "B",
+                  "text": "Library desk"
+                },
+                {
+                  "key": "C",
+                  "text": "Cafe desk"
+                }
+              ],
+              "answer": [
+                "B"
+              ],
+              "explanation": "Câu nói xác nhận vị trí thư viện.",
+              "evidence": "Choose the library desk, letter B, and write river for the final five items.",
+              "distractors": [
+                {
+                  "text": "C",
+                  "why": "Quán cà phê không phải địa điểm được chọn."
+                }
+              ]
+            },
+            {
+              "n": 32,
+              "prompt": "Choose the location for item 32.",
+              "options": [
+                {
+                  "key": "A",
+                  "text": "Garden desk"
+                },
+                {
+                  "key": "B",
+                  "text": "Library desk"
+                },
+                {
+                  "key": "C",
+                  "text": "Cafe desk"
+                }
+              ],
+              "answer": [
+                "B"
+              ],
+              "explanation": "Câu nói xác nhận vị trí thư viện.",
+              "evidence": "Choose the library desk, letter B, and write river for the final five items.",
+              "distractors": [
+                {
+                  "text": "C",
+                  "why": "Quán cà phê không phải địa điểm được chọn."
+                }
+              ]
+            },
+            {
+              "n": 33,
+              "prompt": "Choose the location for item 33.",
+              "options": [
+                {
+                  "key": "A",
+                  "text": "Garden desk"
+                },
+                {
+                  "key": "B",
+                  "text": "Library desk"
+                },
+                {
+                  "key": "C",
+                  "text": "Cafe desk"
+                }
+              ],
+              "answer": [
+                "B"
+              ],
+              "explanation": "Câu nói xác nhận vị trí thư viện.",
+              "evidence": "Choose the library desk, letter B, and write river for the final five items.",
+              "distractors": [
+                {
+                  "text": "C",
+                  "why": "Quán cà phê không phải địa điểm được chọn."
+                }
+              ]
+            },
+            {
+              "n": 34,
+              "prompt": "Choose the location for item 34.",
+              "options": [
+                {
+                  "key": "A",
+                  "text": "Garden desk"
+                },
+                {
+                  "key": "B",
+                  "text": "Library desk"
+                },
+                {
+                  "key": "C",
+                  "text": "Cafe desk"
+                }
+              ],
+              "answer": [
+                "B"
+              ],
+              "explanation": "Câu nói xác nhận vị trí thư viện.",
+              "evidence": "Choose the library desk, letter B, and write river for the final five items.",
+              "distractors": [
+                {
+                  "text": "C",
+                  "why": "Quán cà phê không phải địa điểm được chọn."
+                }
+              ]
+            },
+            {
+              "n": 35,
+              "prompt": "Choose the location for item 35.",
+              "options": [
+                {
+                  "key": "A",
+                  "text": "Garden desk"
+                },
+                {
+                  "key": "B",
+                  "text": "Library desk"
+                },
+                {
+                  "key": "C",
+                  "text": "Cafe desk"
+                }
+              ],
+              "answer": [
+                "B"
+              ],
+              "explanation": "Câu nói xác nhận vị trí thư viện.",
+              "evidence": "Choose the library desk, letter B, and write river for the final five items.",
+              "distractors": [
+                {
+                  "text": "C",
+                  "why": "Quán cà phê không phải địa điểm được chọn."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "range": [
+            36,
+            40
+          ],
+          "type": "note",
+          "instructions": "Write ONE WORD AND/OR A NUMBER for each answer.",
+          "wordLimit": 1,
+          "allowNumber": true,
+          "questions": [
+            {
+              "n": 36,
+              "prompt": "Item 36: {{blank}}",
+              "answer": [
+                "river"
+              ],
+              "explanation": "Nghe rõ thông tin: river.",
+              "evidence": "Choose the library desk, letter B, and write river for the final five items.",
+              "distractors": [
+                {
+                  "text": "old entry",
+                  "why": "Thông tin cũ đã được thay thế."
+                }
+              ]
+            },
+            {
+              "n": 37,
+              "prompt": "Item 37: {{blank}}",
+              "answer": [
+                "river"
+              ],
+              "explanation": "Nghe rõ thông tin: river.",
+              "evidence": "Choose the library desk, letter B, and write river for the final five items.",
+              "distractors": [
+                {
+                  "text": "old entry",
+                  "why": "Thông tin cũ đã được thay thế."
+                }
+              ]
+            },
+            {
+              "n": 38,
+              "prompt": "Item 38: {{blank}}",
+              "answer": [
+                "river"
+              ],
+              "explanation": "Nghe rõ thông tin: river.",
+              "evidence": "Choose the library desk, letter B, and write river for the final five items.",
+              "distractors": [
+                {
+                  "text": "old entry",
+                  "why": "Thông tin cũ đã được thay thế."
+                }
+              ]
+            },
+            {
+              "n": 39,
+              "prompt": "Item 39: {{blank}}",
+              "answer": [
+                "river"
+              ],
+              "explanation": "Nghe rõ thông tin: river.",
+              "evidence": "Choose the library desk, letter B, and write river for the final five items.",
+              "distractors": [
+                {
+                  "text": "old entry",
+                  "why": "Thông tin cũ đã được thay thế."
+                }
+              ]
+            },
+            {
+              "n": 40,
+              "prompt": "Item 40: {{blank}}",
+              "answer": [
+                "river"
+              ],
+              "explanation": "Nghe rõ thông tin: river.",
+              "evidence": "Choose the library desk, letter B, and write river for the final five items.",
+              "distractors": [
+                {
+                  "text": "old entry",
+                  "why": "Thông tin cũ đã được thay thế."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

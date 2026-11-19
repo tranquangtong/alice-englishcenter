@@ -4,15 +4,18 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light dark">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='26' font-size='30'%3E💧%3C/text%3E%3C/svg%3E">
   <meta name="description" content="Không gian mentoring tiếng Anh IELTS và TOEIC dành cho đồng nghiệp và học viên.">
   <title>Alice English Center</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400..800&family=Noto+Sans:wght@500..800&display=swap">
   <link rel="stylesheet" href="assets/css/style.css?v=4">
+  <link rel="stylesheet" href="assets/css/listening.css?v=1">
   <script defer src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/dompurify@3.1.6/dist/purify.min.js"></script>
-  <script defer src="assets/js/app.js?v=3"></script>
+  <script defer src="assets/js/listening.js?v=1"></script>
+  <script defer src="assets/js/app.js?v=4"></script>
 </head>
 <body>
   <div class="aero-bg" aria-hidden="true">
@@ -28,6 +31,15 @@
   <a class="skip-link" href="#main-content">Bỏ qua đến nội dung</a>
   <header class="site-header">
     <a class="brand" href="#/home"><span class="brand-mark" aria-hidden="true">a.</span><span>Alice English Center</span></a>
+    <nav class="top-menu" aria-label="IELTS General">
+      <button class="top-menu__btn aero-btn" type="button" aria-expanded="false" aria-controls="gt-menu-panel">IELTS General</button>
+      <div class="top-menu__panel" id="gt-menu-panel" hidden>
+        <a href="#/ielts-gt/listening">Listening</a>
+        <a href="#/ielts-gt/reading">Reading</a>
+        <a href="#/ielts-gt/writing">Writing</a>
+        <a href="#/ielts-gt/speaking">Speaking</a>
+      </div>
+    </nav>
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" hidden>Danh mục học tập</button>
   </header>
   <div class="layout">
