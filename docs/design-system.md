@@ -56,6 +56,29 @@ Tránh: flat design phẳng lì, màu xám buồn, brutalism, neon cyberpunk, g�
 - **Trang trí:** bong bóng, mây, sóng, aurora bằng CSS gradient / SVG inline; **chỉ ở nền**, không
   chồng lên chữ, `pointer-events: none`, `aria-hidden="true"`.
 
+### Listening test player (`assets/css/listening.css`)
+
+- **Menu IELTS General (`.top-menu*`):** nút disclosure dùng `.aero-btn` đặt cạnh thương hiệu; bảng thả
+  xuống `.top-menu__panel` là glass panel có icon kỹ năng, mục sắp ra mắt dịu màu (vẫn đạt AA). Trên
+  màn hình hẹp (≤ 600px), header giữ **một hàng gọn** (`--header-offset` không tăng): nút menu rút gọn
+  nhãn/icon nhưng giữ nguyên tên truy cập (accessible name).
+- **Hub & Danh sách đề (`.gt-hub`, `.lt-list`, `.lt-card`):** lưới 2 cột đáp ứng; thẻ Listening nổi
+  bật bằng glass sheen + pill cỏ, các kỹ năng `Sắp ra mắt` (`.gt-skill--soon`) viền nét đứt, không
+  nhấc khi hover. Mỗi thẻ đề có 2 nút gel (Luyện tập aqua · Thi thử hổ phách ấm `--lt-exam-*`); khối
+  liên kết ngoài chia 2 cột gọn kèm dấu `↗` và ghi chú bản quyền.
+- **Trình phát & Bài làm (`.lt-*`):** thanh audio `.lt-audio` dạng glass dính dưới header
+  (`top: var(--header-offset)`), nút phát chính là gel aqua, nút tua nhanh dùng glass phụ để phân cấp,
+  slider giọt nước và đồng hồ `tabular-nums`. Chế độ luyện tập (`.lt-mode--practice`) mang sắc aqua;
+  chế độ thi thử (`.lt-mode--exam`, `.lt-timer`) dùng nhóm token hổ phách ấm `--lt-amber-*` (đủ tương
+  phản AA cả light/dark). Tab chọn Part (`.lt-tabs`) là segmented glass control; nhóm câu hỏi
+  (`.lt-group`) là glass sub-panel; ô điền `.lt-gap` nội tuyến, lựa chọn `.lt-option` ≥ 44px, sơ đồ
+  `.lt-map` đóng khung trên nền giấy sáng `--lt-map-bg` để đọc rõ cả dark mode.
+- **Kết quả & Transcript (`.lt-result`, `.lt-feedback`, `.lt-transcript`):** thẻ hero điểm + Band
+  (`tabular-nums`); câu đúng/sai (`.lt-q--correct` / `.lt-q--wrong`) phân biệt bằng **cả màu sắc lẫn
+  ký hiệu/chữ** (`✓ Đúng` / `✗ Chưa đúng`); 3 khối giải thích (`.lt-explain`), dẫn chứng
+  (`.lt-evidence`), và Bẫy (`.lt-distractors`, hổ phách + `⚠`) tách biệt rõ; transcript làm nổi bật
+  bằng chứng bằng `mark.lt-hl`.
+
 ## 4. Ràng buộc kỹ thuật & a11y (không được phá)
 
 - Tương phản chữ ≥ **WCAG AA** (4.5:1) — đo trên nền kính *xấu nhất* (vùng sáng nhất của trời).
