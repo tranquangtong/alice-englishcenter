@@ -1,0 +1,1276 @@
+{
+  "id": "gt-l-01",
+  "title": "Practice Test 1",
+  "parts": [
+    {
+      "part": 1,
+      "title": "Part 1 — Booking a community sports course",
+      "context": "A telephone conversation between a receptionist at Northgate Community Sports Centre and a caller enquiring about an adult evening sports course.",
+      "audio": "assets/audio/ielts-gt/listening/gt-l-01/part1.mp3",
+      "script": [
+        {
+          "speaker": "Narrator",
+          "voice": "en-GB-narrator",
+          "text": "Part 1. You will hear a telephone conversation between a receptionist at a community sports centre and a man who wants to book an adult evening sports course. First, you have some time to look at questions 1 to 6."
+        },
+        {
+          "pause": 30,
+          "note": "Reading time for questions 1–6"
+        },
+        {
+          "speaker": "Narrator",
+          "voice": "en-GB-narrator",
+          "text": "Now listen carefully and answer questions 1 to 6."
+        },
+        {
+          "speaker": "Receptionist",
+          "voice": "en-GB-female-1",
+          "text": "Good morning, Northgate Community Sports Centre, Claire speaking. How can I help you today?"
+        },
+        {
+          "speaker": "Caller",
+          "voice": "en-AU-male-1",
+          "text": "Hi Claire. I saw a flyer at the local supermarket about your autumn adult evening courses, and I'd love to sign up for one before all the spots disappear."
+        },
+        {
+          "speaker": "Receptionist",
+          "voice": "en-GB-female-1",
+          "text": "You've called at a good time—we still have places left in several groups. Let me open the enrolment form and take a few details first. Could I have your full name, please?"
+        },
+        {
+          "speaker": "Caller",
+          "voice": "en-AU-male-1",
+          "text": "Sure, it's Daniel Bramwell."
+        },
+        {
+          "speaker": "Receptionist",
+          "voice": "en-GB-female-1",
+          "text": "Right, Daniel... is that Bramhall, with an H-A-L-L at the end?"
+        },
+        {
+          "speaker": "Caller",
+          "voice": "en-AU-male-1",
+          "text": "People get that mixed up all the time. No, it's Bramwell—that's B-R-A-M-W-E-L-L."
+        },
+        {
+          "speaker": "Receptionist",
+          "voice": "en-GB-female-1",
+          "text": "Got it, thank you. And because we offer a council discount for residents within the borough, could you give me your street address?"
+        },
+        {
+          "speaker": "Caller",
+          "voice": "en-AU-male-1",
+          "text": "Yes, I've just moved into number 47 Alder Road, right behind the train station."
+        },
+        {
+          "speaker": "Receptionist",
+          "voice": "en-GB-female-1",
+          "text": "Sorry, was that Elder Road, like the tree starting with an E?"
+        },
+        {
+          "speaker": "Caller",
+          "voice": "en-AU-male-1",
+          "text": "Ah, close! It's actually another tree—Alder, spelt A-L-D-E-R. So 47 Alder Road."
+        },
+        {
+          "speaker": "Receptionist",
+          "voice": "en-GB-female-1",
+          "text": "Lovely, that definitely qualifies for the resident rate. Now, what's the best phone number to reach you on in case a session ever has to be moved?"
+        },
+        {
+          "speaker": "Caller",
+          "voice": "en-AU-male-1",
+          "text": "Let's use my mobile. It's 07492 618350... wait, sorry, hang on, that's my old work handset. My personal mobile is 07492 618305."
+        },
+        {
+          "speaker": "Receptionist",
+          "voice": "en-GB-female-1",
+          "text": "Let me read that back to be safe: 07492 618305. Perfect. Now, which sport caught your eye on the flyer?"
+        },
+        {
+          "speaker": "Caller",
+          "voice": "en-AU-male-1",
+          "text": "Well, I originally wanted to book Thursday squash, because I used to play it a bit back in Melbourne. Do you still have room in that class?"
+        },
+        {
+          "speaker": "Receptionist",
+          "voice": "en-GB-female-1",
+          "text": "Oh, I'm afraid Thursday squash filled up yesterday afternoon, and there are already four people on the waiting list. We do still have spaces in Tuesday indoor volleyball and Wednesday badminton, if either of those appeals."
+        },
+        {
+          "speaker": "Caller",
+          "voice": "en-AU-male-1",
+          "text": "Tuesdays are tricky with my work shifts, so Wednesday badminton sounds ideal. Let's go with badminton, please."
+        },
+        {
+          "speaker": "Receptionist",
+          "voice": "en-GB-female-1",
+          "text": "Great choice—our coach, Gary, is brilliant. We run two Wednesday groups side by side: complete beginners and improvers. Which level would suit you best?"
+        },
+        {
+          "speaker": "Caller",
+          "voice": "en-AU-male-1",
+          "text": "Hmm, I was thinking about joining the beginners group since I haven't picked up a racket in three years, though I did play fairly regularly at university."
+        },
+        {
+          "speaker": "Receptionist",
+          "voice": "en-GB-female-1",
+          "text": "Honestly, if you already know how to serve and rally, the beginners class spends the first three weeks on basic grip and scoring, so you might find it a bit slow. Most people with university experience prefer the improvers session."
+        },
+        {
+          "speaker": "Caller",
+          "voice": "en-AU-male-1",
+          "text": "Fair point—I'd rather get a proper workout. Put me down for improvers, then."
+        },
+        {
+          "speaker": "Receptionist",
+          "voice": "en-GB-female-1",
+          "text": "Will do. Just one quick health question for the coach's safety sheet: do you have any current injuries—anything like knee or ankle problems he should know about?"
+        },
+        {
+          "speaker": "Caller",
+          "voice": "en-AU-male-1",
+          "text": "My knees and ankles are completely fine now, touch wood. The only thing is a mild shoulder injury from moving furniture last winter—it doesn't stop me playing, I just have to warm up slowly before overhead smashes."
+        },
+        {
+          "speaker": "Receptionist",
+          "voice": "en-GB-female-1",
+          "text": "Thanks for mentioning that; I'll pop a brief note on the register for Gary."
+        },
+        {
+          "speaker": "Narrator",
+          "voice": "en-GB-narrator",
+          "text": "Before you hear the rest of the conversation, you have some time to look at questions 7 to 10."
+        },
+        {
+          "pause": 20,
+          "note": "Reading time for questions 7–10"
+        },
+        {
+          "speaker": "Narrator",
+          "voice": "en-GB-narrator",
+          "text": "Now listen and answer questions 7 to 10."
+        },
+        {
+          "speaker": "Caller",
+          "voice": "en-AU-male-1",
+          "text": "Could you just confirm the dates and times? The flyer said the autumn term begins on the 7th of October."
+        },
+        {
+          "speaker": "Receptionist",
+          "voice": "en-GB-female-1",
+          "text": "Most of our courses do start on the 7th of October, yes, including swimming and table tennis. However, the main sports hall floor is being sanded and re-varnished that week, so badminton actually starts a week later, on the 14th of October."
+        },
+        {
+          "speaker": "Caller",
+          "voice": "en-AU-male-1",
+          "text": "Oh, I'm glad I checked! I'd have turned up to an empty hall. And is it still 6.45 to 7.45 in the evening?"
+        },
+        {
+          "speaker": "Receptionist",
+          "voice": "en-GB-female-1",
+          "text": "Last term it was just an hour finishing at 7.45, but players asked for longer matches, so we extended it to ninety minutes. That means we still start at 6.45 pm, and you'll finish at 8.15 pm."
+        },
+        {
+          "speaker": "Caller",
+          "voice": "en-AU-male-1",
+          "text": "Ninety minutes is way better value. Speaking of which, how much is the eight-week block?"
+        },
+        {
+          "speaker": "Receptionist",
+          "voice": "en-GB-female-1",
+          "text": "The standard price for non-residents is 76 pounds, which works out at nine pounds fifty a session. Because you live in the borough, though, the local resident discount brings the total down to 64 pounds for all eight weeks."
+        },
+        {
+          "speaker": "Caller",
+          "voice": "en-AU-male-1",
+          "text": "That's really reasonable. Can I pay by card when I arrive on the first night, or should I pay over the phone?"
+        },
+        {
+          "speaker": "Receptionist",
+          "voice": "en-GB-female-1",
+          "text": "Either is fine, though paying at reception ten minutes before your first class saves us reading card numbers aloud. Just remember to bring proof of address like a utility bill."
+        },
+        {
+          "speaker": "Caller",
+          "voice": "en-AU-male-1",
+          "text": "No problem. And what about gear? Do I need to buy my own racket and shuttlecocks, or a pound coin for the changing-room lockers?"
+        },
+        {
+          "speaker": "Receptionist",
+          "voice": "en-GB-female-1",
+          "text": "We provide spare rackets and plenty of shuttlecocks free of charge. As for the lockers, we actually took out the old coin-operated ones back in June because people never had cash on them. You'll just need to bring a small padlock of your own to secure your bag."
+        },
+        {
+          "speaker": "Caller",
+          "voice": "en-AU-male-1",
+          "text": "A padlock—got it, I've got one at home. Thanks so much for your help, Claire."
+        },
+        {
+          "speaker": "Receptionist",
+          "voice": "en-GB-female-1",
+          "text": "You're very welcome, Daniel. See you on the 14th!"
+        },
+        {
+          "speaker": "Narrator",
+          "voice": "en-GB-narrator",
+          "text": "That is the end of Part 1. You now have half a minute to check your answers."
+        },
+        {
+          "pause": 30,
+          "note": "Check answers for Part 1"
+        }
+      ],
+      "groups": [
+        {
+          "range": [1, 6],
+          "type": "form",
+          "instructions": "Complete the form below. Write ONE WORD AND/OR A NUMBER for each answer.",
+          "wordLimit": 1,
+          "allowNumber": true,
+          "title": "Northgate Community Sports Centre — Enrolment Form",
+          "questions": [
+            {
+              "n": 1,
+              "prompt": "Full name: Daniel {{blank}}",
+              "answer": ["Bramwell"],
+              "explanation": "Người gọi tự sửa lại khi lễ tân nghe nhầm và đánh vần từng chữ cái họ của mình là B-R-A-M-W-E-L-L.",
+              "evidence": "No, it's Bramwell—that's B-R-A-M-W-E-L-L.",
+              "distractors": [
+                {
+                  "text": "Bramhall",
+                  "why": "Lễ tân đoán nhầm đuôi là H-A-L-L ('Bramhall'), nhưng Daniel lập tức phủ nhận và đánh vần lại."
+                }
+              ]
+            },
+            {
+              "n": 2,
+              "prompt": "Street address: 47 {{blank}} Road",
+              "answer": ["Alder"],
+              "explanation": "Daniel đính chính tên đường không phải Elder mà là Alder, đánh vần A-L-D-E-R.",
+              "evidence": "It's actually another tree—Alder, spelt A-L-D-E-R. So 47 Alder Road.",
+              "distractors": [
+                {
+                  "text": "Elder",
+                  "why": "Lễ tân hỏi lại xem có phải 'Elder Road' bắt đầu bằng chữ E không, nhưng người gọi sửa lại thành chữ A."
+                }
+              ]
+            },
+            {
+              "n": 3,
+              "prompt": "Contact telephone: {{blank}}",
+              "answer": ["07492 618305", "07492618305"],
+              "explanation": "Daniel đọc nhầm số máy công ty cũ rồi tự sửa lại sang số di động cá nhân là 07492 618305, và lễ tân nhắc lại để xác nhận.",
+              "evidence": "My personal mobile is 07492 618305.",
+              "distractors": [
+                {
+                  "text": "07492 618350",
+                  "why": "Đây là số máy công ty cũ (old work handset) mà Daniel đọc nhầm trước khi dừng lại sửa thành đuôi 305."
+                }
+              ]
+            },
+            {
+              "n": 4,
+              "prompt": "Chosen sport: {{blank}}",
+              "answer": ["badminton"],
+              "explanation": "Môn squash đã hết chỗ và bóng chuyền thứ Ba trùng ca làm việc, nên Daniel chọn cầu lông (badminton) vào tối thứ Tư.",
+              "evidence": "Tuesdays are tricky with my work shifts, so Wednesday badminton sounds ideal. Let's go with badminton, please.",
+              "distractors": [
+                {
+                  "text": "squash",
+                  "why": "Daniel ban đầu định đăng ký squash nhưng lớp tối thứ Năm đã kín chỗ và có 4 người trong danh sách chờ."
+                },
+                {
+                  "text": "volleyball",
+                  "why": "Lễ tân gợi ý bóng chuyền thứ Ba, nhưng Daniel từ chối vì kẹt ca làm việc."
+                }
+              ]
+            },
+            {
+              "n": 5,
+              "prompt": "Preferred level: {{blank}}",
+              "answer": ["improvers"],
+              "explanation": "Sau khi lễ tân khuyên lớp người mới sẽ hơi chậm với người từng chơi ở đại học, Daniel đồng ý đăng ký trình độ improvers (nâng cao cơ bản).",
+              "evidence": "Put me down for improvers, then.",
+              "distractors": [
+                {
+                  "text": "beginners",
+                  "why": "Daniel ban đầu cân nhắc lớp beginners vì 3 năm chưa cầm vợt, nhưng đổi ý sau lời khuyên của lễ tân."
+                }
+              ]
+            },
+            {
+              "n": 6,
+              "prompt": "Medical note: mild {{blank}} injury",
+              "answer": ["shoulder"],
+              "explanation": "Daniel xác nhận đầu gối và mắt cá chân đều ổn, chỉ có chấn thương vai nhẹ ('mild shoulder injury') từ mùa đông năm ngoái.",
+              "evidence": "The only thing is a mild shoulder injury from moving furniture last winter—it doesn't stop me playing, I just have to warm up slowly before overhead smashes.",
+              "distractors": [
+                {
+                  "text": "knee",
+                  "why": "Lễ tân hỏi thăm về chấn thương đầu gối hoặc mắt cá chân, nhưng Daniel nói cả hai đều hoàn toàn ổn."
+                },
+                {
+                  "text": "ankle",
+                  "why": "Được lễ tân nhắc đến như ví dụ nhưng Daniel phủ nhận mình có vấn đề ở mắt cá chân."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "range": [7, 10],
+          "type": "table",
+          "instructions": "Complete the table below. Write ONE WORD AND/OR A NUMBER for each answer.",
+          "wordLimit": 1,
+          "allowNumber": true,
+          "title": "Wednesday Badminton — Schedule & Fees",
+          "questions": [
+            {
+              "n": 7,
+              "prompt": "Course start date: {{blank}} October",
+              "answer": ["14", "14th"],
+              "explanation": "Sàn nhà thi đấu được đánh bóng lại trong tuần đầu nên lớp cầu lông khai giảng muộn hơn 1 tuần, vào ngày 14 tháng 10.",
+              "evidence": "However, the main sports hall floor is being sanded and re-varnished that week, so badminton actually starts a week later, on the 14th of October.",
+              "distractors": [
+                {
+                  "text": "7 / 7th",
+                  "why": "Ngày 7 tháng 10 là ngày khai giảng của các môn khác như bơi lội và bóng bàn, không phải cầu lông."
+                }
+              ]
+            },
+            {
+              "n": 8,
+              "prompt": "Session time: 6.45 pm to {{blank}} pm",
+              "answer": ["8.15", "8:15"],
+              "explanation": "Khóa này kéo dài thành 90 phút theo yêu cầu học viên nên buổi tập bắt đầu lúc 6.45 tối và kết thúc lúc 8.15 tối.",
+              "evidence": "That means we still start at 6.45 pm, and you'll finish at 8.15 pm.",
+              "distractors": [
+                {
+                  "text": "7.45",
+                  "why": "7.45 tối là giờ kết thúc của học kỳ trước khi mỗi buổi chỉ dài 60 phút."
+                }
+              ]
+            },
+            {
+              "n": 9,
+              "prompt": "Total fee (8 weeks, with resident discount): £{{blank}}",
+              "answer": ["64"],
+              "explanation": "Nhờ ưu đãi cư dân địa phương ('local resident discount'), tổng học phí 8 tuần giảm xuống còn 64 bảng.",
+              "evidence": "Because you live in the borough, though, the local resident discount brings the total down to 64 pounds for all eight weeks.",
+              "distractors": [
+                {
+                  "text": "76",
+                  "why": "76 bảng là mức giá tiêu chuẩn dành cho người không phải cư dân trong quận (non-residents)."
+                }
+              ]
+            },
+            {
+              "n": 10,
+              "prompt": "Item to bring for lockers: a small {{blank}}",
+              "answer": ["padlock"],
+              "explanation": "Trung tâm đã thay tủ khóa dùng xu từ tháng 6 nên học viên cần mang theo một chiếc ổ khóa nhỏ ('small padlock') để khóa túi đồ.",
+              "evidence": "You'll just need to bring a small padlock of your own to secure your bag.",
+              "distractors": [
+                {
+                  "text": "coin",
+                  "why": "Daniel hỏi về đồng xu 1 bảng cho tủ khóa, nhưng lễ tân cho biết loại tủ dùng xu đã bị tháo bỏ hồi tháng 6."
+                },
+                {
+                  "text": "racket",
+                  "why": "Vợt và cầu đều được trung tâm cho mượn miễn phí nên không cần tự mang."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "title": "Part 2 — Tour of a new community library",
+      "context": "A head librarian welcoming visitors and describing the services and ground-floor layout of the newly renovated Ashbrook Community Library.",
+      "audio": "assets/audio/ielts-gt/listening/gt-l-01/part2.mp3",
+      "script": [
+        {
+          "speaker": "Narrator",
+          "voice": "en-GB-narrator",
+          "text": "Part 2. You will hear a head librarian giving a welcome talk to visitors at the newly renovated Ashbrook Community Library. First, you have some time to look at questions 11 to 14."
+        },
+        {
+          "pause": 30,
+          "note": "Reading time for questions 11–14"
+        },
+        {
+          "speaker": "Narrator",
+          "voice": "en-GB-narrator",
+          "text": "Now listen carefully and answer questions 11 to 14."
+        },
+        {
+          "speaker": "Librarian",
+          "voice": "en-GB-male-1",
+          "text": "Good afternoon everyone, and welcome to the grand reopening of Ashbrook Community Library! My name's Martin, and I'm the head librarian here. Before I walk you through our new ground-floor layout, I'd like to run through a few membership perks and practical updates."
+        },
+        {
+          "speaker": "Librarian",
+          "voice": "en-GB-male-1",
+          "text": "First, a lot of people have asked what is actually free once you hold a standard library card. Now, printing documents still costs ten pence a page—we tried to scrap it, honestly, but ink budgets wouldn't stretch, though scanning to email is free. On the digital side, though, every card holder gets unlimited free access to borrowing audiobooks through our mobile app, with no late fines because files return themselves automatically."
+        },
+        {
+          "speaker": "Librarian",
+          "voice": "en-GB-male-1",
+          "text": "What about our upstairs meeting rooms? Local charities and community clubs can use them free of charge, whereas commercial or business bookings carry a small hourly fee to cover heating and cleaning. One brand-new thing that doesn't cost a penny for anyone, however, is attending the weekly digital skills drop-in every Wednesday morning, where volunteers help with everything from online banking to photo backups. Oh, and regarding book holds: standard reservations are free, though fast-track copies of newly released bestselling novels do have a one-pound charge."
+        },
+        {
+          "speaker": "Librarian",
+          "voice": "en-GB-male-1",
+          "text": "You probably noticed we opened three weeks later than the date printed on our summer banners. Rumours went round that our new shelving arrived in the wrong dimensions, which gave us a laugh because the shelves actually turned up two days early! And the solar panels on the roof sailed through their safety inspection first time. What really held us up was when the builders pulled up the old carpet and uncovered water damage beneath the floorboards from a slow-leaking heating pipe, so the whole sub-floor had to be dried out and replaced."
+        },
+        {
+          "speaker": "Librarian",
+          "voice": "en-GB-male-1",
+          "text": "Now, onto our autumn opening hours. We heard loud and clear from commuters that closing at half past five made it hard to drop by after work. We haven't changed our weekday morning opening—we still unlock the doors at nine o'clock—and Sundays remain afternoon-only from one till four. The big shift is that instead of staying open until eight o'clock on Thursdays only, we're now open late on both Tuesday and Thursday evenings until eight pm."
+        },
+        {
+          "speaker": "Narrator",
+          "voice": "en-GB-narrator",
+          "text": "Before you hear the rest of the talk, you have some time to look at questions 15 to 20."
+        },
+        {
+          "pause": 25,
+          "note": "Reading time for questions 15–20"
+        },
+        {
+          "speaker": "Narrator",
+          "voice": "en-GB-narrator",
+          "text": "Now listen and answer questions 15 to 20."
+        },
+        {
+          "speaker": "Librarian",
+          "voice": "en-GB-male-1",
+          "text": "Right, if you look down at the ground-floor plan in your welcome folder, you'll see Maple Street running along the bottom and the Main Entrance right in the centre of the south wall. Just inside is our Welcome Desk, and straight ahead runs the Central Walkway leading all the way north to the Garden Patio Door, which opens out onto Mill Pond Garden."
+        },
+        {
+          "speaker": "Librarian",
+          "voice": "en-GB-male-1",
+          "text": "Let's start with our youngest visitors. In the old building, the Children's Story Corner sat immediately to the left of the Main Entrance facing Maple Street—where room A is now—but bus noise from the street kept interrupting storytime. So room A has become our public cloakroom and accessible toilets, and we've moved the Children's Story Corner all the way up to the far north-west corner, looking right out onto Mill Pond Garden, with big beanbags and low picture-book bins."
+        },
+        {
+          "speaker": "Librarian",
+          "voice": "en-GB-male-1",
+          "text": "Next, I know everyone's excited about our new Community Café. Several residents assumed we'd tuck it right next to the Garden Patio Door at the north end, which would have been lovely, except the kitchen plumbing and extraction vents had to connect to the street mains. So as you come through the Main Entrance, turn immediately right, go past the Self-Check Kiosks, and you'll find the Community Café occupying the whole south-east corner facing Maple Street."
+        },
+        {
+          "speaker": "Librarian",
+          "voice": "en-GB-male-1",
+          "text": "Heading back towards the west side now, if you walk past the cloakroom in the bottom-left corner and head north along the corridor with the Main Bookstacks on your right-hand side, you'll reach a glass-walled studio directly opposite those bookstacks. That's our new Digital Media Lab, kitted out with podcast microphones, photo scanners, and editing stations."
+        },
+        {
+          "speaker": "Librarian",
+          "voice": "en-GB-male-1",
+          "text": "For anyone needing total silence to revise or work from home, we've installed six soundproof Quiet Study Pods. Originally the architects drew them halfway up the east wall beside the Stairs and Lift, which sounded convenient until we realised footsteps and lift chimes would drive students mad. Instead, we tucked the Quiet Study Pods into the far north-east corner of the floor, overlooking Mill Pond Garden, so you get natural light and total peace."
+        },
+        {
+          "speaker": "Librarian",
+          "voice": "en-GB-male-1",
+          "text": "Walk west along the north wall towards the centre and you'll come to two medium-sized rooms flanking the Garden Patio Door. Don't mix them up! The room on the right-hand, east side of the patio door is strictly staff storage and book sorting, so please don't wander in there. The one directly opposite it, on the left side of the Garden Patio Door between the walkway and the Children's Story Corner, is our Local History Archive, housing old Ashbrook maps and newspapers."
+        },
+        {
+          "speaker": "Librarian",
+          "voice": "en-GB-male-1",
+          "text": "Finally, one of our proudest additions is the Tool and Seed Lending Shelf—yes, you can borrow hedge trimmers, wallpaper steamers, and heirloom vegetable seeds! We briefly trialled a small display right near the entrance, but carrying heavy toolboxes across the lobby wasn't safe. Now it sits halfway up the east wall, directly across the corridor from the Stairs and Lift and right between the Quiet Study Pods and the Café, making it super easy to wheel bulky items out. Now, let's grab a coffee and take a look around!"
+        },
+        {
+          "speaker": "Narrator",
+          "voice": "en-GB-narrator",
+          "text": "That is the end of Part 2. You now have half a minute to check your answers."
+        },
+        {
+          "pause": 30,
+          "note": "Check answers for Part 2"
+        }
+      ],
+      "groups": [
+        {
+          "range": [11, 12],
+          "type": "mcq-multi",
+          "title": "Free services for library card holders",
+          "instructions": "Choose TWO letters, A–E. Which TWO services are currently free for all library card holders?",
+          "options": [
+            { "key": "A", "text": "Printing documents up to twenty pages" },
+            { "key": "B", "text": "Borrowing audiobooks through the mobile app" },
+            { "key": "C", "text": "Booking a private meeting room for business" },
+            { "key": "D", "text": "Attending the weekly digital skills drop-in" },
+            { "key": "E", "text": "Reserving newly released bestselling novels" }
+          ],
+          "questions": [
+            {
+              "n": 11,
+              "answer": ["B", "D"],
+              "explanation": "Thủ thư khẳng định mọi chủ thẻ đều được mượn sách nói miễn phí không giới hạn qua ứng dụng di động ('unlimited free access to borrowing audiobooks through our mobile app' = B).",
+              "evidence": "On the digital side, though, every card holder gets unlimited free access to borrowing audiobooks through our mobile app, with no late fines because files return themselves automatically.",
+              "distractors": [
+                {
+                  "text": "A",
+                  "why": "In tài liệu vẫn tốn 10 xu mỗi trang ('ten pence a page'); chỉ có scan gửi email là miễn phí."
+                },
+                {
+                  "text": "C",
+                  "why": "Phòng họp chỉ miễn phí cho tổ chức từ thiện và câu lạc bộ cộng đồng; đặt cho mục đích kinh doanh (business bookings) vẫn có phí theo giờ."
+                },
+                {
+                  "text": "E",
+                  "why": "Đặt giữ sách thông thường miễn phí, nhưng bản đặt nhanh của tiểu thuyết bán chạy mới phát hành (newly released bestselling novels) tốn 1 bảng."
+                }
+              ]
+            },
+            {
+              "n": 12,
+              "answer": ["B", "D"],
+              "explanation": "Buổi hướng dẫn kỹ năng số hằng tuần ('weekly digital skills drop-in') hoàn toàn miễn phí cho tất cả mọi người ('doesn't cost a penny for anyone' = D).",
+              "evidence": "One brand-new thing that doesn't cost a penny for anyone, however, is attending the weekly digital skills drop-in every Wednesday morning, where volunteers help with everything from online banking to photo backups.",
+              "distractors": []
+            }
+          ]
+        },
+        {
+          "range": [13, 14],
+          "type": "mcq",
+          "instructions": "Choose the correct letter, A, B or C.",
+          "questions": [
+            {
+              "n": 13,
+              "prompt": "Why was the library's reopening delayed by three weeks?",
+              "options": [
+                { "key": "A", "text": "The new shelving arrived in the wrong dimensions." },
+                { "key": "B", "text": "Water damage was found beneath the old floor." },
+                { "key": "C", "text": "The roof solar panels failed a safety inspection." }
+              ],
+              "answer": ["B"],
+              "explanation": "Nguyên nhân thực sự gây chậm trễ là thợ xây phát hiện hư hại do nước thấm dưới ván sàn cũ từ một ống sưởi rò rỉ ('water damage beneath the floorboards' = paraphrase của 'beneath the old floor').",
+              "evidence": "What really held us up was when the builders pulled up the old carpet and uncovered water damage beneath the floorboards from a slow-leaking heating pipe, so the whole sub-floor had to be dried out and replaced.",
+              "distractors": [
+                {
+                  "text": "A",
+                  "why": "Đây chỉ là tin đồn sai; thực tế giá sách mới đến sớm hơn hai ngày."
+                },
+                {
+                  "text": "C",
+                  "why": "Tấm pin mặt trời trên mái đã vượt qua kiểm tra an toàn ngay lần đầu ('sailed through their safety inspection first time')."
+                }
+              ]
+            },
+            {
+              "n": 14,
+              "prompt": "What is the main change to the library's opening hours this autumn?",
+              "options": [
+                { "key": "A", "text": "It now opens earlier on weekday mornings." },
+                { "key": "B", "text": "It has started opening all day on Sundays." },
+                { "key": "C", "text": "It stays open late on two evenings instead of one." }
+              ],
+              "answer": ["C"],
+              "explanation": "Thay đổi lớn nhất là thư viện nay mở cửa muộn đến 8 giờ tối vào cả tối thứ Ba và thứ Năm thay vì chỉ tối thứ Năm như trước ('two evenings instead of one').",
+              "evidence": "The big shift is that instead of staying open until eight o'clock on Thursdays only, we're now open late on both Tuesday and Thursday evenings until eight pm.",
+              "distractors": [
+                {
+                  "text": "A",
+                  "why": "Giờ mở cửa sáng các ngày trong tuần không đổi, vẫn là 9 giờ sáng."
+                },
+                {
+                  "text": "B",
+                  "why": "Chủ nhật vẫn chỉ mở buổi chiều từ 1 giờ đến 4 giờ ('afternoon-only'), không mở cả ngày."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "range": [15, 20],
+          "type": "map",
+          "title": "Ashbrook Community Library — Ground Floor",
+          "image": "content/ielts-gt/listening/img/gt-l-01-map.svg",
+          "instructions": "Label the map below. Write the correct letter, A–H, next to questions 15–20.",
+          "options": [
+            { "key": "A", "text": "A" },
+            { "key": "B", "text": "B" },
+            { "key": "C", "text": "C" },
+            { "key": "D", "text": "D" },
+            { "key": "E", "text": "E" },
+            { "key": "F", "text": "F" },
+            { "key": "G", "text": "G" },
+            { "key": "H", "text": "H" }
+          ],
+          "questions": [
+            {
+              "n": 15,
+              "prompt": "Children's Story Corner",
+              "answer": ["C"],
+              "explanation": "Góc kể chuyện thiếu nhi đã được chuyển lên góc Tây Bắc xa nhất ('far north-west corner'), nhìn ra Mill Pond Garden — tương ứng vị trí C trên bản đồ.",
+              "evidence": "So room A has become our public cloakroom and accessible toilets, and we've moved the Children's Story Corner all the way up to the far north-west corner, looking right out onto Mill Pond Garden, with big beanbags and low picture-book bins.",
+              "distractors": [
+                {
+                  "text": "A",
+                  "why": "A là vị trí cũ của góc thiếu nhi nhưng bị ồn bởi xe buýt trên Maple Street nên giờ đã chuyển thành phòng gửi đồ và nhà vệ sinh."
+                }
+              ]
+            },
+            {
+              "n": 16,
+              "prompt": "Community Café",
+              "answer": ["H"],
+              "explanation": "Từ Cổng Chính rẽ phải ngay, đi qua các quầy Self-Check Kiosks sẽ thấy Community Café ở góc Đông Nam ('south-east corner') giáp Maple Street — chính là H.",
+              "evidence": "So as you come through the Main Entrance, turn immediately right, go past the Self-Check Kiosks, and you'll find the Community Café occupying the whole south-east corner facing Maple Street.",
+              "distractors": [
+                {
+                  "text": "D",
+                  "why": "Nhiều cư dân tưởng quán cà phê sẽ ở sát cửa vườn Garden Patio Door, nhưng hệ thống ống nước buộc phải nối ra mặt đường chính."
+                },
+                {
+                  "text": "E",
+                  "why": "Tương tự, cạnh cửa vườn ở phía Bắc không có đường ống nước phù hợp cho bếp quán cà phê."
+                }
+              ]
+            },
+            {
+              "n": 17,
+              "prompt": "Digital Media Lab",
+              "answer": ["B"],
+              "explanation": "Đi qua phòng A (góc Tây Nam) hướng lên phía Bắc, bên phải là Main Bookstacks, thì phòng đối diện trực tiếp với Main Bookstacks bên tường Tây là B.",
+              "evidence": "Heading back towards the west side now, if you walk past the cloakroom in the bottom-left corner and head north along the corridor with the Main Bookstacks on your right-hand side, you'll reach a glass-walled studio directly opposite those bookstacks. That's our new Digital Media Lab, kitted out with podcast microphones, photo scanners, and editing stations.",
+              "distractors": [
+                {
+                  "text": "A",
+                  "why": "A là phòng gửi đồ mà bạn đi ngang qua trước khi tới vị trí đối diện giá sách chính."
+                },
+                {
+                  "text": "C",
+                  "why": "C nằm xa hơn ở góc Tây Bắc và là Children's Story Corner."
+                }
+              ]
+            },
+            {
+              "n": 18,
+              "prompt": "Quiet Study Pods",
+              "answer": ["F"],
+              "explanation": "Khu học yên tĩnh được đặt ở góc Đông Bắc xa nhất ('far north-east corner'), nhìn ra Mill Pond Garden — tương ứng vị trí F.",
+              "evidence": "Instead, we tucked the Quiet Study Pods into the far north-east corner of the floor, overlooking Mill Pond Garden, so you get natural light and total peace.",
+              "distractors": [
+                {
+                  "text": "G",
+                  "why": "Ban đầu kiến trúc sư định đặt khu này giữa tường Đông cạnh thang máy/cầu thang (G), nhưng đã đổi vì sợ tiếng bước chân và chuông thang máy."
+                }
+              ]
+            },
+            {
+              "n": 19,
+              "prompt": "Local History Archive",
+              "answer": ["D"],
+              "explanation": "Phòng Lưu trữ Lịch sử Địa phương nằm bên trái cửa Garden Patio Door, giữa lối đi trung tâm và Children's Story Corner (C) — chính là D.",
+              "evidence": "The one directly opposite it, on the left side of the Garden Patio Door between the walkway and the Children's Story Corner, is our Local History Archive, housing old Ashbrook maps and newspapers.",
+              "distractors": [
+                {
+                  "text": "E",
+                  "why": "E nằm bên phải (phía Đông) cửa Garden Patio Door, nhưng người nói cảnh báo rõ đây là kho nội bộ của nhân viên ('strictly staff storage')."
+                }
+              ]
+            },
+            {
+              "n": 20,
+              "prompt": "Tool & Seed Lending Shelf",
+              "answer": ["G"],
+              "explanation": "Kệ cho mượn dụng cụ & hạt giống nằm giữa tường Đông, đối diện trực tiếp với Stairs & Lift và nằm giữa Quiet Study Pods (F) với Café (H) — chính là G.",
+              "evidence": "Now it sits halfway up the east wall, directly across the corridor from the Stairs and Lift and right between the Quiet Study Pods and the Café, making it super easy to wheel bulky items out.",
+              "distractors": [
+                {
+                  "text": "A",
+                  "why": "Kệ từng được thử nghiệm gần lối vào chính, nhưng việc bê hộp dụng cụ nặng qua sảnh không an toàn nên đã dời sang G."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "part": 3,
+      "title": "Part 3 — Workplace first-aid course assignment",
+      "context": "Two workplace first-aid trainees, Priya and Sam, discussing their course assignment with their trainer, Helen.",
+      "audio": "assets/audio/ielts-gt/listening/gt-l-01/part3.mp3",
+      "script": [
+        {
+          "speaker": "Narrator",
+          "voice": "en-GB-narrator",
+          "text": "Part 3. You will hear two trainees, Priya and Sam, talking to their trainer, Helen, about their workplace first-aid course assignment for a catering warehouse. First, you have some time to look at questions 21 to 24."
+        },
+        {
+          "pause": 30,
+          "note": "Reading time for questions 21–24"
+        },
+        {
+          "speaker": "Narrator",
+          "voice": "en-GB-narrator",
+          "text": "Now listen carefully and answer questions 21 to 24."
+        },
+        {
+          "speaker": "Helen",
+          "voice": "en-AU-female-1",
+          "text": "Right, come in both of you, take a seat. I've read your draft audit and emergency handbook for the catering warehouse—really solid fieldwork. Sam, you inspected the existing first-aid kits first, didn't you? What caught you off guard?"
+        },
+        {
+          "speaker": "Sam",
+          "voice": "en-US-male-1",
+          "text": "Honestly, Helen, I went in expecting locked cupboards, because someone from another branch told me managers lock kits up to stop staff taking plasters home. Actually every wall box was unlocked and easy to reach, and they even had loads of burn gels right by the hot-drinks station. What genuinely shocked me was checking the dates—nearly half of the sterile dressings had expired, some back in 2021!"
+        },
+        {
+          "speaker": "Priya",
+          "voice": "en-GB-female-1",
+          "text": "Yeah, nobody had been assigned to audit stock monthly. Then I looked at the emergency contact poster pinned next to the loading bay. Sam thought maybe the print was too tiny for workers wearing safety goggles, though under the LED strip lights it's actually readable enough, and the local hospital address is still accurate. The real mess is that it mixes twenty non-urgent numbers—like the vending machine repair line and payroll—right alongside the ambulance and poison-control numbers."
+        },
+        {
+          "speaker": "Helen",
+          "voice": "en-AU-female-1",
+          "text": "Oh, that's a classic hazard when someone's panicking—you definitely need to strip that back. Now, turning to your draft incident report form, I have to say your wording is refreshingly clear—none of the heavy medical jargon that confuses warehouse drivers, and you've stayed within staff privacy rules on personal details. My one big concern is that once an injury is logged, there's nowhere at the bottom to note what follow-up actions were taken later, like whether a faulty pallet truck was fixed."
+        },
+        {
+          "speaker": "Priya",
+          "voice": "en-GB-female-1",
+          "text": "Ah, good catch—without that, the same accident just repeats itself. Before we present the handbook to the warehouse manager on Friday, Sam and I were debating a few tweaks."
+        },
+        {
+          "speaker": "Sam",
+          "voice": "en-US-male-1",
+          "text": "I was keen on translating the whole booklet into three languages straight away, since several packers speak Polish or Portuguese."
+        },
+        {
+          "speaker": "Helen",
+          "voice": "en-AU-female-1",
+          "text": "Brilliant long-term idea, Sam, though you'll never get accurate safety translations done properly before Friday—save that as a phase-two recommendation."
+        },
+        {
+          "speaker": "Priya",
+          "voice": "en-GB-female-1",
+          "text": "True. I also wondered if we should trim the chemical eye-wash section to save pages, since it's three pages long."
+        },
+        {
+          "speaker": "Sam",
+          "voice": "en-US-male-1",
+          "text": "Wait—they store concentrated industrial degreasers in aisle four, Priya. Cutting eye-wash steps could be risky. What about adding colour-coded tabs down the edge for different types of injury—burns, cuts, chemical splashes—so anyone can flip straight there?"
+        },
+        {
+          "speaker": "Priya",
+          "voice": "en-GB-female-1",
+          "text": "Yes! That solves the speed issue without dropping vital detail. Let's definitely put colour-coded tabs in before Friday."
+        },
+        {
+          "speaker": "Narrator",
+          "voice": "en-GB-narrator",
+          "text": "Before you hear the rest of the discussion, you have some time to look at questions 25 to 30."
+        },
+        {
+          "pause": 25,
+          "note": "Reading time for questions 25–30"
+        },
+        {
+          "speaker": "Narrator",
+          "voice": "en-GB-narrator",
+          "text": "Now listen and answer questions 25 to 30."
+        },
+        {
+          "speaker": "Helen",
+          "voice": "en-AU-female-1",
+          "text": "Now let's go section by section through the updates you're planning before you submit. First up, the defibrillator maintenance log."
+        },
+        {
+          "speaker": "Sam",
+          "voice": "en-US-male-1",
+          "text": "I wrote down that the battery lasts five years and the adhesive pads last two, based on an old manual I found online. Priya pointed out that this warehouse has the newer compact model, so I'm going to phone the equipment supplier tomorrow to verify the exact replacement intervals."
+        },
+        {
+          "speaker": "Helen",
+          "voice": "en-AU-female-1",
+          "text": "Sensible move—never guess with defibrillator specs. What about the choking response guide? Did you notice any duplicate checklists in there?"
+        },
+        {
+          "speaker": "Priya",
+          "voice": "en-GB-female-1",
+          "text": "I already stripped out the duplicate checklists last night, Helen. The bigger issue with the choking guide is that it's just dense paragraphs of text, and nobody reads paragraphs when a colleague can't breathe. We're going to drop in a clean step-by-step diagram showing back blows and abdominal thrusts."
+        },
+        {
+          "speaker": "Helen",
+          "voice": "en-AU-female-1",
+          "text": "Much better. Next, I noticed your fire-assembly and triage map is tucked away on page eighteen."
+        },
+        {
+          "speaker": "Sam",
+          "voice": "en-US-male-1",
+          "text": "Yeah, looking back, hiding the evacuation map in the appendix makes zero sense. We've decided to shift it right to the very front of the handbook, on the inside front cover, so it's the first thing staff see."
+        },
+        {
+          "speaker": "Helen",
+          "voice": "en-AU-female-1",
+          "text": "Great call. Now, on the allergic reaction protocol—the medical steps for auto-injectors look accurate, though I spotted a snag in the footnotes."
+        },
+        {
+          "speaker": "Priya",
+          "voice": "en-GB-female-1",
+          "text": "Oh, let me guess—the 2016 Health and Safety Executive references! I pulled those from an old template and forgot the regulations were updated last year. I'll swap out those outdated legal references tonight."
+        },
+        {
+          "speaker": "Helen",
+          "voice": "en-AU-female-1",
+          "text": "Spot on. And how about the solo-worker accident procedure? The warehouse only has two people on site during the overnight cold-store restock, doesn't it?"
+        },
+        {
+          "speaker": "Sam",
+          "voice": "en-US-male-1",
+          "text": "Exactly, and neither of us has ever worked an overnight shift, so our draft is mostly guesswork about how their check-in radios work. Rather than guessing, we've booked twenty minutes to interview a night-shift supervisor tomorrow morning and rewrite that part from real experience."
+        },
+        {
+          "speaker": "Helen",
+          "voice": "en-AU-female-1",
+          "text": "That'll give your assignment real weight. Finally, the new-starter induction summary—were you thinking of asking one of the senior first-aiders to proofread it?"
+        },
+        {
+          "speaker": "Priya",
+          "voice": "en-GB-female-1",
+          "text": "Well, since you're assessing the whole draft yourself, we don't really need a senior colleague to proofread it. What worried us is that new hires just skim a one-page leaflet and bin it. So we're going to build in a short practical quiz—just five quick scenario questions at the end—so supervisors can check they've actually absorbed the basics."
+        },
+        {
+          "speaker": "Helen",
+          "voice": "en-AU-female-1",
+          "text": "Love that idea. Send me the updated file by Thursday evening and you'll be in great shape for Friday."
+        },
+        {
+          "speaker": "Narrator",
+          "voice": "en-GB-narrator",
+          "text": "That is the end of Part 3. You now have half a minute to check your answers."
+        },
+        {
+          "pause": 30,
+          "note": "Check answers for Part 3"
+        }
+      ],
+      "groups": [
+        {
+          "range": [21, 24],
+          "type": "mcq",
+          "instructions": "Choose the correct letter, A, B or C.",
+          "questions": [
+            {
+              "n": 21,
+              "prompt": "What surprised Sam most during his inspection of the warehouse's existing first-aid kits?",
+              "options": [
+                { "key": "A", "text": "Several boxes were kept in locked offices." },
+                { "key": "B", "text": "Almost half the sterile dressings were past their expiry date." },
+                { "key": "C", "text": "There were no burn gels anywhere in the building." }
+              ],
+              "answer": ["B"],
+              "explanation": "Điều thực sự làm Sam bất ngờ ('genuinely shocked me') là gần một nửa băng gạc vô trùng đã hết hạn ('nearly half of the sterile dressings had expired' = paraphrase của 'almost half ... past their expiry date').",
+              "evidence": "What genuinely shocked me was checking the dates—nearly half of the sterile dressings had expired, some back in 2021!",
+              "distractors": [
+                {
+                  "text": "A",
+                  "why": "Sam nghe đồn từ chi nhánh khác về tủ bị khóa, nhưng thực tế tại kho này mọi hộp sơ cứu đều mở và dễ lấy."
+                },
+                {
+                  "text": "C",
+                  "why": "Ngược lại với C, Sam nói kho có rất nhiều gel trị bỏng ('loads of burn gels') ngay cạnh khu pha đồ uống nóng."
+                }
+              ]
+            },
+            {
+              "n": 22,
+              "prompt": "Why does Priya suggest reorganising the emergency contact poster?",
+              "options": [
+                { "key": "A", "text": "The hospital address printed on it is out of date." },
+                { "key": "B", "text": "The font is too small for staff wearing safety goggles." },
+                { "key": "C", "text": "It lists too many non-urgent phone numbers alongside emergency ones." }
+              ],
+              "answer": ["C"],
+              "explanation": "Priya chỉ ra vấn đề thực sự là áp phích trộn lẫn 20 số không khẩn cấp (như sửa máy bán hàng tự động, phòng lương) ngay bên cạnh số cấp cứu và chống độc.",
+              "evidence": "The real mess is that it mixes twenty non-urgent numbers—like the vending machine repair line and payroll—right alongside the ambulance and poison-control numbers.",
+              "distractors": [
+                {
+                  "text": "A",
+                  "why": "Priya nói rõ địa chỉ bệnh viện địa phương vẫn chính xác ('still accurate')."
+                },
+                {
+                  "text": "B",
+                  "why": "Sam từng nghĩ cỡ chữ quá nhỏ với người đeo kính bảo hộ, nhưng Priya cho rằng dưới đèn LED vẫn đủ dễ đọc."
+                }
+              ]
+            },
+            {
+              "n": 23,
+              "prompt": "According to Helen, what is the biggest weakness in the trainees' draft incident report form?",
+              "options": [
+                { "key": "A", "text": "It asks for personal details that violate staff privacy." },
+                { "key": "B", "text": "It leaves no space to record follow-up actions taken later." },
+                { "key": "C", "text": "It uses medical jargon that warehouse drivers may misunderstand." }
+              ],
+              "answer": ["B"],
+              "explanation": "Mối lo ngại lớn nhất của Helen ('My one big concern') là cuối biểu mẫu không có chỗ ghi lại các biện pháp khắc phục sau đó ('nowhere at the bottom to note what follow-up actions were taken later').",
+              "evidence": "My one big concern is that once an injury is logged, there's nowhere at the bottom to note what follow-up actions were taken later, like whether a faulty pallet truck was fixed.",
+              "distractors": [
+                {
+                  "text": "A",
+                  "why": "Helen khen mẫu báo cáo đã tuân thủ đúng quy định bảo mật thông tin cá nhân của nhân viên."
+                },
+                {
+                  "text": "C",
+                  "why": "Helen nhận xét ngôn từ rất rõ ràng và không dùng thuật ngữ y khoa khó hiểu ('none of the heavy medical jargon')."
+                }
+              ]
+            },
+            {
+              "n": 24,
+              "prompt": "What do Priya and Sam agree to change before presenting their handbook to the warehouse manager?",
+              "options": [
+                { "key": "A", "text": "Include colour-coded tabs for different types of injury." },
+                { "key": "B", "text": "Translate the whole booklet into three languages." },
+                { "key": "C", "text": "Shorten the section on chemical eye-wash procedures." }
+              ],
+              "answer": ["A"],
+              "explanation": "Sam đề xuất thêm thẻ phân trang mã hóa màu theo loại chấn thương ('colour-coded tabs') và Priya lập tức đồng ý làm trước thứ Sáu.",
+              "evidence": "Let's definitely put colour-coded tabs in before Friday.",
+              "distractors": [
+                {
+                  "text": "B",
+                  "why": "Sam đề nghị dịch sang ba ngôn ngữ nhưng Helen bảo không kịp hạn thứ Sáu nên để sang giai đoạn hai."
+                },
+                {
+                  "text": "C",
+                  "why": "Priya hỏi có nên rút ngắn phần rửa mắt hóa chất không nhưng Sam phản đối vì kho chứa hóa chất tẩy dầu mỡ đậm đặc."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "range": [25, 30],
+          "type": "matching",
+          "title": "Planned updates to the workplace first-aid assignment",
+          "instructions": "What decision do they make about each of the following sections of the assignment? Choose SIX answers from the box and write the correct letter, A–H, next to questions 25–30.",
+          "options": [
+            { "key": "A", "text": "Add a step-by-step diagram" },
+            { "key": "B", "text": "Replace outdated legal references" },
+            { "key": "C", "text": "Interview a night-shift supervisor" },
+            { "key": "D", "text": "Remove duplicate checklists" },
+            { "key": "E", "text": "Include a short practical quiz" },
+            { "key": "F", "text": "Check accuracy with the equipment supplier" },
+            { "key": "G", "text": "Move it to the front of the handbook" },
+            { "key": "H", "text": "Ask a senior colleague to proofread it" }
+          ],
+          "questions": [
+            {
+              "n": 25,
+              "prompt": "Defibrillator maintenance log",
+              "answer": ["F"],
+              "explanation": "Vì kho dùng mẫu máy khử rung tim mới hơn, Sam sẽ gọi cho nhà cung cấp thiết bị để xác minh chu kỳ thay pin và miếng dán ('phone the equipment supplier tomorrow to verify' = paraphrase của 'Check accuracy with the equipment supplier').",
+              "evidence": "Priya pointed out that this warehouse has the newer compact model, so I'm going to phone the equipment supplier tomorrow to verify the exact replacement intervals.",
+              "distractors": [
+                {
+                  "text": "B",
+                  "why": "Nhắc tới tài liệu cũ trên mạng ('old manual'), dễ nhầm với việc thay trích dẫn pháp lý cũ (B), nhưng hành động quyết định là kiểm tra với nhà cung cấp."
+                }
+              ]
+            },
+            {
+              "n": 26,
+              "prompt": "Choking response guide",
+              "answer": ["A"],
+              "explanation": "Họ nhận thấy đoạn văn dài khó đọc khi hoảng loạn nên quyết định chèn sơ đồ hướng dẫn từng bước ('drop in a clean step-by-step diagram' = A).",
+              "evidence": "We're going to drop in a clean step-by-step diagram showing back blows and abdominal thrusts.",
+              "distractors": [
+                {
+                  "text": "D",
+                  "why": "Helen hỏi về bảng kiểm trùng lặp ('duplicate checklists'), nhưng Priya nói cô đã xóa xong tối qua rồi nên đây không còn là việc cần làm."
+                }
+              ]
+            },
+            {
+              "n": 27,
+              "prompt": "Fire-assembly and triage map",
+              "answer": ["G"],
+              "explanation": "Sơ đồ sơ tán đang bị giấu ở trang 18 (phụ lục) nên họ quyết định chuyển lên ngay đầu sổ tay ('shift it right to the very front of the handbook' = G).",
+              "evidence": "We've decided to shift it right to the very front of the handbook, on the inside front cover, so it's the first thing staff see.",
+              "distractors": [
+                {
+                  "text": "A",
+                  "why": "Có nhắc đến bản đồ (map), nhưng họ không vẽ thêm sơ đồ mới mà chỉ di chuyển bản đồ có sẵn lên trang đầu."
+                }
+              ]
+            },
+            {
+              "n": 28,
+              "prompt": "Allergic reaction protocol",
+              "answer": ["B"],
+              "explanation": "Các bước y tế đã đúng nhưng phần chú thích còn trích dẫn quy định cũ năm 2016 nên Priya sẽ thay thế các trích dẫn pháp lý lỗi thời ('swap out those outdated legal references' = B).",
+              "evidence": "I'll swap out those outdated legal references tonight.",
+              "distractors": [
+                {
+                  "text": "F",
+                  "why": "Có nhắc đến bút tiêm tự động (auto-injectors), nhưng không cần hỏi nhà cung cấp vì bước y tế đã chính xác."
+                }
+              ]
+            },
+            {
+              "n": 29,
+              "prompt": "Solo-worker accident procedure",
+              "answer": ["C"],
+              "explanation": "Vì cả hai chưa từng làm ca đêm, họ đã đặt lịch phỏng vấn một giám sát ca đêm ('interview a night-shift supervisor' = C) để viết lại dựa trên thực tế.",
+              "evidence": "Rather than guessing, we've booked twenty minutes to interview a night-shift supervisor tomorrow morning and rewrite that part from real experience.",
+              "distractors": [
+                {
+                  "text": "H",
+                  "why": "Họ phỏng vấn giám sát ca đêm để lấy thông tin thực tế, không phải nhờ đồng nghiệp cấp cao đọc soát lỗi."
+                }
+              ]
+            },
+            {
+              "n": 30,
+              "prompt": "New-starter induction summary",
+              "answer": ["E"],
+              "explanation": "Để tránh việc nhân viên mới chỉ đọc lướt tờ rơi rồi vứt đi, họ sẽ thêm một bài trắc nghiệm thực hành ngắn 5 câu ('build in a short practical quiz' = E).",
+              "evidence": "So we're going to build in a short practical quiz—just five quick scenario questions at the end—so supervisors can check they've actually absorbed the basics.",
+              "distractors": [
+                {
+                  "text": "H",
+                  "why": "Helen hỏi họ có định nhờ đồng nghiệp kỳ cựu đọc soát lỗi không, nhưng Priya từ chối vì chính Helen sẽ chấm bản nháp."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "part": 4,
+      "title": "Part 4 — Urban beekeeping",
+      "context": "A talk by an environmental researcher on the growth, benefits, and ecological challenges of keeping honeybees in cities.",
+      "audio": "assets/audio/ielts-gt/listening/gt-l-01/part4.mp3",
+      "script": [
+        {
+          "speaker": "Narrator",
+          "voice": "en-GB-narrator",
+          "text": "Part 4. You will hear an environmental researcher giving a talk about urban beekeeping. First, you have some time to look at questions 31 to 40."
+        },
+        {
+          "pause": 40,
+          "note": "Reading time for questions 31–40"
+        },
+        {
+          "speaker": "Narrator",
+          "voice": "en-GB-narrator",
+          "text": "Now listen carefully and answer questions 31 to 40."
+        },
+        {
+          "speaker": "Speaker",
+          "voice": "en-US-female-1",
+          "text": "Good evening, everyone. Tonight I want to look at a trend that has reshaped city skylines quietly over the last fifteen years: urban beekeeping. If you climb onto a rooftop in London, Paris, Melbourne, or Chicago today, there's a fair chance you'll spot painted wooden hives buzzing away above the traffic."
+        },
+        {
+          "speaker": "Speaker",
+          "voice": "en-US-female-1",
+          "text": "Now, when people imagine city hives, they often picture primary schools first, because of educational projects. In reality, strict child-safety liability rules mean schools host only a tiny fraction of hives. Across major cities, rooftop apiaries are far more commonly installed on the flat roofs of hotels, corporate offices, and hospitals—often maintained by specialist contractors who harvest honey for the building's own kitchens."
+        },
+        {
+          "speaker": "Speaker",
+          "voice": "en-US-female-1",
+          "text": "Why have cities turned out to be surprisingly welcoming for honeybees? Well, we all hear about chemical pesticides harming rural colonies, and that is certainly a major factor. Yet even aside from spraying, modern countryside farmland is often dominated by a single crop, such as vast fields of canola or wheat that bloom for just three weeks and then leave a nutritional desert. Urban bees, by contrast, enjoy a continuous menu of diverse flowering plants from early spring through late autumn."
+        },
+        {
+          "speaker": "Speaker",
+          "voice": "en-US-female-1",
+          "text": "This variety shows up directly in the jar. While rural bees rely heavily on field margins and wild hedges, city honey often has an unusually complex flavour because urban bees gather nectar from public parks, apartment balconies, and ornamental trees lining residential avenues—species like lime, horse chestnut, and cherry blossom."
+        },
+        {
+          "speaker": "Speaker",
+          "voice": "en-US-female-1",
+          "text": "Temperature plays a role as well. Concrete and brick absorb heat during the day and release it slowly after sunset, creating what climatologists call the urban heat-island effect. Researchers initially wondered whether mild winters would cut winter mortality dramatically, though the picture there is mixed. What is much clearer is that because cities stay warmer overnight, the foraging season starts earlier and finishes later, boosting average yields per hive well above nearby rural averages."
+        },
+        {
+          "speaker": "Speaker",
+          "voice": "en-US-female-1",
+          "text": "So far, urban beekeeping sounds like an unqualified win for nature. However, ecologists have begun raising serious flags about overcrowding. Many residents assume traffic fumes and air pollution must be the biggest threat to rooftop colonies, yet lab tests rarely find worrying contaminant levels in city honey. Instead, a sudden surge in hobbyist hives across central districts has created intense competition for a finite supply of urban pollen and nectar."
+        },
+        {
+          "speaker": "Speaker",
+          "voice": "en-US-female-1",
+          "text": "And honeybees are not the ones losing that battle. A single managed hive can house fifty thousand workers capable of stripping a city park of pollen within hours. While migratory insects like painted lady butterflies pass through briefly, recent surveys in Paris and Montreal show that high honeybee density places severe strain on native species—particularly solitary bumblebees and mason bees that cannot fly far to find alternative food."
+        },
+        {
+          "speaker": "Speaker",
+          "voice": "en-US-female-1",
+          "text": "There is also a health risk when enthusiasm outpaces training. Neighbours living near rooftop hives usually worry most about sudden swarms settling in their gardens during May. Swarms are dramatic, yes, but rarely aggressive. Far more damaging is when inexperienced keepers fail to check colonies regularly for parasitic Varroa mites, allowing disease to spread rapidly from one unmanaged roof to surrounding apiaries."
+        },
+        {
+          "speaker": "Speaker",
+          "voice": "en-US-female-1",
+          "text": "So what does responsible city beekeeping look like? First, before ordering a colony online, anyone interested should check local height and boundary rules and register with a regional association. Only a handful of city councils operate official hive registries, whereas regional beekeeping associations provide mentors, swarm-collection networks, and local disease alerts."
+        },
+        {
+          "speaker": "Speaker",
+          "voice": "en-US-female-1",
+          "text": "Second, urban keepers must supply clean drinking water right beside their hives so thirsty bees don't crowd neighbours' swimming pools or birdbaths. Avoid filling a tray with sand, which quickly turns to sour mud; instead, placing a shallow dish of water filled with pebbles gives bees dry landing spots and stops them from drowning while they drink."
+        },
+        {
+          "speaker": "Speaker",
+          "voice": "en-US-female-1",
+          "text": "Finally, it's worth remembering that honeybees are domesticated livestock, not an endangered wild species. If you want to help urban biodiversity without years of hive training, ecologists now advise skipping the hive altogether. Clipped evergreen shrubs look tidy, sure, yet offer almost zero nectar. Instead, city residents can make a much broader impact by planting pollinator-friendly meadows—even tiny balcony or roadside strips of native wildflowers that nourish hundreds of insect species at once. Thank you very much for listening."
+        },
+        {
+          "speaker": "Narrator",
+          "voice": "en-GB-narrator",
+          "text": "That is the end of Part 4. You now have half a minute to check your answers."
+        },
+        {
+          "pause": 30,
+          "note": "Check answers for Part 4"
+        }
+      ],
+      "groups": [
+        {
+          "range": [31, 40],
+          "type": "note",
+          "instructions": "Complete the notes below. Write ONE WORD ONLY for each answer.",
+          "wordLimit": 1,
+          "allowNumber": false,
+          "title": "Urban Beekeeping: Growth, Benefits and Challenges",
+          "questions": [
+            {
+              "n": 31,
+              "prompt": "Hive locations: Commonly installed on the flat roofs of hotels, offices, and {{blank}}.",
+              "answer": ["hospitals"],
+              "explanation": "Diễn giả liệt kê tổ ong trên mái bằng thành phố thường đặt ở khách sạn, văn phòng và bệnh viện ('hotels, corporate offices, and hospitals').",
+              "evidence": "Across major cities, rooftop apiaries are far more commonly installed on the flat roofs of hotels, corporate offices, and hospitals—often maintained by specialist contractors who harvest honey for the building's own kitchens.",
+              "distractors": [
+                {
+                  "text": "schools",
+                  "why": "Mọi người thường nghĩ đến trường tiểu học đầu tiên, nhưng do quy định an toàn trẻ em nên trường học chỉ chiếm tỷ lệ rất nhỏ."
+                }
+              ]
+            },
+            {
+              "n": 32,
+              "prompt": "Urban bees enjoy diverse flowers, unlike rural areas dominated by a single {{blank}}.",
+              "answer": ["crop"],
+              "explanation": "Đất nông nghiệp hiện đại ở nông thôn thường chỉ trồng một loại cây duy nhất ('dominated by a single crop'), tạo ra sự thiếu hụt dinh dưỡng sau khi hết mùa hoa.",
+              "evidence": "Yet even aside from spraying, modern countryside farmland is often dominated by a single crop, such as vast fields of canola or wheat that bloom for just three weeks and then leave a nutritional desert.",
+              "distractors": [
+                {
+                  "text": "pesticides",
+                  "why": "Thuốc trừ sâu được nhắc tới ngay trước đó như một tác nhân khác ở nông thôn, nhưng cụm 'dominated by a single ___' cần danh từ số ít 'crop'."
+                }
+              ]
+            },
+            {
+              "n": 33,
+              "prompt": "Complex honey flavour comes from nectar in parks, balconies, and ornamental {{blank}}.",
+              "answer": ["trees"],
+              "explanation": "Ong thành phố lấy mật từ công viên, ban công và các loài cây cảnh trồng ven đường ('ornamental trees').",
+              "evidence": "While rural bees rely heavily on field margins and wild hedges, city honey often has an unusually complex flavour because urban bees gather nectar from public parks, apartment balconies, and ornamental trees lining residential avenues—species like lime, horse chestnut, and cherry blossom.",
+              "distractors": [
+                {
+                  "text": "hedges",
+                  "why": "Hàng rào cây dại ('wild hedges') là nguồn hoa của ong nông thôn, không phải ong thành phố."
+                }
+              ]
+            },
+            {
+              "n": 34,
+              "prompt": "Warmer city nights extend the foraging season, increasing average {{blank}}.",
+              "answer": ["yields"],
+              "explanation": "Mùa tìm mật kéo dài giúp nâng cao sản lượng trung bình mỗi tổ ('boosting average yields' = paraphrase của 'increasing average yields').",
+              "evidence": "What is much clearer is that because cities stay warmer overnight, the foraging season starts earlier and finishes later, boosting average yields per hive well above nearby rural averages.",
+              "distractors": [
+                {
+                  "text": "mortality",
+                  "why": "Tỷ lệ chết mùa đông ('winter mortality') được nhắc tới ở câu trước nhưng diễn giả nói kết quả nghiên cứu chưa rõ ràng."
+                }
+              ]
+            },
+            {
+              "n": 35,
+              "prompt": "Overcrowding risk: Rapid growth in hobbyist hives has created intense {{blank}} for pollen.",
+              "answer": ["competition"],
+              "explanation": "Sự bùng nổ tổ ong nuôi làm thú vui ở khu trung tâm gây ra cạnh tranh gay gắt ('intense competition') về nguồn phấn hoa và mật hoa hữu hạn.",
+              "evidence": "Instead, a sudden surge in hobbyist hives across central districts has created intense competition for a finite supply of urban pollen and nectar.",
+              "distractors": [
+                {
+                  "text": "pollution",
+                  "why": "Nhiều cư dân tưởng ô nhiễm không khí ('air pollution') là mối đe dọa lớn nhất, nhưng kiểm nghiệm ít khi thấy chất độc đáng lo trong mật ong thành phố."
+                }
+              ]
+            },
+            {
+              "n": 36,
+              "prompt": "High honeybee density puts pressure on {{blank}} species such as solitary bumblebees.",
+              "answer": ["native"],
+              "explanation": "Mật độ ong mật cao gây áp lực nặng nề lên các loài bản địa ('native species') như ong nghệ sống đơn độc.",
+              "evidence": "While migratory insects like painted lady butterflies pass through briefly, recent surveys in Paris and Montreal show that high honeybee density places severe strain on native species—particularly solitary bumblebees and mason bees that cannot fly far to find alternative food.",
+              "distractors": [
+                {
+                  "text": "migratory",
+                  "why": "Các loài côn trùng di cư ('migratory insects') như bướm chỉ bay ngang qua trong thời gian ngắn nên không chịu áp lực tương tự."
+                }
+              ]
+            },
+            {
+              "n": 37,
+              "prompt": "Poor mite monitoring by inexperienced keepers allows {{blank}} to spread to nearby roofs.",
+              "answer": ["disease"],
+              "explanation": "Người nuôi thiếu kinh nghiệm không kiểm tra bọ ve ký sinh khiến dịch bệnh ('disease') lan nhanh sang các tổ ong lân cận.",
+              "evidence": "Far more damaging is when inexperienced keepers fail to check colonies regularly for parasitic Varroa mites, allowing disease to spread rapidly from one unmanaged roof to surrounding apiaries.",
+              "distractors": [
+                {
+                  "text": "swarms",
+                  "why": "Hàng xóm thường sợ đàn ong chia đàn ('swarms'), nhưng diễn giả nói chúng hiếm khi hung dữ và không gây hại bằng dịch bệnh."
+                }
+              ]
+            },
+            {
+              "n": 38,
+              "prompt": "Responsible practice: Check local rules and register with a regional {{blank}}.",
+              "answer": ["association"],
+              "explanation": "Người muốn nuôi ong cần kiểm tra quy định địa phương và đăng ký với một hiệp hội nuôi ong khu vực ('register with a regional association').",
+              "evidence": "First, before ordering a colony online, anyone interested should check local height and boundary rules and register with a regional association.",
+              "distractors": [
+                {
+                  "text": "council",
+                  "why": "Chỉ rất ít hội đồng thành phố ('city councils') có hệ thống đăng ký chính thức; hiệp hội khu vực mới là nơi nên đăng ký."
+                }
+              ]
+            },
+            {
+              "n": 39,
+              "prompt": "Provide a shallow water dish filled with {{blank}} so bees do not drown.",
+              "answer": ["pebbles"],
+              "explanation": "Đặt đĩa nước nông có rải đá cuội ('filled with pebbles') giúp ong có chỗ đậu khô ráo và tránh bị chết đuối khi uống nước.",
+              "evidence": "Avoid filling a tray with sand, which quickly turns to sour mud; instead, placing a shallow dish of water filled with pebbles gives bees dry landing spots and stops them from drowning while they drink.",
+              "distractors": [
+                {
+                  "text": "sand",
+                  "why": "Diễn giả khuyên tránh dùng cát ('Avoid filling a tray with sand') vì cát nhanh chóng biến thành bùn."
+                }
+              ]
+            },
+            {
+              "n": 40,
+              "prompt": "Residents without training should plant pollinator-friendly {{blank}} instead of keeping hives.",
+              "answer": ["meadows"],
+              "explanation": "Các nhà sinh thái khuyên cư dân thành phố nên trồng các thảm hoa đồng cỏ thân thiện với loài thụ phấn ('pollinator-friendly meadows') thay vì tự nuôi ong.",
+              "evidence": "Instead, city residents can make a much broader impact by planting pollinator-friendly meadows—even tiny balcony or roadside strips of native wildflowers that nourish hundreds of insect species at once.",
+              "distractors": [
+                {
+                  "text": "shrubs",
+                  "why": "Cây bụi thường xanh cắt tỉa gọn ('Clipped evergreen shrubs') trông đẹp mắt nhưng hầu như không có mật hoa cho côn trùng."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

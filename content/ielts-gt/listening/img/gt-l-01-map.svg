@@ -1,0 +1,149 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 540" role="img" aria-labelledby="map-title map-desc">
+  <title id="map-title">Ashbrook Community Library — Ground Floor Plan</title>
+  <desc id="map-desc">Floor plan of Ashbrook Community Library ground floor with Maple Street and Main Entrance to the south, Mill Pond Garden and Garden Patio Door to the north, Welcome Desk, Main Bookstacks, Stairs and Lift, Self-Check Kiosks, and eight lettered areas A through H.</desc>
+  <defs>
+    <linearGradient id="bg-sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f2faff"/>
+      <stop offset="100%" stop-color="#e4f3fc"/>
+    </linearGradient>
+    <linearGradient id="garden-grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#d7f3dc"/>
+      <stop offset="100%" stop-color="#bce8c4"/>
+    </linearGradient>
+    <linearGradient id="badge-grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2ea8e6"/>
+      <stop offset="100%" stop-color="#1178b2"/>
+    </linearGradient>
+    <linearGradient id="landmark-grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#dff2fd"/>
+      <stop offset="100%" stop-color="#c6e6f9"/>
+    </linearGradient>
+    <filter id="soft-shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2.5" flood-color="#0b2a3c" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <style>
+    .title { font: 700 17px "Noto Sans", "Inter", system-ui, sans-serif; fill: #0b2a3c; }
+    .subtitle { font: 600 12px "Inter", system-ui, sans-serif; fill: #237a2b; letter-spacing: 0.08em; }
+    .street { font: 700 13px "Inter", system-ui, sans-serif; fill: #2d4859; letter-spacing: 0.14em; }
+    .label { font: 600 12.5px "Inter", system-ui, sans-serif; fill: #0b2a3c; }
+    .label-sm { font: 500 11px "Inter", system-ui, sans-serif; fill: #3d5b6c; }
+    .badge-txt { font: 700 16px "Noto Sans", "Inter", system-ui, sans-serif; fill: #ffffff; }
+    .compass-txt { font: 700 12px "Noto Sans", "Inter", system-ui, sans-serif; fill: #0b2a3c; }
+    .wall { fill: #ffffff; stroke: #0b2a3c; stroke-width: 2.5; }
+    .room { fill: #f9fdff; stroke: #4b748c; stroke-width: 1.8; }
+    .landmark { fill: url(#landmark-grad); stroke: #1593d6; stroke-width: 1.5; }
+    .walkway { fill: #eef7fc; stroke: none; }
+    .door { fill: #ffffff; stroke: #1593d6; stroke-width: 2; }
+  </style>
+
+  <!-- Outer card background -->
+  <rect x="0" y="0" width="800" height="540" rx="18" fill="url(#bg-sky)"/>
+
+  <!-- Header title -->
+  <text x="48" y="31" class="title">Ashbrook Community Library — Ground Floor</text>
+
+  <!-- Compass (top right) -->
+  <g transform="translate(736, 30)" aria-label="Compass pointing North">
+    <circle cx="0" cy="0" r="19" fill="#ffffff" stroke="#1593d6" stroke-width="1.5"/>
+    <polygon points="0,-13 4.5,-2 -4.5,-2" fill="#1593d6"/>
+    <polygon points="0,13 4.5,2 -4.5,2" fill="#9bc2d9"/>
+    <text x="0" y="-22" text-anchor="middle" class="compass-txt">N</text>
+  </g>
+
+  <!-- North: Mill Pond Garden -->
+  <rect x="50" y="48" width="660" height="34" rx="10" fill="url(#garden-grad)" stroke="#45b649" stroke-width="1.5"/>
+  <text x="380" y="69" text-anchor="middle" class="subtitle">MILL POND GARDEN</text>
+
+  <!-- Main Building Outline -->
+  <rect x="50" y="92" width="700" height="366" rx="10" class="wall" filter="url(#soft-shadow)"/>
+
+  <!-- Interior Corridors / Central Atrium -->
+  <rect x="336" y="94" width="128" height="362" class="walkway"/>
+  <rect x="218" y="196" width="120" height="258" class="walkway"/>
+  <rect x="462" y="196" width="126" height="258" class="walkway"/>
+  <rect x="218" y="196" width="370" height="28" class="walkway"/>
+  <rect x="218" y="316" width="370" height="24" class="walkway"/>
+
+  <!-- Garden Patio Door (North Wall) -->
+  <rect x="364" y="88" width="72" height="10" rx="3" class="door"/>
+  <text x="400" y="114" text-anchor="middle" class="label-sm">Garden Patio Door</text>
+
+  <!-- Central Atrium Label -->
+  <text x="400" y="214" text-anchor="middle" class="label-sm">Central Walkway</text>
+
+  <!-- ROOM C (North-West Corner) -->
+  <rect x="64" y="106" width="152" height="90" rx="8" class="room"/>
+  <circle cx="140" cy="151" r="17" fill="url(#badge-grad)"/>
+  <text x="140" y="157" text-anchor="middle" class="badge-txt">C</text>
+
+  <!-- ROOM D (North-Central-West, left of Garden Patio Door) -->
+  <rect x="228" y="106" width="106" height="90" rx="8" class="room"/>
+  <circle cx="281" cy="151" r="17" fill="url(#badge-grad)"/>
+  <text x="281" y="157" text-anchor="middle" class="badge-txt">D</text>
+
+  <!-- ROOM E (North-Central-East, right of Garden Patio Door) -->
+  <rect x="466" y="106" width="110" height="90" rx="8" class="room"/>
+  <circle cx="521" cy="151" r="17" fill="url(#badge-grad)"/>
+  <text x="521" y="157" text-anchor="middle" class="badge-txt">E</text>
+
+  <!-- ROOM F (North-East Corner) -->
+  <rect x="588" y="106" width="148" height="90" rx="8" class="room"/>
+  <circle cx="662" cy="151" r="17" fill="url(#badge-grad)"/>
+  <text x="662" y="157" text-anchor="middle" class="badge-txt">F</text>
+
+  <!-- ROOM B (Mid-West) -->
+  <rect x="64" y="218" width="152" height="102" rx="8" class="room"/>
+  <circle cx="140" cy="269" r="17" fill="url(#badge-grad)"/>
+  <text x="140" y="275" text-anchor="middle" class="badge-txt">B</text>
+
+  <!-- LANDMARK: Main Bookstacks (West-Central) -->
+  <rect x="234" y="232" width="94" height="78" rx="8" class="landmark"/>
+  <line x1="246" y1="252" x2="316" y2="252" stroke="#1593d6" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <line x1="246" y1="290" x2="316" y2="290" stroke="#1593d6" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="281" y="269" text-anchor="middle" class="label">Main</text>
+  <text x="281" y="284" text-anchor="middle" class="label">Bookstacks</text>
+
+  <!-- LANDMARK: Stairs & Lift (East-Central) -->
+  <rect x="472" y="232" width="100" height="78" rx="8" class="landmark"/>
+  <path d="M484 252 h12 v-6 h12 v-6 h12" fill="none" stroke="#1593d6" stroke-width="1.6"/>
+  <text x="522" y="274" text-anchor="middle" class="label">Stairs &amp;</text>
+  <text x="522" y="290" text-anchor="middle" class="label">Lift</text>
+
+  <!-- ROOM G (Mid-East) -->
+  <rect x="588" y="218" width="148" height="102" rx="8" class="room"/>
+  <circle cx="662" cy="269" r="17" fill="url(#badge-grad)"/>
+  <text x="662" y="275" text-anchor="middle" class="badge-txt">G</text>
+
+  <!-- ROOM A (South-West Corner, immediately left of Main Entrance) -->
+  <rect x="64" y="340" width="152" height="104" rx="8" class="room"/>
+  <circle cx="140" cy="392" r="17" fill="url(#badge-grad)"/>
+  <text x="140" y="398" text-anchor="middle" class="badge-txt">A</text>
+
+  <!-- LANDMARK: Welcome Desk (Central-South, inside entrance) -->
+  <rect x="352" y="366" width="96" height="44" rx="12" class="landmark"/>
+  <text x="400" y="385" text-anchor="middle" class="label">Welcome</text>
+  <text x="400" y="400" text-anchor="middle" class="label">Desk</text>
+
+  <!-- LANDMARK: Self-Check Kiosks (South-East side of lobby) -->
+  <rect x="474" y="352" width="96" height="58" rx="8" class="landmark"/>
+  <text x="522" y="378" text-anchor="middle" class="label">Self-Check</text>
+  <text x="522" y="394" text-anchor="middle" class="label">Kiosks</text>
+
+  <!-- ROOM H (South-East Corner, immediately right of Main Entrance / past Self-Check Kiosks) -->
+  <rect x="588" y="340" width="148" height="104" rx="8" class="room"/>
+  <circle cx="662" cy="392" r="17" fill="url(#badge-grad)"/>
+  <text x="662" y="398" text-anchor="middle" class="badge-txt">H</text>
+
+  <!-- Main Entrance (South Wall) -->
+  <rect x="358" y="452" width="84" height="12" rx="3" class="door"/>
+  <polygon points="400,440 393,450 407,450" fill="#1593d6"/>
+  <text x="400" y="434" text-anchor="middle" class="label">Main Entrance</text>
+
+  <!-- South: Maple Street -->
+  <rect x="50" y="476" width="700" height="42" rx="10" fill="#d9eaf5" stroke="#8eb3cb" stroke-width="1.5"/>
+  <line x1="80" y1="497" x2="290" y2="497" stroke="#ffffff" stroke-width="2" stroke-dasharray="10 8"/>
+  <line x1="510" y1="497" x2="720" y2="497" stroke="#ffffff" stroke-width="2" stroke-dasharray="10 8"/>
+  <text x="400" y="502" text-anchor="middle" class="street">MAPLE STREET</text>
+</svg>

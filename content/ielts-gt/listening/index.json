@@ -1,0 +1,32 @@
+{
+  "tests": [
+    {
+      "id": "gt-l-01",
+      "title": "Practice Test 1",
+      "file": "content/ielts-gt/listening/gt-l-01.json",
+      "summary": "Part 1: Booking a community sports course · Part 2: Tour of a new community library · Part 3: Workplace first-aid course assignment · Part 4: Urban beekeeping",
+      "difficulty": "band 5.5–7"
+    },
+    {
+      "id": "gt-l-02",
+      "title": "Practice Test 2",
+      "file": "content/ielts-gt/listening/gt-l-02.json",
+      "summary": "Part 1: Renting a holiday cottage · Part 2: Volunteer orientation at a wildlife park · Part 3: Hospitality placement report · Part 4: History of public transport ticketing",
+      "difficulty": "band 5.5–7.5"
+    },
+    {
+      "id": "gt-l-03",
+      "title": "Practice Test 3",
+      "file": "content/ielts-gt/listening/gt-l-03.json",
+      "summary": "Part 1: Car-share scheme · Part 2: Town food festival · Part 3: Workplace recycling presentation · Part 4: Sleep and shift work",
+      "difficulty": "band 6–7.5"
+    },
+    {
+      "id": "gt-l-04",
+      "title": "Practice Test 4",
+      "file": "content/ielts-gt/listening/gt-l-04.json",
+      "summary": "Part 1: Lost property on a train · Part 2: Supermarket staff induction · Part 3: Photography course project · Part 4: Coral reef restoration",
+      "difficulty": "band 6–8"
+    }
+  ]
+}

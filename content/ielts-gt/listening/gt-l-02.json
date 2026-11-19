@@ -1,0 +1,1303 @@
+{
+  "id": "gt-l-02",
+  "title": "Practice Test 2",
+  "parts": [
+    {
+      "part": 1,
+      "title": "Part 1 — Renting a holiday cottage",
+      "context": "A telephone conversation between a lettings agent at Coastline Cottages and a customer enquiring about renting a holiday cottage for her family.",
+      "audio": "assets/audio/ielts-gt/listening/gt-l-02/part1.mp3",
+      "script": [
+        {
+          "speaker": "Narrator",
+          "voice": "en-GB-narrator",
+          "text": "Part 1. You will hear a telephone conversation between a holiday lettings agent and a woman who wants to rent a cottage for a family holiday. First, you have some time to look at questions 1 to 5."
+        },
+        {
+          "pause": 30,
+          "note": "Reading time for questions 1–5"
+        },
+        {
+          "speaker": "Narrator",
+          "voice": "en-GB-narrator",
+          "text": "Now listen carefully and answer questions 1 to 5."
+        },
+        {
+          "speaker": "Agent",
+          "voice": "en-GB-male-1",
+          "text": "Good morning, Coastline Cottages, Owen speaking. How can I help you today?"
+        },
+        {
+          "speaker": "Customer",
+          "voice": "en-US-female-1",
+          "text": "Hi Owen! I'm calling from Bristol—my family and I are hoping to rent a seaside cottage in Cornwall for a week this July."
+        },
+        {
+          "speaker": "Agent",
+          "voice": "en-GB-male-1",
+          "text": "Lovely choice—Cornwall's gorgeous in July, though bookings are filling fast. Let me start a quick enquiry sheet so I can pull up what's free. May I take your surname, please?"
+        },
+        {
+          "speaker": "Customer",
+          "voice": "en-US-female-1",
+          "text": "Sure, it's Rachel Kerrigan."
+        },
+        {
+          "speaker": "Agent",
+          "voice": "en-GB-male-1",
+          "text": "Kerrigan... is that with a C, like C-A-R-R-I-G-A-N?"
+        },
+        {
+          "speaker": "Customer",
+          "voice": "en-US-female-1",
+          "text": "No, it starts with a K—K-E-R-R-I-G-A-N."
+        },
+        {
+          "speaker": "Agent",
+          "voice": "en-GB-male-1",
+          "text": "Got it, thank you, Rachel. All our July rentals run Saturday to Saturday. Which Saturday were you hoping to arrive?"
+        },
+        {
+          "speaker": "Customer",
+          "voice": "en-US-female-1",
+          "text": "We were originally looking at Saturday the 12th of July, because that's right when my husband's leave begins."
+        },
+        {
+          "speaker": "Agent",
+          "voice": "en-GB-male-1",
+          "text": "Ah, let me check the calendar... oh, dear, the week starting the 12th of July is completely sold out across our family-sized cottages—returning guests snapped them up back in January. We do have a few lovely openings the following week, arriving on Saturday the 19th of July."
+        },
+        {
+          "speaker": "Customer",
+          "voice": "en-US-female-1",
+          "text": "Hmm, let me think... yes, actually, he has two weeks off, so the 19th of July works even better because the kids will have finished school by then. Let's look at Saturday the 19th."
+        },
+        {
+          "speaker": "Agent",
+          "voice": "en-GB-male-1",
+          "text": "Brilliant. And how many people will be staying altogether?"
+        },
+        {
+          "speaker": "Customer",
+          "voice": "en-US-female-1",
+          "text": "There are six of us in total: my husband and me, my parents, and our two young children—so four adults and two kids."
+        },
+        {
+          "speaker": "Agent",
+          "voice": "en-GB-male-1",
+          "text": "Lovely, four adults plus two children. Will you be bringing any pets along? Several of our owners welcome dogs, while a few cottages are strictly pet-free."
+        },
+        {
+          "speaker": "Customer",
+          "voice": "en-US-female-1",
+          "text": "Yes, we'd love to bring our dog, Milo. He's super house-trained."
+        },
+        {
+          "speaker": "Agent",
+          "voice": "en-GB-male-1",
+          "text": "Ha, don't tell me he's a giant muddy spaniel who loves jumping on white sofas!"
+        },
+        {
+          "speaker": "Customer",
+          "voice": "en-US-female-1",
+          "text": "Definitely not! He's just a tiny terrier—hardly sheds at all, and he sleeps in his own travel crate."
+        },
+        {
+          "speaker": "Agent",
+          "voice": "en-GB-male-1",
+          "text": "A small terrier is absolutely fine—most owners adore them. Now, do you have any particular accessibility or layout requirements? A sea-view balcony, maybe, or enclosed garden?"
+        },
+        {
+          "speaker": "Customer",
+          "voice": "en-US-female-1",
+          "text": "We don't really care about a balcony, honestly. What is essential, though, is a downstairs bedroom, because my mum had hip surgery last autumn and finds steep cottage staircases really tough."
+        },
+        {
+          "speaker": "Agent",
+          "voice": "en-GB-male-1",
+          "text": "That's a very important filter—let me tick ground-floor sleeping right away."
+        },
+        {
+          "speaker": "Narrator",
+          "voice": "en-GB-narrator",
+          "text": "Before you hear the rest of the conversation, you have some time to look at questions 6 to 10."
+        },
+        {
+          "pause": 20,
+          "note": "Reading time for questions 6–10"
+        },
+        {
+          "speaker": "Narrator",
+          "voice": "en-GB-narrator",
+          "text": "Now listen and answer questions 6 to 10."
+        },
+        {
+          "speaker": "Agent",
+          "voice": "en-GB-male-1",
+          "text": "Okay, with those filters on, two great properties pop up for the 19th of July. The first is Harbour View Cottage, right above the old fishing quay."
+        },
+        {
+          "speaker": "Customer",
+          "voice": "en-US-female-1",
+          "text": "Oh, that sounds dreamy! What's the weekly rent on Harbour View?"
+        },
+        {
+          "speaker": "Agent",
+          "voice": "en-GB-male-1",
+          "text": "In peak August it goes up to 940 pounds a week, but since you're arriving in mid-July, your week is 890 pounds."
+        },
+        {
+          "speaker": "Customer",
+          "voice": "en-US-female-1",
+          "text": "That's within our budget. Any catches I should know about? Old stone cottages can have dodgy heating or damp."
+        },
+        {
+          "speaker": "Agent",
+          "voice": "en-GB-male-1",
+          "text": "Oh, the owners just put in brand-new underfloor heating last winter, so it's super cosy. To be completely upfront, the one drawback is limited parking—it sits on a narrow cobbled lane with space for only one small hatchback, and you're bringing six people, so I guess you might have two cars."
+        },
+        {
+          "speaker": "Customer",
+          "voice": "en-US-female-1",
+          "text": "Yes, my parents are driving down separately in their own car, so that could be a headache. What's the second option?"
+        },
+        {
+          "speaker": "Agent",
+          "voice": "en-GB-male-1",
+          "text": "The second is Meadow Barn, about two miles inland, with a huge gravel driveway that easily fits three vehicles. It's 860 pounds for your week."
+        },
+        {
+          "speaker": "Customer",
+          "voice": "en-US-female-1",
+          "text": "Inland sounds peaceful, though the kids will want sand every single day. How far is it from the nearest beach?"
+        },
+        {
+          "speaker": "Agent",
+          "voice": "en-GB-male-1",
+          "text": "If you fancy a scenic walk along the public footpath, it takes about 25 minutes on foot. Most families drive down with buckets and boards, and it's only 12 minutes by car to Sandy Cove."
+        },
+        {
+          "speaker": "Customer",
+          "voice": "en-US-female-1",
+          "text": "Twelve minutes by car is nothing at all! And does Meadow Barn have a decent garden for Milo and outdoor dinners?"
+        },
+        {
+          "speaker": "Agent",
+          "voice": "en-GB-male-1",
+          "text": "A fully fenced lawn, yes! They used to have a standard gas barbecue out there, actually, though last spring the owners replaced it with a traditional wood-fired oven on the patio—they even leave a stack of dry logs and a pizza peel."
+        },
+        {
+          "speaker": "Customer",
+          "voice": "en-US-female-1",
+          "text": "Oh, my kids would lose their minds making homemade pizzas! I think Meadow Barn is the winner. Just before I confirm with my husband, is there a refundable security deposit?"
+        },
+        {
+          "speaker": "Agent",
+          "voice": "en-GB-male-1",
+          "text": "Yes, we hold a security deposit against breakages and refund it within five working days of checkout. For our luxury cottages with hot tubs it's 200 pounds, whereas for Meadow Barn it's 150 pounds."
+        },
+        {
+          "speaker": "Customer",
+          "voice": "en-US-female-1",
+          "text": "That's totally fair. Could you email me the booking link for Meadow Barn and hold it until five o'clock today?"
+        },
+        {
+          "speaker": "Agent",
+          "voice": "en-GB-male-1",
+          "text": "Consider it held until five pm, Rachel. I'll send the link right over."
+        },
+        {
+          "speaker": "Narrator",
+          "voice": "en-GB-narrator",
+          "text": "That is the end of Part 1. You now have half a minute to check your answers."
+        },
+        {
+          "pause": 30,
+          "note": "Check answers for Part 1"
+        }
+      ],
+      "groups": [
+        {
+          "range": [1, 5],
+          "type": "form",
+          "instructions": "Complete the form below. Write ONE WORD AND/OR A NUMBER for each answer.",
+          "wordLimit": 1,
+          "allowNumber": true,
+          "title": "Coastline Cottages — Booking Enquiry",
+          "questions": [
+            {
+              "n": 1,
+              "prompt": "Guest surname: {{blank}}",
+              "answer": ["Kerrigan"],
+              "explanation": "Khách hàng đính chính họ của mình bắt đầu bằng chữ K chứ không phải chữ C và đánh vần K-E-R-R-I-G-A-N.",
+              "evidence": "No, it starts with a K—K-E-R-R-I-G-A-N.",
+              "distractors": [
+                {
+                  "text": "Carrigan",
+                  "why": "Nhân viên đoán nhầm bắt đầu bằng chữ C ('C-A-R-R-I-G-A-N'), nhưng Rachel sửa lại ngay."
+                }
+              ]
+            },
+            {
+              "n": 2,
+              "prompt": "Arrival date: Saturday {{blank}} July",
+              "answer": ["19", "19th"],
+              "explanation": "Tuần bắt đầu ngày 12 tháng 7 đã kín chỗ, nên Rachel đồng ý chọn tuần kế tiếp bắt đầu vào thứ Bảy ngày 19 tháng 7.",
+              "evidence": "Let's look at Saturday the 19th.",
+              "distractors": [
+                {
+                  "text": "12 / 12th",
+                  "why": "Rachel ban đầu hỏi ngày 12 tháng 7, nhưng nhân viên báo toàn bộ nhà cỡ gia đình tuần đó đã được khách cũ đặt hết từ tháng Giêng."
+                }
+              ]
+            },
+            {
+              "n": 3,
+              "prompt": "Number of adults: {{blank}}",
+              "answer": ["4", "four"],
+              "explanation": "Đoàn có tổng cộng 6 người, nhưng câu hỏi chỉ hỏi số người lớn ('Number of adults'), tức là 4 người lớn (vợ chồng Rachel và bố mẹ cô).",
+              "evidence": "There are six of us in total: my husband and me, my parents, and our two young children—so four adults and two kids.",
+              "distractors": [
+                {
+                  "text": "6 / six",
+                  "why": "6 là tổng số khách gồm cả 2 trẻ em, không phải số người lớn."
+                },
+                {
+                  "text": "2 / two",
+                  "why": "2 là số trẻ em trong đoàn."
+                }
+              ]
+            },
+            {
+              "n": 4,
+              "prompt": "Pet staying: one {{blank}}",
+              "answer": ["terrier"],
+              "explanation": "Rachel khẳng định chú chó Milo của gia đình là giống chó sục nhỏ ('tiny terrier').",
+              "evidence": "He's just a tiny terrier—hardly sheds at all, and he sleeps in his own travel crate.",
+              "distractors": [
+                {
+                  "text": "spaniel",
+                  "why": "Nhân viên nói đùa sợ đó là một chú chó spaniel to lớn hay dính bùn, nhưng Rachel phủ nhận ngay ('Definitely not!')."
+                }
+              ]
+            },
+            {
+              "n": 5,
+              "prompt": "Special requirement: a {{blank}} bedroom",
+              "answer": ["downstairs"],
+              "explanation": "Mẹ của Rachel mới phẫu thuật hông và khó leo cầu thang dốc nên yêu cầu bắt buộc là có một phòng ngủ ở tầng trệt ('a downstairs bedroom').",
+              "evidence": "What is essential, though, is a downstairs bedroom, because my mum had hip surgery last autumn and finds steep cottage staircases really tough.",
+              "distractors": [
+                {
+                  "text": "balcony",
+                  "why": "Nhân viên gợi ý ban công nhìn ra biển nhưng Rachel nói gia đình không quan tâm đến ban công ('don't really care about a balcony')."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "range": [6, 10],
+          "type": "table",
+          "instructions": "Complete the table below. Write ONE WORD AND/OR A NUMBER for each answer.",
+          "wordLimit": 1,
+          "allowNumber": true,
+          "title": "Available Cottages — Comparison & Booking Terms",
+          "questions": [
+            {
+              "n": 6,
+              "prompt": "Harbour View Cottage — Weekly rent: £{{blank}}",
+              "answer": ["890"],
+              "explanation": "Vì gia đình đến vào giữa tháng 7 nên giá thuê một tuần của Harbour View Cottage là 890 bảng.",
+              "evidence": "In peak August it goes up to 940 pounds a week, but since you're arriving in mid-July, your week is 890 pounds.",
+              "distractors": [
+                {
+                  "text": "940",
+                  "why": "940 bảng là giá mùa cao điểm tháng 8, không áp dụng cho tuần ngày 19 tháng 7."
+                },
+                {
+                  "text": "860",
+                  "why": "860 bảng là giá thuê của căn thứ hai (Meadow Barn), không phải Harbour View Cottage."
+                }
+              ]
+            },
+            {
+              "n": 7,
+              "prompt": "Harbour View Cottage — Main drawback: limited {{blank}}",
+              "answer": ["parking"],
+              "explanation": "Nhược điểm duy nhất của Harbour View là chỗ đậu xe hạn chế ('limited parking') trên con hẻm nhỏ chỉ đủ cho một xe nhỏ.",
+              "evidence": "To be completely upfront, the one drawback is limited parking—it sits on a narrow cobbled lane with space for only one small hatchback, and you're bringing six people, so I guess you might have two cars.",
+              "distractors": [
+                {
+                  "text": "heating",
+                  "why": "Rachel lo nhà đá cũ hỏng hệ thống sưởi, nhưng nhân viên giải thích chủ nhà vừa lắp hệ thống sưởi sàn hoàn toàn mới mùa đông năm ngoái."
+                }
+              ]
+            },
+            {
+              "n": 8,
+              "prompt": "Meadow Barn — Distance to nearest beach: {{blank}} minutes by car",
+              "answer": ["12", "twelve"],
+              "explanation": "Đi ô tô từ Meadow Barn ra bãi biển Sandy Cove chỉ mất 12 phút ('only 12 minutes by car').",
+              "evidence": "Most families drive down with buckets and boards, and it's only 12 minutes by car to Sandy Cove.",
+              "distractors": [
+                {
+                  "text": "25",
+                  "why": "25 phút là thời gian đi bộ dọc lối mòn ('25 minutes on foot'), không phải đi bằng ô tô."
+                }
+              ]
+            },
+            {
+              "n": 9,
+              "prompt": "Meadow Barn — Extra feature in garden: a wood-fired {{blank}}",
+              "answer": ["oven"],
+              "explanation": "Chủ nhà đã lắp một lò nướng củi ngoài sân vườn ('traditional wood-fired oven') kèm củi khô và xẻng nướng pizza.",
+              "evidence": "They used to have a standard gas barbecue out there, actually, though last spring the owners replaced it with a traditional wood-fired oven on the patio—they even leave a stack of dry logs and a pizza peel.",
+              "distractors": [
+                {
+                  "text": "barbecue",
+                  "why": "Bếp nướng gas ('gas barbecue') là thiết bị cũ đã bị thay thế từ mùa xuân năm ngoái."
+                }
+              ]
+            },
+            {
+              "n": 10,
+              "prompt": "Meadow Barn — Refundable security deposit: £{{blank}}",
+              "answer": ["150"],
+              "explanation": "Tiền đặt cọc bảo đảm hoàn lại trong vòng 5 ngày làm việc cho Meadow Barn là 150 bảng.",
+              "evidence": "For our luxury cottages with hot tubs it's 200 pounds, whereas for Meadow Barn it's 150 pounds.",
+              "distractors": [
+                {
+                  "text": "200",
+                  "why": "200 bảng chỉ áp dụng cho các căn cao cấp có bồn tắm nước nóng ('luxury cottages with hot tubs')."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "title": "Part 2 — Volunteer orientation at a wildlife park",
+      "context": "A volunteer coordinator briefing newly accepted weekend volunteers at Cedar Ridge Wildlife Park.",
+      "audio": "assets/audio/ielts-gt/listening/gt-l-02/part2.mp3",
+      "script": [
+        {
+          "speaker": "Narrator",
+          "voice": "en-GB-narrator",
+          "text": "Part 2. You will hear a volunteer coordinator giving an orientation briefing to new weekend volunteers at Cedar Ridge Wildlife Park. First, you have some time to look at questions 11 to 14."
+        },
+        {
+          "pause": 30,
+          "note": "Reading time for questions 11–14"
+        },
+        {
+          "speaker": "Narrator",
+          "voice": "en-GB-narrator",
+          "text": "Now listen carefully and answer questions 11 to 14."
+        },
+        {
+          "speaker": "Coordinator",
+          "voice": "en-AU-female-1",
+          "text": "Morning everyone, and a huge welcome to Cedar Ridge Wildlife Park! I'm Tess, the weekend volunteer coordinator. We're thrilled to have twelve new faces joining our conservation team this season. Before we split into zone tours, I want to run through what to pack for your first shift, the perks you'll earn as regulars, and what each park area actually involves."
+        },
+        {
+          "speaker": "Coordinator",
+          "voice": "en-AU-female-1",
+          "text": "First up, gear for your very first shift next Saturday. People always email asking whether they need to buy a high-visibility vest—no need at all, we issue clean hi-vis vests and sun hats at check-in every morning. Likewise, heavy gardening gloves are stocked in the tool shed for everyone to share, so leave yours at home. What you absolutely must bring yourself is a sturdy pair of waterproof walking boots, because paths get muddy fast after rain and we don't keep spare sizes."
+        },
+        {
+          "speaker": "Coordinator",
+          "voice": "en-AU-female-1",
+          "text": "The other essential item to bring in your backpack is a reusable water bottle. We phased out single-use cups across the whole reserve last year, and there are chilled refill taps behind every kiosk. Oh, and someone asked on the registration form about bringing a printed medical certificate—you only ever need one of those if you later apply to train in the venomous reptile house, not for general weekend shifts."
+        },
+        {
+          "speaker": "Coordinator",
+          "voice": "en-AU-female-1",
+          "text": "Now, we know you're giving up precious weekends for free, so once you've completed three months of regular shifts, we like to say thank you with a couple of meaningful perks. Just to clarify, our free minibus shuttle from the train station is open to all volunteers from day one, though we can't offer free public bus passes for city routes. After that three-month milestone, however, you receive four complimentary guest tickets each year so your family members can visit the park for free."
+        },
+        {
+          "speaker": "Coordinator",
+          "voice": "en-AU-female-1",
+          "text": "You'll also hear folks joking about a fifty-percent discount in the souvenir shop—sorry to burst that bubble, the staff and volunteer shop discount is twenty percent, though it does cover café lunches too! What volunteers tell us they treasure most at the three-month mark is an invitation to join behind-the-scenes feeding sessions with our keepers once a quarter—watching the red pandas or otters get breakfast up close is unforgettable. And just so expectations are crystal clear, all volunteer shifts remain unpaid even during busy school holidays, although active volunteers do get early notice whenever paid keeper assistant roles open up."
+        },
+        {
+          "speaker": "Narrator",
+          "voice": "en-GB-narrator",
+          "text": "Before you hear the rest of the briefing, you have some time to look at questions 15 to 20."
+        },
+        {
+          "pause": 25,
+          "note": "Reading time for questions 15–20"
+        },
+        {
+          "speaker": "Narrator",
+          "voice": "en-GB-narrator",
+          "text": "Now listen and answer questions 15 to 20."
+        },
+        {
+          "speaker": "Coordinator",
+          "voice": "en-AU-female-1",
+          "text": "Right, let's look at the six zones where weekend volunteers rotate, and your main duty in each spot. One golden rule across every single zone first: volunteers never touch enclosure gates or check whether latches are locked—only qualified keepers handle animal security, no exceptions."
+        },
+        {
+          "speaker": "Coordinator",
+          "voice": "en-AU-female-1",
+          "text": "Let's start down at the Wetland Bird Hide overlooking the reed beds. It's a peaceful post, and your main job there is to greet families at the wooden deck and hand out loan binoculars and laminated spotter sheets so kids can tick off kingfishers and herons."
+        },
+        {
+          "speaker": "Coordinator",
+          "voice": "en-AU-female-1",
+          "text": "Next is the Nocturnal Mammal House, where we reverse day and night lighting so visitors can watch owls, bats, and bushbabies active. Even with big warning signs at the door, people constantly forget to switch off their phone settings. So your primary task inside is to stay quietly by the glass and politely remind visitors not to use camera flashes, which startle the animals."
+        },
+        {
+          "speaker": "Coordinator",
+          "voice": "en-AU-female-1",
+          "text": "Over at the Children's Petting Barn, things get lively fast with Pygmy goats and guinea pigs. Keepers supervise the brushing and feeding, while volunteers focus on hygiene: every time a school group finishes inside, you guide the children straight out to the outdoor soap and hand-washing stations before they head off to the picnic lawn."
+        },
+        {
+          "speaker": "Coordinator",
+          "voice": "en-AU-female-1",
+          "text": "Then there's our Woodland Canopy Trail, which winds through tall cedar trees on raised timber walkways. Because gusts overnight regularly drop pine cones and twigs, volunteers assigned there do an early morning sweep before opening to clear fallen branches from the wooden boardwalks so pushchairs and wheelchairs can roll smoothly."
+        },
+        {
+          "speaker": "Coordinator",
+          "voice": "en-AU-female-1",
+          "text": "Down at Penguin Cove, volunteers used to dip thermometers in the pool to record water temperature readings, though automatic digital sensors took over that chore in March. Instead, right after the midday fish feed, you'll assist the keepers in the prep room to weigh and log any daily food leftovers—changes in appetite are often our earliest clue that a bird needs a vet check."
+        },
+        {
+          "speaker": "Coordinator",
+          "voice": "en-AU-female-1",
+          "text": "Finally, on sunny bank-holiday weekends, our Main Entrance Car Park gets jam-packed by ten thirty. Family cars manage fine with the painted arrows, so your chief focus out front is spotting incoming coaches and directing tour buses down to the overflow bays along the south fence so the main entrance stays clear for emergency vehicles. All right, let's grab our name badges and head outside!"
+        },
+        {
+          "speaker": "Narrator",
+          "voice": "en-GB-narrator",
+          "text": "That is the end of Part 2. You now have half a minute to check your answers."
+        },
+        {
+          "pause": 30,
+          "note": "Check answers for Part 2"
+        }
+      ],
+      "groups": [
+        {
+          "range": [11, 12],
+          "type": "mcq-multi",
+          "title": "Items volunteers must bring on their first shift",
+          "instructions": "Choose TWO letters, A–E. Which TWO items must volunteers bring with them on their first shift?",
+          "options": [
+            { "key": "A", "text": "Waterproof walking boots" },
+            { "key": "B", "text": "A high-visibility vest" },
+            { "key": "C", "text": "Heavy gardening gloves" },
+            { "key": "D", "text": "A reusable water bottle" },
+            { "key": "E", "text": "A printed medical certificate" }
+          ],
+          "questions": [
+            {
+              "n": 11,
+              "answer": ["A", "D"],
+              "explanation": "Điều phối viên nhấn mạnh tình nguyện viên bắt buộc tự mang giày đi bộ chống nước chắc chắn ('absolutely must bring yourself is a sturdy pair of waterproof walking boots' = A).",
+              "evidence": "What you absolutely must bring yourself is a sturdy pair of waterproof walking boots, because paths get muddy fast after rain and we don't keep spare sizes.",
+              "distractors": [
+                {
+                  "text": "B",
+                  "why": "Áo phản quang (hi-vis vests) được công viên phát sẵn mỗi sáng khi điểm danh."
+                },
+                {
+                  "text": "C",
+                  "why": "Găng tay làm vườn dày đã có sẵn trong kho dụng cụ dùng chung nên không cần mang theo."
+                },
+                {
+                  "text": "E",
+                  "why": "Giấy khám sức khỏe chỉ cần nếu sau này đăng ký huấn luyện ở khu bò sát có nọc độc, không cần cho ca cuối tuần thông thường."
+                }
+              ]
+            },
+            {
+              "n": 12,
+              "answer": ["A", "D"],
+              "explanation": "Vật dụng thiết yếu thứ hai cần mang trong ba lô là bình nước tái sử dụng ('a reusable water bottle' = D) vì công viên đã bỏ ly dùng một lần.",
+              "evidence": "The other essential item to bring in your backpack is a reusable water bottle.",
+              "distractors": []
+            }
+          ]
+        },
+        {
+          "range": [13, 14],
+          "type": "mcq-multi",
+          "title": "Benefits offered to regular volunteers",
+          "instructions": "Choose TWO letters, A–E. Which TWO benefits are offered to volunteers after completing three months of shifts?",
+          "options": [
+            { "key": "A", "text": "Free public bus passes to the park" },
+            { "key": "B", "text": "Complimentary guest tickets for family members" },
+            { "key": "C", "text": "A fifty-percent discount in the souvenir shop" },
+            { "key": "D", "text": "Behind-the-scenes feeding sessions with keepers" },
+            { "key": "E", "text": "Paid weekend shifts during school holidays" }
+          ],
+          "questions": [
+            {
+              "n": 13,
+              "answer": ["B", "D"],
+              "explanation": "Sau mốc 3 tháng, tình nguyện viên được tặng 4 vé mời miễn phí mỗi năm để người thân vào tham quan ('four complimentary guest tickets ... family members' = B).",
+              "evidence": "After that three-month milestone, however, you receive four complimentary guest tickets each year so your family members can visit the park for free.",
+              "distractors": [
+                {
+                  "text": "A",
+                  "why": "Công viên có xe đưa đón miễn phí từ ga tàu ngay từ ngày đầu, nhưng không cấp vé xe buýt công cộng miễn phí."
+                },
+                {
+                  "text": "C",
+                  "why": "Mức giảm giá ở cửa hàng lưu niệm chỉ là 20%, không phải 50% như lời đùa."
+                },
+                {
+                  "text": "E",
+                  "why": "Mọi ca tình nguyện vẫn không có lương kể cả dịp nghỉ học; họ chỉ được báo sớm khi có vị trí tuyển dụng trả lương."
+                }
+              ]
+            },
+            {
+              "n": 14,
+              "answer": ["B", "D"],
+              "explanation": "Quyền lợi thứ hai sau 3 tháng là lời mời tham gia các buổi cho thú ăn hậu trường cùng nhân viên chăm sóc mỗi quý một lần ('behind-the-scenes feeding sessions with our keepers' = D).",
+              "evidence": "What volunteers tell us they treasure most at the three-month mark is an invitation to join behind-the-scenes feeding sessions with our keepers once a quarter—watching the red pandas or otters get breakfast up close is unforgettable.",
+              "distractors": []
+            }
+          ]
+        },
+        {
+          "range": [15, 20],
+          "type": "matching",
+          "title": "Volunteer Zones & Key Responsibilities",
+          "instructions": "What is the main responsibility for volunteers assigned to each area of the wildlife park? Choose SIX answers from the box and write the correct letter, A–H, next to questions 15–20.",
+          "options": [
+            { "key": "A", "text": "Remind visitors not to use camera flashes" },
+            { "key": "B", "text": "Weigh and log daily food leftovers" },
+            { "key": "C", "text": "Clear fallen branches from wooden boardwalks" },
+            { "key": "D", "text": "Hand out binoculars and spotter sheets" },
+            { "key": "E", "text": "Check that enclosure latches are locked" },
+            { "key": "F", "text": "Direct tour buses to overflow bays" },
+            { "key": "G", "text": "Record water temperature readings" },
+            { "key": "H", "text": "Guide school groups to hand-washing stations" }
+          ],
+          "questions": [
+            {
+              "n": 15,
+              "prompt": "Wetland Bird Hide",
+              "answer": ["D"],
+              "explanation": "Tại chòi ngắm chim đầm lầy, nhiệm vụ chính là đón gia đình và phát ống nhòm mượn kèm phiếu nhận diện chim ('hand out loan binoculars and laminated spotter sheets' = D).",
+              "evidence": "It's a peaceful post, and your main job there is to greet families at the wooden deck and hand out loan binoculars and laminated spotter sheets so kids can tick off kingfishers and herons.",
+              "distractors": [
+                {
+                  "text": "E",
+                  "why": "Nguyên tắc chung đã nêu rõ: tình nguyện viên không bao giờ kiểm tra chốt khóa chuồng thú (chỉ nhân viên chuyên môn được làm)."
+                }
+              ]
+            },
+            {
+              "n": 16,
+              "prompt": "Nocturnal Mammal House",
+              "answer": ["A"],
+              "explanation": "Ở khu thú sống về đêm, nhiệm vụ chính là nhắc khách lịch sự không bật đèn flash máy ảnh ('politely remind visitors not to use camera flashes' = A).",
+              "evidence": "So your primary task inside is to stay quietly by the glass and politely remind visitors not to use camera flashes, which startle the animals.",
+              "distractors": [
+                {
+                  "text": "E",
+                  "why": "Không liên quan đến chốt cửa chuồng; tình nguyện viên chỉ đứng bên ngoài kính nhắc khách về ánh sáng."
+                }
+              ]
+            },
+            {
+              "n": 17,
+              "prompt": "Children's Petting Barn",
+              "answer": ["H"],
+              "explanation": "Nhân viên chăm sóc lo việc cho ăn, còn tình nguyện viên lo vệ sinh bằng cách dẫn các đoàn học sinh ra khu rửa tay có xà phòng ('guide the children straight out to the outdoor soap and hand-washing stations' = H).",
+              "evidence": "Keepers supervise the brushing and feeding, while volunteers focus on hygiene: every time a school group finishes inside, you guide the children straight out to the outdoor soap and hand-washing stations before they head off to the picnic lawn.",
+              "distractors": [
+                {
+                  "text": "B",
+                  "why": "Nhắc tới từ 'feeding' (cho ăn) nhưng việc cho ăn ở chuồng này do nhân viên giám sát, không phải cân thức ăn thừa."
+                }
+              ]
+            },
+            {
+              "n": 18,
+              "prompt": "Woodland Canopy Trail",
+              "answer": ["C"],
+              "explanation": "Trước giờ mở cửa, tình nguyện viên kiểm tra và dọn cành cây rơi khỏi lối đi lát gỗ ('clear fallen branches from the wooden boardwalks' = C).",
+              "evidence": "Because gusts overnight regularly drop pine cones and twigs, volunteers assigned there do an early morning sweep before opening to clear fallen branches from the wooden boardwalks so pushchairs and wheelchairs can roll smoothly.",
+              "distractors": [
+                {
+                  "text": "D",
+                  "why": "Lối đi trên tán cây không có nhiệm vụ phát ống nhòm."
+                }
+              ]
+            },
+            {
+              "n": 19,
+              "prompt": "Penguin Cove",
+              "answer": ["B"],
+              "explanation": "Sau bữa ăn trưa của chim cánh cụt, tình nguyện viên hỗ trợ cân và ghi chép lượng thức ăn thừa hằng ngày ('weigh and log any daily food leftovers' = B).",
+              "evidence": "Instead, right after the midday fish feed, you'll assist the keepers in the prep room to weigh and log any daily food leftovers—changes in appetite are often our earliest clue that a bird needs a vet check.",
+              "distractors": [
+                {
+                  "text": "G",
+                  "why": "Bẫy rất điển hình: trước đây tình nguyện viên từng đo nhiệt độ nước ('record water temperature readings'), nhưng từ tháng 3 cảm biến tự động đã thay thế việc này."
+                }
+              ]
+            },
+            {
+              "n": 20,
+              "prompt": "Main Entrance Car Park",
+              "answer": ["F"],
+              "explanation": "Nhiệm vụ chính ở bãi đỗ xe cổng chính là phát hiện xe khách du lịch và hướng dẫn họ vào khu đỗ dự phòng ('directing tour buses down to the overflow bays' = F).",
+              "evidence": "Family cars manage fine with the painted arrows, so your chief focus out front is spotting incoming coaches and directing tour buses down to the overflow bays along the south fence so the main entrance stays clear for emergency vehicles.",
+              "distractors": [
+                {
+                  "text": "C",
+                  "why": "Không liên quan đến dọn đường gỗ; trọng tâm ở bãi xe là điều phối xe buýt du lịch."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "part": 3,
+      "title": "Part 3 — Hospitality placement report",
+      "context": "A hospitality management student, Chloe, meeting her college tutor, Dr. David Patel, to review the draft report on her twelve-week hotel placement.",
+      "audio": "assets/audio/ielts-gt/listening/gt-l-02/part3.mp3",
+      "script": [
+        {
+          "speaker": "Narrator",
+          "voice": "en-GB-narrator",
+          "text": "Part 3. You will hear a hospitality management student, Chloe, discussing her draft placement report with her tutor, Dr. David Patel. First, you have some time to look at questions 21 to 25."
+        },
+        {
+          "pause": 30,
+          "note": "Reading time for questions 21–25"
+        },
+        {
+          "speaker": "Narrator",
+          "voice": "en-GB-narrator",
+          "text": "Now listen carefully and answer questions 21 to 25."
+        },
+        {
+          "speaker": "Tutor",
+          "voice": "en-GB-male-1",
+          "text": "Come in, Chloe! Good to have you back on campus after twelve weeks at the Harbourside Boutique Hotel. I've gone through your first draft—lots of sharp observations here. Before we dive into edits, I'm curious: you also had an offer from a big international hotel chain, didn't you? What swung your decision?"
+        },
+        {
+          "speaker": "Student",
+          "voice": "en-GB-female-1",
+          "text": "Yeah, the big chain actually offered a slightly higher monthly training allowance, and it was only ten minutes from my parents' house, whereas the boutique meant a forty-minute bus ride. Still, big chains usually keep trainees pinned to one single desk for the whole twelve weeks. At the boutique, the manager promised I could rotate across reception, wedding events, and housekeeping, and getting that broad departmental mix was what really mattered to me."
+        },
+        {
+          "speaker": "Tutor",
+          "voice": "en-GB-male-1",
+          "text": "Smart long-term thinking. Now, in your reflection log, you mention that month one on reception was pretty stressful. Was that guests turning up early demanding rooms before check-in?"
+        },
+        {
+          "speaker": "Student",
+          "voice": "en-GB-female-1",
+          "text": "Actually, early arrivals were surprisingly easy once I offered free luggage storage and a coffee voucher, and interns weren't permitted to cover solo night shifts anyway. What nearly drove me round the bend was their ancient booking software—it froze twice a day and required obscure manual keyboard codes just to split a restaurant bill. It took me three solid weeks to stop panicking whenever a queue built up."
+        },
+        {
+          "speaker": "Tutor",
+          "voice": "en-GB-male-1",
+          "text": "Oh, legacy reservation systems—every hospitality graduate has horror stories! I loved the section where you proposed a way to cut breakfast buffet waste. How did the hotel manager react when you pitched it?"
+        },
+        {
+          "speaker": "Student",
+          "voice": "en-GB-female-1",
+          "text": "I honestly braced myself for him to shoot it down out of fear that late diners would grumble about smaller portions. Instead, he didn't touch the menu items at all—the head chef kept cooking the exact same dishes—he simply agreed to test my idea of switching to half-sized serving trays during the last thirty minutes for a two-week trial. When food waste dropped by almost a third with zero complaints, he rolled it out permanently."
+        },
+        {
+          "speaker": "Tutor",
+          "voice": "en-GB-male-1",
+          "text": "That's gold for your evaluation grade. Now, looking closely at structure, your introduction currently runs to six pages, which makes it heavy. Definitely keep the overview of the hotel's target customer groups—that anchors your marketing section—and your personal learning objectives have to stay because the rubric checks for them. What you really ought to trim out is the two-page architectural history of the Victorian building and its nineteenth-century owners. Interesting as a brochure, yes, but it distracts from a management analysis."
+        },
+        {
+          "speaker": "Student",
+          "voice": "en-GB-female-1",
+          "text": "Fair enough, I did get a bit carried away at the local library! And did you get a chance to look at my anonymous staff survey data?"
+        },
+        {
+          "speaker": "Tutor",
+          "voice": "en-GB-male-1",
+          "text": "I did, and one finding genuinely made me sit up. I wasn't shocked that staff loved the new shift-swapping phone app, and housekeeping actually had an impressive response rate—nearly ninety percent. What truly surprised me was the massive gap between departments on communication: front-desk staff rated daily handovers eight out of ten, while the kitchen brigade rated the exact same process three out of ten!"
+        },
+        {
+          "speaker": "Narrator",
+          "voice": "en-GB-narrator",
+          "text": "Before you hear the rest of the tutorial, you have some time to look at questions 26 to 30."
+        },
+        {
+          "pause": 25,
+          "note": "Reading time for questions 26–30"
+        },
+        {
+          "speaker": "Narrator",
+          "voice": "en-GB-narrator",
+          "text": "Now listen and answer questions 26 to 30."
+        },
+        {
+          "speaker": "Tutor",
+          "voice": "en-GB-male-1",
+          "text": "Moving onto section four, I spotted a methodological slip in your financial comparison table. Your room occupancy math checks out fine, and I was pleased you remembered to footnote online travel agency commission fees. The catch is that you've compared the hotel's peak July coastal room rates directly against year-round national averages, which include quiet winter off-peak months—that makes the hotel look artificially profitable."
+        },
+        {
+          "speaker": "Student",
+          "voice": "en-GB-female-1",
+          "text": "Oh, of course! Comparing summer peak against annual figures completely skews it. I'll pull the regional Q3 benchmark data instead."
+        },
+        {
+          "speaker": "Tutor",
+          "voice": "en-GB-male-1",
+          "text": "Much stronger. Now, for your final case study on operational problem-solving, you sketched out a double-booking mix-up during a local business conference, though honestly that felt a bit minor to carry a whole section. Were there any bigger incidents you witnessed?"
+        },
+        {
+          "speaker": "Student",
+          "voice": "en-GB-female-1",
+          "text": "Well, there was a nasty online review from a coach tour group, except the hotel asked me not to quote identifiable guest complaints for confidentiality reasons. The other big one was a Saturday wedding reception for ninety guests when a storm knocked out the power for two hours—reception, chefs, and porters had to switch to gas burners and battery lanterns seamlessly. I'll swap out the conference error and make the wedding power cut my main case study."
+        },
+        {
+          "speaker": "Tutor",
+          "voice": "en-GB-male-1",
+          "text": "Brilliant—that shows cross-department leadership under pressure. One more tip: consider adding two or three short direct quotes from your workplace supervisor. You don't need them to pad out the appendix—you're already close to the word ceiling—and your signed timesheet already proves your hours. What supervisor quotes do is show the marker how realistic your recommendations looked from a management perspective."
+        },
+        {
+          "speaker": "Student",
+          "voice": "en-GB-female-1",
+          "text": "That makes total sense—I have her feedback notes from my exit interview. Speaking of markers, I'm getting pretty nervous about next week's oral presentation."
+        },
+        {
+          "speaker": "Tutor",
+          "voice": "en-GB-male-1",
+          "text": "Really? You're normally great in seminars—is it the Q&A with the external examiner, or worrying the projector will scramble your charts?"
+        },
+        {
+          "speaker": "Student",
+          "voice": "en-GB-female-1",
+          "text": "Oh, IT tests our slides the day before so I'm calm about the tech, and I actually enjoy answering curveball questions. My real panic is the strict ten-minute cap—when I practised aloud last night, I didn't finish my key findings until minute sixteen!"
+        },
+        {
+          "speaker": "Tutor",
+          "voice": "en-GB-male-1",
+          "text": "Cutting six minutes is totally doable once you drop the building history. Now, with final submission this Friday, what's our next step? Do you need to send the revised draft back to the hotel manager?"
+        },
+        {
+          "speaker": "Student",
+          "voice": "en-GB-female-1",
+          "text": "No, he already signed off the confidentiality waiver last week, and I'll sort out the bibliography formatting myself using the library citation guide rather than pestering a second-year student. Could we possibly squeeze in a quick fifteen-minute chat on Thursday afternoon so you can glance over my rewritten recommendations?"
+        },
+        {
+          "speaker": "Tutor",
+          "voice": "en-GB-male-1",
+          "text": "Thursday at three works great—pop it in my calendar and I'll see you then, Chloe."
+        },
+        {
+          "speaker": "Narrator",
+          "voice": "en-GB-narrator",
+          "text": "That is the end of Part 3. You now have half a minute to check your answers."
+        },
+        {
+          "pause": 30,
+          "note": "Check answers for Part 3"
+        }
+      ],
+      "groups": [
+        {
+          "range": [21, 25],
+          "type": "mcq",
+          "title": "Reviewing the placement experience",
+          "instructions": "Choose the correct letter, A, B or C.",
+          "questions": [
+            {
+              "n": 21,
+              "prompt": "Why did Chloe choose to do her placement at a mid-sized boutique hotel rather than a large chain?",
+              "options": [
+                { "key": "A", "text": "It offered a higher monthly training allowance." },
+                { "key": "B", "text": "She wanted experience working across several departments." },
+                { "key": "C", "text": "It was much closer to her family home." }
+              ],
+              "answer": ["B"],
+              "explanation": "Khách sạn boutique hứa cho Chloe luân chuyển qua lễ tân, tổ chức tiệc cưới và buồng phòng ('rotate across reception, wedding events, and housekeeping' = paraphrase của 'working across several departments').",
+              "evidence": "At the boutique, the manager promised I could rotate across reception, wedding events, and housekeeping, and getting that broad departmental mix was what really mattered to me.",
+              "distractors": [
+                {
+                  "text": "A",
+                  "why": "Chuỗi khách sạn lớn mới là nơi trả trợ cấp thực tập hàng tháng cao hơn một chút."
+                },
+                {
+                  "text": "C",
+                  "why": "Chuỗi lớn chỉ cách nhà bố mẹ cô 10 phút, còn khách sạn boutique mất tới 40 phút đi xe buýt."
+                }
+              ]
+            },
+            {
+              "n": 22,
+              "prompt": "What caused the most stress during Chloe's first month at reception?",
+              "options": [
+                { "key": "A", "text": "Dealing with guests who arrived before check-in time." },
+                { "key": "B", "text": "Covering night shifts when colleagues were ill." },
+                { "key": "C", "text": "Learning the hotel's outdated booking software." }
+              ],
+              "answer": ["C"],
+              "explanation": "Điều khiến Chloe căng thẳng nhất ('nearly drove me round the bend') là phần mềm đặt phòng cũ kỹ hay treo máy và đòi mã bàn phím thủ công ('ancient booking software' = paraphrase của 'outdated booking software').",
+              "evidence": "What nearly drove me round the bend was their ancient booking software—it froze twice a day and required obscure manual keyboard codes just to split a restaurant bill.",
+              "distractors": [
+                {
+                  "text": "A",
+                  "why": "Chloe nói khách đến sớm hóa ra lại dễ xử lý khi cô đề nghị gửi hành lý miễn phí và tặng phiếu cà phê."
+                },
+                {
+                  "text": "B",
+                  "why": "Thực tập sinh không được phép làm ca đêm một mình ('interns weren't permitted to cover solo night shifts anyway')."
+                }
+              ]
+            },
+            {
+              "n": 23,
+              "prompt": "How did the hotel manager respond to Chloe's suggestion about breakfast buffet waste?",
+              "options": [
+                { "key": "A", "text": "He tested it for two weeks before adopting it permanently." },
+                { "key": "B", "text": "He rejected it because guests might complain about smaller portions." },
+                { "key": "C", "text": "He asked the head chef to design a completely new menu." }
+              ],
+              "answer": ["A"],
+              "explanation": "Quản lý đồng ý thử nghiệm dùng khay nhỏ hơn trong 30 phút cuối suốt 2 tuần ('for a two-week trial'), thấy lượng lãng phí giảm gần một phần ba nên áp dụng vĩnh viễn ('rolled it out permanently').",
+              "evidence": "When food waste dropped by almost a third with zero complaints, he rolled it out permanently.",
+              "distractors": [
+                {
+                  "text": "B",
+                  "why": "Chloe chỉ sợ trước rằng ông sẽ từ chối vì lý do đó ('braced myself for him to shoot it down'), chứ thực tế ông không từ chối."
+                },
+                {
+                  "text": "C",
+                  "why": "Bếp trưởng vẫn giữ nguyên toàn bộ món ăn trong thực đơn ('didn't touch the menu items at all')."
+                }
+              ]
+            },
+            {
+              "n": 24,
+              "prompt": "What does Dr. Patel think Chloe should cut from her report's introduction?",
+              "options": [
+                { "key": "A", "text": "The overview of the hotel's target customer groups." },
+                { "key": "B", "text": "The detailed history of the building's architecture." },
+                { "key": "C", "text": "The summary of her personal learning objectives." }
+              ],
+              "answer": ["B"],
+              "explanation": "Giảng viên khuyên cô cắt bỏ 2 trang lịch sử kiến trúc tòa nhà thời Victoria ('trim out ... the two-page architectural history of the Victorian building' = B).",
+              "evidence": "What you really ought to trim out is the two-page architectural history of the Victorian building and its nineteenth-century owners.",
+              "distractors": [
+                {
+                  "text": "A",
+                  "why": "Thầy bảo chắc chắn phải giữ phần tổng quan nhóm khách hàng mục tiêu vì nó làm nền cho phần marketing."
+                },
+                {
+                  "text": "C",
+                  "why": "Mục tiêu học tập cá nhân bắt buộc phải giữ lại theo tiêu chí chấm điểm (rubric)."
+                }
+              ]
+            },
+            {
+              "n": 25,
+              "prompt": "What surprised Dr. Patel about Chloe's staff survey results?",
+              "options": [
+                { "key": "A", "text": "How few housekeeping staff completed the questionnaire." },
+                { "key": "B", "text": "How positively staff viewed the new shift-swapping app." },
+                { "key": "C", "text": "How strongly kitchen and front-desk staff disagreed about communication." }
+              ],
+              "answer": ["C"],
+              "explanation": "Điều thực sự khiến Dr. Patel ngạc nhiên là sự chênh lệch lớn giữa lễ tân (chấm 8/10) và bộ phận bếp (chấm 3/10) về chất lượng giao tiếp bàn giao ca ('massive gap between departments on communication').",
+              "evidence": "What truly surprised me was the massive gap between departments on communication: front-desk staff rated daily handovers eight out of ten, while the kitchen brigade rated the exact same process three out of ten!",
+              "distractors": [
+                {
+                  "text": "A",
+                  "why": "Ngược lại, bộ phận buồng phòng có tỷ lệ phản hồi rất ấn tượng—gần 90%."
+                },
+                {
+                  "text": "B",
+                  "why": "Thầy nói mình không bất ngờ ('wasn't shocked') việc nhân viên thích ứng dụng đổi ca."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "range": [26, 30],
+          "type": "mcq",
+          "title": "Improving the analysis and final presentation",
+          "instructions": "Choose the correct letter, A, B or C.",
+          "questions": [
+            {
+              "n": 26,
+              "prompt": "What problem does Dr. Patel identify in Chloe's financial comparison table?",
+              "options": [
+                { "key": "A", "text": "The room occupancy figures are calculated inaccurately." },
+                { "key": "B", "text": "She compares peak-season figures with off-peak industry averages." },
+                { "key": "C", "text": "She forgot to include online travel agency commission fees." }
+              ],
+              "answer": ["B"],
+              "explanation": "Lỗi phương pháp nằm ở việc Chloe so sánh giá phòng mùa cao điểm tháng 7 trực tiếp với mức trung bình cả năm (bao gồm cả mùa thấp điểm mùa đông), làm lợi nhuận trông cao giả tạo.",
+              "evidence": "The catch is that you've compared the hotel's peak July coastal room rates directly against year-round national averages, which include quiet winter off-peak months—that makes the hotel look artificially profitable.",
+              "distractors": [
+                {
+                  "text": "A",
+                  "why": "Thầy xác nhận phần tính tỷ lệ lấp đầy phòng hoàn toàn chính xác ('room occupancy math checks out fine')."
+                },
+                {
+                  "text": "C",
+                  "why": "Thầy khen cô đã nhớ ghi chú phí hoa hồng của đại lý du lịch trực tuyến ở cuối bảng."
+                }
+              ]
+            },
+            {
+              "n": 27,
+              "prompt": "What does Chloe decide to use as the main case study in her final section?",
+              "options": [
+                { "key": "A", "text": "A wedding reception affected by a power cut." },
+                { "key": "B", "text": "A double-booking error during a local conference." },
+                { "key": "C", "text": "A negative online review posted by a tour group." }
+              ],
+              "answer": ["A"],
+              "explanation": "Chloe quyết định bỏ sự cố hội nghị và chọn sự cố mất điện trong tiệc cưới ('make the wedding power cut my main case study' = A) làm tình huống nghiên cứu chính.",
+              "evidence": "I'll swap out the conference error and make the wedding power cut my main case study.",
+              "distractors": [
+                {
+                  "text": "B",
+                  "why": "Chloe viết nháp về lỗi đặt trùng phòng hội nghị trước, nhưng thầy thấy quá nhỏ nhặt nên cô quyết định thay thế."
+                },
+                {
+                  "text": "C",
+                  "why": "Khách sạn yêu cầu không trích dẫn đánh giá tiêu cực có thể nhận diện khách vì lý do bảo mật."
+                }
+              ]
+            },
+            {
+              "n": 28,
+              "prompt": "Why does Dr. Patel advise Chloe to include quotes from her workplace supervisor?",
+              "options": [
+                { "key": "A", "text": "To meet the minimum word count for the appendix." },
+                { "key": "B", "text": "To show how her recommendations looked from a management perspective." },
+                { "key": "C", "text": "To prove that she completed all required placement hours." }
+              ],
+              "answer": ["B"],
+              "explanation": "Trích dẫn lời người giám sát giúp giám khảo thấy mức độ thực tế của các đề xuất dưới góc nhìn quản lý ('how realistic your recommendations looked from a management perspective' = B).",
+              "evidence": "What supervisor quotes do is show the marker how realistic your recommendations looked from a management perspective.",
+              "distractors": [
+                {
+                  "text": "A",
+                  "why": "Chloe đã gần chạm giới hạn số từ tối đa ('already close to the word ceiling'), không thiếu từ."
+                },
+                {
+                  "text": "C",
+                  "why": "Bảng chấm công có chữ ký ('signed timesheet') đã đủ chứng minh số giờ thực tập."
+                }
+              ]
+            },
+            {
+              "n": 29,
+              "prompt": "What is Chloe most worried about regarding next week's oral presentation?",
+              "options": [
+                { "key": "A", "text": "Answering unexpected questions from the external examiner." },
+                { "key": "B", "text": "Getting her chart slides to display properly on the projector." },
+                { "key": "C", "text": "Fitting all her key findings into the ten-minute time limit." }
+              ],
+              "answer": ["C"],
+              "explanation": "Nỗi lo thực sự của Chloe ('My real panic') là giới hạn đúng 10 phút vì lúc tập thử cô mất tới 16 phút mới trình bày hết kết quả chính.",
+              "evidence": "My real panic is the strict ten-minute cap—when I practised aloud last night, I didn't finish my key findings until minute sixteen!",
+              "distractors": [
+                {
+                  "text": "A",
+                  "why": "Chloe thực sự thích trả lời câu hỏi bất ngờ ('actually enjoy answering curveball questions')."
+                },
+                {
+                  "text": "B",
+                  "why": "Bộ phận IT kiểm tra slide từ hôm trước nên cô hoàn toàn yên tâm về máy chiếu."
+                }
+              ]
+            },
+            {
+              "n": 30,
+              "prompt": "What do Chloe and Dr. Patel agree to do before Friday's submission deadline?",
+              "options": [
+                { "key": "A", "text": "Send the revised draft to the hotel manager for final approval." },
+                { "key": "B", "text": "Meet briefly on Thursday afternoon to review the revised recommendations." },
+                { "key": "C", "text": "Ask a second-year student to check the bibliography formatting." }
+              ],
+              "answer": ["B"],
+              "explanation": "Chloe đề xuất một buổi trao đổi nhanh 15 phút vào chiều thứ Năm để thầy xem qua phần đề xuất đã viết lại, và thầy đồng ý hẹn lúc 3 giờ chiều thứ Năm.",
+              "evidence": "Could we possibly squeeze in a quick fifteen-minute chat on Thursday afternoon so you can glance over my rewritten recommendations?",
+              "distractors": [
+                {
+                  "text": "A",
+                  "why": "Quản lý khách sạn đã ký xác nhận miễn trừ bảo mật từ tuần trước nên không cần gửi lại."
+                },
+                {
+                  "text": "C",
+                  "why": "Chloe tự chỉnh danh mục tài liệu tham khảo theo hướng dẫn thư viện thay vì làm phiền sinh viên năm hai."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "part": 4,
+      "title": "Part 4 — History of public transport ticketing",
+      "context": "A public lecture by a transport historian tracing how fare collection evolved from nineteenth-century paper tickets to modern contactless payments.",
+      "audio": "assets/audio/ielts-gt/listening/gt-l-02/part4.mp3",
+      "script": [
+        {
+          "speaker": "Narrator",
+          "voice": "en-GB-narrator",
+          "text": "Part 4. You will hear a transport historian giving a lecture on the history of public transport ticketing. First, you have some time to look at questions 31 to 35."
+        },
+        {
+          "pause": 30,
+          "note": "Reading time for questions 31–35"
+        },
+        {
+          "speaker": "Narrator",
+          "voice": "en-GB-narrator",
+          "text": "Now listen carefully and answer questions 31 to 35."
+        },
+        {
+          "speaker": "Lecturer",
+          "voice": "en-AU-male-1",
+          "text": "Good evening. Most of us tap a bank card or phone at a station gate every morning without giving it a second thought. Yet how public transport systems collect fares has always shaped how smoothly cities move. Tonight, I'd like to trace that story across nearly two centuries—from inked ledgers to invisible digital payments."
+        },
+        {
+          "speaker": "Lecturer",
+          "voice": "en-AU-male-1",
+          "text": "When the first passenger railways opened in Britain in the early 1830s, they borrowed their booking method straight from horse-drawn stagecoaches. A clerk behind a wooden counter wrote each traveller's name and destination by hand into a thick paper ledger, then tore off a receipt. Naturally, frustrated passengers sometimes broke into arguments in the booking hall, though the operational nightmare railway bosses actually cared about was the sheer scale of delays at busy stations—trains routinely left twenty minutes late simply waiting for queues to clear."
+        },
+        {
+          "speaker": "Lecturer",
+          "voice": "en-AU-male-1",
+          "text": "The breakthrough arrived in 1837 from a quiet stationmaster in northern England named Thomas Edmondson. Edmondson designed a small, stiff pasteboard rectangle pre-printed with departure and arrival stations. He also built a tall wooden cabinet to keep racks of these tickets tidy, while the real technical heart of his invention was a compact wooden press that stamped a unique consecutive serial number onto every single cardboard ticket."
+        },
+        {
+          "speaker": "Lecturer",
+          "voice": "en-AU-male-1",
+          "text": "Why did serial numbers matter so much? Certainly, simple arithmetic errors by overworked clerks declined overnight. Far more importantly for railway directors, however, sequential numbering let auditors match the exact number of tickets sold at dusk against the coins in the cash box, dramatically curbing staff fraud—because a clerk could no longer pocket cash from a spare unnumbered slip."
+        },
+        {
+          "speaker": "Lecturer",
+          "voice": "en-AU-male-1",
+          "text": "Meanwhile, inside rapidly growing cities, horse-drawn buses and electric trams faced a different puzzle: passengers hopped on and off every few hundred metres. Rather than booking windows, transit operators employed roving conductors who walked up and down the aisle carrying a mechanical bell punch. Each conductor held colour-coded paper slips, punching a tiny hole through specific printed boxes—not to record the vehicle's route, which stayed fixed, but to indicate the fare each rider had paid for their journey."
+        },
+        {
+          "speaker": "Lecturer",
+          "voice": "en-AU-male-1",
+          "text": "By the 1950s and 1960s, rising post-war wages made keeping a conductor on every tram and bus financially unsustainable. While underground networks in London and Paris leaned towards heavy mechanical barriers at station entrances, several central European cities—notably Zurich and Vienna—pioneered a bold alternative: honour-based open boarding, where passengers bought tickets from kerbside machines and compliance was enforced through random inspections carried out by roaming teams of plain-clothes officers."
+        },
+        {
+          "speaker": "Narrator",
+          "voice": "en-GB-narrator",
+          "text": "Before you hear the rest of the lecture, you have some time to look at questions 36 to 40."
+        },
+        {
+          "pause": 20,
+          "note": "Reading time for questions 36–40"
+        },
+        {
+          "speaker": "Narrator",
+          "voice": "en-GB-narrator",
+          "text": "Now listen and answer questions 36 to 40."
+        },
+        {
+          "speaker": "Lecturer",
+          "voice": "en-AU-male-1",
+          "text": "The next major leap came in the late 1960s and 1970s with the arrival of magnetic-stripe paper tickets, trialled heavily on London Underground and San Francisco's BART system. Automated turnstiles could read an encoded iron-oxide strip in a fraction of a second. Occasional tourists often fumbled inserting the thin slips upside down, yet the machines transformed rush hour by allowing station gates to process far higher volumes of commuters than human ticket collectors ever could."
+        },
+        {
+          "speaker": "Lecturer",
+          "voice": "en-AU-male-1",
+          "text": "Magnetic stripes weren't without headaches, of course. Today we blame smartphone magnets for wiping hotel keycards, though mobile phones weren't in pockets back in the 1970s. Back then, the main practical drawback of early magnetic tickets was how easily their fragile stripe scratched or lost data whenever riders shoved them loose into a trouser pocket alongside keys or coins."
+        },
+        {
+          "speaker": "Lecturer",
+          "voice": "en-AU-male-1",
+          "text": "Engineers solved that wear-and-tear problem in the 1990s by replacing fragile strips with sealed plastic smart cards. Hong Kong led the world when it launched the Octopus card in September 1997, embedding a contactless radio-frequency chip inside durable plastic. Whereas earlier travel passes had to be slid out of protective envelopes for inspection, Octopus readers detected the chip through leather and fabric, enabling busy passengers to breeze through gates without ever removing cards from their wallets."
+        },
+        {
+          "speaker": "Lecturer",
+          "voice": "en-AU-male-1",
+          "text": "Over the past decade, we've entered an even simpler era: open-loop payments using everyday contactless bank cards and smartphones. For an occasional visitor, this removes the friction of buying and topping up a local city travel card altogether. Better still, back-office software tracks every tap across buses and trains and automatically applies daily fare capping—meaning riders never need to fill out forms to claim refunds if they take more journeys than planned."
+        },
+        {
+          "speaker": "Lecturer",
+          "voice": "en-AU-male-1",
+          "text": "Yet every technological convenience carries a social trade-off. As more transit authorities shut down cash ticket offices completely, consumer advocates raise a valid warning. You don't strictly need a smartphone to ride a modern bus, since physical debit cards work just as well. The deeper risk is that strictly cashless networks exclude elderly residents who prefer paper currency and lower-income people without bank accounts, reminding us that the best ticketing system isn't just the fastest—it has to stay open to everyone. Thank you."
+        },
+        {
+          "speaker": "Narrator",
+          "voice": "en-GB-narrator",
+          "text": "That is the end of Part 4. You now have half a minute to check your answers."
+        },
+        {
+          "pause": 30,
+          "note": "Check answers for Part 4"
+        }
+      ],
+      "groups": [
+        {
+          "range": [31, 35],
+          "type": "summary",
+          "instructions": "Complete the summary below. Write ONE WORD ONLY for each answer.",
+          "wordLimit": 1,
+          "allowNumber": false,
+          "title": "Early Ticketing Systems (1830s–1950s)",
+          "questions": [
+            {
+              "n": 31,
+              "prompt": "Early railway clerks recorded each destination by hand in a ledger, a slow process that often caused {{blank}} at busy stations.",
+              "answer": ["delays"],
+              "explanation": "Cách ghi sổ tay chậm chạp gây ra tình trạng chậm chuyến nghiêm trọng tại các nhà ga đông đúc ('sheer scale of delays at busy stations').",
+              "evidence": "Naturally, frustrated passengers sometimes broke into arguments in the booking hall, though the operational nightmare railway bosses actually cared about was the sheer scale of delays at busy stations—trains routinely left twenty minutes late simply waiting for queues to clear.",
+              "distractors": [
+                {
+                  "text": "arguments",
+                  "why": "Hành khách đôi khi tranh cãi trong phòng vé, nhưng vấn đề vận hành chính mà các nhà quản lý đường sắt lo ngại là sự chậm trễ (delays)."
+                }
+              ]
+            },
+            {
+              "n": 32,
+              "prompt": "In 1837, Thomas Edmondson invented a cardboard ticket stamped with a serial number using a wooden {{blank}}.",
+              "answer": ["press"],
+              "explanation": "Thiết bị đóng dấu số sê-ri lên từng vé bìa cứng của Edmondson là một máy dập nhỏ bằng gỗ ('compact wooden press').",
+              "evidence": "He also built a tall wooden cabinet to keep racks of these tickets tidy, while the real technical heart of his invention was a compact wooden press that stamped a unique consecutive serial number onto every single cardboard ticket.",
+              "distractors": [
+                {
+                  "text": "cabinet",
+                  "why": "Tủ gỗ ('wooden cabinet') chỉ dùng để xếp gọn các giá đựng vé, không phải dụng cụ đóng số sê-ri."
+                }
+              ]
+            },
+            {
+              "n": 33,
+              "prompt": "Sequential numbering allowed railway companies to check daily cash and reduce staff {{blank}}.",
+              "answer": ["fraud"],
+              "explanation": "Đánh số liên tiếp giúp đối chiếu số vé bán với tiền trong két, qua đó giảm mạnh gian lận của nhân viên ('curbing staff fraud' = paraphrase của 'reduce staff fraud').",
+              "evidence": "Far more importantly for railway directors, however, sequential numbering let auditors match the exact number of tickets sold at dusk against the coins in the cash box, dramatically curbing staff fraud—because a clerk could no longer pocket cash from a spare unnumbered slip.",
+              "distractors": [
+                {
+                  "text": "errors",
+                  "why": "Lỗi tính toán ('arithmetic errors') cũng giảm, nhưng mục đích quan trọng hơn nhiều đối với giám đốc đường sắt là ngăn gian lận (fraud)."
+                }
+              ]
+            },
+            {
+              "n": 34,
+              "prompt": "On city trams and buses, roving conductors punched holes in colour-coded slips to show the {{blank}} paid.",
+              "answer": ["fare"],
+              "explanation": "Nhân viên bán vé lưu động bấm lỗ trên các phiếu giấy mã màu để thể hiện mức giá vé hành khách đã trả ('indicate the fare each rider had paid').",
+              "evidence": "Each conductor held colour-coded paper slips, punching a tiny hole through specific printed boxes—not to record the vehicle's route, which stayed fixed, but to indicate the fare each rider had paid for their journey.",
+              "distractors": [
+                {
+                  "text": "route",
+                  "why": "Giảng viên nói rõ việc bấm lỗ không dùng để ghi tuyến đường ('not to record the vehicle's route') vì tuyến đã cố định."
+                }
+              ]
+            },
+            {
+              "n": 35,
+              "prompt": "High labour costs led some European cities to adopt honour systems supported by random {{blank}}.",
+              "answer": ["inspections"],
+              "explanation": "Một số thành phố châu Âu áp dụng hình thức tự giác mua vé và kiểm soát bằng các đợt kiểm tra ngẫu nhiên ('enforced through random inspections').",
+              "evidence": "While underground networks in London and Paris leaned towards heavy mechanical barriers at station entrances, several central European cities—notably Zurich and Vienna—pioneered a bold alternative: honour-based open boarding, where passengers bought tickets from kerbside machines and compliance was enforced through random inspections carried out by roaming teams of plain-clothes officers.",
+              "distractors": [
+                {
+                  "text": "barriers",
+                  "why": "Cổng chắn cơ học ('mechanical barriers') được dùng ở tàu điện ngầm London và Paris, trái ngược với hệ thống tự giác ở Zurich và Vienna."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "range": [36, 40],
+          "type": "note",
+          "instructions": "Complete the notes below. Write ONE WORD ONLY for each answer.",
+          "wordLimit": 1,
+          "allowNumber": false,
+          "title": "Electronic, Smart-Card and Contactless Eras",
+          "questions": [
+            {
+              "n": 36,
+              "prompt": "1960s–1970s: Magnetic-stripe tickets let automated gates handle larger volumes of {{blank}}.",
+              "answer": ["commuters"],
+              "explanation": "Cổng tự động đọc dải từ giúp xử lý lưu lượng người đi làm hằng ngày lớn hơn nhiều ('process far higher volumes of commuters').",
+              "evidence": "Occasional tourists often fumbled inserting the thin slips upside down, yet the machines transformed rush hour by allowing station gates to process far higher volumes of commuters than human ticket collectors ever could.",
+              "distractors": [
+                {
+                  "text": "tourists",
+                  "why": "Khách du lịch thi thoảng mới đi nên hay lúng túng khi nhét vé ngược, không phải nhóm hành khách giờ cao điểm được xử lý với lưu lượng lớn."
+                }
+              ]
+            },
+            {
+              "n": 37,
+              "prompt": "Drawback: Early magnetic tickets easily lost data when stored next to keys or {{blank}}.",
+              "answer": ["coins"],
+              "explanation": "Nhược điểm chính của vé từ đời đầu là dễ trầy xước hoặc mất dữ liệu khi để lẫn trong túi quần cùng chìa khóa hoặc tiền xu ('alongside keys or coins').",
+              "evidence": "Back then, the main practical drawback of early magnetic tickets was how easily their fragile stripe scratched or lost data whenever riders shoved them loose into a trouser pocket alongside keys or coins.",
+              "distractors": [
+                {
+                  "text": "phones",
+                  "why": "Giảng viên nhấn mạnh điện thoại di động chưa có trong túi quần vào thập niên 1970."
+                }
+              ]
+            },
+            {
+              "n": 38,
+              "prompt": "1997: Hong Kong's Octopus smart card let riders tap gates without taking cards out of their {{blank}}.",
+              "answer": ["wallets"],
+              "explanation": "Đầu đọc không tiếp xúc nhận chip qua lớp da và vải nên hành khách đi qua cổng mà không cần rút thẻ khỏi ví ('without ever removing cards from their wallets').",
+              "evidence": "Whereas earlier travel passes had to be slid out of protective envelopes for inspection, Octopus readers detected the chip through leather and fabric, enabling busy passengers to breeze through gates without ever removing cards from their wallets.",
+              "distractors": [
+                {
+                  "text": "envelopes",
+                  "why": "Phong bì bảo vệ ('protective envelopes') là thứ hành khách phải rút vé ra trong các hệ thống cũ trước thẻ Octopus."
+                }
+              ]
+            },
+            {
+              "n": 39,
+              "prompt": "Modern contactless bank cards remove the need for local travel cards and apply automatic daily fare {{blank}}.",
+              "answer": ["capping"],
+              "explanation": "Hệ thống tự động áp dụng mức trần giá vé theo ngày ('automatically applies daily fare capping') cho các lượt chạm thẻ.",
+              "evidence": "Better still, back-office software tracks every tap across buses and trains and automatically applies daily fare capping—meaning riders never need to fill out forms to claim refunds if they take more journeys than planned.",
+              "distractors": [
+                {
+                  "text": "refunds",
+                  "why": "Nhờ có mức trần tự động (capping), hành khách không cần điền đơn xin hoàn tiền ('claim refunds')."
+                }
+              ]
+            },
+            {
+              "n": 40,
+              "prompt": "Equity concern: Cashless-only systems risk excluding elderly riders and people without bank {{blank}}.",
+              "answer": ["accounts"],
+              "explanation": "Mạng lưới hoàn toàn không tiền mặt có nguy cơ gạt ra ngoài người cao tuổi và người thu nhập thấp không có tài khoản ngân hàng ('people without bank accounts').",
+              "evidence": "The deeper risk is that strictly cashless networks exclude elderly residents who prefer paper currency and lower-income people without bank accounts, reminding us that the best ticketing system isn't just the fastest—it has to stay open to everyone.",
+              "distractors": [
+                {
+                  "text": "smartphones",
+                  "why": "Giảng viên giải thích bạn không nhất thiết phải có điện thoại thông minh vì thẻ ghi nợ vật lý vẫn dùng được bình thường."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
