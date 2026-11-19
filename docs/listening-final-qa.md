@@ -91,7 +91,7 @@ No general refactor was made.
 | Tokens | New listening semantic colours live in `:root` with dark overrides; components reuse shared surface, type, border and gel tokens. Standalone SVG maps contain their own palette. No new colour literal introduced by this QA round. |
 | AA / themes / motion / mobile / print | Screen DOM text, both schemes, 360/390px layout, focus, target size, motion and tested print panels pass after the fixes above. SVG badge text still fails AA; see below. |
 | Component reuse | Listening cards, controls, tabs, feedback and dropdown reuse the glass/gel vocabulary; existing JS selectors remain compatible. Glass fallbacks are present before `@supports`. |
-| CSS size / assets | Open budget finding: both stylesheets together are approximately 77.7KB uncompressed, exceeding the guide's approximate 40KB total budget. CSS/SVG decoration remains lightweight relative to raster assets. |
+| CSS size / assets | Still open after the CSS follow-up: loaded minified stylesheets total 56,359 bytes raw / 12,677 bytes gzip, down from 77,675 raw bytes. The raw total still exceeds the approximate 40KB budget. |
 
 ### Open findings
 
@@ -106,9 +106,11 @@ No general refactor was made.
    image text cannot be fixed by the page stylesheet; left for the requested
    full-diff findings report rather than changing content assets in this CSS QA.
    Exact glyph bounds and contrast bounds: `test-artifacts/final/map-contrast.json`.
-2. **CSS budget exceeded.** `assets/css/style.css` plus
-   `assets/css/listening.css` total roughly 77.7KB. Consolidation/minification
-   needs a separate scoped change; no refactor in this round.
+2. **CSS budget still exceeded — partial reduction, not resolved.** Shared
+   component declarations and generated minified files reduce loaded CSS from
+   **77,675 to 56,359 raw bytes** (27.4% smaller), **12,677 bytes gzip**. A further
+   **16,360 raw bytes** must be removed to satisfy the strict <40,000-byte check.
+   See the follow-up below. Gzip size alone does not close the raw-byte finding.
 
 The earlier content findings in `docs/listening-phase-b-validation.md` are
 historical: the two merged content corrections and regenerated audio address
@@ -116,7 +118,79 @@ them. Schema/evidence checks and real-test scoring remain green; this round
 does not claim a fresh human pronunciation review or independent fact-check of
 every lesson claim.
 
-## Validation and artifacts
+## CSS budget follow-up — incomplete
+
+Readable CSS remains in `assets/css/style.css` and `assets/css/listening.css`.
+Shared grid layouts, glass surfaces and answer-state declarations are grouped;
+gel gradients use shared tokens. No content SVG was edited. The five Aero genes,
+existing colours, selectors, glass fallbacks and print rules remain intact.
+
+`node scripts/build-css.mjs` (also `npm run css`) generates the checked-in
+`.min.css` files without dependencies. It preserves quoted strings, SVG URLs,
+escapes, descendant pseudo selectors and calc spacing. `index.html` now loads
+`style.min.css?v=6` and `listening.min.css?v=3`. Source hashes and deterministic
+output comparisons make missing/stale builds fail `scripts/check.mjs`, including
+comment-only source edits. Line endings are normalized for cross-platform checks.
+The checker also enforces the raw budget; it currently fails with **one budget
+error, zero stale-file errors and zero warnings**. This change is not ready to
+be reported as the completed budget fix.
+
+| Loaded file | Raw bytes | Gzip bytes |
+|---|---:|---:|
+| `assets/css/style.min.css` | 26,853 | 6,697 |
+| `assets/css/listening.min.css` | 29,506 | 5,980 |
+| **Total** | **56,359** | **12,677** |
+
+Gzip uses Node's default gzip level, compressing each file separately. The two
+readable sources still total 76,873 bytes. Comment/whitespace minification of
+the original sources alone produced 57,083 bytes, so that step cannot meet the
+raw budget. Further structural CSS consolidation remains necessary.
+
+Before any source edit, the existing final e2e captured its 32 screenshots in
+`test-artifacts/css-budget/before/`. Independent stabilized source/generated
+e2e runs are in `source/` and `after/`, with exact pixel counts in
+`pixel-diff.json`. A repeat using the unchanged original sources is in
+`before-repeat/`, with `control-pixel-diff.json`. The repeat reproduced the
+42,608-pixel dark footer difference and the mobile result/player paint region;
+these large cross-run differences therefore also occur without a CSS change.
+
+An additional comparison applied original and updated styles to the **same DOM,
+viewport and browser context**, across all 28 states, taking paired screenshots
+and comparing every standard computed property on every element and its
+`::before`/`::after`. All 28 states had **zero computed-property differences**.
+Paired exact pixel counts (no tolerance applied):
+
+| State | Light 1600 | Light 390 | Dark 1600 | Dark 390 |
+|---|---:|---:|---:|---:|
+| Hub | 4 | 0 | 2 | 0 |
+| List | 0 | 0 | 0 | 0 |
+| Practice | 0 | 1 | 0 | 3 |
+| Practice, scrolled | 2 | 0 | 1 | 0 |
+| Exam | 0 | 1 | 0 | 3 |
+| Result | 0 | 1 | 0 | 3 |
+| Dropdown | 7 | 12 | 4 | 15 |
+
+Every nonzero paired difference is only **1–2 channel levels** (of 255), at
+glass/bubble or antialiased brand edges; the largest is **15 pixels / 0.004557%**.
+Together with unchanged computed styles and the original-source repeat, this
+supports browser raster/compositor variability rather than a layout/style
+change. Paired PNGs and JSON reports are in `test-artifacts/css-budget/paired/`.
+Both independent e2e runs still pass layout, contrast, focus, target, motion,
+360px and print assertions.
+
+To reproduce source/generated e2e captures, set `CSS_QA_STYLESHEETS=source` and
+`CSS_QA_OUTPUT=test-artifacts/css-budget/source` for the first run of
+`node --test tests/listening-final.e2e.test.mjs`; unset the stylesheet override
+and choose a different output directory for the generated-file run. An optional
+`CSS_QA_SOURCE_DIRECTORY` selects a saved source directory relative to the repo.
+Compare directories with
+`node tests/helpers/compare-screenshots.mjs BEFORE AFTER REPORT.json`.
+
+Follow-up validation: `node --test` **32/32 pass** (the original 30 plus two CSS
+build tests); `git diff --check` clean. `node scripts/check.mjs` has **1 error**,
+solely the remaining raw-byte budget overrun. Finding #2 remains open.
+
+## Original QA validation and artifacts
 
 - `node --test`: **30 tests, 30 pass, 0 fail**, including fixture e2e, final QA,
   and all four real tests/real audio, 40/40 → Band 9 and 0/40 paths, exam guards,

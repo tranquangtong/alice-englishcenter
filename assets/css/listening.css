@@ -99,6 +99,16 @@
   transform: translateY(2px) rotate(-135deg);
 }
 
+.top-menu__panel,
+.lt-card,
+.lt-audio {
+  background-color: var(--glass-strong);
+  background-image: var(--glass-card-bg);
+  border: 1px solid var(--glass-edge);
+  border-radius: var(--radius-m);
+  box-shadow: var(--glass-highlight), var(--shadow-soft);
+}
+
 .top-menu__panel {
   position: absolute;
   inset-inline-start: 0;
@@ -110,11 +120,6 @@
   display: flex;
   flex-direction: column;
   gap: .25rem;
-  background-color: var(--glass-strong);
-  background-image: var(--glass-card-bg);
-  border: 1px solid var(--glass-edge);
-  border-radius: var(--radius-m);
-  box-shadow: var(--glass-highlight), var(--shadow-soft);
 }
 
 @supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
@@ -233,7 +238,8 @@
    IELTS General Hub (.gt-hub, .gt-skill, .gt-skill--soon)
    ========================================================================== */
 
-.gt-hub {
+.gt-hub,
+.lt-list {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1.15rem;
@@ -396,12 +402,6 @@
    Listening Test List & External Links (.lt-list, .lt-card)
    ========================================================================== */
 
-.lt-list {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1.15rem;
-}
-
 .lt-list > h1,
 .lt-list > p,
 .lt-list > h2,
@@ -426,11 +426,6 @@
   align-items: start;
   margin: 0;
   padding: 1.25rem 1.3rem;
-  border-radius: var(--radius-m);
-  border: 1px solid var(--glass-edge);
-  background-color: var(--glass-strong);
-  background-image: var(--glass-card-bg);
-  box-shadow: var(--glass-highlight), var(--shadow-soft);
   transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
 }
 
@@ -511,13 +506,17 @@
   font-weight: 500;
 }
 
-.lt-list > section {
-  padding: 1.05rem 1.2rem;
+.lt-list > section,
+.lt-transcript {
   border-radius: var(--radius-m);
   border: 1px solid var(--glass-edge);
   background-color: var(--glass);
   background-image: var(--glass-sheen);
   box-shadow: var(--glass-highlight), 0 4px 16px rgb(0 60 110 / .08);
+}
+
+.lt-list > section {
+  padding: 1.05rem 1.2rem;
 }
 
 .lt-list > section > h3 {
@@ -741,7 +740,7 @@
 
 .lt-tab.aero-btn[aria-selected="true"] {
   border-color: var(--gel-edge);
-  background: linear-gradient(180deg, var(--gel-top) 0%, var(--gel-mid) 52%, var(--gel-bottom) 100%);
+  background: var(--gel-bg);
   color: var(--gel-ink);
   font-weight: 800;
   box-shadow: var(--gel-shadow);
@@ -762,11 +761,6 @@
   gap: .5rem .6rem;
   margin-block: 1rem;
   padding: .75rem .95rem;
-  border-radius: var(--radius-m);
-  border: 1px solid var(--glass-edge);
-  background-color: var(--glass-strong);
-  background-image: var(--glass-card-bg);
-  box-shadow: var(--glass-highlight), var(--shadow-soft);
 }
 
 @supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
@@ -1269,20 +1263,21 @@
 }
 
 /* Per-question grading states (colour + border + ✓/✗ status banner) */
-.lt-q--correct {
-  padding: .85rem .95rem;
-  border-radius: var(--radius-m);
-  border: 1px solid var(--badge-edge);
-  border-inline-start: 4px solid var(--grass);
-  background: var(--surface-stripe);
-}
-
+.lt-q--correct,
 .lt-q--wrong {
   padding: .85rem .95rem;
   border-radius: var(--radius-m);
+  background: var(--surface-stripe);
+}
+
+.lt-q--correct {
+  border: 1px solid var(--badge-edge);
+  border-inline-start: 4px solid var(--grass);
+}
+
+.lt-q--wrong {
   border: 1px solid var(--lt-wrong-edge);
   border-inline-start: 4px solid var(--lt-wrong);
-  background: var(--surface-stripe);
 }
 
 .lt-q--correct .lt-gap {
@@ -1395,11 +1390,6 @@ article blockquote.lt-evidence::before {
 .lt-transcript {
   margin-top: 1.75rem;
   padding: 1.25rem 1.35rem;
-  border-radius: var(--radius-m);
-  border: 1px solid var(--glass-edge);
-  background-color: var(--glass);
-  background-image: var(--glass-sheen);
-  box-shadow: var(--glass-highlight), 0 4px 16px rgb(0 60 110 / .08);
 }
 
 .lt-transcript > h3 {

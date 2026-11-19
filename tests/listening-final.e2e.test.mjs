@@ -6,6 +6,8 @@ import { tmpdir } from 'node:os';
 import path from 'node:path';
 import { serveFixture } from './helpers/static-server.mjs';
 
+const outputDirectory = process.env.CSS_QA_OUTPUT || 'test-artifacts/final';
+
 // Conservative glass approximation: composite computed background colours and
 // gradient stops through every ancestor, including the gel's white sheen.
 // Keep both sky extremes (plus white clouds in light mode). Blur/saturation and
@@ -79,15 +81,27 @@ test('Edge: final Aero QA, both schemes and widths, sticky player and accessible
   t.after(async () => { await context?.close(); await server.close(); await rm(profile, { recursive: true, force: true, maxRetries: 5, retryDelay: 200 }); });
   context = await chromium.launchPersistentContext(profile, { channel: 'msedge', headless: true, args: ['--no-sandbox'], reducedMotion: 'reduce' });
   const page = await context.newPage(); page.setDefaultTimeout(10000);
+  if (process.env.CSS_QA_STYLESHEETS === 'source') {
+    await page.route('**/assets/css/*.min.css*', async route => {
+      const name = new URL(route.request().url()).pathname.split('/').at(-1).replace('.min.css', '.css');
+      const directory = process.env.CSS_QA_SOURCE_DIRECTORY || 'assets/css';
+      await route.fulfill({ contentType: 'text/css', body: await readFile(new URL(`../${directory}/${name}`, import.meta.url), 'utf8') });
+    });
+  }
   const report = [], printReport = [], failures = [], errors = [];
   page.on('pageerror', error => errors.push(error.message));
-  await mkdir('test-artifacts/final', { recursive: true });
+  await mkdir(outputDirectory, { recursive: true });
   async function route(hash) {
     await page.goto(server.url + hash); await page.locator('main:not([aria-busy])').waitFor();
     await page.locator('#page-content h1').waitFor();
   }
   const check = (condition, message) => { if (!condition) failures.push(message); };
   async function capture(label, { scrolled = false, dropdown = false } = {}) {
+    // Put the pointer away from controls and let sticky/backdrop compositor
+    // updates settle before taking reproducible source/generated comparisons.
+    await page.mouse.move(0, 0);
+    await page.evaluate(() => document.fonts.ready);
+    await page.waitForTimeout(100);
     const measurement = await page.evaluate(inspect);
     const name = `${label}-${measurement.viewport}-${await page.evaluate(() => matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')}`;
     report.push({ name, ...measurement });
@@ -101,7 +115,7 @@ test('Edge: final Aero QA, both schemes and widths, sticky player and accessible
       check(Math.abs(measurement.audio.top - measurement.audioOffset) < 2, `${name}: audio is not sticky`);
     }
     if (measurement.viewport === 390 && measurement.audio) check(measurement.audio.height <= 844 * .4, `${name}: audio too tall`);
-    await page.screenshot({ path: `test-artifacts/final/${name}.png`, fullPage: !scrolled && !dropdown });
+    await page.screenshot({ path: `${outputDirectory}/${name}.png`, fullPage: !scrolled && !dropdown });
   }
   const data = JSON.parse(await readFile(new URL('../content/ielts-gt/listening/gt-l-01.json', import.meta.url)));
   const external = JSON.parse(await readFile(new URL('../content/ielts-gt/listening/external.json', import.meta.url)));
@@ -137,7 +151,8 @@ test('Edge: final Aero QA, both schemes and widths, sticky player and accessible
     assert.match(await page.locator('.lt-q--wrong .lt-feedback > p').first().innerText(), /^✗ Chưa đúng/);
     await page.evaluate(() => { document.activeElement.blur(); window.scrollTo(0, 0); }); await capture('result');
     await page.locator('.lt-result').scrollIntoViewIfNeeded();
-    await page.screenshot({ path: `test-artifacts/final/result-score-${width}-${colorScheme}.png` });
+    await page.waitForTimeout(100);
+    await page.screenshot({ path: `${outputDirectory}/result-score-${width}-${colorScheme}.png` });
     await route('#/ielts-gt/listening/gt-l-01?mode=exam'); await capture('exam');
     if (width === 390) {
       await page.setViewportSize({ width: 360, height: 800 });
@@ -170,7 +185,7 @@ test('Edge: final Aero QA, both schemes and widths, sticky player and accessible
   assert.equal(await page.locator('.lt-list > section').nth(0).locator(':scope > p').count(), 0);
   assert.equal(await page.locator('.lt-list > section').nth(1).locator(':scope > p').innerText(), '<img src=x onerror="alert(1)">');
   assert.equal(await page.locator('.lt-list > section img').count(), 0);
-  await writeFile('test-artifacts/final/measurements.json', JSON.stringify({ approximation: 'Computed gradient-stop extrema and alpha compositing; glass blur/saturation and inset shadows not rasterised. Light includes white cloud and sky extremes; dark uses navy/teal extremes. Gloss caps above actual text bounds do not affect label contrast.', report, printReport, failures, errors }, null, 2));
+  await writeFile(`${outputDirectory}/measurements.json`, JSON.stringify({ approximation: 'Computed gradient-stop extrema and alpha compositing; glass blur/saturation and inset shadows not rasterised. Light includes white cloud and sky extremes; dark uses navy/teal extremes. Gloss caps above actual text bounds do not affect label contrast.', report, printReport, failures, errors }, null, 2));
   assert.deepEqual(errors, []);
   assert.deepEqual(failures, []);
 });
