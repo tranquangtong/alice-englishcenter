@@ -7,6 +7,11 @@
   const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   let dispose = () => {};
   let runningExam = false;
+  function setRunningExam(running) {
+    if (runningExam === running) return;
+    runningExam = running;
+    window.dispatchEvent(new Event('listeningexamchange'));
+  }
   let catalogRequest;
   const top = document.querySelector('.top-menu');
   const disclosure = top.querySelector('button');
@@ -24,7 +29,9 @@
     if (e.key === 'ArrowDown' && e.target === disclosure) {
       e.preventDefault(); disclosure.setAttribute('aria-expanded', 'true'); panel.hidden = false; panel.querySelector('a').focus();
     }
-    if (e.key === 'Escape') { e.preventDefault(); close(true); }
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && !panel.hidden) { e.preventDefault(); close(true); }
   });
   document.addEventListener('click', e => { if (!top.contains(e.target)) close(); });
   top.addEventListener('focusout', e => { if (!top.contains(e.relatedTarget)) close(); });
@@ -184,14 +191,14 @@
     }
     function submit() {
       if (submitted) return;
-      submitted = true; phase = 'done'; runningExam = false; result = rules.grade(test, answers); audio.pause();
+      submitted = true; phase = 'done'; setRunningExam(false); result = rules.grade(test, answers); audio.pause();
       root.querySelector('.lt-submit').hidden = true;
       const start = bar.querySelector('[data-action="start"]'); if (start) start.hidden = true;
       root.querySelector('.lt-result').innerHTML = `<h2 tabindex="-1">Kết quả</h2><p class="lt-score">${result.score}/40</p><p class="lt-band">Band ${result.band} (ước tính)</p><p>Chọn từng Part để xem giải thích, Bẫy và transcript.</p><button type="button" class="lt-btn aero-btn" data-action="reset">Làm lại</button>`;
       drawPaper(); updateTime(); root.querySelector('.lt-result h2').focus();
     }
     function reset() {
-      answers = {}; save(); submitted = false; phase = 'ready'; runningExam = false; started = 0; reviewUntil = 0;
+      answers = {}; save(); submitted = false; phase = 'ready'; setRunningExam(false); started = 0; reviewUntil = 0;
       selected = 0; root.querySelector('.lt-submit').hidden = false; root.querySelector('.lt-result').replaceChildren();
       audioBar(); setAudio(0); drawPaper(); updateProgress();
     }
@@ -210,7 +217,7 @@
       if (action === 'reset') reset();
       if (action === 'start' && !submitted) {
         if (phase === 'ready' && !window.confirm('Bắt đầu thi thử? Audio chạy liên tục, không tạm dừng hoặc nghe lại.')) return;
-        if (phase === 'ready') { started = Date.now(); phase = 'playing'; runningExam = true; }
+        if (phase === 'ready') { started = Date.now(); phase = 'playing'; setRunningExam(true); }
         failed = false; e.target.hidden = true;
         if (audio.error) { resetting = true; audio.load(); }
         play();
@@ -260,7 +267,7 @@
       else if (mode === 'exam') updateTime();
     }, 250);
     dispose = () => {
-      dead = true; runningExam = false; phase = 'done'; clearInterval(tick);
+      dead = true; setRunningExam(false); phase = 'done'; clearInterval(tick);
       window.removeEventListener('keydown', keydown); window.removeEventListener('beforeunload', unload);
       audio.pause(); audio.removeAttribute('src'); audio.load();
     };
@@ -269,6 +276,7 @@
   window.Listening = {
     render,
     loadCatalog,
+    isExamRunning() { return runningExam; },
     dispose() { dispose(); dispose = () => {}; },
     allowLeave() { return !runningExam || window.confirm('Bạn đang thi thử. Rời trang sẽ kết thúc lượt thi này. Tiếp tục?'); }
   };

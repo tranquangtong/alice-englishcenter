@@ -5,7 +5,7 @@
    ========================================================================== */
 
 :root {
-  color-scheme: light dark;
+  color-scheme: light;
 
   /* 1. Core tokens (docs/design-system.md section 2) */
   --sky-top: #4fb3ef;
@@ -94,68 +94,67 @@
 }
 
 /* Dark mode = "Aero ban đêm" */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --sky-top: #06223a;
-    --sky-mid: #083550;
-    --sky-bottom: #0b4a63;
-    --aqua: #5cc8ff;
-    --aqua-ink: #72d2ff;
-    --grass: #7ee07f;
-    --grass-ink: #7ee07f;
-    --glass: rgb(10 40 60 / .55);
-    --glass-strong: rgb(10 40 60 / .78);
-    --glass-header: rgb(10 40 60 / .38);
-    --glass-edge: rgb(140 220 255 / .28);
-    --ink: #e8f6ff;
-    --ink-soft: #b2d7ea;
-    --shadow-soft: 0 10px 28px rgb(0 12 26 / .5);
+:root:where([data-theme="dark"]) {
+  color-scheme: dark;
+  --sky-top: #06223a;
+  --sky-mid: #083550;
+  --sky-bottom: #0b4a63;
+  --aqua: #5cc8ff;
+  --aqua-ink: #72d2ff;
+  --grass: #7ee07f;
+  --grass-ink: #7ee07f;
+  --glass: rgb(10 40 60 / .55);
+  --glass-strong: rgb(10 40 60 / .78);
+  --glass-header: rgb(10 40 60 / .38);
+  --glass-edge: rgb(140 220 255 / .28);
+  --ink: #e8f6ff;
+  --ink-soft: #b2d7ea;
+  --shadow-soft: 0 10px 28px rgb(0 12 26 / .5);
 
-    --glass-sheen: linear-gradient(180deg, rgb(160 228 255 / .11) 0%, rgb(160 228 255 / 0) 56px);
-    --glass-card-bg: linear-gradient(180deg, rgb(14 54 80 / .74) 0%, var(--glass-strong) 100%);
-    --glass-highlight: inset 0 1px 0 rgb(180 235 255 / .24), inset 0 -1px 0 rgb(92 200 255 / .08);
-    --line-glass: rgb(92 200 255 / .24);
-    --surface-tint: rgb(92 200 255 / .12);
-    --surface-stripe: rgb(92 200 255 / .055);
-    --surface-hover: rgb(92 200 255 / .16);
-    --shadow-pill: 0 4px 14px rgb(0 10 24 / .48);
-    --focus-glow: 0 0 0 3px rgb(92 200 255 / .36), 0 0 14px rgb(126 224 127 / .42);
+  --glass-sheen: linear-gradient(180deg, rgb(160 228 255 / .11) 0%, rgb(160 228 255 / 0) 56px);
+  --glass-card-bg: linear-gradient(180deg, rgb(14 54 80 / .74) 0%, var(--glass-strong) 100%);
+  --glass-highlight: inset 0 1px 0 rgb(180 235 255 / .24), inset 0 -1px 0 rgb(92 200 255 / .08);
+  --line-glass: rgb(92 200 255 / .24);
+  --surface-tint: rgb(92 200 255 / .12);
+  --surface-stripe: rgb(92 200 255 / .055);
+  --surface-hover: rgb(92 200 255 / .16);
+  --shadow-pill: 0 4px 14px rgb(0 10 24 / .48);
+  --focus-glow: 0 0 0 3px rgb(92 200 255 / .36), 0 0 14px rgb(126 224 127 / .42);
 
-    --gel-top: #0b5c8e;
-    --gel-mid: #074166;
-    --gel-bottom: #09527e;
-    --gel-hover-top: #0e6ca6;
-    --gel-hover-bottom: #0a5f92;
-    --gel-edge: rgb(150 225 255 / .46);
-    --gel-ink: #e8f6ff;
-    --gel-shadow: inset 0 1px 0 rgb(180 235 255 / .36), 0 4px 14px rgb(0 10 24 / .55);
-    --pill-active-bg: linear-gradient(180deg, rgb(92 200 255 / .32) 0%, rgb(21 147 214 / .2) 52%, rgb(10 56 86 / .72) 100%);
-    --pill-active-edge: rgb(92 200 255 / .52);
-    --pill-active-ink: #eff9ff;
-    --badge-bg: linear-gradient(180deg, rgb(16 66 72 / .78) 0%, rgb(10 46 58 / .72) 100%);
-    --badge-edge: rgb(126 224 127 / .42);
+  --gel-top: #0b5c8e;
+  --gel-mid: #074166;
+  --gel-bottom: #09527e;
+  --gel-hover-top: #0e6ca6;
+  --gel-hover-bottom: #0a5f92;
+  --gel-edge: rgb(150 225 255 / .46);
+  --gel-ink: #e8f6ff;
+  --gel-shadow: inset 0 1px 0 rgb(180 235 255 / .36), 0 4px 14px rgb(0 10 24 / .55);
+  --pill-active-bg: linear-gradient(180deg, rgb(92 200 255 / .32) 0%, rgb(21 147 214 / .2) 52%, rgb(10 56 86 / .72) 100%);
+  --pill-active-edge: rgb(92 200 255 / .52);
+  --pill-active-ink: #eff9ff;
+  --badge-bg: linear-gradient(180deg, rgb(16 66 72 / .78) 0%, rgb(10 46 58 / .72) 100%);
+  --badge-edge: rgb(126 224 127 / .42);
 
-    --droplet-bg: radial-gradient(circle at 30% 24%, #259be0 0%, #0b5a8e 56%, #053659 100%);
-    --droplet-ink: #e8f6ff;
-    --droplet-shadow: inset 0 2px 3px rgb(190 240 255 / .55), inset 0 -6px 10px rgb(126 224 127 / .28), 0 6px 16px rgb(0 12 28 / .55);
+  --droplet-bg: radial-gradient(circle at 30% 24%, #259be0 0%, #0b5a8e 56%, #053659 100%);
+  --droplet-ink: #e8f6ff;
+  --droplet-shadow: inset 0 2px 3px rgb(190 240 255 / .55), inset 0 -6px 10px rgb(126 224 127 / .28), 0 6px 16px rgb(0 12 28 / .55);
 
-    --table-head-bg: linear-gradient(180deg, rgb(24 98 142 / .68) 0%, rgb(12 64 96 / .74) 100%);
-    --callout-bg: linear-gradient(135deg, rgb(14 54 78 / .74) 0%, rgb(16 68 58 / .62) 100%);
-    --code-bg: rgb(92 200 255 / .14);
-    --pre-bg: linear-gradient(180deg, rgb(7 32 49 / .86) 0%, rgb(6 26 40 / .82) 100%);
-    --kbd-bg: linear-gradient(180deg, #1b4d6d 0%, #0f334b 100%);
-    --kbd-shadow: 0 2px 0 rgb(2 12 22 / .75), inset 0 1px 0 rgb(160 225 255 / .24);
+  --table-head-bg: linear-gradient(180deg, rgb(24 98 142 / .68) 0%, rgb(12 64 96 / .74) 100%);
+  --callout-bg: linear-gradient(135deg, rgb(14 54 78 / .74) 0%, rgb(16 68 58 / .62) 100%);
+  --code-bg: rgb(92 200 255 / .14);
+  --pre-bg: linear-gradient(180deg, rgb(7 32 49 / .86) 0%, rgb(6 26 40 / .82) 100%);
+  --kbd-bg: linear-gradient(180deg, #1b4d6d 0%, #0f334b 100%);
+  --kbd-shadow: 0 2px 0 rgb(2 12 22 / .75), inset 0 1px 0 rgb(160 225 255 / .24);
 
-    /* Night Aero subtle aurora borealis */
-    --flare-bg:
-      radial-gradient(ellipse 68% 36% at 18% 14%, rgb(126 224 127 / .15) 0%, transparent 65%),
-      radial-gradient(ellipse 62% 34% at 78% 18%, rgb(92 200 255 / .18) 0%, transparent 68%),
-      radial-gradient(ellipse 58% 30% at 52% 84%, rgb(92 200 255 / .12) 0%, transparent 70%);
-    --bubble-bg: radial-gradient(circle at 30% 28%, rgb(210 245 255 / .42) 0%, rgb(92 200 255 / .18) 28%, rgb(126 224 127 / .12) 72%, rgb(92 200 255 / .28) 100%);
-    --bubble-shadow: inset 0 2px 6px rgb(200 245 255 / .36), inset 0 -4px 10px rgb(126 224 127 / .18), 0 6px 18px rgb(0 12 26 / .38);
-    --wave-bg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 220' preserveAspectRatio='none'%3E%3Cpath fill='rgba(126,224,127,0.13)' d='M0,118 C320,188 640,36 980,114 C1190,162 1330,128 1440,96 L1440,220 L0,220 Z'/%3E%3Cpath fill='rgba(92,200,255,0.15)' d='M0,146 C360,72 760,202 1120,118 C1280,80 1380,114 1440,130 L1440,220 L0,220 Z'/%3E%3Cpath fill='none' stroke='rgba(180,235,255,0.34)' stroke-width='2' d='M0,146 C360,72 760,202 1120,118 C1280,80 1380,114 1440,130'/%3E%3C/svg%3E");
-    --callout-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M12 2.5C12 2.5 6 9.4 6 14a6 6 0 0 0 12 0c0-4.6-6-11.5-6-11.5Z' fill='%235cc8ff'/%3E%3Cpath d='M10.2 8.2C8.8 10.2 8 12.1 8 13.8a3.8 3.8 0 0 0 .8 2.4' stroke='white' stroke-opacity='.75' stroke-width='1.5' stroke-linecap='round'/%3E%3Cpath d='M15 18.5c2.8-.2 5.2-2.2 5.5-5.3-2.6.2-4.8 2-5.5 5.3Z' fill='%237ee07f'/%3E%3C/svg%3E");
-  }
+  /* Night Aero subtle aurora borealis */
+  --flare-bg:
+    radial-gradient(ellipse 68% 36% at 18% 14%, rgb(126 224 127 / .15) 0%, transparent 65%),
+    radial-gradient(ellipse 62% 34% at 78% 18%, rgb(92 200 255 / .18) 0%, transparent 68%),
+    radial-gradient(ellipse 58% 30% at 52% 84%, rgb(92 200 255 / .12) 0%, transparent 70%);
+  --bubble-bg: radial-gradient(circle at 30% 28%, rgb(210 245 255 / .42) 0%, rgb(92 200 255 / .18) 28%, rgb(126 224 127 / .12) 72%, rgb(92 200 255 / .28) 100%);
+  --bubble-shadow: inset 0 2px 6px rgb(200 245 255 / .36), inset 0 -4px 10px rgb(126 224 127 / .18), 0 6px 18px rgb(0 12 26 / .38);
+  --wave-bg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 220' preserveAspectRatio='none'%3E%3Cpath fill='rgba(126,224,127,0.13)' d='M0,118 C320,188 640,36 980,114 C1190,162 1330,128 1440,96 L1440,220 L0,220 Z'/%3E%3Cpath fill='rgba(92,200,255,0.15)' d='M0,146 C360,72 760,202 1120,118 C1280,80 1380,114 1440,130 L1440,220 L0,220 Z'/%3E%3Cpath fill='none' stroke='rgba(180,235,255,0.34)' stroke-width='2' d='M0,146 C360,72 760,202 1120,118 C1280,80 1380,114 1440,130'/%3E%3C/svg%3E");
+  --callout-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M12 2.5C12 2.5 6 9.4 6 14a6 6 0 0 0 12 0c0-4.6-6-11.5-6-11.5Z' fill='%235cc8ff'/%3E%3Cpath d='M10.2 8.2C8.8 10.2 8 12.1 8 13.8a3.8 3.8 0 0 0 .8 2.4' stroke='white' stroke-opacity='.75' stroke-width='1.5' stroke-linecap='round'/%3E%3Cpath d='M15 18.5c2.8-.2 5.2-2.2 5.5-5.3-2.6.2-4.8 2-5.5 5.3Z' fill='%237ee07f'/%3E%3C/svg%3E");
 }
 
 /* ==========================================================================
@@ -170,6 +169,7 @@
 
 html {
   scroll-padding-top: var(--header-offset);
+  scroll-padding-bottom: var(--toast-space, 0px);
   max-width: 100%;
   overflow-x: clip;
 }
@@ -504,6 +504,37 @@ main {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
+}
+
+.theme-toggle.aero-btn {
+  flex-shrink: 0;
+  min-width: 44px;
+  padding-inline: .75rem;
+}
+
+.theme-toggle [data-theme-option],
+:root:not([data-theme-mode]) .theme-toggle {
+  display: none;
+}
+
+[data-theme-mode="system"] [data-theme-option="system"],
+[data-theme-mode="light"] [data-theme-option="light"],
+[data-theme-mode="dark"] [data-theme-option="dark"] {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+}
+
+.theme-toggle.aero-btn,
+.update-toast__close.aero-btn {
+  background: var(--pill-active-bg) var(--sky-top);
+  border-color: var(--pill-active-edge);
+  color: var(--pill-active-ink);
+}
+
+.theme-toggle::after,
+.update-toast .aero-btn::after {
+  content: none;
 }
 
 .brand {
@@ -1129,6 +1160,73 @@ tr:last-child td {
   text-align: center;
 }
 
+/* The glass tint preserves readable text over moving page content. */
+.update-toast {
+  --toast-gap: 1.25rem;
+  position: fixed;
+  z-index: 25;
+  right: calc(var(--toast-gap) + env(safe-area-inset-right, 0px));
+  bottom: calc(var(--toast-gap) + env(safe-area-inset-bottom, 0px) + var(--toast-bottom-offset, 0px));
+  width: 28rem;
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  padding: .8rem .9rem;
+  border: 1px solid var(--glass-edge);
+  border-inline-start: 4px solid var(--grass);
+  border-radius: var(--radius-m);
+  background: var(--glass-card-bg) var(--sky-bottom);
+  background-color: color-mix(in srgb, var(--sky-bottom) 75%, transparent);
+  backdrop-filter: blur(var(--glass-blur)) saturate(160%);
+  box-shadow: var(--glass-highlight), var(--shadow-soft);
+  animation: toast-in .22s ease-out both;
+}
+
+.update-toast--warn {
+  border-color: var(--lt-amber-edge);
+  border-inline-start-color: var(--lt-amber);
+  background-image: var(--lt-amber-bg);
+}
+
+.update-toast__title {
+  margin: 0 0 .2rem;
+  color: var(--ink);
+  font: 800 .95rem/1.3 var(--font-heading);
+}
+
+.update-toast--warn .update-toast__title { color: var(--lt-amber-ink); }
+
+.update-toast__text {
+  margin: 0;
+  color: var(--ink);
+  font-size: .86rem;
+  line-height: 1.45;
+}
+
+.update-toast__actions {
+  display: flex;
+  gap: .4rem;
+}
+
+.update-toast__reload.aero-btn {
+  padding-inline: .85rem;
+  white-space: nowrap;
+}
+
+.update-toast__close.aero-btn {
+  width: 44px;
+  flex: 0 0 44px;
+  padding: 0;
+  font-size: 1.25rem;
+}
+
+body:has(.update-toast:not([hidden])) { padding-bottom: var(--toast-space, 0px); }
+
+@keyframes toast-in {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 /* ==========================================================================
    Responsive Breakpoints
    ========================================================================== */
@@ -1247,10 +1345,20 @@ tr:last-child td {
   }
 
   .brand > span:last-child {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    line-height: 1.15;
   }
+
+  .theme-toggle.aero-btn { padding: 0; }
+  .theme-toggle [data-theme-option] span { display: none; }
+
+  .update-toast {
+    --toast-gap: .75rem;
+    left: calc(var(--toast-gap) + env(safe-area-inset-left, 0px));
+    width: auto;
+    flex-wrap: wrap;
+  }
+
+  .update-toast__actions { margin-inline-start: auto; }
 
   /* Keep one compact header row down to 360px while preserving accessible label */
   .menu-toggle {
@@ -1318,9 +1426,13 @@ tr:last-child td {
     transition-duration: .001ms !important;
   }
 
-  .aero-bubble {
+  .aero-bubble,
+  .update-toast {
     animation: none !important;
   }
+
+  .theme-toggle.aero-btn,
+  .update-toast .aero-btn { transform: none; }
 }
 
 @media print {
@@ -1343,6 +1455,8 @@ tr:last-child td {
   .sidebar,
   .toc-panel,
   .menu-toggle,
+  .theme-toggle,
+  .update-toast,
   .skip-link,
   .site-footer,
   .brand-mark {

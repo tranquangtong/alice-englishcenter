@@ -19,6 +19,123 @@
   let previousHash = location.hash;
   let reverting = false;
 
+  function startThemeToggle() {
+    const root = document.documentElement;
+    const button = document.querySelector('.theme-toggle');
+    const system = matchMedia('(prefers-color-scheme: dark)');
+    const labels = { system: 'Theo hệ thống', light: 'Sáng', dark: 'Tối' };
+    const modes = Object.keys(labels);
+
+    function apply(mode) {
+      root.dataset.themeMode = mode;
+      root.dataset.theme = mode === 'system' ? (system.matches ? 'dark' : 'light') : mode;
+      const label = `Giao diện: ${labels[mode]}`;
+      button.setAttribute('aria-label', label);
+      button.title = label;
+      return label;
+    }
+
+    apply(root.dataset.themeMode || 'system');
+    button.addEventListener('click', () => {
+      const mode = modes[(modes.indexOf(root.dataset.themeMode) + 1) % modes.length];
+      try { localStorage.setItem('aec-theme', mode); } catch { /* Storage can be blocked. */ }
+      status.textContent = apply(mode);
+    });
+    system.addEventListener('change', () => {
+      if (root.dataset.themeMode === 'system') apply('system');
+    });
+  }
+
+  function startUpdateChecks() {
+    const loadedHash = document.querySelector('meta[name="aec-version"]').content;
+    const toast = document.querySelector('#update-toast');
+    const title = toast.querySelector('.update-toast__title');
+    const text = toast.querySelector('.update-toast__text');
+    const versionURL = new URL('version.json', base);
+    const hashPattern = /^[a-f0-9]{64}$/;
+    const dismissed = new Set();
+    const dismissKey = hash => `aec-dismissed:${base.pathname}:${hash}`;
+    let offeredHash;
+    let checking = false;
+
+    function renderNotice() {
+      if (toast.hidden) return;
+      const exam = window.Listening?.isExamRunning();
+      const message = exam
+        ? 'Nội dung vừa được cập nhật. Đang trong lượt thi thử — tải lại trang sẽ làm mất bài đang làm.'
+        : 'Nội dung vừa được cập nhật. Tải lại trang để xem bản mới nhất nhé.';
+      toast.classList.toggle('update-toast--warn', exam);
+      if (!title.textContent) title.textContent = 'Đã có phiên bản mới';
+      if (text.textContent !== message) text.textContent = message;
+    }
+
+    function hideNotice() {
+      const restoreFocus = toast.contains(document.activeElement);
+      toast.hidden = true;
+      offeredHash = undefined;
+      title.textContent = '';
+      text.textContent = '';
+      if (restoreFocus) main.focus({ preventScroll: true });
+    }
+
+    function dismissNotice() {
+      dismissed.add(offeredHash);
+      try { sessionStorage.setItem(dismissKey(offeredHash), '1'); } catch { /* Storage can be blocked. */ }
+      hideNotice();
+    }
+
+    async function checkVersion() {
+      if (checking) return;
+      checking = true;
+      try {
+        versionURL.searchParams.set('ts', Date.now());
+        const response = await fetch(versionURL, { cache: 'no-store', signal: AbortSignal.timeout(10000) });
+        if (!response.ok) return;
+        const { hash } = await response.json();
+        if (typeof hash !== 'string' || !hashPattern.test(hash)) return;
+        let seen = dismissed.has(hash);
+        try { seen ||= sessionStorage.getItem(dismissKey(hash)) === '1'; } catch { /* Storage can be blocked. */ }
+        if (hash === loadedHash || seen) {
+          if (!toast.hidden) hideNotice();
+        } else {
+          offeredHash = hash;
+          if (toast.hidden) {
+            toast.hidden = false;
+            requestAnimationFrame(renderNotice);
+          }
+        }
+      } catch { /* A failed poll should leave the current page usable. */ }
+      finally { checking = false; }
+    }
+
+    if (!hashPattern.test(loadedHash)) return;
+    toast.querySelector('.update-toast__reload').addEventListener('click', () => location.reload());
+    toast.querySelector('.update-toast__close').addEventListener('click', dismissNotice);
+    new ResizeObserver(() => {
+      const space = toast.hidden ? 0 : Math.ceil(innerHeight - toast.offsetTop);
+      document.documentElement.style.setProperty('--toast-space', `${space}px`);
+      const field = document.activeElement;
+      if (!toast.hidden && field.matches('.lt-paper :is(input, select, textarea)')) {
+        const answer = field.getBoundingClientRect();
+        const notice = toast.getBoundingClientRect();
+        if (answer.bottom > toast.offsetTop && answer.right > notice.left && answer.left < notice.right) {
+          field.scrollIntoView({ block: 'nearest' });
+        }
+      }
+    }).observe(toast);
+    window.addEventListener('listeningexamchange', renderNotice);
+    window.addEventListener('focus', checkVersion);
+    document.addEventListener('visibilitychange', () => {
+      if (!document.hidden) checkVersion();
+    });
+    document.addEventListener('keydown', event => {
+      if (event.key !== 'Escape' || event.defaultPrevented || toast.hidden) return;
+      dismissNotice();
+    });
+    setInterval(checkVersion, 5 * 60 * 1000);
+    checkVersion();
+  }
+
   function routeURL(id, section = '') {
     return `#/${encodeURIComponent(id)}${section ? `?section=${encodeURIComponent(section)}` : ''}`;
   }
@@ -43,7 +160,8 @@
     nav.classList.toggle('is-open', open);
   });
   document.addEventListener('keydown', event => {
-    if (event.key === 'Escape' && menu.getAttribute('aria-expanded') === 'true') {
+    if (event.key === 'Escape' && !event.defaultPrevented && menu.getAttribute('aria-expanded') === 'true') {
+      event.preventDefault();
       closeMenu();
       menu.focus();
     }
@@ -315,5 +433,7 @@
       console.error(error);
     }
   }
+  startThemeToggle();
+  startUpdateChecks();
   start();
 })();
