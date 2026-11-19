@@ -530,6 +530,7 @@
 .lt-list > section > h3 a {
   display: inline-flex;
   align-items: center;
+  min-height: 44px;
   gap: .35rem;
   text-decoration: none;
 }
@@ -818,6 +819,7 @@
 
 /* Secondary frosted glass jump buttons so primary Play button stands out */
 .lt-audio [data-jump].aero-btn {
+  min-width: 44px;
   padding: .42rem .68rem;
   border-color: var(--line-glass);
   background: var(--glass-strong);
@@ -1610,6 +1612,13 @@ mark.lt-hl,
   .lt-timer,
   .lt-q--correct,
   .lt-q--wrong,
+  .lt-feedback > p:first-child,
+  .lt-mode--practice,
+  .lt-mode--exam,
+  .lt-progress,
+  .lt-band,
+  .lt-instructions,
+  .lt-transcript > p:not([lang]),
   .lt-explain,
   .lt-distractors,
   .lt-transcript,
