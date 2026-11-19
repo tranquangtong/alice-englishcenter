@@ -58,6 +58,7 @@ Giữ file `.nojekyll` ở root. Tất cả tài nguyên dùng đường dẫn t
 - `content/syllabus/`: các đề cương kỹ năng do nhóm nội dung bổ sung.
 - `docs/roadmap-teacher-student.md` là lộ trình phát triển nội bộ, không hiển thị trong menu trang học.
 - `docs/`: tài liệu tham khảo, bao gồm [cấu trúc đề thi](docs/exam-structure.md).
+- [docs/HANDOFF.md](docs/HANDOFF.md): tài liệu bàn giao dự án (trạng thái hiện tại, setup macOS, quy trình commit và việc còn mở).
 - `scripts/check.mjs`: kiểm tra cục bộ không cần dependencies.
 
 ## Thêm tài liệu
