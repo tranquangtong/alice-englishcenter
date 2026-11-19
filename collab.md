@@ -8,7 +8,7 @@
 ## Commands
 - Install: none (Node ≥ 20 only for checks)
 - Test: `node scripts/check.mjs` (links + manifest + Markdown files exist)
-- Run/dev: `python3 -m http.server 8000` then open http://localhost:8000
+- Run/dev: `python3 -m http.server 8000` (Windows: `python -m http.server 8000`) then open http://localhost:8000
 
 ## Roles (overrides global routing)
 - lead: whoever the user is chatting with
@@ -22,7 +22,7 @@
 - Never touch: `.env*`, secrets. Never publish ielts.app test content verbatim (structure only; write original practice items).
 
 ## Project rules
-- Definition of done: lint + tests pass (once they exist); the lead verifies before reporting.
+- Definition of done: `node scripts/check.mjs` passes with 0 errors; the lead verifies before reporting.
 - Keep learner-facing content accurate and consistent; Codex reviews code, the lead reviews content.
 - **UI design gene = Frutiger Aero (mandatory).** Every UI change — redesign, new page or feature
   (login, teacher/student dashboards, quizzes…) — must follow `docs/design-system.md` (tokens,
