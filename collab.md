@@ -3,7 +3,7 @@
 ## Stack
 - Static site for GitHub Pages (plain HTML/CSS/JS, no build step; `.nojekyll`).
 - Content = Markdown in `content/` + `docs/`, rendered client-side (marked via pinned CDN).
-- Later: private repo + other hosting; teacher/student roles (see `content/roadmap-teacher-student.md`).
+- Later: private repo + other hosting; teacher/student roles (see `docs/roadmap-teacher-student.md`).
 
 ## Commands
 - Install: none (Node ≥ 20 only for checks)
