@@ -17,6 +17,22 @@ import { VOICES, safePath, validateTest } from '../assets/js/listening-core.js';
 const root = fileURLToPath(new URL('../', import.meta.url));
 const xml = text => text.replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&apos;' }[c]));
 const ffmpeg = process.env.FFMPEG_PATH || ffmpegStatic;
+// Limit simultaneous service connections; preserve script order regardless of
+// response order, and drain workers before the temporary directory is removed.
+export async function mapConcurrent(items, concurrency, operation) {
+  const output = new Array(items.length);
+  let next = 0, failed = false;
+  const workers = await Promise.allSettled(Array.from({ length: Math.min(concurrency, items.length) }, async () => {
+    while (!failed && next < items.length) {
+      const index = next++;
+      try { output[index] = await operation(items[index], index); }
+      catch (error) { failed = true; throw error; }
+    }
+  }));
+  const failure = workers.find(worker => worker.status === 'rejected');
+  if (failure) throw failure.reason;
+  return output;
+}
 export async function runFFmpeg(args) {
   await new Promise((resolve, reject) => {
     const child = spawn(ffmpeg, ['-hide_banner', '-loglevel', 'error', '-y', ...args], { windowsHide: true });
@@ -67,8 +83,7 @@ export async function buildTest(file, { force = false } = {}) {
     try { if (!force && (await stat(output)).mtimeMs > sourceTime) { console.log(`SKIP ${part.audio} (up to date)`); continue; } } catch { /* Build absent outputs. */ }
     const temporary = await mkdtemp(path.join(tmpdir(), 'alice-listening-audio-'));
     try {
-      const pcmFiles = [];
-      for (const [index, item] of part.script.entries()) {
+      const pcmFiles = await mapConcurrent(part.script, 4, async (item, index) => {
         const pcm = path.join(temporary, `${index}.pcm`);
         if ('pause' in item) {
           // Exact 24 kHz, mono, signed 16-bit PCM silence, including fractional pauses.
@@ -86,8 +101,8 @@ export async function buildTest(file, { force = false } = {}) {
           }
           await runFFmpeg(['-i', mp3, '-ar', '24000', '-ac', '1', '-f', 's16le', pcm]);
         }
-        pcmFiles.push(pcm);
-      }
+        return pcm;
+      });
       // Join PCM rather than MP3 frames: this avoids gaps/timestamps and preserves
       // reading pauses across different voices. Stream to avoid whole-test buffers.
       const combined = path.join(temporary, 'combined.pcm');

@@ -1,7 +1,7 @@
 /* Listening route controller. Visual class names follow the shared content contract. */
 (() => {
   'use strict';
-  const core = import('./listening-core.js?v=1');
+  const core = import('./listening-core.js?v=2');
   const dataRoot = 'content/ielts-gt/listening/';
   const skills = ['Listening', 'Reading', 'Writing', 'Speaking'];
   const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -141,20 +141,33 @@
       };
       return `<section class="lt-transcript"><h3>Transcript · Part ${part.part}</h3>${part.script.map(s => 'pause' in s ? `<p>[Nghỉ ${esc(s.pause)} giây: ${esc(s.note || '')}]</p>` : `<p lang="en"><strong>${esc(s.speaker)}:</strong> ${highlight(s.text)}</p>`).join('')}</section>`;
     }
+    function gap(question, prompt = question.prompt) {
+      const input = `<input class="lt-gap" id="lt-q-${question.n}" data-n="${question.n}" name="q${question.n}" aria-label="${esc(`Question ${question.n}: ${question.prompt.replace('{{blank}}', '…')}`)}" value="${esc(answers[question.n] || '')}" autocomplete="off" spellcheck="false" ${submitted ? 'disabled' : ''}>`;
+      return `<label for="lt-q-${question.n}">${esc(prompt).replace('{{blank}}', input)}</label>`;
+    }
+    function questionMarkup(question, group, table = false) {
+      const cls = submitted ? (result.questions[question.n].correct ? ' lt-q--correct' : ' lt-q--wrong') : '';
+      if (table) {
+        const cells = question.prompt.split(' | ');
+        return `<tr role="row" class="lt-q${cls}" data-question="${question.n}">${cells.map((cell, i) => `<td role="cell">${i === 0 ? `<strong>${question.n}.</strong> ` : ''}${cell.includes('{{blank}}') ? gap(question, cell) + feedback(question) : esc(cell)}</td>`).join('')}</tr>`;
+      }
+      let field;
+      if (rules.GAP_TYPES.includes(group.type)) field = `<strong>${question.n}.</strong> ${gap(question)}`;
+      else if (group.type !== 'mcq-multi') field = `<fieldset><legend>${question.n}. ${esc(question.prompt || '')}</legend>${options(question, group)}</fieldset>`;
+      else field = `<p>Câu ${question.n}</p>`;
+      return `<div class="lt-q${cls}" data-question="${question.n}">${field}${feedback(question)}</div>`;
+    }
+    function groupQuestions(group) {
+      // Older table prompts have no column delimiter; keep their inline layout.
+      const table = group.type === 'table' && group.questions.every(q => q.prompt.includes(' | '));
+      const rows = group.questions.map(q => questionMarkup(q, group, table)).join('');
+      return table ? `<div class="table-scroll"><table role="table" class="lt-table" lang="en"><caption class="visually-hidden">${esc(group.title || `Questions ${group.range.join('–')}`)}</caption><tbody role="rowgroup">${rows}</tbody></table></div>` : rows;
+    }
     function drawPaper() {
       const part = test.parts[selected];
       paper.setAttribute('aria-labelledby', `lt-tab-${selected}`);
       root.querySelectorAll('.lt-tab').forEach((tab, i) => { tab.setAttribute('aria-selected', String(i === selected)); tab.tabIndex = i === selected ? 0 : -1; });
-      paper.innerHTML = `<h2>${esc(part.title)}</h2><p lang="en">${esc(part.context)}</p>${part.groups.map(group => `<section class="lt-group"><h3>${esc(group.title || `Questions ${group.range.join('–')}`)}</h3><p class="lt-instructions" lang="en">${esc(group.instructions)}</p>${group.image ? `<img class="lt-map" src="${esc(group.image)}" alt="${esc(group.title || 'Sơ đồ địa điểm cho câu hỏi ' + group.range.join('–'))}">` : ''}${group.type === 'mcq-multi' ? `<fieldset><legend>Questions ${group.range.join('–')} · Chọn ${group.questions.length} đáp án</legend>${options(group.questions[0], group, true)}</fieldset>` : ''}${group.questions.map(question => {
-        const cls = submitted ? (result.questions[question.n].correct ? ' lt-q--correct' : ' lt-q--wrong') : '';
-        let field = '';
-        if (rules.GAP_TYPES.includes(group.type)) {
-          const input = `<input class="lt-gap" id="lt-q-${question.n}" data-n="${question.n}" name="q${question.n}" value="${esc(answers[question.n] || '')}" autocomplete="off" spellcheck="false" ${submitted ? 'disabled' : ''}>`;
-          field = `<label for="lt-q-${question.n}"><strong>${question.n}.</strong> ${esc(question.prompt).replace('{{blank}}', input)}</label>`;
-        } else if (group.type !== 'mcq-multi') field = `<fieldset><legend>${question.n}. ${esc(question.prompt || '')}</legend>${options(question, group)}</fieldset>`;
-        else field = `<p>Câu ${question.n}</p>`;
-        return `<div class="lt-q${cls}" data-question="${question.n}">${field}${feedback(question)}</div>`;
-      }).join('')}</section>`).join('')}${submitted ? transcript(part) : ''}`;
+      paper.innerHTML = `<h2>${esc(part.title)}</h2><p lang="en">${esc(part.context)}</p>${part.groups.map(group => `<section class="lt-group"><h3>${esc(group.title || `Questions ${group.range.join('–')}`)}</h3><p class="lt-instructions" lang="en">${esc(group.instructions)}</p>${group.image ? `<img class="lt-map" src="${esc(group.image)}" alt="${esc(group.title || 'Sơ đồ địa điểm cho câu hỏi ' + group.range.join('–'))}">` : ''}${group.type === 'mcq-multi' ? `<fieldset><legend>Questions ${group.range.join('–')} · Chọn ${group.questions.length} đáp án</legend>${options(group.questions[0], group, true)}</fieldset>` : ''}${groupQuestions(group)}</section>`).join('')}${submitted ? transcript(part) : ''}`;
     }
     function choose(index) {
       selected = index; drawPaper();
