@@ -28,6 +28,14 @@ file `.min.css`. Script không cần cài package. GitHub Pages dùng các file 
 sẵn, không cần chạy build khi triển khai. `node scripts/check.mjs` kiểm tra file
 sinh ra có khớp nguồn và báo tổng byte CSS được tải.
 
+Trước khi commit thay đổi trong `index.html`, `assets/` hoặc `content/`, tăng
+`?v=` trong `index.html` cho các tệp CSS/JavaScript đã sửa, tạo lại CSS nếu cần,
+rồi chạy `node scripts/build-version.mjs` và `node scripts/check.mjs`. Commit cả
+`version.json` và mã phiên bản mà script cập nhật trong `index.html`. Mã này dùng
+SHA-256 từ đường dẫn và nội dung của các tệp trong ba vị trí trên, bỏ trống thẻ
+mã phiên bản khi tính hash và chuẩn hóa xuống dòng CRLF của các định dạng văn bản
+web. Trình duyệt dùng mã này để báo khi có nội dung mới.
+
 Bộ kiểm tra xác thực manifest, file nội dung, liên kết tương đối trong Markdown/HTML và cú pháp JavaScript. File syllabus/roadmap chưa xuất bản được báo `WARNING`; các lỗi khác khiến lệnh trả về exit code 1. Bộ kiểm tra không truy cập liên kết Internet hoặc xác thực fragment/anchor trong tài liệu.
 
 ## Triển khai GitHub Pages
@@ -43,7 +51,7 @@ Giữ file `.nojekyll` ở root. Tất cả tài nguyên dùng đường dẫn t
 ## Cấu trúc dự án
 
 - `index.html`: khung trang, landmarks và thư viện CDN.
-- `assets/css/style.css`: responsive layout, light/dark theo hệ thống, style in trang.
+- `assets/css/style.css`: responsive layout, giao diện Hệ thống/Sáng/Tối, style in trang.
 - `assets/js/app.js`: hash routing `#/id`, tải và sanitize Markdown, mục lục h2/h3, chuyển liên kết nội bộ.
 - `content/manifest.json`: danh mục `{id, title, group, path}`; thứ tự trong file quyết định thứ tự điều hướng.
 - `content/home.md`: lời giới thiệu.

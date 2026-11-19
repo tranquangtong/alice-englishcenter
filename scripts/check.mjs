@@ -5,6 +5,7 @@ import { spawnSync } from 'node:child_process';
 import { existsSync } from 'node:fs';
 import { safePath, validateTest, validateExternal } from '../assets/js/listening-core.js';
 import { checkCSS } from './build-css.mjs';
+import { checkVersion } from './build-version.mjs';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 let errors = 0;
@@ -135,5 +136,8 @@ try {
   for (const issue of css.errors) report(issue);
   console.log(`Loaded CSS: ${css.raw} bytes raw, ${css.gzip} bytes gzip (files compressed separately).`);
 } catch (error) { report(`CSS build: ${error.message}`); }
+try {
+  if (!await checkVersion(root)) report('version.json or the index.html release stamp is missing or stale; run node scripts/build-version.mjs');
+} catch (error) { report(`Version build: ${error.message}`); }
 console.log(`Checked ${files.length} files, ${checkedLinks} relative links. ${errors} error(s), ${warnings} warning(s).`);
 process.exitCode = errors ? 1 : 0;
