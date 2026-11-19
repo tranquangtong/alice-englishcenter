@@ -8,8 +8,9 @@
       <stop offset="100%" stop-color="#69caf4"/>
     </linearGradient>
     <linearGradient id="badgeGrad" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#35b0ec"/>
-      <stop offset="100%" stop-color="#117ec2"/>
+      <stop offset="0%" stop-color="#0c6aa6"/>
+      <stop offset="52%" stop-color="#085080"/>
+      <stop offset="100%" stop-color="#0b649e"/>
     </linearGradient>
     <linearGradient id="parkBg" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0%" stop-color="#effae9"/>

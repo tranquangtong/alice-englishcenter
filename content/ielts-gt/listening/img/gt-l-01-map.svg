@@ -11,8 +11,9 @@
       <stop offset="100%" stop-color="#bce8c4"/>
     </linearGradient>
     <linearGradient id="badge-grad" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#2ea8e6"/>
-      <stop offset="100%" stop-color="#1178b2"/>
+      <stop offset="0%" stop-color="#0c6aa6"/>
+      <stop offset="52%" stop-color="#085080"/>
+      <stop offset="100%" stop-color="#0b649e"/>
     </linearGradient>
     <linearGradient id="landmark-grad" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0%" stop-color="#dff2fd"/>
