@@ -113,7 +113,27 @@
       wrapper.className = 'table-scroll';
       wrapper.tabIndex = 0;
       wrapper.setAttribute('role', 'region');
-      wrapper.setAttribute('aria-label', 'Bảng dữ liệu, có thể cuộn ngang');
+      wrapper.setAttribute('aria-label', 'Bảng dữ liệu');
+      // Column headers become data-label on each cell (stacked card layout on narrow screens).
+      const headerRow = table.tHead ? table.tHead.rows[0] : null;
+      const labels = headerRow ? Array.from(headerRow.cells, cell => cell.textContent.trim()) : [];
+      const columns = Math.max(labels.length, ...Array.from(table.rows, row => row.cells.length));
+      if (columns >= 5) wrapper.classList.add('table-scroll--wide');
+      if (columns >= 7) wrapper.classList.add('table-scroll--many');
+      // Explicit roles keep table semantics when CSS switches rows to display: block.
+      table.setAttribute('role', 'table');
+      Array.from(table.querySelectorAll('thead, tbody, tfoot')).forEach(group => group.setAttribute('role', 'rowgroup'));
+      Array.from(table.rows).forEach(row => {
+        row.setAttribute('role', 'row');
+        Array.from(row.cells).forEach((cell, index) => {
+          if (cell.tagName === 'TH') {
+            cell.setAttribute('role', cell.closest('thead') ? 'columnheader' : 'rowheader');
+          } else {
+            cell.setAttribute('role', 'cell');
+            if (labels[index]) cell.dataset.label = labels[index];
+          }
+        });
+      });
       table.before(wrapper);
       wrapper.append(table);
     });

@@ -1,7 +1,7 @@
 /* ==========================================================================
    Alice English Center — Frutiger Aero Design System
    Binding spec: docs/design-system.md (sky/water · fresh grass · glossy glass ·
-   soft pills/gel · clean humanist typography)
+   soft pills/gel · Inter body + Noto Sans headings)
    ========================================================================== */
 
 :root {
@@ -25,7 +25,8 @@
   --radius-m: 18px;
   --radius-l: 28px;
   --radius-pill: 999px;
-  --font: "Frutiger", "Segoe UI", "Myriad Pro", "Nunito Sans", system-ui, -apple-system, sans-serif;
+  --font: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-heading: "Noto Sans", "Inter", system-ui, sans-serif;
   --font-mono: ui-monospace, "SFMono-Regular", Menlo, Consolas, "Liberation Mono", monospace;
 
   /* 2. Derived Aero surface, gloss & state tokens (light) */
@@ -190,6 +191,17 @@ a {
   text-underline-offset: .22em;
   text-decoration-thickness: 1.5px;
   transition: color .18s ease, text-decoration-color .18s ease;
+}
+
+/* Headings (article, sidebar/TOC section titles) + brand name use the heading face */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.brand {
+  font-family: var(--font-heading);
 }
 
 a:hover {
@@ -517,7 +529,7 @@ main {
   border-radius: 50% 50% 22% 50%;
   background: var(--droplet-bg);
   color: var(--droplet-ink);
-  font-family: var(--font);
+  font-family: var(--font-heading);
   font-size: 1.2rem;
   font-weight: 800;
   line-height: 1;
@@ -701,8 +713,12 @@ main {
   border: 0;
 }
 
+/* Fill the whole main panel (only main's padding frames the text). Named
+   container so tables can switch to stacked cards by the space they really get. */
 article {
-  max-width: 74ch;
+  min-width: 0;
+  max-width: none;
+  container: article / inline-size;
 }
 
 article h1,
@@ -856,7 +872,11 @@ article kbd {
   color: var(--ink);
 }
 
-/* Glass Tables with Aqua Header */
+/* Glass Tables with Aqua Header
+   Fit-to-width first (auto layout, wrapping cells); stacked glass cards when the
+   article is narrow; horizontal scroll on .table-scroll only as a last resort.
+   app.js adds .table-scroll--wide (>= 5 cols), .table-scroll--many (>= 7 cols)
+   and td[data-label] (column header text) in prepareContent(). */
 .table-scroll {
   max-width: 100%;
   overflow-x: auto;
@@ -869,17 +889,19 @@ article kbd {
 
 table {
   width: 100%;
+  table-layout: auto;
   border-collapse: collapse;
   font-size: .92rem;
 }
 
 th,
 td {
-  padding: .8rem 1rem;
+  padding: .75rem .95rem;
   border-bottom: 1px solid var(--line-glass);
   text-align: left;
   vertical-align: top;
-  min-width: 8.5rem;
+  overflow-wrap: break-word;
+  word-break: normal;
 }
 
 th {
@@ -899,6 +921,152 @@ tbody tr:hover td {
 
 tr:last-child td {
   border-bottom: 0;
+}
+
+/* Wide tables: slightly tighter type and padding so they fit without scrolling */
+.table-scroll--wide table {
+  font-size: .86rem;
+  line-height: 1.55;
+}
+
+.table-scroll--wide th,
+.table-scroll--wide td {
+  padding: .6rem .65rem;
+}
+
+/* Stacked "card" layout: each row = glass card, each cell labelled by its header.
+   Same rules twice: every table when the article is <= 42rem (~720px screens),
+   tables with many columns already when it is <= 50rem. */
+@container article (max-width: 42rem) {
+  .table-scroll {
+    overflow: visible;
+    border: 0;
+    border-radius: 0;
+    background: none;
+    box-shadow: none;
+  }
+
+  .table-scroll table,
+  .table-scroll tbody,
+  .table-scroll tr,
+  .table-scroll td {
+    display: block;
+    width: 100%;
+    font-size: .92rem;
+  }
+
+  .table-scroll thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .table-scroll tbody tr {
+    margin-bottom: .85rem;
+    padding: .3rem 1.05rem;
+    border: 1px solid var(--glass-edge);
+    border-radius: var(--radius-m);
+    background-color: var(--glass-strong);
+    background-image: var(--glass-sheen);
+    box-shadow: var(--glass-highlight), 0 4px 14px rgb(0 60 110 / .1);
+  }
+
+  .table-scroll tbody tr:last-child {
+    margin-bottom: 0;
+  }
+
+  .table-scroll tbody tr td {
+    padding: .55rem 0;
+    border-bottom: 1px solid var(--line-glass);
+    background: transparent;
+    text-align: left;
+  }
+
+  .table-scroll tbody tr td:last-child {
+    border-bottom: 0;
+  }
+
+  .table-scroll td[data-label]::before {
+    content: attr(data-label);
+    content: attr(data-label) / "";
+    display: block;
+    margin-bottom: .1rem;
+    font-size: .74rem;
+    font-weight: 800;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: var(--aqua-ink);
+  }
+}
+
+@container article (max-width: 50rem) {
+  .table-scroll--many {
+    overflow: visible;
+    border: 0;
+    border-radius: 0;
+    background: none;
+    box-shadow: none;
+  }
+
+  .table-scroll--many table,
+  .table-scroll--many tbody,
+  .table-scroll--many tr,
+  .table-scroll--many td {
+    display: block;
+    width: 100%;
+    font-size: .92rem;
+  }
+
+  .table-scroll--many thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .table-scroll--many tbody tr {
+    margin-bottom: .85rem;
+    padding: .3rem 1.05rem;
+    border: 1px solid var(--glass-edge);
+    border-radius: var(--radius-m);
+    background-color: var(--glass-strong);
+    background-image: var(--glass-sheen);
+    box-shadow: var(--glass-highlight), 0 4px 14px rgb(0 60 110 / .1);
+  }
+
+  .table-scroll--many tbody tr:last-child {
+    margin-bottom: 0;
+  }
+
+  .table-scroll--many tbody tr td {
+    padding: .55rem 0;
+    border-bottom: 1px solid var(--line-glass);
+    background: transparent;
+    text-align: left;
+  }
+
+  .table-scroll--many tbody tr td:last-child {
+    border-bottom: 0;
+  }
+
+  .table-scroll--many td[data-label]::before {
+    content: attr(data-label);
+    content: attr(data-label) / "";
+    display: block;
+    margin-bottom: .1rem;
+    font-size: .74rem;
+    font-weight: 800;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: var(--aqua-ink);
+  }
 }
 
 /* ==========================================================================
@@ -1182,6 +1350,19 @@ tr:last-child td {
 
   tbody tr:nth-child(even) td {
     background: #fafafa !important;
+  }
+
+  /* Stacked table cards (if the page is narrow enough to trigger them) */
+  .table-scroll tbody tr {
+    background: #ffffff !important;
+    box-shadow: none !important;
+    border-color: #bbbbbb !important;
+    border-radius: 0 !important;
+    break-inside: avoid;
+  }
+
+  .table-scroll td[data-label]::before {
+    color: #000000 !important;
   }
 
   pre {
