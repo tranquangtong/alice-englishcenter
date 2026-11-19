@@ -9,7 +9,11 @@
   const toc = document.querySelector('#page-toc');
   const main = document.querySelector('main');
   const menu = document.querySelector('.menu-toggle');
+  const gtHub = 'ielts-gt';
+  const gtListening = `${gtHub}/listening`;
   let pages = [];
+  let navSection;
+  let navPage;
   let request = 0;
   let listeningRequest;
   let previousHash = location.hash;
@@ -45,13 +49,65 @@
     }
   });
 
-  function buildNav() {
-    nav.replaceChildren();
-    const general = document.createElement('a');
-    general.href = '#/ielts-gt';
-    general.textContent = 'IELTS General';
-    general.dataset.page = 'ielts-gt';
-    nav.append(general);
+  function navLink(id, title, href = routeURL(id)) {
+    const link = document.createElement('a');
+    link.href = href;
+    link.textContent = title;
+    link.dataset.page = id;
+    return link;
+  }
+
+  function appendNavItem(list, entry) {
+    const item = document.createElement('li');
+    item.append(entry);
+    list.append(item);
+    return item;
+  }
+
+  function markCurrentNav() {
+    for (const entry of nav.querySelectorAll('[data-page]')) {
+      if (entry.dataset.page === navPage) entry.setAttribute('aria-current', 'page');
+      else entry.removeAttribute('aria-current');
+    }
+  }
+
+  function buildGtNav() {
+    const overview = navLink(gtHub, 'IELTS General');
+    overview.className = 'sidebar__overview';
+    const skills = document.createElement('ul');
+    const listening = appendNavItem(skills, navLink(gtListening, 'Listening', `#/${gtListening}`));
+    const tests = document.createElement('ul');
+    tests.className = 'sidebar__sublist';
+    listening.append(tests);
+    for (const skill of ['Reading', 'Writing', 'Speaking']) {
+      const entry = document.createElement('span');
+      entry.className = 'sidebar__soon';
+      entry.dataset.page = `${gtHub}/${skill.toLowerCase()}`;
+      const badge = document.createElement('small');
+      badge.textContent = 'Sắp ra mắt';
+      entry.append(`${skill} `, badge);
+      appendNavItem(skills, entry);
+    }
+    nav.append(navLink('home', '← Danh mục học tập'), overview, skills);
+  }
+
+  async function populateGtTests(list) {
+    let catalog;
+    try {
+      catalog = await window.Listening?.loadCatalog();
+    } catch {
+      // Keep the skill links usable and retry on the next IELTS General route.
+      return;
+    }
+    if (!list.isConnected || list.childElementCount || !Array.isArray(catalog?.tests)) return;
+    for (const { id, title } of catalog.tests) {
+      const href = `#/${gtListening}/${encodeURIComponent(id)}?mode=practice`;
+      appendNavItem(list, navLink(`${gtListening}/${id}`, title, href));
+    }
+    markCurrentNav();
+  }
+
+  function buildGlobalNav() {
     const groups = new Map();
     for (const page of pages) {
       if (!groups.has(page.group)) {
@@ -63,14 +119,22 @@
         nav.append(group);
         groups.set(page.group, list);
       }
-      const item = document.createElement('li');
-      const link = document.createElement('a');
-      link.href = routeURL(page.id);
-      link.textContent = page.title;
-      link.dataset.page = page.id;
-      item.append(link);
-      groups.get(page.group).append(item);
+      appendNavItem(groups.get(page.group), navLink(page.id, page.title));
     }
+  }
+
+  function buildNav(id, inGt) {
+    navPage = id;
+    if (navSection !== inGt) {
+      navSection = inGt;
+      nav.replaceChildren();
+      nav.setAttribute('aria-label', inGt ? 'Danh mục IELTS General' : 'Tài liệu học tập');
+      if (inGt) buildGtNav();
+      else buildGlobalNav();
+    }
+    markCurrentNav();
+    const pendingTests = inGt && nav.querySelector('.sidebar__sublist:empty');
+    if (pendingTests) populateGtTests(pendingTests);
   }
 
   function prepareContent(page) {
@@ -166,11 +230,9 @@
     try { id = decodeURIComponent(rawId || 'home'); } catch { id = ''; }
     const page = pages.find(entry => entry.id === id);
     closeMenu();
-    nav.querySelectorAll('a').forEach(link => {
-      if (link.dataset.page === id || (link.dataset.page === 'ielts-gt' && id.startsWith('ielts-gt/'))) link.setAttribute('aria-current', 'page');
-      else link.removeAttribute('aria-current');
-    });
-    toc.closest('aside').hidden = id === 'ielts-gt' || id.startsWith('ielts-gt/');
+    const inGt = id === gtHub || id.startsWith(`${gtHub}/`);
+    buildNav(id, inGt);
+    toc.closest('aside').hidden = inGt;
     if (id === 'ielts-gt' || /^ielts-gt\/(?:listening(?:\/[^/]+)?|reading|writing|speaking)$/.test(id)) {
       listeningRequest = new AbortController();
       main.setAttribute('aria-busy', 'true');
@@ -243,7 +305,6 @@
         !['id', 'title', 'group', 'path'].every(key => typeof page[key] === 'string' && page[key].trim()))) {
         throw new Error('Danh mục tài liệu không hợp lệ.');
       }
-      buildNav();
       menu.hidden = false;
       window.addEventListener('hashchange', render);
       await render();

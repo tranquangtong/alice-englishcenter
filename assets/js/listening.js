@@ -7,6 +7,7 @@
   const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   let dispose = () => {};
   let runningExam = false;
+  let catalogRequest;
   const top = document.querySelector('.top-menu');
   const disclosure = top.querySelector('button');
   const panel = top.querySelector('.top-menu__panel');
@@ -33,6 +34,13 @@
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     return response.json();
   }
+  function loadCatalog() {
+    // The sidebar and Listening pages share the small catalogue across routes.
+    return catalogRequest ??= json(`${dataRoot}index.json`, undefined, true).catch(error => {
+      catalogRequest = undefined;
+      throw error;
+    });
+  }
   async function render({ id, query, content, signal }) {
     const rules = await core;
     if (signal.aborted) return;
@@ -46,14 +54,15 @@
       return;
     }
     if (id === 'ielts-gt/listening') {
-      const [catalog, external] = await Promise.all([json(`${dataRoot}index.json`, signal, true), json(`${dataRoot}external.json`, signal, true)]);
+      const [catalog, external] = await Promise.all([loadCatalog(), json(`${dataRoot}external.json`, signal, true)]);
       if (signal.aborted) return;
       if (external && rules.validateExternal(external).length) throw new Error('Danh mục liên kết không hợp lệ');
       content.innerHTML = `<section class="lt-list"><h1>IELTS General · Listening</h1><p>Bài luyện tập tự biên soạn. Chọn luyện tập hoặc thi thử.</p>${(catalog?.tests || []).map(t => `<article class="lt-card"><h2>${esc(t.title)}</h2><p>${esc(t.summary)}</p><p>${esc(t.difficulty)}</p><a class="lt-btn aero-btn" href="#/ielts-gt/listening/${encodeURIComponent(t.id)}?mode=practice">Luyện tập</a> <a class="lt-btn aero-btn" href="#/ielts-gt/listening/${encodeURIComponent(t.id)}?mode=exam">Thi thử</a></article>`).join('') || '<p>Bài thi đang được chuẩn bị.</p>'}<h2>Luyện thêm ở trang khác</h2><p>Các bài thi được liên kết thuộc về chủ sở hữu tương ứng.</p>${(external?.sites || []).map(site => `<section><h3><a target="_blank" rel="noopener noreferrer" href="${esc(site.home)}">${esc(site.site)}</a></h3>${site.note ? `<p>${esc(site.note)}</p>` : ''}<ul>${site.tests.map(t => `<li><a target="_blank" rel="noopener noreferrer" href="${esc(t.url)}">${esc(t.title)}</a></li>`).join('')}</ul></section>`).join('')}</section>`;
       return;
     }
     const testId = id.slice('ielts-gt/listening/'.length);
-    const catalog = await json(`${dataRoot}index.json`, signal, true);
+    const catalog = await loadCatalog();
+    if (signal.aborted) return;
     const entry = catalog?.tests?.find(t => t.id === testId);
     if (!entry || !rules.safePath(entry.file)) throw new Error('Không tìm thấy bài thi');
     const test = await json(entry.file, signal);
@@ -259,6 +268,7 @@
   }
   window.Listening = {
     render,
+    loadCatalog,
     dispose() { dispose(); dispose = () => {}; },
     allowLeave() { return !runningExam || window.confirm('Bạn đang thi thử. Rời trang sẽ kết thúc lượt thi này. Tiếp tục?'); }
   };

@@ -37,7 +37,8 @@ test('Edge: listening player, exam guards, routing and responsive layout', { tim
   await page.locator('main').click({ position: { x: mainBox.width - 10, y: 10 } }); assert.equal(await page.locator('.top-menu__panel').isVisible(), false);
   await route('#/ielts-gt'); assert.equal(await page.locator('.gt-skill').count(), 4);
   await page.locator('.gt-skill--soon').first().click(); await page.waitForFunction(() => document.querySelector('#page-content h1')?.textContent === 'reading');
-  assert.equal(await page.getByText('Sắp ra mắt', { exact: true }).count(), 1);
+  assert.equal(await page.locator('#page-content').getByText('Sắp ra mắt', { exact: true }).count(), 1);
+  assert.match(await page.locator('#site-nav [aria-current="page"]').innerText(), /^Reading/);
   await route('#/ielts-gt/listening'); assert.equal(await page.locator('.lt-card').count(), 1);
   assert.equal(await page.getByText('External fixture').getAttribute('rel'), 'noopener noreferrer');
   await page.getByRole('link', { name: 'Luyện tập', exact: true }).click(); await page.locator('.lt-paper').waitFor();
@@ -93,7 +94,6 @@ test('Edge: listening player, exam guards, routing and responsive layout', { tim
   await page.setViewportSize({ width: 390, height: 844 });
   await noOverflow('mobile result');
   await page.locator('.top-menu__btn').click(); await noOverflow('mobile dropdown');
-  const menuSize = await page.locator('.top-menu__btn').boundingBox(); assert.ok(menuSize.height >= 44);
   await page.keyboard.press('Escape');
   await page.evaluate(() => { document.activeElement.blur(); window.scrollTo(0, 0); }); await page.screenshot({ path: 'test-artifacts/listening-390.png', fullPage: true });
   await route('#/home'); assert.equal(await page.locator('#page-content').innerText(), home);

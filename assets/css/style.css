@@ -35,6 +35,7 @@
   --glass-header: rgb(255 255 255 / .3);
   /* Sticky offsets must equal the natural positions, or panels jump while scrolling */
   --header-top: 1.15rem;
+  --brand-mark-size: 2.25rem;
   --header-h: 3.4rem; /* 2.25rem logo + 2×.5rem padding + borders */
   --layout-gap-top: 1.35rem;
   --header-offset: calc(var(--header-top) + var(--header-h) + var(--layout-gap-top));
@@ -528,8 +529,8 @@ main {
   display: grid;
   place-items: center;
   flex-shrink: 0;
-  width: 2.25rem;
-  height: 2.25rem;
+  width: var(--brand-mark-size);
+  height: var(--brand-mark-size);
   border-radius: 50% 50% 22% 50%;
   background: var(--droplet-bg);
   color: var(--droplet-ink);
@@ -553,6 +554,25 @@ main {
   background: linear-gradient(180deg, rgb(255 255 255 / .82) 0%, rgb(255 255 255 / 0) 100%);
   transform: rotate(-18deg);
   pointer-events: none;
+}
+
+.top-menu__btn.aero-btn {
+  height: var(--brand-mark-size);
+  min-height: 0;
+  min-width: 44px;
+  padding: 0 .65rem;
+  overflow: visible;
+  font-size: .82rem;
+  white-space: nowrap;
+}
+
+.top-menu__btn.aero-btn::after {
+  /* Extend the touch area to 44px, including the button's 1px borders. */
+  inset: calc((var(--brand-mark-size) - 46px) / 2) -1px;
+  background: none;
+  transform: none;
+  transition: none;
+  pointer-events: auto;
 }
 
 /* ==========================================================================
@@ -611,7 +631,8 @@ main {
   margin: .22rem 0;
 }
 
-.sidebar a {
+.sidebar a,
+.sidebar__soon {
   display: flex;
   align-items: center;
   min-height: 44px;
@@ -625,6 +646,27 @@ main {
   transition: background .18s ease, color .18s ease, border-color .18s ease, box-shadow .18s ease, transform .18s ease;
 }
 
+.sidebar .sidebar__overview {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.sidebar .sidebar__sublist {
+  padding-inline-start: .9rem;
+}
+
+.sidebar__soon small {
+  margin-inline-start: auto;
+  padding: .15rem .4rem;
+  border: 1px solid var(--badge-edge);
+  border-radius: var(--radius-pill);
+  background: var(--badge-bg);
+  color: var(--ink-soft);
+  font-size: .72rem;
+  white-space: nowrap;
+}
+
 .sidebar a:hover {
   background: var(--surface-hover);
   border-color: var(--glass-edge);
@@ -632,7 +674,7 @@ main {
   transform: translateX(2px);
 }
 
-.sidebar a[aria-current="page"] {
+.sidebar [aria-current="page"] {
   position: relative;
   overflow: hidden;
   background: var(--pill-active-bg);
@@ -643,7 +685,7 @@ main {
   box-shadow: var(--glass-highlight), 0 4px 12px rgb(21 147 214 / .16);
 }
 
-.sidebar a[aria-current="page"]::before {
+.sidebar [aria-current="page"]::before {
   content: "";
   width: .55rem;
   height: .55rem;
@@ -1119,6 +1161,7 @@ tr:last-child td {
     --glass-blur: 10px;
     --header-top: .65rem;
     --header-offset: 4.75rem;
+    --brand-mark-size: 2rem;
   }
 
   .site-header {
@@ -1136,8 +1179,6 @@ tr:last-child td {
   }
 
   .brand-mark {
-    width: 2rem;
-    height: 2rem;
     font-size: 1.1rem;
   }
 
