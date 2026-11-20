@@ -1465,10 +1465,10 @@ body:has(.update-toast:not([hidden])) { padding-bottom: var(--toast-space, 0px);
 @media print {
   :root {
     color-scheme: light;
-    --ink: #000;
+    --ink: #000000;
     --ink-soft: #333;
-    --aqua-ink: #000;
-    --grass-ink: #000;
+    --aqua-ink: #000000;
+    --grass-ink: #000000;
   }
 
   body {
