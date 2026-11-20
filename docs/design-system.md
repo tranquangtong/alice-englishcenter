@@ -83,6 +83,13 @@ Tránh: flat design phẳng lì, màu xám buồn, brutalism, neon cyberpunk, g�
   ký hiệu/chữ** (`✓ Đúng` / `✗ Chưa đúng`); 3 khối giải thích (`.lt-explain`), dẫn chứng
   (`.lt-evidence`), và Bẫy (`.lt-distractors`, hổ phách + `⚠`) tách biệt rõ; transcript làm nổi bật
   bằng chứng bằng `mark.lt-hl`.
+- **Trang luyện kỹ năng (`assets/css/practice.css`, `.practice*`):** nạp lười riêng trên tuyến phương
+  pháp nghe; danh sách bài `.practice-list` dùng lưới thẻ kính Aero 2 cột có huy hiệu số bài và nút
+  vào bài; thanh audio `.practice-audio` dùng kính bóng với nút phát chính gel aqua, nút nghe lại kính
+  phụ và chọn tốc độ dạng pill giống `.lt-speed`; nút gợi ý `[data-practice-action="hint"]` là chip
+  kính mờ nhẹ (≥ 44px) đặt cuối ô nhập; lựa chọn `.practice-choice` là thẻ kính bấm lớn; phản hồi
+  đúng / một phần / chưa đúng kết hợp màu cỏ / hổ phách / đỏ với ký hiệu (`✓` / `◐` / `✗` / `+` / gạch
+  ngang), so sánh từng từ `.practice-diff` và thẻ điểm `.practice-score` đạt AA cả sáng/tối.
 
 ## 4. Ràng buộc kỹ thuật & a11y (không được phá)
 
