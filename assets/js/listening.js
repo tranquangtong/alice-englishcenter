@@ -64,12 +64,19 @@
       const [catalog, external] = await Promise.all([loadCatalog(), json(`${dataRoot}external.json`, signal, true)]);
       if (signal.aborted) return;
       if (external && rules.validateExternal(external).length) throw new Error('Danh mục liên kết không hợp lệ');
-      content.innerHTML = `<section class="lt-list"><h1>IELTS General · Listening</h1><p>Bài luyện tập tự biên soạn. Chọn luyện tập hoặc thi thử.</p>${(catalog?.tests || []).map(t => `<article class="lt-card"><h2>${esc(t.title)}</h2><p>${esc(t.summary)}</p><p>${esc(t.difficulty)}</p><a class="lt-btn aero-btn" href="#/ielts-gt/listening/${encodeURIComponent(t.id)}?mode=practice">Luyện tập</a> <a class="lt-btn aero-btn" href="#/ielts-gt/listening/${encodeURIComponent(t.id)}?mode=exam">Thi thử</a></article>`).join('') || '<p>Bài thi đang được chuẩn bị.</p>'}<h2>Luyện thêm ở trang khác</h2><p>Các bài thi được liên kết thuộc về chủ sở hữu tương ứng.</p>${(external?.sites || []).map(site => `<section><h3><a target="_blank" rel="noopener noreferrer" href="${esc(site.home)}">${esc(site.site)}</a></h3>${site.note ? `<p>${esc(site.note)}</p>` : ''}<ul>${site.tests.map(t => `<li><a target="_blank" rel="noopener noreferrer" href="${esc(t.url)}">${esc(t.title)}</a></li>`).join('')}</ul></section>`).join('')}</section>`;
+      content.innerHTML = `<section class="lt-list"><h1>IELTS General · Listening</h1><p>Bài luyện tập tự biên soạn. Chọn luyện tập hoặc thi thử.</p>${(catalog?.tests || []).map(t => `<article class="lt-card"><h2>${esc(t.title)}</h2><p>${esc(t.summary)}</p><p>${esc(t.difficulty)}</p><a class="lt-btn aero-btn" href="#/ielts-gt/listening/${encodeURIComponent(t.id)}?mode=practice">Luyện tập</a> <a class="lt-btn aero-btn" href="#/ielts-gt/listening/${encodeURIComponent(t.id)}?mode=exam">Thi thử</a></article>`).join('') || '<p>Bài thi đang được chuẩn bị.</p>'}${catalog?.methods?.length ? `<h2>Luyện theo kỹ năng</h2><p>${catalog.methods.map(method => `<a href="#/ielts-gt/listening/${encodeURIComponent(method.id)}" class="lt-btn aero-btn">${esc(method.title)}</a>`).join(' ')}</p>` : ''}<h2>Luyện thêm ở trang khác</h2><p>Các bài thi được liên kết thuộc về chủ sở hữu tương ứng.</p>${(external?.sites || []).map(site => `<section><h3><a target="_blank" rel="noopener noreferrer" href="${esc(site.home)}">${esc(site.site)}</a></h3>${site.note ? `<p>${esc(site.note)}</p>` : ''}<ul>${site.tests.map(t => `<li><a target="_blank" rel="noopener noreferrer" href="${esc(t.url)}">${esc(t.title)}</a></li>`).join('')}</ul></section>`).join('')}</section>`;
       return;
     }
-    const testId = id.slice('ielts-gt/listening/'.length);
+    const [testId, exerciseId] = id.slice('ielts-gt/listening/'.length).split('/');
     const catalog = await loadCatalog();
     if (signal.aborted) return;
+    const method = catalog?.methods?.find(entry => entry.id === testId);
+    if (method) {
+      const { renderMethod } = await import('./listening-methods.js?v=1');
+      if (!signal.aborted) await renderMethod({ method, exerciseId, content, signal });
+      return;
+    }
+    if (exerciseId) throw new Error('Không tìm thấy bài luyện');
     const entry = catalog?.tests?.find(t => t.id === testId);
     if (!entry || !rules.safePath(entry.file)) throw new Error('Không tìm thấy bài thi');
     const test = await json(entry.file, signal);

@@ -1,0 +1,589 @@
+[
+  {
+    "id": "booking-details",
+    "format": "number-spelling",
+    "title": "Tên và số điện thoại khi đặt chỗ",
+    "level": "Band 4.0",
+    "instructions": "Nghe rồi điền thông tin đặt chỗ.",
+    "clips": [
+      {
+        "id": "booking",
+        "script": [
+          {
+            "speaker": "Mia",
+            "voice": "en-GB-female-1",
+            "text": "Could I have your surname and contact number?"
+          },
+          {
+            "speaker": "Noah",
+            "voice": "en-AU-male-1",
+            "text": "My surname is Clarke. That’s C, L, A, R, K, E. My number is oh seven double two, six one five."
+          }
+        ],
+        "items": [
+          {
+            "id": "surname",
+            "prompt": "Họ của khách",
+            "answer": "Clarke",
+            "explanation": "Chữ E ở cuối phân biệt Clarke và Clark."
+          },
+          {
+            "id": "phone",
+            "prompt": "Số điện thoại",
+            "answer": "0722615",
+            "explanation": "“Oh” là 0 và “double two” là 22.",
+            "rules": {
+              "numbers": "digits"
+            }
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/dictation/booking-details-booking.mp3"
+      }
+    ]
+  },
+  {
+    "id": "office-gap",
+    "format": "gap-dictation",
+    "title": "Thông báo ở văn phòng",
+    "level": "Band 5.0",
+    "instructions": "Nghe và điền phần còn thiếu.",
+    "clips": [
+      {
+        "id": "notice",
+        "script": [
+          {
+            "speaker": "Sam",
+            "voice": "en-US-male-1",
+            "text": "Please leave the visitor badges at the reception desk."
+          }
+        ],
+        "items": [
+          {
+            "id": "place",
+            "prompt": "Please leave the visitor badges at the ___.",
+            "answer": "reception desk",
+            "explanation": "Cụm từ chỉ quầy lễ tân."
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/dictation/office-gap-notice.mp3"
+      }
+    ]
+  },
+  {
+    "id": "workplace-sentence",
+    "format": "sentence-dictation",
+    "title": "Một câu trong buổi bàn giao",
+    "level": "Band 5.5",
+    "instructions": "Gõ lại cả câu bạn nghe được.",
+    "clips": [
+      {
+        "id": "handover",
+        "script": [
+          {
+            "speaker": "Noah",
+            "voice": "en-AU-male-1",
+            "text": "We checked the spare keys before the new team arrived."
+          }
+        ],
+        "items": [
+          {
+            "id": "sentence",
+            "prompt": "Câu đầy đủ",
+            "answer": "We checked the spare keys before the new team arrived.",
+            "explanation": "Chú ý checked, keys và arrived."
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/dictation/workplace-sentence-handover.mp3"
+      }
+    ]
+  },
+  {
+    "id": "everyday-tatoeba",
+    "title": "Chép câu ngắn từ Tatoeba",
+    "format": "sentence-dictation",
+    "level": "Band 4.5–5.5",
+    "instructions": "Nghe từng đoạn và gõ lại cả câu. Có thể nghe lại từng đoạn trước khi kiểm tra.",
+    "clips": [
+      {
+        "id": "s22449",
+        "audio": "assets/audio/listening/methods/dictation/everyday-tatoeba-s22449.mp3",
+        "script": [
+          {
+            "speaker": "Auride",
+            "voice": "Auride",
+            "text": "Please remind me of the time of the meeting."
+          }
+        ],
+        "items": [
+          {
+            "id": "sentence-22449",
+            "prompt": "Câu đầy đủ",
+            "answer": "Please remind me of the time of the meeting.",
+            "explanation": "“Remind me of” là nhắc tôi về một việc."
+          }
+        ],
+        "source": {
+          "kind": "tatoeba",
+          "attribution": "Tatoeba · Auride",
+          "licence": "CC BY-SA 4.0",
+          "sentenceId": 22449,
+          "audioId": 1037020,
+          "speaker": "Auride",
+          "link": "https://tatoeba.org/en/sentences/show/22449",
+          "attributionURL": "https://tatoeba.org/en/user/profile/Auride",
+          "audioLicence": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "textLicence": "https://creativecommons.org/licenses/by/2.0/fr/"
+        }
+      },
+      {
+        "id": "s22813",
+        "audio": "assets/audio/listening/methods/dictation/everyday-tatoeba-s22813.mp3",
+        "script": [
+          {
+            "speaker": "Auride",
+            "voice": "Auride",
+            "text": "We eat buttered bread for lunch."
+          }
+        ],
+        "items": [
+          {
+            "id": "sentence-22813",
+            "prompt": "Câu đầy đủ",
+            "answer": "We eat buttered bread for lunch.",
+            "explanation": "“Buttered bread” là bánh mì phết bơ."
+          }
+        ],
+        "source": {
+          "kind": "tatoeba",
+          "attribution": "Tatoeba · Auride",
+          "licence": "CC BY-SA 4.0",
+          "sentenceId": 22813,
+          "audioId": 1037024,
+          "speaker": "Auride",
+          "link": "https://tatoeba.org/en/sentences/show/22813",
+          "attributionURL": "https://tatoeba.org/en/user/profile/Auride",
+          "audioLicence": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "textLicence": "https://creativecommons.org/licenses/by/2.0/fr/"
+        }
+      },
+      {
+        "id": "s22863",
+        "audio": "assets/audio/listening/methods/dictation/everyday-tatoeba-s22863.mp3",
+        "script": [
+          {
+            "speaker": "Auride",
+            "voice": "Auride",
+            "text": "We will get to Tokyo Station at noon."
+          }
+        ],
+        "items": [
+          {
+            "id": "sentence-22863",
+            "prompt": "Câu đầy đủ",
+            "answer": "We will get to Tokyo Station at noon.",
+            "explanation": "Nghe cụm “at noon” ở cuối câu."
+          }
+        ],
+        "source": {
+          "kind": "tatoeba",
+          "attribution": "Tatoeba · CK",
+          "licence": "CC BY-SA 4.0",
+          "sentenceId": 22863,
+          "audioId": 942490,
+          "speaker": "Auride",
+          "link": "https://tatoeba.org/en/sentences/show/22863",
+          "attributionURL": "https://tatoeba.org/en/user/profile/Auride",
+          "audioLicence": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "textLicence": "https://creativecommons.org/licenses/by/2.0/fr/"
+        }
+      },
+      {
+        "id": "s23383",
+        "audio": "assets/audio/listening/methods/dictation/everyday-tatoeba-s23383.mp3",
+        "script": [
+          {
+            "speaker": "Auride",
+            "voice": "Auride",
+            "text": "Our new head office is in Tokyo."
+          }
+        ],
+        "items": [
+          {
+            "id": "sentence-23383",
+            "prompt": "Câu đầy đủ",
+            "answer": "Our new head office is in Tokyo.",
+            "explanation": "“Head office” là trụ sở chính."
+          }
+        ],
+        "source": {
+          "kind": "tatoeba",
+          "attribution": "Tatoeba · CK",
+          "licence": "CC BY-SA 4.0",
+          "sentenceId": 23383,
+          "audioId": 942491,
+          "speaker": "Auride",
+          "link": "https://tatoeba.org/en/sentences/show/23383",
+          "attributionURL": "https://tatoeba.org/en/user/profile/Auride",
+          "audioLicence": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "textLicence": "https://creativecommons.org/licenses/by/2.0/fr/"
+        }
+      },
+      {
+        "id": "s35384",
+        "audio": "assets/audio/listening/methods/dictation/everyday-tatoeba-s35384.mp3",
+        "script": [
+          {
+            "speaker": "Auride",
+            "voice": "Auride",
+            "text": "Some people went by bus, and others by train."
+          }
+        ],
+        "items": [
+          {
+            "id": "sentence-35384",
+            "prompt": "Câu đầy đủ",
+            "answer": "Some people went by bus, and others by train.",
+            "explanation": "“By bus” và “by train” chỉ phương tiện di chuyển."
+          }
+        ],
+        "source": {
+          "kind": "tatoeba",
+          "attribution": "Tatoeba · CM",
+          "licence": "CC BY-SA 4.0",
+          "sentenceId": 35384,
+          "audioId": 951110,
+          "speaker": "Auride",
+          "link": "https://tatoeba.org/en/sentences/show/35384",
+          "attributionURL": "https://tatoeba.org/en/user/profile/Auride",
+          "audioLicence": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "textLicence": "https://creativecommons.org/licenses/by/2.0/fr/"
+        }
+      },
+      {
+        "id": "s37351",
+        "audio": "assets/audio/listening/methods/dictation/everyday-tatoeba-s37351.mp3",
+        "script": [
+          {
+            "speaker": "rul",
+            "voice": "rul",
+            "text": "We'll have to take on someone to do Tom's work."
+          }
+        ],
+        "items": [
+          {
+            "id": "sentence-37351",
+            "prompt": "Câu đầy đủ",
+            "answer": "We'll have to take on someone to do Tom's work.",
+            "explanation": "“Take on someone” ở đây nghĩa là tuyển người."
+          }
+        ],
+        "source": {
+          "kind": "tatoeba",
+          "attribution": "Tatoeba · shekitten",
+          "licence": "CC BY 4.0",
+          "sentenceId": 37351,
+          "audioId": 1285222,
+          "speaker": "rul",
+          "link": "https://tatoeba.org/en/sentences/show/37351",
+          "attributionURL": "https://tatoeba.org/en/user/profile/rul",
+          "audioLicence": "https://creativecommons.org/licenses/by/4.0/",
+          "textLicence": "https://creativecommons.org/licenses/by/2.0/fr/"
+        }
+      },
+      {
+        "id": "s57106",
+        "audio": "assets/audio/listening/methods/dictation/everyday-tatoeba-s57106.mp3",
+        "script": [
+          {
+            "speaker": "Auride",
+            "voice": "Auride",
+            "text": "Please ask whether they have this book at the library."
+          }
+        ],
+        "items": [
+          {
+            "id": "sentence-57106",
+            "prompt": "Câu đầy đủ",
+            "answer": "Please ask whether they have this book at the library.",
+            "explanation": "Từ “whether” nối lời nhờ với câu hỏi gián tiếp."
+          }
+        ],
+        "source": {
+          "kind": "tatoeba",
+          "attribution": "Tatoeba · CM",
+          "licence": "CC BY-SA 4.0",
+          "sentenceId": 57106,
+          "audioId": 956177,
+          "speaker": "Auride",
+          "link": "https://tatoeba.org/en/sentences/show/57106",
+          "attributionURL": "https://tatoeba.org/en/user/profile/Auride",
+          "audioLicence": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "textLicence": "https://creativecommons.org/licenses/by/2.0/fr/"
+        }
+      },
+      {
+        "id": "s66110",
+        "audio": "assets/audio/listening/methods/dictation/everyday-tatoeba-s66110.mp3",
+        "script": [
+          {
+            "speaker": "Them",
+            "voice": "Them",
+            "text": "He may have missed his usual bus."
+          }
+        ],
+        "items": [
+          {
+            "id": "sentence-66110",
+            "prompt": "Câu đầy đủ",
+            "answer": "He may have missed his usual bus.",
+            "explanation": "Nghe cụm “may have missed” để nhận ra điều có thể đã xảy ra."
+          }
+        ],
+        "source": {
+          "kind": "tatoeba",
+          "attribution": "Tatoeba · CK",
+          "licence": "CC BY 4.0",
+          "sentenceId": 66110,
+          "audioId": 1152910,
+          "speaker": "Them",
+          "link": "https://tatoeba.org/en/sentences/show/66110",
+          "attributionURL": "https://tatoeba.org/en/user/profile/Them",
+          "audioLicence": "https://creativecommons.org/licenses/by/4.0/",
+          "textLicence": "https://creativecommons.org/licenses/by/2.0/fr/"
+        }
+      },
+      {
+        "id": "s247383",
+        "audio": "assets/audio/listening/methods/dictation/everyday-tatoeba-s247383.mp3",
+        "script": [
+          {
+            "speaker": "Auride",
+            "voice": "Auride",
+            "text": "Our club will hold its monthly meeting next Wednesday."
+          }
+        ],
+        "items": [
+          {
+            "id": "sentence-247383",
+            "prompt": "Câu đầy đủ",
+            "answer": "Our club will hold its monthly meeting next Wednesday.",
+            "explanation": "“Monthly” cho biết cuộc họp diễn ra hằng tháng."
+          }
+        ],
+        "source": {
+          "kind": "tatoeba",
+          "attribution": "Tatoeba · CM",
+          "licence": "CC BY-SA 4.0",
+          "sentenceId": 247383,
+          "audioId": 956240,
+          "speaker": "Auride",
+          "link": "https://tatoeba.org/en/sentences/show/247383",
+          "attributionURL": "https://tatoeba.org/en/user/profile/Auride",
+          "audioLicence": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "textLicence": "https://creativecommons.org/licenses/by/2.0/fr/"
+        }
+      },
+      {
+        "id": "s249940",
+        "audio": "assets/audio/listening/methods/dictation/everyday-tatoeba-s249940.mp3",
+        "script": [
+          {
+            "speaker": "rul",
+            "voice": "rul",
+            "text": "I have a previous appointment."
+          }
+        ],
+        "items": [
+          {
+            "id": "sentence-249940",
+            "prompt": "Câu đầy đủ",
+            "answer": "I have a previous appointment.",
+            "explanation": "“Previous appointment” là cuộc hẹn đã có từ trước."
+          }
+        ],
+        "source": {
+          "kind": "tatoeba",
+          "attribution": "Tatoeba · rul",
+          "licence": "CC BY 4.0",
+          "sentenceId": 249940,
+          "audioId": 1247324,
+          "speaker": "rul",
+          "link": "https://tatoeba.org/en/sentences/show/249940",
+          "attributionURL": "https://tatoeba.org/en/user/profile/rul",
+          "audioLicence": "https://creativecommons.org/licenses/by/4.0/",
+          "textLicence": "https://creativecommons.org/licenses/by/2.0/fr/"
+        }
+      },
+      {
+        "id": "s259617",
+        "audio": "assets/audio/listening/methods/dictation/everyday-tatoeba-s259617.mp3",
+        "script": [
+          {
+            "speaker": "Auride",
+            "voice": "Auride",
+            "text": "I was late as a result of the train delay."
+          }
+        ],
+        "items": [
+          {
+            "id": "sentence-259617",
+            "prompt": "Câu đầy đủ",
+            "answer": "I was late as a result of the train delay.",
+            "explanation": "“As a result of” giới thiệu nguyên nhân đến muộn."
+          }
+        ],
+        "source": {
+          "kind": "tatoeba",
+          "attribution": "Tatoeba · Auride",
+          "licence": "CC BY-SA 4.0",
+          "sentenceId": 259617,
+          "audioId": 1041093,
+          "speaker": "Auride",
+          "link": "https://tatoeba.org/en/sentences/show/259617",
+          "attributionURL": "https://tatoeba.org/en/user/profile/Auride",
+          "audioLicence": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "textLicence": "https://creativecommons.org/licenses/by/2.0/fr/"
+        }
+      },
+      {
+        "id": "s1299110",
+        "audio": "assets/audio/listening/methods/dictation/everyday-tatoeba-s1299110.mp3",
+        "script": [
+          {
+            "speaker": "Them",
+            "voice": "Them",
+            "text": "His office is near the train station."
+          }
+        ],
+        "items": [
+          {
+            "id": "sentence-1299110",
+            "prompt": "Câu đầy đủ",
+            "answer": "His office is near the train station.",
+            "explanation": "Nghe “near the train station” ở cuối câu."
+          }
+        ],
+        "source": {
+          "kind": "tatoeba",
+          "attribution": "Tatoeba · rahim",
+          "licence": "CC BY 4.0",
+          "sentenceId": 1299110,
+          "audioId": 1121361,
+          "speaker": "Them",
+          "link": "https://tatoeba.org/en/sentences/show/1299110",
+          "attributionURL": "https://tatoeba.org/en/user/profile/Them",
+          "audioLicence": "https://creativecommons.org/licenses/by/4.0/",
+          "textLicence": "https://creativecommons.org/licenses/by/2.0/fr/"
+        }
+      },
+      {
+        "id": "s12658241",
+        "audio": "assets/audio/listening/methods/dictation/everyday-tatoeba-s12658241.mp3",
+        "script": [
+          {
+            "speaker": "rul",
+            "voice": "rul",
+            "text": "I'll touch base with you after I've read the report."
+          }
+        ],
+        "items": [
+          {
+            "id": "sentence-12658241",
+            "prompt": "Câu đầy đủ",
+            "answer": "I'll touch base with you after I've read the report.",
+            "explanation": "“Touch base with you” là liên hệ để trao đổi nhanh."
+          }
+        ],
+        "source": {
+          "kind": "tatoeba",
+          "attribution": "Tatoeba · rul",
+          "licence": "CC BY 4.0",
+          "sentenceId": 12658241,
+          "audioId": 1247289,
+          "speaker": "rul",
+          "link": "https://tatoeba.org/en/sentences/show/12658241",
+          "attributionURL": "https://tatoeba.org/en/user/profile/rul",
+          "audioLicence": "https://creativecommons.org/licenses/by/4.0/",
+          "textLicence": "https://creativecommons.org/licenses/by/2.0/fr/"
+        }
+      },
+      {
+        "id": "s10696223",
+        "audio": "assets/audio/listening/methods/dictation/everyday-tatoeba-s10696223.mp3",
+        "script": [
+          {
+            "speaker": "Them",
+            "voice": "Them",
+            "text": "I'd like a ticket to Warsaw, please."
+          }
+        ],
+        "items": [
+          {
+            "id": "sentence-10696223",
+            "prompt": "Câu đầy đủ",
+            "answer": "I'd like a ticket to Warsaw, please.",
+            "explanation": "Nghe tên thành phố “Warsaw” sau “to”."
+          }
+        ],
+        "source": {
+          "kind": "tatoeba",
+          "attribution": "Tatoeba · tokzyk",
+          "licence": "CC BY 4.0",
+          "sentenceId": 10696223,
+          "audioId": 1114134,
+          "speaker": "Them",
+          "link": "https://tatoeba.org/en/sentences/show/10696223",
+          "attributionURL": "https://tatoeba.org/en/user/profile/Them",
+          "audioLicence": "https://creativecommons.org/licenses/by/4.0/",
+          "textLicence": "https://creativecommons.org/licenses/by/2.0/fr/"
+        }
+      },
+      {
+        "id": "s11180924",
+        "audio": "assets/audio/listening/methods/dictation/everyday-tatoeba-s11180924.mp3",
+        "script": [
+          {
+            "speaker": "Them",
+            "voice": "Them",
+            "text": "I have a flexible work schedule."
+          }
+        ],
+        "items": [
+          {
+            "id": "sentence-11180924",
+            "prompt": "Câu đầy đủ",
+            "answer": "I have a flexible work schedule.",
+            "explanation": "“Flexible work schedule” là lịch làm việc linh hoạt."
+          }
+        ],
+        "source": {
+          "kind": "tatoeba",
+          "attribution": "Tatoeba · DJ_Saidez",
+          "licence": "CC BY 4.0",
+          "sentenceId": 11180924,
+          "audioId": 1115394,
+          "speaker": "Them",
+          "link": "https://tatoeba.org/en/sentences/show/11180924",
+          "attributionURL": "https://tatoeba.org/en/user/profile/Them",
+          "audioLicence": "https://creativecommons.org/licenses/by/4.0/",
+          "textLicence": "https://creativecommons.org/licenses/by/2.0/fr/"
+        }
+      }
+    ]
+  }
+]

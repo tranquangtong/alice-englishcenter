@@ -1,0 +1,51 @@
+[
+  {
+    "id": "training-signup",
+    "format": "predict-verify",
+    "title": "Dự đoán khi đăng ký buổi hướng dẫn",
+    "level": "Band 5.0",
+    "instructions": "Chọn loại thông tin cần điền và thử đoán trước khi nghe.",
+    "clips": [
+      {
+        "id": "signup",
+        "script": [
+          {
+            "speaker": "Mia",
+            "voice": "en-GB-female-1",
+            "text": "How many places should I reserve for the staff induction?"
+          },
+          {
+            "speaker": "Noah",
+            "voice": "en-AU-male-1",
+            "text": "Reserve fourteen places, please. Use the surname Clarke for the booking."
+          }
+        ],
+        "items": [
+          {
+            "id": "places",
+            "prompt": "Places to reserve: ___",
+            "answer": "14",
+            "explanation": "Số chỗ được nhắc đến là fourteen.",
+            "expectedType": "number",
+            "rules": {
+              "numbers": "integer"
+            }
+          },
+          {
+            "id": "booking-name",
+            "prompt": "Booking surname: ___",
+            "answer": "Clarke",
+            "explanation": "Người nói yêu cầu đặt chỗ dưới họ Clarke.",
+            "expectedType": "name"
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/prediction/training-signup-signup.mp3"
+      }
+    ]
+  }
+]

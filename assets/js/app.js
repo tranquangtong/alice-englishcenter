@@ -229,7 +229,8 @@
     }
   }
 
-  function appendGtGroup(list, { id, title }, entries) {
+  function appendGtGroup(list, { id, title }, entries, method = false) {
+    const parent = `${gtListening}/${id}`;
     const items = document.createElement('ul');
     items.id = `gt-listening-${id}`;
     items.className = 'sidebar__sublist';
@@ -242,13 +243,13 @@
     button.type = 'button';
     button.setAttribute('aria-controls', items.id);
     const count = document.createElement('small');
-    count.textContent = entries.length;
+    count.textContent = entries.length - Number(method);
     const chevron = document.createElement('span');
     chevron.textContent = '›';
     chevron.setAttribute('aria-hidden', 'true');
     button.append(`${title} `, count, chevron);
 
-    const group = { key, button, items, routes: new Set(entries.map(entry => `${gtListening}/${entry.id}`)) };
+    const group = { key, button, items, routes: new Set(entries.map(entry => entry.route)) };
     button.addEventListener('click', () => {
       const open = items.hidden;
       groupPreferences.set(key, open);
@@ -256,12 +257,11 @@
       setGroupOpen(group, open);
     });
 
-    for (const { id, title } of entries.slice(0, sidebarItemLimit)) {
-      const href = `#/${gtListening}/${encodeURIComponent(id)}?mode=practice`;
-      appendNavItem(items, navLink(`${gtListening}/${id}`, title, href));
+    for (const { route, title } of entries.slice(0, sidebarItemLimit + Number(method))) {
+      appendNavItem(items, navLink(route, title, `#/${route}${method ? '' : '?mode=practice'}`));
     }
-    if (entries.length > sidebarItemLimit) {
-      appendNavItem(items, navLink(null, `Xem tất cả (${entries.length})`, `#/${gtListening}`));
+    if (entries.length > sidebarItemLimit + Number(method)) {
+      appendNavItem(items, navLink(null, `Xem tất cả (${entries.length - Number(method)})`, `#/${method ? parent : gtListening}`));
     }
     appendNavItem(list, button).append(items);
     navGroups.push(group);
@@ -279,8 +279,15 @@
     // Catalog groups are ordered {id, title} entries. Each test's optional group names its group id.
     // Older catalogs and tests without a group use the Practice Tests group.
     for (const group of catalog.groups ?? [practiceGroup]) {
-      const entries = catalog.tests.filter(entry => (entry.group ?? practiceGroup.id) === group.id);
+      const entries = catalog.tests.filter(entry => (entry.group ?? practiceGroup.id) === group.id)
+        .map(entry => ({ title: entry.title, route: `${gtListening}/${encodeURIComponent(entry.id)}` }));
       if (entries.length) appendGtGroup(list, group, entries);
+    }
+    for (const method of catalog.methods ?? []) {
+      const route = `${gtListening}/${method.id}`;
+      const intro = { title: 'Giới thiệu', route };
+      const exercises = method.exercises.map(entry => ({ title: entry.title, route: `${route}/${entry.id}` }));
+      appendGtGroup(list, method, [intro, ...exercises], true);
     }
     markCurrentNav();
     syncGtGroups();
@@ -415,7 +422,7 @@
     const inGt = id === gtHub || id.startsWith(`${gtHub}/`);
     buildNav(id, inGt);
     toc.closest('aside').hidden = inGt;
-    if (id === 'ielts-gt' || /^ielts-gt\/(?:listening(?:\/[^/]+)?|reading|writing|speaking)$/.test(id)) {
+    if (id === 'ielts-gt' || /^ielts-gt\/(?:listening(?:\/[^/]+){0,2}|reading|writing|speaking)$/.test(id)) {
       listeningRequest = new AbortController();
       main.setAttribute('aria-busy', 'true');
       status.textContent = 'Đang tải IELTS General…';
@@ -429,7 +436,7 @@
         main.focus({ preventScroll: true });
       } catch (error) {
         if (current !== request || error.name === 'AbortError') return;
-        message('Chưa tải được bài thi', error.message);
+        message('Chưa tải được nội dung Listening', error.message);
         status.textContent = 'Có lỗi tải bài thi';
       } finally { if (current === request) main.removeAttribute('aria-busy'); }
       return;

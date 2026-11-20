@@ -67,6 +67,47 @@ async function speech(item, output) {
   } else throw new Error(`Unknown LISTENING_TTS provider: ${provider}`);
   if ((await stat(output)).size < 100) throw new Error('TTS returned empty audio');
 }
+export async function buildClip(script, output, label) {
+  const temporary = await mkdtemp(path.join(tmpdir(), 'alice-listening-audio-'));
+  try {
+    const pcmFiles = await mapConcurrent(script, 4, async (item, index) => {
+      const pcm = path.join(temporary, `${index}.pcm`);
+      if ('pause' in item) {
+        // Exact 24 kHz, mono, signed 16-bit PCM silence, including fractional pauses.
+        await writeFile(pcm, Buffer.alloc(Math.round(item.pause * 24000) * 2));
+      } else {
+        console.log(`TTS ${label} line ${index + 1} · ${item.voice}`);
+        const mp3 = path.join(temporary, `${index}.mp3`);
+        for (let attempt = 1; ; attempt++) {
+          try { await speech(item, mp3); break; }
+          catch (error) {
+            if (attempt >= 3) throw error;
+            console.warn(`TTS retry ${attempt}/2: ${error.message}`);
+            await new Promise(resolve => setTimeout(resolve, attempt * 1000));
+          }
+        }
+        await runFFmpeg(['-i', mp3, '-ar', '24000', '-ac', '1', '-f', 's16le', pcm]);
+      }
+      return pcm;
+    });
+    // Join PCM rather than MP3 frames: this avoids gaps/timestamps and preserves
+    // reading pauses across different voices. Stream to avoid whole-test buffers.
+    const combined = path.join(temporary, 'combined.pcm');
+    await writeFile(combined, Buffer.alloc(0));
+    for (const pcm of pcmFiles) await pipeline(createReadStream(pcm), createWriteStream(combined, { flags: 'a' }));
+    const encoded = path.join(temporary, 'part.mp3');
+    await runFFmpeg(['-f', 's16le', '-ar', '24000', '-ac', '1', '-i', combined, '-codec:a', 'libmp3lame', '-b:a', '48k', '-ac', '1', encoded]);
+    await mkdir(path.dirname(output), { recursive: true });
+    // Atomic replacement in the destination filesystem, only after all synthesis succeeds.
+    const staging = await mkdtemp(path.join(path.dirname(output), '.audio-stage-'));
+    try {
+      const staged = path.join(staging, 'audio.mp3');
+      await copyFile(encoded, staged);
+      await rename(staged, output);
+    } finally { await rm(staging, { recursive: true, force: true }); }
+    console.log(`WROTE ${path.relative(root, output)} (${(await stat(output)).size} bytes, mono 48 kbps)`);
+  } finally { await rm(temporary, { recursive: true, force: true }); }
+}
 export async function buildTest(file, { force = false } = {}) {
   const input = path.resolve(root, file);
   const relative = path.relative(root, input).replaceAll('\\', '/');
@@ -81,41 +122,8 @@ export async function buildTest(file, { force = false } = {}) {
     // Restrict writes to the declared audio trees, even for hand-edited JSON.
     if (!/^(?:assets\/audio\/ielts-gt\/listening|scripts\/fixtures\/audio)\/.+\.mp3$/.test(part.audio)) throw new Error(`Unsafe audio output: ${part.audio}`);
     try { if (!force && (await stat(output)).mtimeMs > sourceTime) { console.log(`SKIP ${part.audio} (up to date)`); continue; } } catch { /* Build absent outputs. */ }
-    const temporary = await mkdtemp(path.join(tmpdir(), 'alice-listening-audio-'));
-    try {
-      const pcmFiles = await mapConcurrent(part.script, 4, async (item, index) => {
-        const pcm = path.join(temporary, `${index}.pcm`);
-        if ('pause' in item) {
-          // Exact 24 kHz, mono, signed 16-bit PCM silence, including fractional pauses.
-          await writeFile(pcm, Buffer.alloc(Math.round(item.pause * 24000) * 2));
-        } else {
-          console.log(`TTS ${test.id} Part ${part.part} line ${index + 1} · ${item.voice}`);
-          const mp3 = path.join(temporary, `${index}.mp3`);
-          for (let attempt = 1; ; attempt++) {
-            try { await speech(item, mp3); break; }
-            catch (error) {
-              if (attempt >= 3) throw error;
-              console.warn(`TTS retry ${attempt}/2: ${error.message}`);
-              await new Promise(resolve => setTimeout(resolve, attempt * 1000));
-            }
-          }
-          await runFFmpeg(['-i', mp3, '-ar', '24000', '-ac', '1', '-f', 's16le', pcm]);
-        }
-        return pcm;
-      });
-      // Join PCM rather than MP3 frames: this avoids gaps/timestamps and preserves
-      // reading pauses across different voices. Stream to avoid whole-test buffers.
-      const combined = path.join(temporary, 'combined.pcm');
-      await writeFile(combined, Buffer.alloc(0));
-      for (const pcm of pcmFiles) await pipeline(createReadStream(pcm), createWriteStream(combined, { flags: 'a' }));
-      const encoded = path.join(temporary, 'part.mp3');
-      await runFFmpeg(['-f', 's16le', '-ar', '24000', '-ac', '1', '-i', combined, '-codec:a', 'libmp3lame', '-b:a', '48k', '-ac', '1', encoded]);
-      await mkdir(path.dirname(output), { recursive: true });
-      // Atomic replacement in the destination filesystem, only after all synthesis succeeds.
-      await copyFile(encoded, `${output}.tmp`);
-      await rename(`${output}.tmp`, output);
-      console.log(`WROTE ${part.audio} (${(await stat(output)).size} bytes, mono 48 kbps)`); built++;
-    } finally { await rm(temporary, { recursive: true, force: true }); }
+    await buildClip(part.script, output, `${test.id} Part ${part.part}`);
+    built++;
   }
   return built;
 }

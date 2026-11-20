@@ -1,0 +1,61 @@
+/* Skills exercises share Listening's glass panels, controls and feedback tokens. */
+.practice { min-width: 0; overflow-wrap: anywhere; }
+.practice-back, .practice-credits summary, .practice-transcript summary {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  width: fit-content;
+  max-width: 100%;
+}
+.practice-credits summary, .practice-transcript summary {
+  display: list-item;
+  line-height: 1.5;
+  padding-block: .65rem;
+  cursor: pointer;
+}
+.practice .aero-btn { min-height: 44px; max-width: 100%; white-space: normal; text-align: center; }
+.practice :is(a, button, input, select, summary):focus-visible {
+  outline: 2px solid var(--aqua-ink);
+  outline-offset: 2px;
+}
+.practice-list { display: flex; flex-wrap: wrap; gap: .65rem; list-style: none; padding: 0; }
+.practice-list li { margin: 0; min-width: 0; }
+.practice-clip { margin-block: 1rem; min-width: 0; }
+.practice .practice-audio { position: static; margin-block: .5rem; }
+.practice .practice-audio label { flex: 0 1 auto; min-width: 0; }
+.practice .practice-audio select { width: auto; }
+.practice-item {
+  margin: .8rem 0;
+  padding: .55rem .7rem .7rem;
+  min-inline-size: 0;
+  border: 1px solid var(--line-glass);
+  border-radius: var(--radius-s);
+}
+.practice-item legend { padding-inline: .3rem; max-width: 100%; font-weight: 700; }
+.practice-text { width: min(100%, 35rem); margin-inline: 0; }
+.practice-choice + .practice-choice { margin-block-start: .35rem; }
+.practice-score:not(:empty) {
+  padding: .65rem .85rem;
+  border: 1px solid var(--line-glass);
+  border-radius: var(--radius-s);
+  background: var(--glass-strong);
+  font-weight: 750;
+  font-variant-numeric: tabular-nums;
+}
+.practice-feedback { margin-block-start: .65rem; padding: .35rem .65rem; border-radius: var(--radius-s); }
+.practice-feedback p { margin: .3rem 0; }
+.practice-hint, .practice-credits { color: var(--ink-soft); }
+.practice-diff ins, .practice-mark--answer { background: var(--lt-hl-bg); color: var(--ink); }
+.practice-diff del, .practice-mark--distractor { background: var(--lt-wrong-bg); color: var(--lt-wrong-ink); }
+.practice-credits li a { display: inline-flex; align-items: center; min-height: 44px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .practice .lt-gap { transition: none; }
+}
+@media print {
+  .practice :is(.practice-audio, .lt-submit, .practice-back, [data-practice-action]) { display: none; }
+  .practice :is(.practice-item, .practice-score, .practice-feedback, mark, ins, del) {
+    background: white;
+    color: black;
+  }
+}

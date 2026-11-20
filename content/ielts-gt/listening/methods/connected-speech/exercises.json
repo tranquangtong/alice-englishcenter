@@ -1,0 +1,194 @@
+[
+  {
+    "id": "count-the-words",
+    "format": "word-count",
+    "title": "Đếm từ trong cụm nói nhanh",
+    "level": "Band 4.5",
+    "instructions": "Đếm số từ. Tính mỗi từ dạng rút gọn là một từ.",
+    "clips": [
+      {
+        "id": "spoken",
+        "script": [
+          {
+            "speaker": "Mia",
+            "voice": "en-GB-female-1",
+            "text": "Could you send it today?"
+          }
+        ],
+        "items": [
+          {
+            "id": "count",
+            "prompt": "Có bao nhiêu từ?",
+            "answer": "5",
+            "explanation": "Could / you / send / it / today. “Could you” và “send it” thường được nói liền.",
+            "rules": {
+              "numbers": "integer"
+            }
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/connected-speech/count-the-words-spoken.mp3"
+      }
+    ]
+  },
+  {
+    "id": "weak-have",
+    "format": "reduced-cloze",
+    "title": "Nghe dạng yếu của have",
+    "level": "Band 5.5",
+    "instructions": "Điền cụm từ bị khuyết. Bạn có thể dùng dạng rút gọn.",
+    "clips": [
+      {
+        "id": "early",
+        "script": [
+          {
+            "speaker": "Sam",
+            "voice": "en-US-male-1",
+            "text": "He must've left early."
+          }
+        ],
+        "items": [
+          {
+            "id": "modal",
+            "prompt": "He ___ left early.",
+            "answer": "must have",
+            "explanation": "“Have” được rút gọn thành /əv/ trong “must’ve”.",
+            "rules": {
+              "contractions": true
+            }
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/connected-speech/weak-have-early.mp3"
+      }
+    ]
+  },
+  {
+    "id": "teen-or-ty",
+    "format": "number-contrast",
+    "title": "Phân biệt 14 và 40",
+    "level": "Band 5.0",
+    "instructions": "Chọn con số bạn nghe được.",
+    "clips": [
+      {
+        "id": "tickets",
+        "script": [
+          {
+            "speaker": "Noah",
+            "voice": "en-AU-male-1",
+            "text": "I printed fourteen tickets for the morning tour."
+          }
+        ],
+        "items": [
+          {
+            "id": "number",
+            "prompt": "Số vé",
+            "answer": "fourteen",
+            "explanation": "“Fourteen” có hậu tố -teen.",
+            "choices": [
+              {
+                "id": "fourteen",
+                "label": "14"
+              },
+              {
+                "id": "forty",
+                "label": "40"
+              }
+            ]
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/connected-speech/teen-or-ty-tickets.mp3"
+      }
+    ]
+  },
+  {
+    "id": "word-endings",
+    "format": "ending-contrast",
+    "title": "Phân biệt đuôi -s và -ed",
+    "level": "Band 5.0",
+    "instructions": "Chọn chính xác từ được nói ở mỗi đoạn.",
+    "clips": [
+      {
+        "id": "ending-s",
+        "script": [
+          {
+            "speaker": "Mia",
+            "voice": "en-GB-female-1",
+            "text": "The next item is visitor badges."
+          }
+        ],
+        "items": [
+          {
+            "id": "plural",
+            "prompt": "Từ cuối câu",
+            "answer": "badges",
+            "explanation": "“Badges” có âm tiết cuối /ɪz/.",
+            "choices": [
+              {
+                "id": "badge",
+                "label": "badge"
+              },
+              {
+                "id": "badges",
+                "label": "badges"
+              }
+            ]
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/connected-speech/word-endings-ending-s.mp3"
+      },
+      {
+        "id": "ending-ed",
+        "script": [
+          {
+            "speaker": "Sam",
+            "voice": "en-US-male-1",
+            "text": "We walked past the reception desk."
+          }
+        ],
+        "items": [
+          {
+            "id": "past",
+            "prompt": "Động từ trong câu",
+            "answer": "walked",
+            "explanation": "Đuôi -ed trong “walked” phát âm /t/.",
+            "choices": [
+              {
+                "id": "walk",
+                "label": "walk"
+              },
+              {
+                "id": "walked",
+                "label": "walked"
+              }
+            ]
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/connected-speech/word-endings-ending-ed.mp3"
+      }
+    ]
+  }
+]

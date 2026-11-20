@@ -1,0 +1,182 @@
+[
+  {
+    "id": "booking-change",
+    "format": "trap-spotter",
+    "title": "Thay đổi lịch đặt phòng",
+    "level": "Band 4.5",
+    "instructions": "Chọn thông tin cuối cùng và cụm từ báo hiệu thay đổi.",
+    "clips": [
+      {
+        "id": "booking",
+        "script": [
+          {
+            "speaker": "Mia",
+            "voice": "en-GB-female-1",
+            "text": "For the induction, I have the small meeting room free on Monday. Shall I put your name down for that?"
+          },
+          {
+            "speaker": "Noah",
+            "voice": "en-AU-male-1",
+            "text": "Monday was my first choice. Actually, the new starters arrive on Tuesday, so please book it for Tuesday morning."
+          }
+        ],
+        "items": [
+          {
+            "id": "day",
+            "prompt": "Ngày được chọn cuối cùng",
+            "answer": "tuesday",
+            "explanation": "Người đặt chuyển sang sáng thứ Ba.",
+            "choices": [
+              {
+                "id": "monday",
+                "label": "Monday"
+              },
+              {
+                "id": "tuesday",
+                "label": "Tuesday"
+              },
+              {
+                "id": "friday",
+                "label": "Friday"
+              }
+            ],
+            "role": "fact"
+          },
+          {
+            "id": "pivot",
+            "prompt": "Từ báo hiệu thay đổi",
+            "answer": "actually",
+            "explanation": "“Actually” mở đầu phần điều chỉnh.",
+            "choices": [
+              {
+                "id": "first",
+                "label": "First choice"
+              },
+              {
+                "id": "actually",
+                "label": "Actually"
+              },
+              {
+                "id": "please",
+                "label": "Please"
+              }
+            ],
+            "role": "cue"
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/paraphrase/booking-change-booking.mp3"
+      }
+    ]
+  },
+  {
+    "id": "parking-rule",
+    "format": "paraphrase-match",
+    "title": "Quy định chỗ đỗ xe",
+    "level": "Band 5.0",
+    "instructions": "Chọn câu có cùng nghĩa với thông báo.",
+    "clips": [
+      {
+        "id": "parking",
+        "script": [
+          {
+            "speaker": "Noah",
+            "voice": "en-AU-male-1",
+            "text": "Staff can leave their cars in the rear car park only after six."
+          }
+        ],
+        "items": [
+          {
+            "id": "meaning",
+            "prompt": "Thông báo có nghĩa gì?",
+            "answer": "evening",
+            "explanation": "“Only after six” giới hạn thời gian được đỗ.",
+            "choices": [
+              {
+                "id": "evening",
+                "label": "Employees may park at the back after 6 p.m."
+              },
+              {
+                "id": "before",
+                "label": "Employees must leave by 6 p.m."
+              },
+              {
+                "id": "front",
+                "label": "Employees must park at the front."
+              }
+            ]
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/paraphrase/parking-rule-parking.mp3"
+      }
+    ]
+  },
+  {
+    "id": "pickup-point",
+    "format": "transcript-highlight",
+    "title": "Địa điểm nhận đồng phục",
+    "level": "Band 5.5",
+    "instructions": "Chọn địa điểm rồi kiểm tra phần được đánh dấu trong transcript.",
+    "clips": [
+      {
+        "id": "uniforms",
+        "script": [
+          {
+            "speaker": "Sam",
+            "voice": "en-US-male-1",
+            "text": "We used to hand out uniforms at the front desk. From this week, collect them from the room beside the staff kitchen."
+          }
+        ],
+        "items": [
+          {
+            "id": "location",
+            "prompt": "Bạn sẽ đến đâu?",
+            "answer": "kitchen",
+            "explanation": "“From this week” giới thiệu địa điểm mới.",
+            "choices": [
+              {
+                "id": "desk",
+                "label": "The front desk"
+              },
+              {
+                "id": "kitchen",
+                "label": "The room next to the staff kitchen"
+              },
+              {
+                "id": "office",
+                "label": "The manager’s office"
+              }
+            ]
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "highlights": [
+          {
+            "line": 0,
+            "text": "at the front desk",
+            "kind": "distractor"
+          },
+          {
+            "line": 0,
+            "text": "from the room beside the staff kitchen",
+            "kind": "answer"
+          }
+        ],
+        "audio": "assets/audio/listening/methods/paraphrase/pickup-point-uniforms.mp3"
+      }
+    ]
+  }
+]
