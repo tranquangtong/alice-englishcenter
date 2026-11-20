@@ -1447,10 +1447,18 @@ body:has(.update-toast:not([hidden])) { padding-bottom: var(--toast-space, 0px);
 
 @media (prefers-reduced-transparency: reduce), (forced-colors: active) {
   .site-header {
-    background: var(--glass-sheen) var(--glass-strong);
+    background: linear-gradient(var(--glass-strong), var(--glass-strong)) var(--sky-bottom);
     box-shadow: var(--glass-highlight), var(--shadow-soft);
     -webkit-backdrop-filter: none;
     backdrop-filter: none;
+  }
+}
+
+@media (forced-colors: active) and (max-width: 600px) {
+  .menu-toggle::after {
+    /* The icon is drawn with gradients, which forced colors would otherwise hide. */
+    forced-color-adjust: none;
+    --gel-ink: ButtonText;
   }
 }
 
