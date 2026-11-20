@@ -6,6 +6,10 @@ import { serveFixture } from './helpers/static-server.mjs';
 
 const home = '#/ielts-gt/listening';
 const catalog = JSON.parse(await readFile(new URL('../content/ielts-gt/listening/index.json', import.meta.url), 'utf8'));
+const methods = await Promise.all(catalog.methods.map(async method => ({
+  ...method,
+  exercises: JSON.parse(await readFile(new URL(`../${method.file}`, import.meta.url), 'utf8'))
+})));
 const cases = [
   ['dictation/booking-details', { surname: ' CLARKE ', phone: 'oh seven double two six one five' }],
   ['dictation/office-gap', { place: 'Reception Desk!' }],
@@ -20,7 +24,7 @@ const cases = [
   ['prediction/training-signup', { places: 'fourteen', 'booking-name': 'Clarke' }]
 ];
 
-test('Listening methods navigation, playback, grading, retry, persistence and layout', { timeout: 150000 }, async t => {
+test('Listening methods navigation, playback, grading, retry, persistence and layout', { timeout: 240000 }, async t => {
   const server = await serveFixture({ real: true });
   t.after(() => server.close());
   const browser = await launchBrowser();
@@ -31,6 +35,7 @@ test('Listening methods navigation, playback, grading, retry, persistence and la
   const errors = [];
   const stylesheetRequests = [];
   page.on('pageerror', error => errors.push(error.message));
+  page.on('console', message => { if (message.type() === 'error') errors.push(message.text()); });
   page.on('request', request => { if (request.url().includes('/practice.min.css')) stylesheetRequests.push(request.url()); });
   const css = page.locator('#practice-css');
   const score = page.locator('.practice-score');
@@ -63,6 +68,41 @@ test('Listening methods navigation, playback, grading, retry, persistence and la
     assert.match(await css.getAttribute('href'), /practice\.min\.css\?v=\d+/);
     await go();
     assert.equal(await css.count(), 0);
+  }
+
+  for (const method of methods) {
+    await go(method.id);
+    for (const exercise of method.exercises) {
+      const route = `${method.id}/${exercise.id}`;
+      assert.equal(await nav.locator(`[href="${home}/${route}"]`).textContent(), exercise.title);
+      const card = page.locator(`.practice-list a[href="${home}/${route}"]`);
+      await card.waitFor();
+      assert.ok((await card.innerText()).includes(exercise.level), route);
+    }
+    for (const exercise of method.exercises) {
+      const route = `${method.id}/${exercise.id}`;
+      await go(route);
+      const items = exercise.clips.flatMap(clip => clip.items);
+      if (method.id === 'prediction') {
+        for (const item of items) await page.locator(`#practice-${item.id}`).selectOption(item.expectedType);
+        await page.getByRole('button', { name: 'Sang bước nghe' }).click();
+      }
+      assert.deepEqual(await audio.evaluateAll(players => players.map(player => player.getAttribute('src'))),
+        exercise.clips.map(clip => clip.audio), route);
+      await audio.evaluateAll(players => {
+        for (const player of players) {
+          player.preload = 'metadata';
+          player.load();
+        }
+      });
+      await page.waitForFunction(() => Array.from(document.querySelectorAll('.practice audio')).every(player =>
+        player.error || (player.readyState >= HTMLMediaElement.HAVE_METADATA && Number.isFinite(player.duration))));
+      const broken = await audio.evaluateAll(players => players.filter(player => player.error || player.duration <= 0).map(player => player.src));
+      assert.deepEqual(broken, [], route);
+      await check.click();
+      assert.ok((await score.innerText()).endsWith(`Đáp án đúng 0/${items.length}`), route);
+      await retry.click();
+    }
   }
 
   for (const [route, answers, choice] of cases) {
@@ -133,6 +173,8 @@ test('Listening methods navigation, playback, grading, retry, persistence and la
   await page.reload();
   await page.getByRole('textbox').waitFor();
   assert.equal(await page.getByRole('textbox').inputValue(), 'Reception');
+  await go('dictation');
+  assert.match(await page.locator('.practice-list a[href$="/office-gap"]').innerText(), /Đang làm/);
 
   await go('dictation/everyday-tatoeba');
   await page.getByText('Nguồn và giấy phép audio').click();
@@ -140,12 +182,29 @@ test('Listening methods navigation, playback, grading, retry, persistence and la
   const artifacts = `test-artifacts/listening-methods/${browserEngine}`;
   await mkdir(artifacts, { recursive: true });
   await go('dictation/booking-details');
+  await page.locator('.practice-text').first().fill('Clark');
+  await check.click();
+  await page.locator('.practice-diff del').waitFor();
+  await go('dictation');
+  assert.match(await page.locator('.practice-list a[href$="/booking-details"]').innerText(), /Đã kiểm tra/);
   for (const width of [1600, 390]) {
     await page.setViewportSize({ width, height: 1000 });
     for (const theme of ['light', 'dark']) {
+      await go('dictation');
       await page.evaluate(value => localStorage.setItem('aec-theme', value), theme);
       await page.reload();
+      await page.locator('.practice-list').waitFor();
+      await page.waitForFunction(() => Boolean(document.querySelector('#practice-css')?.sheet));
+      assert.equal(await page.locator('html').getAttribute('data-theme'), theme);
+      const hubFits = await page.locator('.practice-list a').evaluateAll(cards => cards.every(card => {
+        const { left, right, height } = card.getBoundingClientRect();
+        return left >= 0 && right <= innerWidth && height >= 44;
+      }) && document.documentElement.scrollWidth <= innerWidth);
+      assert.ok(hubFits, `Hub layout at ${width}px in ${theme}`);
+      await page.screenshot({ path: `${artifacts}/hub-${width}-${theme}.png`, fullPage: true });
+      await go('dictation/booking-details');
       await page.locator('.practice-audio').waitFor();
+      await page.locator('.practice-diff del').waitFor();
       await page.waitForFunction(() => Boolean(document.querySelector('#practice-css')?.sheet));
       assert.equal(await page.locator('html').getAttribute('data-theme'), theme);
       const layout = await page.locator('.practice').evaluate(section => {
@@ -162,7 +221,7 @@ test('Listening methods navigation, playback, grading, retry, persistence and la
       });
       assert.ok(layout.documentWidth <= layout.viewport && layout.playHeight >= 44 && layout.answerHeight >= 44
         && layout.playBeforeAnswer && layout.answerFits, JSON.stringify({ width, theme, layout }));
-      await page.screenshot({ path: `${artifacts}/${width}-${theme}.png`, fullPage: true });
+      await page.screenshot({ path: `${artifacts}/feedback-${width}-${theme}.png`, fullPage: true });
     }
   }
   assert.deepEqual(errors, []);

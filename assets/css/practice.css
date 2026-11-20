@@ -1,62 +1,37 @@
-/* Listening skill-training pages (lazy-loaded on #/ielts-gt/listening/<method>[/<id>]). */
+/* Listening skill-training pages. Shared .lt-* and .aero-btn rules supply the Aero player and controls. */
 .practice { min-width: 0; overflow-wrap: anywhere; }
 .practice audio, .practice-score:empty, .practice-hint:empty { display: none; }
-.practice .aero-btn { min-height: 44px; max-width: 100%; white-space: normal; text-align: center; }
-.practice :is(a, button, input, select, summary):focus-visible {
-  outline: 2.5px solid var(--aqua-ink);
-  outline-offset: 2px;
-  box-shadow: var(--focus-glow);
-}
-
-/* Shared glass highlight & surface primitives */
-.practice > .practice-back,
-.practice-score,
-.practice-item,
-.practice-transcript,
-.practice-audio [data-speed],
-.practice-item > select[data-store="types"],
-[data-practice-action="replay"].aero-btn {
-  border: 1px solid var(--line-glass);
-  box-shadow: var(--glass-highlight);
-}
-.practice-list .aero-btn,
-.practice-audio,
-.practice:has([data-practice-action="retry"]) .practice-score {
-  background: var(--lt-hero-bg) var(--glass-strong);
-  box-shadow: var(--glass-highlight), var(--shadow-soft);
-}
-
-/* Hub back pill & exercise instruction strip */
-.practice > .practice-back {
+.practice .aero-btn { max-width: 100%; white-space: normal; }
+.practice :is(a, button, input, select, summary):focus-visible { border-radius: var(--radius-s); }
+.practice-choice:focus-within { outline: 2.5px solid var(--aqua-ink); outline-offset: 2px; }
+.practice .practice-back {
   display: inline-flex;
   align-items: center;
   gap: .4rem;
   min-height: 44px;
-  margin-bottom: .75rem;
   padding: .4rem .95rem;
+  border: 1px solid var(--line-glass);
   border-radius: var(--radius-pill);
-  background: var(--glass);
+  background: var(--glass-strong);
   color: var(--aqua-ink);
   font-size: .88rem;
   font-weight: 700;
   text-decoration: none;
+  box-shadow: var(--glass-highlight);
 }
-.practice > .practice-back::before { content: "←"; content: "←" / ""; }
-.practice > .practice-back:hover { background: var(--surface-hover); border-color: var(--aqua); color: var(--aqua-ink); }
+.practice > .practice-back { margin-bottom: .75rem; }
+.practice .practice-back::before { content: "←"; content: "←" / ""; }
+.practice .practice-back:hover { border-color: var(--aqua-ink); }
 .practice .lt-head > p {
   flex: 1 0 100%;
   margin: .15rem 0 0;
   padding: .52rem .88rem;
   border-radius: var(--radius-s);
-  border: 1px solid var(--line-glass);
   border-inline-start: 3px solid var(--aqua);
   background: var(--surface-tint);
   color: var(--ink);
-  font-size: .92rem;
-  line-height: 1.48;
 }
 
-/* Method hub: 2-column Aero glass exercise cards */
 .practice-list {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -64,251 +39,146 @@
   list-style: none;
   margin: .85rem 0 0;
   padding: 0;
-  counter-reset: ex;
 }
-.practice-list li { display: flex; margin: 0; min-width: 0; counter-increment: ex; }
+.practice-list li { display: flex; min-width: 0; margin: 0; }
+.practice-list .aero-btn,
+.practice-audio,
+.practice-score[data-outcome] {
+  background: var(--lt-hero-bg) var(--glass-strong);
+  box-shadow: var(--glass-highlight), var(--shadow-soft);
+}
 .practice-list .aero-btn {
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
-  gap: .7rem;
   width: 100%;
   min-height: 7.25rem;
-  padding: 1.15rem 1.25rem;
-  border-radius: var(--radius-m);
+  padding: 1rem 1.15rem;
   border-color: var(--glass-edge);
+  border-radius: var(--radius-m);
   color: var(--ink);
   font: 750 1.04rem/1.38 var(--font-heading);
   text-align: left;
-  transition: transform .18s, box-shadow .18s, border-color .18s;
 }
-.practice-list .aero-btn::before,
-.practice-list .aero-btn::after {
-  position: static;
-  inset: auto;
-  z-index: auto;
-  transform: none;
-  border-radius: var(--radius-pill);
-  font-family: var(--font);
-  font-weight: 800;
-}
-.practice-list .aero-btn::before {
-  content: "Bài " counter(ex);
-  padding: .18rem .68rem;
-  border: 1px solid var(--badge-edge);
-  background: var(--badge-bg);
-  color: var(--grass-ink);
-  font-size: .75rem;
-  letter-spacing: .04em;
-  text-transform: uppercase;
-}
-.practice-list .aero-btn::after {
-  content: "Luyện tập →";
-  margin-top: auto;
-  padding: .28rem .82rem;
+.practice-list .aero-btn:hover { border-color: var(--aqua-ink); }
+.practice-list .aero-btn::before, .practice-list .aero-btn::after { display: none; }
+.practice-card-meta { display: flex; flex-wrap: wrap; align-items: center; gap: .4rem; }
+.practice-card-meta span, .practice-card-progress, .practice-score[data-outcome]::before {
+  padding: .2rem .68rem;
   border: 1px solid var(--pill-active-edge);
-  background: var(--pill-active-bg);
+  border-radius: var(--radius-pill);
+  background: var(--pill-active-bg) var(--glass-strong);
   color: var(--pill-active-ink);
-  font-size: .82rem;
-  box-shadow: var(--glass-highlight);
+  font: 750 .8rem/1.4 var(--font);
 }
-.practice-list .aero-btn:hover {
-  color: var(--ink);
-  background: var(--lt-hero-bg) var(--glass-strong);
-  border-color: var(--aqua);
-  transform: translateY(-2px);
-  box-shadow: var(--glass-highlight), 0 12px 26px rgb(8 80 130 / .22);
+.practice-card-meta span:first-child, .practice-score[data-outcome="correct"]::before {
+  border-color: var(--badge-edge);
+  background: var(--badge-bg) var(--glass-strong);
+  color: var(--grass-ink);
 }
-.practice-list .aero-btn:hover::after { transform: none; border-color: var(--aqua); color: var(--aqua-ink); }
-.practice-list .aero-btn:active { transform: none; box-shadow: var(--glass-highlight), var(--shadow-soft); }
 
-/* Stage banner & graded score summary hero card */
 .practice-score {
-  display: flex;
-  align-items: center;
-  gap: .55rem;
   margin: 0 0 1rem;
   padding: .62rem 1rem;
-  border-radius: var(--radius-m);
-  border-color: var(--pill-active-edge);
+  border: 1px solid var(--pill-active-edge);
   border-inline-start: 4px solid var(--aqua);
-  background: var(--pill-active-bg);
+  border-radius: var(--radius-m);
+  background: var(--pill-active-bg) var(--glass-strong);
   color: var(--pill-active-ink);
   font-weight: 750;
   font-variant-numeric: tabular-nums;
 }
-.practice:has([data-practice-action="retry"]) .practice-score {
-  --b: var(--badge-bg);
-  --e: var(--badge-edge);
-  --i: var(--grass-ink);
-  --l: "✓ Hoàn thành";
-  flex-direction: column;
-  text-align: center;
+.practice-score[data-outcome] {
+  display: grid;
+  justify-items: center;
   gap: .4rem;
-  margin-block: 1rem 1.25rem;
-  padding: 1.25rem 1.35rem;
+  padding: 1.25rem;
   border-radius: var(--radius-l);
-  border: 1px solid var(--e);
   color: var(--aqua-ink);
   font: 800 clamp(1.15rem, 2.5vw, 1.45rem)/1.35 var(--font-heading);
+  text-align: center;
 }
-.practice:has([data-practice-action="retry"]):has(.lt-q--correct):has(.lt-q--wrong) .practice-score {
-  --b: var(--lt-amber-bg);
-  --e: var(--lt-amber-edge);
-  --i: var(--lt-amber-ink);
-  --l: "◐ Đạt một phần";
+.practice-score[data-outcome="correct"]::before { content: "✓ Hoàn thành" / ""; }
+.practice-score[data-outcome="partial"]::before {
+  content: "◐ Đạt một phần" / "";
+  border-color: var(--lt-amber-edge);
+  background: var(--lt-amber-bg) var(--glass-strong);
+  color: var(--lt-amber-ink);
 }
-.practice:has([data-practice-action="retry"]):not(:has(.lt-q--correct)) .practice-score {
-  --b: var(--lt-wrong-bg);
-  --e: var(--lt-wrong-edge);
-  --i: var(--lt-wrong-ink);
-  --l: "✗ Cần nghe lại";
-}
-.practice:has([data-practice-action="retry"]) .practice-score::before {
-  content: var(--l);
-  padding: .24rem .85rem;
-  border-radius: var(--radius-pill);
-  border: 1px solid var(--e);
-  background: var(--b);
-  color: var(--i);
-  font: 800 .78rem/1.3 var(--font);
-  letter-spacing: .04em;
-  text-transform: uppercase;
-  box-shadow: var(--glass-highlight);
+.practice-score[data-outcome="wrong"]::before {
+  content: "✗ Cần nghe lại" / "";
+  border-color: var(--lt-wrong-edge);
+  background: var(--lt-wrong-bg) var(--glass-strong);
+  color: var(--lt-wrong-ink);
 }
 
-/* Clip panel & Aero glass audio control bar */
-.practice-clip { margin-block: 1rem; min-width: 0; }
-.practice-clip > h2 { margin: 0 0 .55rem; padding: 0; font-size: 1.08rem; color: var(--aqua-ink); }
+.practice-clip { margin-block: 1rem; }
+.practice-clip > h2 { margin: 0 0 .55rem; padding: 0; font-size: 1.08rem; color: var(--ink); }
 .practice-audio {
   position: static;
   margin-block: .6rem 1rem;
   padding: .68rem .88rem;
   border-color: var(--pill-active-edge);
 }
-[data-practice-action="play"].aero-btn { flex: 0 0 auto; padding: .5rem 1.1rem; white-space: nowrap; }
-:is([data-practice-action="replay"], [data-practice-action="hint"], [data-practice-action="retry"]).aero-btn::before,
-:is([data-practice-action="replay"], [data-practice-action="hint"], [data-practice-action="retry"]).aero-btn::after { display: none; }
-[data-practice-action="replay"].aero-btn {
-  flex: 0 0 auto;
-  padding: .46rem .95rem;
-  background: var(--glass-strong);
-  color: var(--ink);
-  font-size: .88rem;
-  white-space: nowrap;
-}
-[data-practice-action="replay"].aero-btn:hover {
-  background: var(--pill-active-bg);
-  border-color: var(--pill-active-edge);
-  color: var(--pill-active-ink);
-  box-shadow: var(--glass-highlight), 0 3px 8px rgb(21 147 214 / .16);
-}
-.practice-audio > label { flex: 0 0 auto; min-width: 0; margin-inline-start: auto; }
-.practice-audio [data-speed],
-.practice-item > select[data-store="types"] {
-  -webkit-appearance: none;
-  appearance: none;
+.practice-audio > label { margin-inline-start: auto; }
+.practice-audio [data-speed] { width: auto; font-variant-numeric: tabular-nums; }
+.practice select.lt-gap {
+  min-height: 44px;
   margin: 0;
-  padding: .3rem 1.9rem .3rem .85rem;
   border-radius: var(--radius-pill);
-  background: var(--glass-strong) conic-gradient(from 315deg at 50% 100%, var(--ink) 90deg, #0000 90deg) right .68rem center / 10px 5px no-repeat;
-  color: var(--ink);
-  font-size: .86rem;
-  font-weight: 700;
   cursor: pointer;
 }
-.practice-audio [data-speed] { width: auto; min-width: 4.5rem; font-variant-numeric: tabular-nums; }
-.practice-audio [data-speed]:hover,
-.practice-item > select[data-store="types"]:hover { border-color: var(--aqua); background-color: var(--surface-hover); }
+.practice :is([data-practice-action="replay"], [data-practice-action="hint"], [data-practice-action="retry"]) {
+  border-color: var(--pill-active-edge);
+  background: var(--pill-active-bg) var(--glass-strong);
+  color: var(--pill-active-ink);
+  box-shadow: var(--glass-highlight);
+}
+.practice :is([data-practice-action="replay"], [data-practice-action="hint"], [data-practice-action="retry"]):hover {
+  border-color: var(--aqua-ink);
+}
+.practice [data-practice-action="hint"] { padding: .35rem .88rem; font-size: .82rem; }
+.practice [data-practice-action="retry"] { min-width: min(100%, 12rem); }
 
-/* Items, inputs, ghost hint chip, option tiles & prediction fields */
-.practice-item {
+.practice-item,
+.practice-transcript {
   margin: .9rem 0 0;
   padding: .85rem 1rem 1rem;
   min-inline-size: 0;
+  border: 1px solid var(--line-glass);
   border-radius: var(--radius-m);
   background: var(--surface-stripe);
-}
-.practice-item legend { padding-inline: .45rem; max-width: 100%; font-weight: 750; line-height: 1.45; color: var(--ink); }
-.practice-item:has(> .lt-q--correct) { border-color: var(--badge-edge); border-inline-start: 4px solid var(--grass); }
-.practice-item:has(> .lt-q--wrong) { border-color: var(--lt-wrong-edge); border-inline-start: 4px solid var(--lt-wrong); }
-.practice-item:has(> .lt-q--correct) .lt-gap { border-color: var(--badge-edge); border-bottom-color: var(--grass-ink); }
-.practice-item:has(> .lt-q--wrong) .lt-gap { border-color: var(--lt-wrong-edge); border-bottom-color: var(--lt-wrong-ink); }
-.practice .lt-gap[readonly] { background: var(--surface-stripe); color: var(--ink); }
-
-.practice-item:has(> .practice-text) { display: flex; flex-wrap: wrap; align-items: center; gap: .55rem .65rem; }
-.practice-text { flex: 1 1 16rem; width: min(100%, 35rem); max-width: 35rem; min-width: 0; margin: 0; }
-.practice-item[data-question="count"] .practice-text {
-  flex: 0 1 8rem;
-  max-width: 8rem;
-  text-align: center;
-  font-size: 1.15rem;
-  font-weight: 800;
-  font-variant-numeric: tabular-nums;
-}
-[data-practice-action="hint"].aero-btn {
-  flex: 0 0 auto;
-  padding: .35rem .88rem;
-  border-color: var(--line-glass);
-  background: var(--surface-tint);
-  color: var(--aqua-ink);
-  font-size: .82rem;
-  font-weight: 650;
-  white-space: nowrap;
-  box-shadow: none;
-}
-[data-practice-action="hint"].aero-btn:hover {
-  background: var(--pill-active-bg);
-  border-color: var(--pill-active-edge);
-  color: var(--pill-active-ink);
-  transform: none;
   box-shadow: var(--glass-highlight);
 }
-[data-practice-action="hint"].aero-btn:active { transform: translateY(1px); box-shadow: none; }
-.practice-hint:not(:empty) {
+.practice-item legend { padding-inline: .45rem; max-width: 100%; font-weight: 750; line-height: 1.45; }
+.practice-item:has(.lt-q--correct) { border-inline-start: 4px solid var(--grass-ink); }
+.practice-item:has(.lt-q--wrong) { border-inline-start: 4px solid var(--lt-wrong-ink); }
+.practice .lt-gap[readonly] { background: var(--surface-stripe); color: var(--ink); }
+.practice-item:has(> .practice-text) { display: flex; flex-wrap: wrap; align-items: center; gap: .55rem .65rem; }
+.practice-item > .practice-text { flex: 1 1 16rem; width: 100%; max-width: 35rem; min-width: 0; margin: 0; }
+.practice-item[data-question="count"] .practice-text { max-width: 8rem; text-align: center; }
+.practice-hint {
   flex: 1 0 100%;
   padding: .38rem .78rem;
   border-radius: var(--radius-s);
-  border: 1px solid var(--pill-active-edge);
   border-inline-start: 3px solid var(--aqua);
   background: var(--surface-tint);
-  color: var(--aqua-ink);
+  color: var(--ink);
   font-size: .85rem;
-  font-weight: 650;
 }
-
 .practice-choice {
   min-height: 48px;
-  padding: .62rem .95rem;
   background: var(--glass-sheen) var(--glass-strong);
-  box-shadow: var(--glass-highlight), 0 2px 6px rgb(0 50 90 / .06);
+  box-shadow: var(--glass-highlight);
 }
 .practice-choice + .practice-choice { margin-block-start: .48rem; }
-.practice-choice:hover,
-.practice-choice:has(input:focus-visible) { border-color: var(--aqua); box-shadow: var(--glass-highlight), 0 4px 12px rgb(21 147 214 / .16); }
-.practice-choice:has(input:checked) { border-color: var(--aqua); box-shadow: var(--glass-highlight), 0 0 0 2px rgb(21 147 214 / .22); }
-.practice-choice:has(input:disabled) { background: var(--surface-stripe); box-shadow: none; }
-.practice-item:has(> .lt-q--correct) .practice-choice:has(input:checked) { background: var(--badge-bg); border-color: var(--badge-edge); color: var(--grass-ink); box-shadow: var(--glass-highlight); }
-.practice-item:has(> .lt-q--wrong) .practice-choice:has(input:checked) { background: var(--lt-wrong-bg); border-color: var(--lt-wrong-edge); color: var(--lt-wrong-ink); box-shadow: var(--glass-highlight); }
-
-.practice-item > label:not(.practice-choice) { display: block; margin: .68rem 0 .28rem; font-size: .86rem; font-weight: 700; color: var(--ink-soft); }
-.practice-item > label:not(.practice-choice):first-of-type { margin-top: .12rem; }
-.practice-item > select[data-store="types"] { display: block; width: min(100%, 16rem); font-size: .92rem; }
-.practice-item > select[data-store="types"]:valid {
-  border-color: var(--pill-active-edge);
-  background: conic-gradient(from 315deg at 50% 100%, var(--pill-active-ink) 90deg, #0000 90deg) right .68rem center / 10px 5px no-repeat, var(--pill-active-bg) var(--glass-strong);
-  color: var(--pill-active-ink);
-  font-weight: 750;
-}
-.practice-item > select[data-store="types"]:valid:hover { border-color: var(--aqua); }
+.practice-choice:has(input:checked) { border-color: var(--aqua-ink); }
+.practice-item > label:not(.practice-choice) { display: block; margin: .68rem 0 .28rem; font-weight: 700; color: var(--ink-soft); }
+.practice-item > select[data-store="types"] { display: block; width: min(100%, 16rem); }
 .practice-item > input[data-store="guesses"] { display: block; width: min(100%, 28rem); margin: 0; }
 
-/* Feedback, word-level diff, transcript, credits & retry CTA */
-.practice-feedback {
+.practice .practice-feedback {
   flex: 1 0 100%;
-  display: flex;
-  flex-direction: column;
-  gap: .5rem;
   margin-block-start: .8rem;
   padding: .75rem 0 0;
   border: 0;
@@ -316,151 +186,73 @@
   border-radius: 0;
   background: transparent;
 }
-.practice-feedback > p { margin: 0; font-size: .9rem; line-height: 1.55; color: var(--ink); }
-.practice-feedback > p:first-child { padding: .45rem .8rem; border-radius: var(--radius-s); font-size: .92rem; font-weight: 700; line-height: 1.45; }
-.practice-feedback > p:first-child strong { color: inherit; }
-.practice-feedback.lt-q--correct > p:first-child { background: var(--badge-bg); border: 1px solid var(--badge-edge); color: var(--grass-ink); }
-.practice-feedback.lt-q--wrong > p:first-child { background: var(--lt-wrong-bg); border: 1px solid var(--lt-wrong-edge); color: var(--lt-wrong-ink); }
-.practice-feedback > p:nth-child(2):not(:last-child):not(.practice-diff) { padding: .34rem .72rem; border-radius: var(--radius-s); background: var(--surface-tint); font-weight: 600; }
-.practice-feedback > p:last-child:not(:first-child):not(.practice-diff) { padding: .55rem .8rem; border-radius: var(--radius-s); border: 1px solid var(--line-glass); background: var(--glass); }
-
-.practice-diff {
-  padding: .55rem .8rem;
+.practice-feedback > p { margin: 0 0 .5rem; font-size: .9rem; line-height: 1.55; }
+.practice-feedback > p:last-child { margin: 0; }
+.practice-feedback > p:first-child, .practice-diff {
+  padding: .45rem .8rem;
   border-radius: var(--radius-s);
-  border: 1px solid var(--line-glass);
   background: var(--glass-strong);
-  font-size: .94rem;
-  line-height: 1.85;
-  word-spacing: .1em;
 }
-.practice-diff :is(ins, del) { display: inline-block; padding: .02em .38em; border-radius: 6px; line-height: 1.45; }
-.practice-diff ins { border: 1px solid var(--badge-edge); background: var(--badge-bg); color: var(--grass-ink); font-weight: 750; text-decoration: none; }
-.practice-diff ins::before { content: "+"; content: "+" / ""; margin-inline-end: .2em; font-weight: 800; }
-.practice-diff del { border: 1px solid var(--lt-wrong-edge); background: var(--lt-wrong-bg); color: var(--lt-wrong-ink); font-weight: 650; text-decoration: line-through 1.5px; }
-
-.practice-transcript,
-details.practice-credits { margin-top: 1.1rem; padding: .2rem 1rem .75rem; border-radius: var(--radius-m); background: var(--glass); }
-details.practice-credits { border: 1px solid var(--line-glass); border-radius: var(--radius-s); background: var(--surface-stripe); font-size: .85rem; }
-.practice-transcript:not([open]), details.practice-credits:not([open]) { padding-bottom: .2rem; }
-.practice-transcript summary,
-.practice-credits summary {
-  display: flex;
-  align-items: center;
-  gap: .5rem;
-  min-height: 44px;
-  width: 100%;
-  padding-block: .45rem;
-  font-weight: 750;
-  line-height: 1.4;
-  cursor: pointer;
-  list-style: none;
+.practice-feedback > p:first-child { font-weight: 700; }
+.practice-feedback.lt-q--correct > p:first-child, .practice-diff ins {
+  border: 1px solid var(--badge-edge);
+  background: var(--badge-bg) var(--glass-strong);
+  color: var(--grass-ink);
 }
-.practice-transcript summary::-webkit-details-marker,
-.practice-credits summary::-webkit-details-marker { display: none; }
-.practice-transcript summary { font-family: var(--font-heading); color: var(--aqua-ink); }
-.practice-transcript summary::before,
-.practice-credits summary::before {
-  content: "";
-  width: .46rem;
-  height: .46rem;
-  flex-shrink: 0;
-  border-inline-end: 2px solid currentColor;
-  border-bottom: 2px solid currentColor;
-  transform: rotate(-45deg);
-  transition: transform .16s;
+.practice-feedback.lt-q--wrong > p:first-child, .practice-diff del, .practice-mark--distractor {
+  border: 1px solid var(--lt-wrong-edge);
+  background: var(--lt-wrong-bg) var(--glass-strong);
+  color: var(--lt-wrong-ink);
 }
-.practice-transcript[open] > summary::before,
-.practice-credits[open] > summary::before { transform: rotate(45deg); }
-.practice-transcript p { margin: .5rem 0; line-height: 1.72; }
-.practice-transcript p strong { margin-inline-end: .3rem; color: var(--aqua-ink); }
-.practice-mark--answer, .practice-mark--distractor { padding: .08em .35em; border-radius: 6px; font-weight: 650; }
+.practice-diff :is(ins, del), .practice mark { padding: .08em .35em; border-radius: 6px; font-weight: 650; }
+.practice-diff ins { text-decoration: none; }
+.practice-diff ins::before { content: "+" / ""; margin-inline-end: .2em; }
+.practice-diff del { text-decoration: line-through; }
 .practice-mark--answer { border-bottom: 2px solid var(--grass-ink); background: var(--lt-hl-bg); color: var(--ink); }
-.practice-mark--distractor { border-bottom: 2px solid var(--lt-wrong); background: var(--lt-wrong-bg); color: var(--lt-wrong-ink); }
-.practice-mark--answer small, .practice-mark--distractor small { font-size: .78em; font-weight: 800; }
 
-.practice-credits { color: var(--ink-soft); }
-p.practice-credits { margin-top: 1.1rem; font-size: .85rem; }
-.practice-credits ul { margin: .2rem 0 .35rem; padding-inline-start: 1.2rem; }
+.practice-transcript, details.practice-credits { padding: .2rem 1rem .75rem; background: var(--glass-strong); }
+details.practice-credits { border: 1px solid var(--line-glass); border-radius: var(--radius-s); }
+.practice :is(.practice-transcript, .practice-credits):not([open]) { padding-bottom: .2rem; }
+.practice :is(.practice-transcript, .practice-credits) summary {
+  min-height: 44px;
+  padding-block: .68rem;
+  color: var(--aqua-ink);
+  font-weight: 750;
+  cursor: pointer;
+}
+.practice-transcript p { margin: .5rem 0; line-height: 1.65; }
+.practice-credits { margin-top: 1.1rem; color: var(--ink-soft); font-size: .85rem; }
 .practice-credits li a { display: inline-flex; align-items: center; min-height: 44px; }
 
-[data-practice-action="retry"].aero-btn {
-  min-width: min(100%, 12rem);
-  padding: .68rem 1.75rem;
-  font-size: .96rem;
-  border-color: var(--pill-active-edge);
-  background: var(--pill-active-bg);
-  color: var(--pill-active-ink);
-  box-shadow: var(--glass-highlight), var(--shadow-pill);
-}
-[data-practice-action="retry"].aero-btn:hover {
-  border-color: var(--gel-edge);
-  background: var(--gel-hover-bg);
-  color: var(--gel-ink);
-  box-shadow: var(--gel-shadow);
-}
-
-/* Mobile-safe down to 360px / 390px */
 @media (max-width: 640px) {
   .practice-list { grid-template-columns: 1fr; gap: .75rem; }
-  .practice-list .aero-btn { min-height: 5.75rem; padding: .95rem 1rem; }
-  .practice-clip { padding: .85rem .75rem; }
+  .practice-clip, .practice-item { padding: .65rem .7rem .75rem; }
   .practice-audio { padding: .5rem .6rem; gap: .4rem; }
-  .practice-audio [data-practice-action].aero-btn { padding: .4rem .72rem; font-size: .82rem; }
-  .practice-audio > label { margin-inline-start: 0; gap: .35rem; font-size: .78rem; }
-  .practice-audio [data-speed] { min-width: 4rem; padding: .25rem 1.65rem .25rem .65rem; font-size: .82rem; }
-  .practice-item { margin-top: .75rem; padding: .65rem .7rem .75rem; border-radius: var(--radius-s); }
-  .practice-text,
-  .practice-item[data-question="count"] .practice-text,
-  .practice-item > select[data-store="types"],
-  .practice-item > input[data-store="guesses"] { flex: 1 0 100%; width: 100%; max-width: 100%; }
-  .practice-choice { padding: .55rem .75rem; }
-  .practice-transcript, details.practice-credits { padding-inline: .75rem; }
+  .practice-audio > label { margin-inline-start: 0; }
+  .practice-audio .aero-btn { padding-inline: .65rem; }
 }
-
-/* Reduced motion, reduced transparency, forced colors & print */
 @media (prefers-reduced-motion: reduce) {
-  .practice .lt-gap { transition: none; }
-  :is(.practice-list .aero-btn, [data-practice-action="replay"].aero-btn, [data-practice-action="retry"].aero-btn):hover { transform: none; }
+  .practice .aero-btn, .practice .aero-btn::after { transform: none; transition: none !important; }
 }
 @media (prefers-reduced-transparency: reduce) {
-  .practice-audio,
-  .practice-list .aero-btn,
-  .practice:has([data-practice-action="retry"]) .practice-score {
-    background: var(--sky-bottom);
-    -webkit-backdrop-filter: none;
-    backdrop-filter: none;
-  }
-  .practice-audio [data-speed],
-  .practice-item > select[data-store="types"] { background-color: var(--sky-bottom); }
+  .practice { --glass: var(--sky-bottom); --glass-strong: var(--sky-bottom); }
+  .practice-audio { -webkit-backdrop-filter: none; backdrop-filter: none; }
 }
 @media (forced-colors: active) {
-  .practice-audio [data-speed],
-  .practice-item > select[data-store="types"] {
-    forced-color-adjust: none;
-    background-color: Field;
-    border-color: ButtonBorder;
-    --ink: FieldText;
-    --pill-active-ink: FieldText;
-    --aqua-ink: Highlight;
-    --focus-glow: none;
-  }
-  .practice-item > select[data-store="types"]:valid {
-    background: Field conic-gradient(from 315deg at 50% 100%, FieldText 90deg, #0000 90deg) right .68rem center / 10px 5px no-repeat;
-    border-color: Highlight;
-  }
-  .practice :is(.practice-diff ins, .practice-diff del, .practice-mark--answer, .practice-mark--distractor) { border: 1px solid CanvasText; }
-  .practice-choice:has(input:checked) { border: 1px solid Highlight; }
+  .practice :is(a, button, input, select, summary):focus-visible, .practice-choice:focus-within { outline-color: Highlight; }
+  .practice .aero-btn::before, .practice .aero-btn::after { display: none; }
+  .practice-choice:has(input:checked) { border: 2px solid Highlight; }
+  .practice :is(ins, del, mark), .practice-card-progress { border: 1px solid CanvasText; }
 }
 @media print {
   .practice :is(.practice-audio, .lt-submit, .practice-back, [data-practice-action]) { display: none !important; }
-  .practice :is(.practice-list .aero-btn, .practice-item, .practice-score, .practice-feedback, .practice-feedback > p, .practice-transcript, details.practice-credits, .practice-choice, mark, ins, del) {
+  .practice-score[data-outcome]::before,
+  .practice :is(.aero-btn, .practice-item, .practice-score, .practice-feedback, .practice-feedback > p, .practice-transcript, .practice-choice, .practice-card-meta span, .practice-card-progress, details, mark, ins, del) {
     background: #fff !important;
     color: #000 !important;
     box-shadow: none !important;
     border-color: #bbb !important;
-    border-radius: 0 !important;
   }
   .practice-item, .practice-score, .practice-list li { break-inside: avoid; }
   .practice-diff ins, .practice-mark--answer { text-decoration: underline; }
-  .practice-diff del, .practice-mark--distractor { text-decoration: line-through; }
 }

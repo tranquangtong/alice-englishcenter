@@ -152,6 +152,7 @@
             "variants": [
               "£45",
               "45 pounds",
+              "forty-five pounds",
               "45.00"
             ],
             "explanation": "Ký hiệu “£___” cho thấy chỗ trống cần con số. Phí bảo dưỡng trọn gói là 45 bảng (forty-five pounds).",

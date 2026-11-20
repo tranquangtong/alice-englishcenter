@@ -1,6 +1,7 @@
 import { gradePractice, isChoice, isDictation, PREDICTIONS, validatePractice, wordDiff } from './listening-methods-core.js?v=1';
 
 const home = '#/ielts-gt/listening';
+const progressKey = (method, exercise) => `aec-listening-method:${location.pathname}:${method}:${exercise}`;
 const esc = value => String(value ?? '').replace(/[&<>"']/g, char =>
   ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
 const button = (action, label, primary = false) =>
@@ -14,10 +15,12 @@ async function read(file, signal, type) {
 
 export async function renderMethod({ method, exerciseId, content, signal }) {
   const href = `${home}/${method.id}`;
-  const intro = exerciseId ? null : await read(method.intro, signal, 'text');
-  const exercises = exerciseId ? await read(method.file, signal, 'json') : null;
+  const [exercises, intro] = await Promise.all([
+    read(method.file, signal, 'json'),
+    exerciseId ? null : read(method.intro, signal, 'text')
+  ]);
   if (signal.aborted) return;
-  const exercise = exercises?.find(entry => entry.id === exerciseId);
+  const exercise = exerciseId ? exercises.find(entry => entry.id === exerciseId) : null;
   if (exerciseId && !exercise) throw new Error('Không tìm thấy bài luyện');
   if (exercise && validatePractice(exercise, method.id).length) throw new Error('Dữ liệu bài luyện không hợp lệ');
 
@@ -31,8 +34,18 @@ export async function renderMethod({ method, exerciseId, content, signal }) {
     const outline = document.createElement('div');
     outline.innerHTML = window.DOMPurify.sanitize(window.marked.parse(intro), { SANITIZE_NAMED_PROPS: true });
     root.append(outline);
-    root.insertAdjacentHTML('beforeend', `<h2>Bài luyện</h2><ul class="practice-list">${method.exercises.map(entry =>
-      `<li><a class="lt-btn aero-btn" href="${href}/${encodeURIComponent(entry.id)}">${esc(entry.title)}</a></li>`).join('')}</ul>`);
+    root.insertAdjacentHTML('beforeend', `<h2>Bài luyện</h2><ul class="practice-list">${exercises.map((entry, index) => {
+      const predict = entry.format === 'predict-verify';
+      const state = readProgress(progressKey(method.id, entry.id), entry.clips.flatMap(clip => clip.items), predict);
+      const started = (predict && state.stage === 'answer')
+        || Object.keys(state.types).length || Object.values(state.guesses).some(value => value.trim())
+        || Object.values(state.answers).some(value => value.trim());
+      const progress = state.stage === 'result' ? '✓ Đã kiểm tra' : started ? 'Đang làm' : 'Chưa làm';
+      return `<li><a class="aero-btn" href="${href}/${encodeURIComponent(entry.id)}">
+        <span class="practice-card-meta"><span>Bài ${index + 1}</span><span>${esc(entry.level)}</span></span>
+        <span>${esc(entry.title)}</span><span class="practice-card-progress">${progress}</span>
+      </a></li>`;
+    }).join('')}</ul>`);
   }
   document.title = `${exercise?.title ?? method.title} · Alice English Center`;
   const style = document.createElement('link');
@@ -109,7 +122,7 @@ function mount(root, methodId, exercise, signal) {
   const predict = exercise.format === 'predict-verify';
   const items = exercise.clips.flatMap(clip => clip.items);
   const byId = new Map(items.map(item => [item.id, item]));
-  const key = `aec-listening-method:${location.pathname}:${methodId}:${exercise.id}`;
+  const key = progressKey(methodId, exercise.id);
   let state = readProgress(key, items, predict);
   const form = document.createElement('form');
   const score = document.createElement('p');
@@ -136,6 +149,8 @@ function mount(root, methodId, exercise, signal) {
     const predicting = state.stage === 'predict';
     const done = state.stage === 'result';
     const result = done ? gradePractice(exercise, state.answers, state.types) : null;
+    if (result) score.dataset.outcome = result.correct === result.total ? 'correct' : result.correct ? 'partial' : 'wrong';
+    else delete score.dataset.outcome;
     score.textContent = result
       ? `${predict ? `Dự đoán đúng ${result.predictionCorrect}/${result.predictionTotal} · ` : ''}Đáp án đúng ${result.correct}/${result.total}`
       : predict ? (predicting ? 'Bước 1 · Dự đoán' : 'Bước 2 · Nghe và kiểm chứng') : '';
