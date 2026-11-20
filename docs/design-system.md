@@ -46,11 +46,12 @@ Tránh: flat design phẳng lì, màu xám buồn, brutalism, neon cyberpunk, g�
 - **Gel button / pill:** gradient dọc aqua (sáng trên, đậm dưới), nửa trên có lớp bóng trắng
   (`::before`), bo pill, hover sáng hơn + nhấc nhẹ, active lún xuống.
 - **Nav item active:** dạng pill kính có vệt sáng, chữ aqua đậm.
-- **Header:** dải kính lỏng (*liquid glass*) nổi dạng pill — `blur` ≤ `1.5px` (hiện `1px`) + `saturate(125%)`
-  (không tăng `brightness`), phủ tint trắng trung tính dịu nhẹ (chỉ gợi ánh aqua mảnh trên viền đáy), tạo chất
-  kính bằng viền sáng 1px, vệt specular đỉnh, hiệu ứng uốn/đổ bóng cạnh trái-phải và bóng ngoài mềm để nội dung
-  cuộn bên dưới vẫn rõ nét (fallback `--glass-strong` khi thiếu `backdrop-filter` / `prefers-reduced-transparency`);
-  logo giọt nước bóng.
+- **Header:** dải kính lỏng (*liquid glass*) nổi dạng pill — `blur` `2–3px` (hiện `2.5px`) + `saturate(125%)`
+  (không tăng `brightness`), phủ tint trung tính dịu nhẹ để dải kính vẫn trong; kèm lớp **text scrim cục bộ**
+  mềm (`--glass-scrim`, ~40% trắng ở light / xanh navy đậm ở dark, tỏa mượt về trong suốt bằng `radial-gradient`)
+  chỉ đặt sau cụm thương hiệu và cụm nút điều khiển để chữ/nút luôn dễ đọc khi nội dung cuộn qua. Tạo chất
+  kính bằng viền sáng 1px, vệt specular đỉnh, hiệu ứng uốn/đổ bóng cạnh trái-phải và bóng ngoài mềm (fallback
+  `--glass-strong` khi thiếu `backdrop-filter` / `prefers-reduced-transparency`); logo giọt nước bóng.
 - **Bảng:** khung kính, hàng tiêu đề gradient aqua nhạt, sọc ngựa vằn rất nhẹ. Ưu tiên đọc **không cuộn
   ngang**: `table-layout: auto`, ô tự xuống dòng, bảng nhiều cột (≥ 5) chữ/padding gọn hơn. Khi vùng
   nội dung hẹp (≤ 42rem, tức màn hình ~720px; bảng ≥ 7 cột từ ≤ 50rem) → **dạng thẻ xếp chồng**: mỗi
