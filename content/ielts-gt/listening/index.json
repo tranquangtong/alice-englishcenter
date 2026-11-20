@@ -1,4 +1,7 @@
 {
+  "groups": [
+    { "id": "practice-tests", "title": "Practice Tests" }
+  ],
   "tests": [
     {
       "id": "gt-l-01",

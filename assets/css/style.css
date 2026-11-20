@@ -382,10 +382,6 @@ main,
   border-radius: var(--radius-l);
 }
 
-main {
-  background-image: var(--glass-card-bg);
-}
-
 @supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
   .sidebar,
   main,
@@ -455,15 +451,20 @@ main {
 }
 
 .menu-toggle::after,
-.aero-btn::after {
+.aero-btn::after,
+.sidebar a[aria-current="page"]::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(110deg, transparent 25%, rgb(255 255 255 / .32) 50%, transparent 75%);
   transform: translateX(-130%);
   pointer-events: none;
   z-index: -1;
   transition: transform .55s;
+}
+
+.menu-toggle::after,
+.aero-btn::after {
+  background: linear-gradient(110deg, transparent 25%, rgb(255 255 255 / .32) 50%, transparent 75%);
 }
 
 .menu-toggle:hover,
@@ -475,7 +476,8 @@ main {
 }
 
 .menu-toggle:hover::after,
-.aero-btn:hover::after {
+.aero-btn:hover::after,
+.sidebar a[aria-current="page"]:hover::after {
   transform: translateX(130%);
 }
 
@@ -669,8 +671,15 @@ main {
   margin: .22rem 0;
 }
 
-.sidebar a,
-.sidebar__soon {
+.sidebar button {
+  width: 100%;
+  font: inherit;
+  background: none;
+  text-align: start;
+  cursor: pointer;
+}
+
+.sidebar :is(a, button, .sidebar__soon) {
   display: flex;
   align-items: center;
   min-height: 44px;
@@ -691,22 +700,30 @@ main {
   font-weight: 800;
 }
 
-.sidebar .sidebar__sublist {
+.sidebar :is(.sidebar__groups, .sidebar__sublist) {
   padding-inline-start: .9rem;
 }
 
-.sidebar__soon small {
+.sidebar small {
   margin-inline-start: auto;
   padding: .15rem .4rem;
   border: 1px solid var(--badge-edge);
   border-radius: var(--radius-pill);
   background: var(--badge-bg);
-  color: var(--ink-soft);
   font-size: .72rem;
   white-space: nowrap;
 }
 
-.sidebar a:hover {
+.sidebar button span {
+  margin-inline-start: .4rem;
+  transition: transform .18s;
+}
+
+.sidebar button[aria-expanded="true"] span {
+  transform: rotate(90deg);
+}
+
+.sidebar :is(a, button):hover {
   background: var(--surface-hover);
   border-color: var(--glass-edge);
   color: var(--ink);
@@ -736,18 +753,7 @@ main {
 }
 
 .sidebar a[aria-current="page"]::after {
-  content: "";
-  position: absolute;
-  inset: 0;
   background: linear-gradient(110deg, transparent 20%, rgb(255 255 255 / .42) 50%, transparent 80%);
-  transform: translateX(-130%);
-  pointer-events: none;
-  z-index: -1;
-  transition: transform .55s;
-}
-
-.sidebar a[aria-current="page"]:hover::after {
-  transform: translateX(130%);
 }
 
 /* Table of Contents panel */
@@ -783,6 +789,7 @@ main {
 main {
   min-width: 0;
   padding: clamp(1.35rem, 3vw, 2.5rem);
+  background-image: var(--glass-card-bg);
 }
 
 /* Screen-reader-only live status (loading / errors); hidden on screen */
@@ -802,7 +809,6 @@ main {
    container so tables can switch to stacked cards by the space they really get. */
 article {
   min-width: 0;
-  max-width: none;
   container: article / inline-size;
 }
 
@@ -846,8 +852,7 @@ article li + li {
   margin-top: .42rem;
 }
 
-article ul li::marker,
-article ol li::marker {
+article :is(ul, ol) li::marker {
   color: var(--aqua-ink);
   font-weight: 700;
 }
