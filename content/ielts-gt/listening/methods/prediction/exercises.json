@@ -563,5 +563,693 @@
         "audio": "assets/audio/listening/methods/prediction/tool-library-talk-overview.mp3"
       }
     ]
+  },
+  {
+    "id": "hotel-checkin-form",
+    "format": "predict-verify",
+    "title": "Phiếu nhận phòng khách sạn",
+    "level": "Band 4.5",
+    "instructions": "Đọc mẫu phiếu nhận phòng khách sạn, dự đoán loại thông tin ở từng mục rồi nghe hội thoại để kiểm chứng.",
+    "clips": [
+      {
+        "id": "desk",
+        "script": [
+          {
+            "speaker": "Receptionist",
+            "voice": "en-GB-female-1",
+            "text": "Good afternoon, welcome to the Harbour View Hotel. Do you have a reservation with us?"
+          },
+          {
+            "speaker": "Guest",
+            "voice": "en-US-male-1",
+            "text": "Yes, I booked a double room for three nights under the name Donovan. That's D-O-N-O-V-A-N."
+          },
+          {
+            "speaker": "Receptionist",
+            "voice": "en-GB-female-1",
+            "text": "Thank you, Mr Donovan. Let me pull that up. I have you checking out on the eighteenth of October, is that right?"
+          },
+          {
+            "speaker": "Guest",
+            "voice": "en-US-male-1",
+            "text": "That's right, the eighteenth of October."
+          },
+          {
+            "speaker": "Receptionist",
+            "voice": "en-GB-female-1",
+            "text": "Lovely. You're in room four twelve on the fourth floor. Just to confirm, would you like breakfast added to your booking? It's served from six forty-five in the morning."
+          },
+          {
+            "speaker": "Guest",
+            "voice": "en-US-male-1",
+            "text": "Yes, please. Six forty-five is great because I have an early train."
+          },
+          {
+            "speaker": "Receptionist",
+            "voice": "en-GB-female-1",
+            "text": "No problem. Also, did you drive here today? We have an underground car park, and the overnight rate is sixteen pounds."
+          },
+          {
+            "speaker": "Guest",
+            "voice": "en-US-male-1",
+            "text": "Actually, I came by train, so I won't need parking. Could I request an extra pillow for the room, though?"
+          },
+          {
+            "speaker": "Receptionist",
+            "voice": "en-GB-female-1",
+            "text": "Of course, I'll have housekeeping send up an extra pillow right away. And the gym is on the mezzanine level if you'd like to use it."
+          }
+        ],
+        "items": [
+          {
+            "id": "guest-surname",
+            "prompt": "Guest surname: ___",
+            "answer": "Donovan",
+            "explanation": "Mục “Guest surname” báo trước cần điền họ (tên riêng). Khách hàng đọc và đánh vần họ là Donovan (D-O-N-O-V-A-N).",
+            "expectedType": "name"
+          },
+          {
+            "id": "checkout-date",
+            "prompt": "Check-out date: ___",
+            "answer": "18 October",
+            "variants": [
+              "18th October",
+              "October 18",
+              "October 18th",
+              "the 18th of October",
+              "18/10",
+              "eighteenth of October"
+            ],
+            "explanation": "“Check-out date” yêu cầu ngày trả phòng. Lễ tân và khách đều xác nhận ngày 18 tháng 10 (the eighteenth of October).",
+            "expectedType": "date"
+          },
+          {
+            "id": "room-number",
+            "prompt": "Room number: ___",
+            "answer": "412",
+            "variants": [
+              "four twelve",
+              "four one two"
+            ],
+            "explanation": "“Room number” yêu cầu con số. Khách được xếp ở phòng 412 (room four twelve).",
+            "expectedType": "number",
+            "rules": {
+              "numbers": "digits"
+            }
+          },
+          {
+            "id": "breakfast-start",
+            "prompt": "Breakfast served from: ___",
+            "answer": "6:45 am",
+            "variants": [
+              "6:45 a.m.",
+              "6.45 am",
+              "6.45 a.m.",
+              "6:45",
+              "6.45",
+              "06:45",
+              "six forty-five",
+              "six forty five"
+            ],
+            "explanation": "Cụm “served from” về bữa sáng báo hiệu khung giờ bắt đầu. Khách sạn phục vụ bữa sáng từ 6:45 sáng (six forty-five in the morning).",
+            "expectedType": "time"
+          },
+          {
+            "id": "extra-request",
+            "prompt": "Special room request: an extra ___",
+            "answer": "pillow",
+            "explanation": "Cụm “an extra ___” yêu cầu danh từ số ít. Khách không cần chỗ đậu xe mà yêu cầu thêm một chiếc gối (pillow).",
+            "expectedType": "noun"
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/prediction/hotel-checkin-form-desk.mp3"
+      }
+    ]
+  },
+  {
+    "id": "clinic-appointment-form",
+    "format": "predict-verify",
+    "title": "Phiếu đặt lịch khám phòng mạch",
+    "level": "Band 5.0",
+    "instructions": "Xem trước phiếu đặt lịch khám bệnh, chọn loại thông tin cần điền ở mỗi chỗ trống rồi nghe cuộc gọi để kiểm chứng.",
+    "clips": [
+      {
+        "id": "call",
+        "script": [
+          {
+            "speaker": "Receptionist",
+            "voice": "en-AU-female-1",
+            "text": "Greenway Medical Clinic, Sarah speaking. How can I help?"
+          },
+          {
+            "speaker": "Patient",
+            "voice": "en-GB-male-1",
+            "text": "Hello, I'm a new patient and I'd like to book a routine check-up with Dr Evans."
+          },
+          {
+            "speaker": "Receptionist",
+            "voice": "en-AU-female-1",
+            "text": "Sure. Dr Evans is away until Monday, so our earliest opening is on the ninth of September at ten fifteen in the morning."
+          },
+          {
+            "speaker": "Patient",
+            "voice": "en-GB-male-1",
+            "text": "The ninth of September at ten fifteen suits me fine."
+          },
+          {
+            "speaker": "Receptionist",
+            "voice": "en-AU-female-1",
+            "text": "Great. Could I take your full name and residential street, please?"
+          },
+          {
+            "speaker": "Patient",
+            "voice": "en-GB-male-1",
+            "text": "My name is Owen Marsh — that's M-A-R-S-H — and I live at twenty-eight Orchard Lane."
+          },
+          {
+            "speaker": "Receptionist",
+            "voice": "en-AU-female-1",
+            "text": "Got it, Orchard Lane. Because this is your first visit, please arrive early to complete a short health form at the North Entrance, not the pharmacy side."
+          },
+          {
+            "speaker": "Patient",
+            "voice": "en-GB-male-1",
+            "text": "Okay, the North Entrance. Should I bring anything besides my photo ID?"
+          },
+          {
+            "speaker": "Receptionist",
+            "voice": "en-AU-female-1",
+            "text": "Yes, please bring a list of any current medication, and let us know if you have a severe allergy to any antibiotics."
+          },
+          {
+            "speaker": "Patient",
+            "voice": "en-GB-male-1",
+            "text": "Will do. Is there a consultation fee for new patients?"
+          },
+          {
+            "speaker": "Receptionist",
+            "voice": "en-AU-female-1",
+            "text": "The standard appointment is sixty-five dollars, payable by card at the desk."
+          }
+        ],
+        "items": [
+          {
+            "id": "appointment-date",
+            "prompt": "Appointment date: ___",
+            "answer": "9 September",
+            "variants": [
+              "9th September",
+              "September 9",
+              "September 9th",
+              "the 9th of September",
+              "9/09",
+              "9/9",
+              "09/09",
+              "ninth of September"
+            ],
+            "explanation": "Mục “Appointment date” yêu cầu ngày tháng. Lịch trống sớm nhất với bác sĩ Evans là ngày 9 tháng 9 (the ninth of September).",
+            "expectedType": "date"
+          },
+          {
+            "id": "appointment-time",
+            "prompt": "Appointment time: ___",
+            "answer": "10:15 am",
+            "variants": [
+              "10:15 a.m.",
+              "10.15 am",
+              "10.15 a.m.",
+              "10:15",
+              "10.15",
+              "ten fifteen",
+              "ten fifteen am"
+            ],
+            "explanation": "“Appointment time” báo trước cần điền giờ. Cuộc hẹn được đặt lúc 10:15 sáng (ten fifteen in the morning).",
+            "expectedType": "time"
+          },
+          {
+            "id": "patient-surname",
+            "prompt": "Patient surname: ___",
+            "answer": "Marsh",
+            "explanation": "Mục “Patient surname” cần họ của bệnh nhân (tên riêng). Người gọi đọc và đánh vần là Marsh (M-A-R-S-H).",
+            "expectedType": "name"
+          },
+          {
+            "id": "clinic-entrance",
+            "prompt": "Check-in entrance: ___",
+            "answer": "North Entrance",
+            "variants": [
+              "the North Entrance"
+            ],
+            "explanation": "“Check-in entrance” hỏi địa điểm/lối vào làm thủ tục. Lễ tân lưu ý đi qua cổng North Entrance chứ không phải phía nhà thuốc.",
+            "expectedType": "place"
+          },
+          {
+            "id": "consultation-fee",
+            "prompt": "Standard consultation fee: $___",
+            "answer": "65",
+            "variants": [
+              "$65",
+              "65 dollars",
+              "sixty-five dollars",
+              "65.00"
+            ],
+            "explanation": "Ký hiệu “$___” cho biết cần điền một con số. Phí khám tiêu chuẩn là 65 đô la (sixty-five dollars).",
+            "expectedType": "number",
+            "rules": {
+              "numbers": "integer"
+            }
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/prediction/clinic-appointment-form-call.mp3"
+      }
+    ]
+  },
+  {
+    "id": "gym-membership-table",
+    "format": "predict-verify",
+    "title": "Bảng gói hội viên phòng gym",
+    "level": "Band 5.5",
+    "instructions": "Đọc bảng so sánh các gói thẻ hội viên phòng gym, dự đoán loại thông tin ở từng ô trống rồi nghe cuộc trao đổi để kiểm chứng.",
+    "clips": [
+      {
+        "id": "plans",
+        "script": [
+          {
+            "speaker": "Enquirer",
+            "voice": "en-US-female-1",
+            "text": "Hi, I moved into the neighbourhood last week and want to compare your two gym membership plans."
+          },
+          {
+            "speaker": "Advisor",
+            "voice": "en-AU-male-1",
+            "text": "Welcome! Our Off-Peak plan costs thirty-eight pounds a month. It gives you full access to the weights room and swimming pool until four thirty in the afternoon on weekdays."
+          },
+          {
+            "speaker": "Enquirer",
+            "voice": "en-US-female-1",
+            "text": "Okay, and what if I want to train after work?"
+          },
+          {
+            "speaker": "Advisor",
+            "voice": "en-AU-male-1",
+            "text": "Then the All-Hours plan is better. It includes evening classes and stays much quieter after eight o'clock. You also get one free session with a personal trainer to check your posture."
+          },
+          {
+            "speaker": "Enquirer",
+            "voice": "en-US-female-1",
+            "text": "Sounds useful. Do members have to pay a joining fee?"
+          },
+          {
+            "speaker": "Advisor",
+            "voice": "en-AU-male-1",
+            "text": "Normally yes, twenty-five pounds, but we waive it if you sign up before the twenty-second of March. Oh, and remember to bring a padlock for the changing-room lockers, as we don't sell them at reception."
+          },
+          {
+            "speaker": "Enquirer",
+            "voice": "en-US-female-1",
+            "text": "Good to know. Who should I ask for if I come in tomorrow to set up the card?"
+          },
+          {
+            "speaker": "Advisor",
+            "voice": "en-AU-male-1",
+            "text": "Ask for Ms Bennett at the membership desk — that's B-E-N-N-E-T-T — and she'll activate your key fob in five minutes."
+          }
+        ],
+        "items": [
+          {
+            "id": "offpeak-fee",
+            "prompt": "Off-Peak plan | Monthly fee: £___",
+            "answer": "38",
+            "variants": [
+              "£38",
+              "38 pounds",
+              "thirty-eight pounds",
+              "38.00"
+            ],
+            "explanation": "Ký hiệu “£___” báo hiệu cần điền số. Gói Off-Peak có giá 38 bảng mỗi tháng (thirty-eight pounds).",
+            "expectedType": "number",
+            "rules": {
+              "numbers": "integer"
+            }
+          },
+          {
+            "id": "offpeak-cutoff",
+            "prompt": "Off-Peak plan | Weekday access ends at: ___",
+            "answer": "4:30 pm",
+            "variants": [
+              "4:30 p.m.",
+              "4.30 pm",
+              "4.30 p.m.",
+              "4:30",
+              "4.30",
+              "16:30",
+              "four thirty",
+              "four thirty pm"
+            ],
+            "explanation": "Cụm “ends at” yêu cầu khung giờ. Gói Off-Peak cho phép tập các ngày trong tuần đến 4:30 chiều (four thirty in the afternoon).",
+            "expectedType": "time"
+          },
+          {
+            "id": "trainer-purpose",
+            "prompt": "All-Hours plan | Free trainer session to ___ posture",
+            "answer": "check",
+            "explanation": "Sau “to” và trước danh từ “posture” cần một động từ nguyên mẫu. Buổi tập miễn phí với huấn luyện viên giúp kiểm tra tư thế (check).",
+            "expectedType": "verb"
+          },
+          {
+            "id": "waiver-deadline",
+            "prompt": "Joining fee | Waived if joining before: ___",
+            "answer": "22 March",
+            "variants": [
+              "22nd March",
+              "March 22",
+              "March 22nd",
+              "the 22nd of March",
+              "22/03",
+              "22/3",
+              "twenty-second of March"
+            ],
+            "explanation": "Cụm “joining before” hỏi mốc ngày tháng. Phí gia nhập 25 bảng được miễn nếu đăng ký trước ngày 22 tháng 3 (the twenty-second of March).",
+            "expectedType": "date"
+          },
+          {
+            "id": "locker-item",
+            "prompt": "What to bring | Own ___ for changing-room lockers",
+            "answer": "padlock",
+            "explanation": "Sau “Own” cần một danh từ chỉ vật dụng. Nhiều người dễ đoán là “towel” hay “bottle”, nhưng nhân viên nhắc riêng hội viên phải tự mang ổ khóa tủ đồ (padlock) vì quầy lễ tân không bán.",
+            "expectedType": "noun"
+          },
+          {
+            "id": "membership-contact",
+            "prompt": "Card setup | Ask for Ms ___ at membership desk",
+            "answer": "Bennett",
+            "explanation": "Danh xưng “Ms” trước chỗ trống báo hiệu họ (tên riêng). Nhân viên phụ trách là Ms Bennett (B-E-N-N-E-T-T).",
+            "expectedType": "name"
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/prediction/gym-membership-table-plans.mp3"
+      }
+    ]
+  },
+  {
+    "id": "course-enrolment-notes",
+    "format": "predict-verify",
+    "title": "Ghi chú hướng dẫn nhập học",
+    "level": "Band 6.0",
+    "instructions": "Đọc khung ghi chú buổi định hướng đăng ký môn học, dự đoán loại từ còn thiếu theo ngữ pháp và ngữ cảnh rồi nghe để kiểm chứng.",
+    "clips": [
+      {
+        "id": "briefing",
+        "script": [
+          {
+            "speaker": "Coordinator",
+            "voice": "en-GB-narrator",
+            "text": "Good morning, everyone, and welcome to the autumn course enrolment briefing for part-time diploma students. Before the online portal opens next week, I want to walk you through the key deadlines, campus offices, and common mistakes that delay registration."
+          },
+          {
+            "speaker": "Coordinator",
+            "voice": "en-GB-narrator",
+            "text": "First, all core modules must be selected online by the fourteenth of August. Students sometimes assume they need to visit the Main Library to collect their printed timetable and student ID card, but this term the card desk has relocated to the West Pavilion beside the bus stop."
+          },
+          {
+            "speaker": "Coordinator",
+            "voice": "en-GB-narrator",
+            "text": "Second, if you plan to transfer credits from a previous college, you must upload certified copies of your transcripts rather than phone photographs. Unclear scans are the single biggest cause of rejected applications, so keep every document legible."
+          },
+          {
+            "speaker": "Coordinator",
+            "voice": "en-GB-narrator",
+            "text": "Third, each student may enrol in a maximum of three elective workshops per semester. Once classes start, you have a short window to switch an elective without paying a fee: any changes submitted after five fifteen on the second Friday will require written approval from your course adviser."
+          },
+          {
+            "speaker": "Coordinator",
+            "voice": "en-GB-narrator",
+            "text": "Finally, if you are unsure which level of academic writing matches your background, don't guess. Book a brief diagnostic chat with our study skills team so they can recommend the most suitable group."
+          }
+        ],
+        "items": [
+          {
+            "id": "enrolment-deadline",
+            "prompt": "Core modules · Online selection closes on: ___",
+            "answer": "14 August",
+            "variants": [
+              "14th August",
+              "August 14",
+              "August 14th",
+              "the 14th of August",
+              "14/08",
+              "fourteenth of August"
+            ],
+            "explanation": "Giới từ “on” đi với “closes” báo hiệu ngày tháng cụ thể. Hạn chọn môn bắt buộc trên cổng trực tuyến là ngày 14 tháng 8 (the fourteenth of August).",
+            "expectedType": "date"
+          },
+          {
+            "id": "id-card-office",
+            "prompt": "Student ID card · Collect from the ___",
+            "answer": "West Pavilion",
+            "variants": [
+              "the West Pavilion"
+            ],
+            "explanation": "Cụm “Collect from the ___” yêu cầu tên địa điểm. Sinh viên thường đoán là thư viện trung tâm (Main Library), nhưng bài nói đính chính bàn cấp thẻ kỳ này đã chuyển sang West Pavilion.",
+            "expectedType": "place"
+          },
+          {
+            "id": "transcript-quality",
+            "prompt": "Credit transfers · Uploaded documents must be ___",
+            "answer": "legible",
+            "explanation": "Sau “must be” cần một tính từ mô tả yêu cầu đối với tài liệu. Bản quét mờ là nguyên nhân hàng đầu khiến hồ sơ bị từ chối, nên tài liệu phải rõ chữ, đọc được (legible).",
+            "expectedType": "adjective"
+          },
+          {
+            "id": "elective-limit",
+            "prompt": "Elective workshops · Maximum of ___ per semester",
+            "answer": "3",
+            "explanation": "Cụm “Maximum of ___ per semester” yêu cầu con số. Mỗi học viên được đăng ký tối đa 3 lớp tự chọn mỗi học kỳ (three).",
+            "expectedType": "number",
+            "rules": {
+              "numbers": "integer"
+            }
+          },
+          {
+            "id": "adviser-action",
+            "prompt": "Study skills team · Can ___ the right writing group",
+            "answer": "recommend",
+            "explanation": "Sau động từ khuyết thiếu “Can” và trước tân ngữ “the right writing group” cần một động từ nguyên mẫu. Nhóm kỹ năng học tập sẽ đề xuất (recommend) nhóm phù hợp nhất.",
+            "expectedType": "verb"
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/prediction/course-enrolment-notes-briefing.mp3"
+      }
+    ]
+  },
+  {
+    "id": "volunteering-lecture-notes",
+    "format": "predict-verify",
+    "title": "Ghi chú bài giảng tình nguyện",
+    "level": "Band 6.5",
+    "instructions": "Đọc ghi chú bài giảng về hoạt động tình nguyện đô thị, dự đoán loại thông tin và thử đoán trước đáp án, rồi nghe để kiểm chứng.",
+    "clips": [
+      {
+        "id": "lecture",
+        "script": [
+          {
+            "speaker": "Lecturer",
+            "voice": "en-AU-female-1",
+            "text": "Good afternoon. In today's sociology lecture, we're examining why community volunteering programmes succeed or struggle in mid-sized cities. Our research team tracked twelve neighbourhood projects over two years, starting with a well-documented coastal clean-up network in Dunedin."
+          },
+          {
+            "speaker": "Lecturer",
+            "voice": "en-AU-female-1",
+            "text": "Before we look at the data, pause and think about what stops working adults from signing up. Most coordinators naturally assume that lack of time is the single biggest barrier. Surprisingly, our resident survey showed that time only ranked third; the top obstacle reported by respondents was actually lack of transport to evening venues once commuter buses thinned out."
+          },
+          {
+            "speaker": "Lecturer",
+            "voice": "en-AU-female-1",
+            "text": "Retention was our second focus. Projects that kept at least seventy-five percent of their volunteers for a full year shared one clear habit: new recruits were paired with an experienced mentor during their first month rather than handed a printed handbook and left alone."
+          },
+          {
+            "speaker": "Lecturer",
+            "voice": "en-AU-female-1",
+            "text": "Equally important was how tasks were communicated. Programmes that gave volunteers flexible shifts saw far higher attendance than rigid rosters, because people could fit short two-hour blocks around family commitments."
+          },
+          {
+            "speaker": "Lecturer",
+            "voice": "en-AU-female-1",
+            "text": "Finally, community centres that wanted to expand beyond retired residents needed to reshape their messaging. Instead of appealing only to duty, successful groups highlighted practical skills, such as first aid or event budgeting, that young applicants could later include on a job application."
+          }
+        ],
+        "items": [
+          {
+            "id": "case-study-city",
+            "prompt": "Research background · Coastal clean-up network in ___",
+            "answer": "Dunedin",
+            "explanation": "Giới từ “in” sau “network” báo hiệu tên địa điểm. Nhóm nghiên cứu bắt đầu khảo sát từ mạng lưới dọn sạch bờ biển tại thành phố Dunedin.",
+            "expectedType": "place"
+          },
+          {
+            "id": "main-barrier",
+            "prompt": "Barriers for working adults · Top obstacle is lack of ___",
+            "answer": "transport",
+            "variants": [
+              "transportation"
+            ],
+            "explanation": "Sau “lack of” chắc chắn là một danh từ. Trước khi nghe, dự đoán rất hợp lý là “time” (thiếu thời gian), nhưng dự đoán này sai: giảng viên giải thích thời gian chỉ đứng thứ ba trong khảo sát, còn rào cản lớn nhất thực tế là “transport” (phương tiện đi lại buổi tối). Cần luôn kiểm chứng lại giả định ban đầu theo dữ liệu trong bài nghe.",
+            "expectedType": "noun"
+          },
+          {
+            "id": "retention-rate",
+            "prompt": "Volunteer retention · Strong projects kept at least ___% for a year",
+            "answer": "75",
+            "variants": [
+              "75%",
+              "seventy-five percent",
+              "seventy five percent"
+            ],
+            "explanation": "Ký hiệu “___%” cho biết cần điền một con số. Các dự án hiệu quả giữ chân được ít nhất 75% tình nguyện viên trong suốt một năm (seventy-five percent).",
+            "expectedType": "number",
+            "rules": {
+              "numbers": "integer"
+            }
+          },
+          {
+            "id": "shift-style",
+            "prompt": "Scheduling · Offering ___ shifts improves attendance",
+            "answer": "flexible",
+            "explanation": "Giữa “Offering” và danh từ “shifts” cần một tính từ mô tả đặc điểm ca làm. Ca trực linh hoạt (flexible) giúp tỷ lệ tham gia cao hơn nhiều so với lịch cố định.",
+            "expectedType": "adjective"
+          },
+          {
+            "id": "cv-benefit",
+            "prompt": "Attracting younger volunteers · Practical skills they can ___ on a job application",
+            "answer": "include",
+            "explanation": "Sau động từ khuyết thiếu “can” cần một động từ nguyên mẫu. Các kỹ năng thực tế như sơ cứu hay lập ngân sách sự kiện là điều ứng viên trẻ có thể đưa vào hồ sơ xin việc (include).",
+            "expectedType": "verb"
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/prediction/volunteering-lecture-notes-lecture.mp3"
+      }
+    ]
+  },
+  {
+    "id": "recycling-rules-lecture",
+    "format": "predict-verify",
+    "title": "Ghi chú quy định tái chế rác",
+    "level": "Band 7.0",
+    "instructions": "Phân tích khung ghi chú bài giảng về hệ thống tái chế đô thị, dự đoán loại từ cần điền (và lưu ý các giả định dễ sai) rồi nghe để kiểm chứng.",
+    "clips": [
+      {
+        "id": "lecture",
+        "script": [
+          {
+            "speaker": "Lecturer",
+            "voice": "en-GB-male-1",
+            "text": "Welcome back to Urban Environmental Systems. Today's talk looks at why household recycling rules vary so widely across councils and where contamination most often occurs once trucks reach a sorting facility."
+          },
+          {
+            "speaker": "Lecturer",
+            "voice": "en-GB-male-1",
+            "text": "Let's start with kitchen food caddies, which many councils introduced alongside standard recycling bins. Planners almost always expect residents to opt out of food-waste collection because of unpleasant smells. Yet post-trial interviews across four boroughs found that odour was rarely the decisive factor; the main concern residents actually cited was pests, particularly flies and mice in warmer months."
+          },
+          {
+            "speaker": "Lecturer",
+            "voice": "en-GB-male-1",
+            "text": "Turning to mixed-recycling bins, soft plastic wrappers remain a stubborn problem. Unlike rigid bottles, thin plastic film tangles around the rotating shafts of sorting rollers, forcing crews to halt the conveyor belt up to four times each shift to cut it free."
+          },
+          {
+            "speaker": "Lecturer",
+            "voice": "en-GB-male-1",
+            "text": "Paper and cardboard have their own strict rules. Clean newspapers can be repulped into new packaging, whereas coffee cups lined with a waterproof coating must be kept separate because standard mills cannot dissolve that inner plastic layer."
+          },
+          {
+            "speaker": "Lecturer",
+            "voice": "en-GB-male-1",
+            "text": "Glass causes a different headache when it is collected mixed with paper. Tiny shards embed themselves into cardboard fibres, making the recovered pulp too brittle for reuse. For that reason, several Nordic municipalities, notably Gothenburg, replaced mixed bins with separate kerbside compartments and saw usable glass recovery climb sharply."
+          },
+          {
+            "speaker": "Lecturer",
+            "voice": "en-GB-male-1",
+            "text": "Finally, education campaigns work best when rules are printed directly on bin lids using clear icons rather than sent as long leaflets that households quickly discard."
+          }
+        ],
+        "items": [
+          {
+            "id": "compost-concern",
+            "prompt": "Food-waste caddies · Main resident concern was ___",
+            "answer": "pests",
+            "explanation": "Sau động từ “was” và cụm chủ ngữ “Main resident concern” cần một danh từ. Trước khi nghe, dự đoán rất hợp lý là “smell” hoặc “odour” (mùi hôi), nhưng dự đoán này sai: giảng viên chỉ rõ mùi hôi hiếm khi là yếu tố quyết định, mà nỗi lo chính của cư dân là “pests” (sâu bọ, ruồi chuột) vào mùa nóng.",
+            "expectedType": "noun"
+          },
+          {
+            "id": "roller-halt",
+            "prompt": "Soft plastic film · Tangles in rollers and forces crews to ___ the belt",
+            "answer": "halt",
+            "explanation": "Cấu trúc “forces crews to ___ the belt” cần động từ nguyên mẫu. Túi nilon mỏng quấn vào trục lăn buộc công nhân phải cho dừng băng chuyền (halt).",
+            "expectedType": "verb"
+          },
+          {
+            "id": "shift-stops",
+            "prompt": "Facility downtime · Belt stopped up to ___ times per shift",
+            "answer": "4",
+            "explanation": "Cụm “up to ___ times” chắc chắn yêu cầu con số. Băng chuyền phải dừng tới 4 lần mỗi ca (four times each shift).",
+            "expectedType": "number",
+            "rules": {
+              "numbers": "integer"
+            }
+          },
+          {
+            "id": "glass-pulp",
+            "prompt": "Mixed glass and paper · Shards make recovered pulp too ___",
+            "answer": "brittle",
+            "explanation": "Sau “too” trong cấu trúc “make + tân ngữ + too ___” cần một tính từ. Mảnh thủy tinh găm vào sợi giấy khiến bột giấy tái chế trở nên quá giòn (brittle).",
+            "expectedType": "adjective"
+          },
+          {
+            "id": "nordic-city",
+            "prompt": "Separate compartments · Successful Nordic example in ___",
+            "answer": "Gothenburg",
+            "explanation": "Cụm “Nordic example in ___” yêu cầu tên một địa điểm/thành phố. Bài giảng nêu ví dụ thành công tại Gothenburg.",
+            "expectedType": "place"
+          },
+          {
+            "id": "rule-placement",
+            "prompt": "Public education · Print clear icons directly on bin ___",
+            "answer": "lids",
+            "explanation": "Sau danh từ bổ nghĩa “bin” cần một danh từ chỉ bộ phận của thùng rác. Cách tuyên truyền hiệu quả nhất là in biểu tượng rõ ràng ngay trên nắp thùng (lids) thay vì phát tờ rơi dài.",
+            "expectedType": "noun"
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/prediction/recycling-rules-lecture-lecture.mp3"
+      }
+    ]
   }
 ]
