@@ -25,7 +25,7 @@ Tài liệu bàn giao nhanh để tiếp tục dự án trên macOS trong phiên
    python3 -m http.server 8000
    # hoặc: npx serve
    ```
-3. **Trình duyệt cho E2E test.** Trên macOS có Google Chrome, chạy `PW_CHANNEL=chrome node --test`. Trên Windows, `node --test` mặc định dùng Microsoft Edge.
+3. **Trình duyệt cho E2E test.** Dùng `npm run test:chrome` với Google Chrome và `npm run test:webkit` với WebKit (engine của Safari). Nếu chưa có WebKit, chạy `npx playwright-core install webkit`. Lệnh `node --test` mặc định dùng Microsoft Edge.
 
 ## 3. Quy trình bắt buộc trước mỗi commit
 
@@ -35,8 +35,10 @@ Tài liệu bàn giao nhanh để tiếp tục dự án trên macOS trong phiên
    node scripts/build-css.mjs
    node scripts/build-version.mjs
    node scripts/check.mjs
-   node --test
+   npm run test:chrome
+   npm run test:webkit
    ```
+   - Ảnh chụp và số đo E2E nằm trong `test-artifacts/<suite>/<engine>/`.
    - `scripts/check.mjs` sẽ **fail** nếu `*.min.css` hoặc `version.json` / `<meta name="aec-version">` bị cũ, thiếu, hoặc tổng CSS vượt budget (`<60 KB` raw / `<15 KB` gzip).
 3. Push lên `main` → GitHub Pages tự động deploy từ nhánh `main` / root (`.nojekyll`).
 

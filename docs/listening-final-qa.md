@@ -177,8 +177,9 @@ To reproduce source/generated e2e captures, set `CSS_QA_STYLESHEETS=source` and
 `node --test tests/listening-final.e2e.test.mjs`; unset the stylesheet override
 and choose a different output directory for the generated-file run. An optional
 `CSS_QA_SOURCE_DIRECTORY` selects a saved source directory relative to the repo.
-Compare directories with
-`node tests/helpers/compare-screenshots.mjs BEFORE AFTER REPORT.json`.
+Pass the engine subdirectories for `BEFORE` and `AFTER` when running
+`node tests/helpers/compare-screenshots.mjs BEFORE AFTER qa/report.json`.
+With `PW_BROWSER=webkit`, this writes `qa/webkit/report.json`.
 
 Earlier CSS follow-up validation: `node --test` **32/32 pass** (the original 30
 plus two CSS build tests); `git diff --check` clean. The former <40,000-byte raw

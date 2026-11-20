@@ -1,9 +1,8 @@
-import { chromium } from 'playwright-core';
-import { mkdtemp, readFile, readdir, rm, writeFile } from 'node:fs/promises';
+import { mkdtemp, mkdir, readFile, readdir, rm, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { browserChannel } from './browser.mjs';
+import { browserEngine, launchPersistentContext } from './browser.mjs';
 
 // Decode PNGs in the same browser used for QA, without another image package.
 export async function compareScreenshots(beforeDirectory, afterDirectory) {
@@ -12,7 +11,7 @@ export async function compareScreenshots(beforeDirectory, afterDirectory) {
   const watchdog = setTimeout(() => { void context?.close().catch(() => {}); }, 120000);
   watchdog.unref();
   try {
-    context = await chromium.launchPersistentContext(profile, { channel: browserChannel, headless: true, args: ['--no-sandbox'] });
+    context = await launchPersistentContext(profile);
     const page = await context.newPage();
     const report = [];
     const names = (await readdir(beforeDirectory)).filter(name => name.endsWith('.png')).sort();
@@ -62,6 +61,8 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
   const [, , before, after, output] = process.argv;
   if (!before || !after || !output) throw new Error('Usage: node tests/helpers/compare-screenshots.mjs BEFORE AFTER REPORT.json');
   const report = await compareScreenshots(before, after);
-  await writeFile(output, JSON.stringify(report, null, 2) + '\n');
+  const directory = path.join(path.dirname(output), browserEngine);
+  await mkdir(directory, { recursive: true });
+  await writeFile(path.join(directory, path.basename(output)), JSON.stringify(report, null, 2) + '\n');
   for (const entry of report) console.log(`${entry.name}: ${entry.changedPixels ?? 'size mismatch'} changed pixels (${entry.percent?.toFixed(6) ?? 'n/a'}%)`);
 }
