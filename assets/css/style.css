@@ -681,7 +681,8 @@ main {
   font-weight: 600;
   line-height: 1.35;
   text-decoration: none;
-  transition: background .18s, color .18s, border-color .18s, box-shadow .18s, transform .18s;
+  /* Switch ink immediately with the active gradient to keep the pill readable. */
+  transition: background .18s, border-color .18s, box-shadow .18s, transform .18s;
 }
 
 .sidebar .sidebar__overview {

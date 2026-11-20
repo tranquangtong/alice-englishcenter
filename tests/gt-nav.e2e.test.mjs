@@ -76,13 +76,16 @@ function measureMenuIcon(button) {
 }
 
 async function tapStickyToggle(page, toggle) {
+  // Use viewport coordinates so the input does not scroll the sticky header.
+  const { x, y } = await toggle.evaluate(button => {
+    const rect = button.getBoundingClientRect();
+    return { x: rect.left + rect.width / 2, y: rect.top + rect.height / 2 };
+  });
   if (webKitMobileOptions.hasTouch) {
-    await toggle.tap();
-    return;
+    await page.touchscreen.tap(x, y);
+  } else {
+    await page.mouse.click(x, y);
   }
-  // Keep Chromium's pointer click in viewport coordinates to avoid locator auto-scroll.
-  const { x, y, width, height } = await toggle.boundingBox();
-  await page.mouse.click(x + width / 2, y + height / 2);
 }
 
 test('Edge: compact GT header and route-specific sidebar at 1600, 390 and 360px', { timeout: 90000 }, async t => {
