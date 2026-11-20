@@ -585,5 +585,249 @@
         }
       }
     ]
+  },
+  {
+    "id": "delivery-details",
+    "format": "number-spelling",
+    "title": "Mã bưu điện, ngày và giá cước",
+    "level": "Band 4.5",
+    "instructions": "Nghe hai đoạn trao đổi giao hàng rồi điền chính xác tên riêng, mã bưu điện, số điện thoại, ngày và giá tiền.",
+    "clips": [
+      {
+        "id": "courier",
+        "script": [
+          {
+            "speaker": "Hannah",
+            "voice": "en-GB-female-1",
+            "text": "Good morning, Swift Parcel Desk. Can I take the recipient's surname, postcode, and mobile number?"
+          },
+          {
+            "speaker": "Jack",
+            "voice": "en-AU-male-1",
+            "text": "Sure. The surname is Bramwell — that's B, R, A, M, W, E, double L. The postcode is S, W, four, seven, P, L. And the mobile is oh seven eight double four, oh nine one five two."
+          }
+        ],
+        "items": [
+          {
+            "id": "recipient-surname",
+            "prompt": "Họ người nhận",
+            "answer": "Bramwell",
+            "explanation": "Nghe cụm “double L” ở cuối nên phải viết đủ hai chữ L trong Bramwell.",
+            "rules": {
+              "spelling": false
+            }
+          },
+          {
+            "id": "postcode",
+            "prompt": "Mã bưu điện",
+            "answer": "SW4 7PL",
+            "variants": [
+              "SW47PL"
+            ],
+            "explanation": "Mã bưu điện gồm phần đầu SW4 và phần sau 7PL (chấp nhận có hoặc không có khoảng trắng).",
+            "rules": {
+              "spelling": false
+            }
+          },
+          {
+            "id": "mobile",
+            "prompt": "Số điện thoại di động",
+            "answer": "0784409152",
+            "variants": [
+              "07844 09152",
+              "07844 091 52"
+            ],
+            "explanation": "“Oh” là số 0 ở cả hai vị trí và “double four” là 44, tạo thành dãy 0784409152.",
+            "rules": {
+              "numbers": "digits"
+            }
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/dictation/delivery-details-courier.mp3"
+      },
+      {
+        "id": "invoice",
+        "script": [
+          {
+            "speaker": "Hannah",
+            "voice": "en-GB-female-1",
+            "text": "Thanks. Your next-day slot is confirmed for the fourteenth of October. Including insurance, the total charge comes to thirty-eight pounds fifty."
+          },
+          {
+            "speaker": "Jack",
+            "voice": "en-AU-male-1",
+            "text": "Great, fourteenth of October and thirty-eight pounds fifty. I'll pay by card now."
+          }
+        ],
+        "items": [
+          {
+            "id": "delivery-date",
+            "prompt": "Ngày giao hàng",
+            "answer": "14 October",
+            "variants": [
+              "14th October",
+              "October 14",
+              "October 14th",
+              "the 14th of October",
+              "14th of October",
+              "fourteenth of October",
+              "14/10",
+              "14-10"
+            ],
+            "explanation": "Người nói đọc “the fourteenth of October”; có thể ghi 14 October, 14th October, October 14 hoặc 14/10."
+          },
+          {
+            "id": "total-charge",
+            "prompt": "Tổng chi phí (bảng Anh)",
+            "answer": "£38.50",
+            "variants": [
+              "38.50",
+              "38.5",
+              "£38.5",
+              "38.50 pounds",
+              "38 pounds 50",
+              "38 pounds 50 pence",
+              "thirty-eight pounds fifty",
+              "thirty eight pounds fifty"
+            ],
+            "explanation": "“Thirty-eight pounds fifty” tương ứng £38.50 (cũng chấp nhận 38.50 hoặc 38 pounds 50)."
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/dictation/delivery-details-invoice.mp3"
+      }
+    ]
+  },
+  {
+    "id": "shift-briefing",
+    "format": "gap-dictation",
+    "title": "Điền cụm từ khi họp giao ca",
+    "level": "Band 6.5",
+    "instructions": "Nghe ba thông báo ngắn ở nơi làm việc và đời sống rồi điền đúng cụm từ còn thiếu (chú ý đuôi -s, -ed và cụm danh từ).",
+    "clips": [
+      {
+        "id": "safety",
+        "script": [
+          {
+            "speaker": "Oliver",
+            "voice": "en-GB-male-1",
+            "text": "Before you start the afternoon shift, please inspect all emergency exits and log any faulty equipment in the maintenance folder."
+          }
+        ],
+        "items": [
+          {
+            "id": "exits",
+            "prompt": "Before you start the afternoon shift, please inspect all ___.",
+            "answer": "emergency exits",
+            "explanation": "Chú ý dạng số nhiều “exits” vì đứng sau “all”."
+          },
+          {
+            "id": "equipment",
+            "prompt": "Log any ___ in the maintenance folder.",
+            "answer": "faulty equipment",
+            "explanation": "“Faulty equipment” là thiết bị hỏng; “equipment” không đếm được nên không thêm -s."
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/dictation/shift-briefing-safety.mp3"
+      },
+      {
+        "id": "schedule",
+        "script": [
+          {
+            "speaker": "Rachel",
+            "voice": "en-US-female-1",
+            "text": "Our payroll office has revised the overtime deadlines, so temporary staff must submit signed timesheets by fifteen minutes past four on Friday."
+          }
+        ],
+        "items": [
+          {
+            "id": "timesheets",
+            "prompt": "Temporary staff must submit ___ before the deadline.",
+            "answer": "signed timesheets",
+            "variants": [
+              "signed time sheets"
+            ],
+            "explanation": "Chú ý âm cuối /d/ ở “signed” và số nhiều “timesheets” (cũng chấp nhận tách thành time sheets)."
+          },
+          {
+            "id": "cutoff-time",
+            "prompt": "The cutoff is ___ on Friday.",
+            "answer": "fifteen minutes past four",
+            "variants": [
+              "15 minutes past four",
+              "4:15",
+              "4.15",
+              "4:15 pm",
+              "4:15 p.m.",
+              "4.15 pm",
+              "4.15 p.m.",
+              "16:15",
+              "quarter past four",
+              "four fifteen"
+            ],
+            "explanation": "“Fifteen minutes past four” là 4:15 (chấp nhận cả cách viết chữ và viết số như 4:15, 4.15 hoặc 16:15)."
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/dictation/shift-briefing-schedule.mp3"
+      },
+      {
+        "id": "commute",
+        "script": [
+          {
+            "speaker": "Chloe",
+            "voice": "en-AU-female-1",
+            "text": "Due to roadworks outside the station, the shuttle bus won't stop at the north entrance until the resurfacing is completed next Thursday."
+          }
+        ],
+        "items": [
+          {
+            "id": "shuttle-stop",
+            "prompt": "The shuttle bus ___ at the north entrance during roadworks.",
+            "answer": "won't stop",
+            "variants": [
+              "will not stop"
+            ],
+            "explanation": "Nghe dạng phủ định rút gọn “won't stop” (tương đương “will not stop”).",
+            "rules": {
+              "contractions": true
+            }
+          },
+          {
+            "id": "resurfacing",
+            "prompt": "Normal service resumes once ___ next Thursday.",
+            "answer": "the resurfacing is completed",
+            "variants": [
+              "resurfacing is completed"
+            ],
+            "explanation": "Chú ý cụm bị động “is completed” với đuôi -ed và từ “resurfacing” (trải lại mặt đường)."
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/dictation/shift-briefing-commute.mp3"
+      }
+    ]
   }
 ]

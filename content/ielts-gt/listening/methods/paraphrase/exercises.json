@@ -178,5 +178,461 @@
         "audio": "assets/audio/listening/methods/paraphrase/pickup-point-uniforms.mp3"
       }
     ]
+  },
+  {
+    "id": "daily-notices",
+    "format": "paraphrase-match",
+    "title": "Thông báo ngắn hằng ngày",
+    "level": "Band 4.0",
+    "instructions": "Nghe từng thông báo ngắn và chọn câu diễn đạt lại đúng ý nhất.",
+    "clips": [
+      {
+        "id": "library",
+        "script": [
+          {
+            "speaker": "Mia",
+            "voice": "en-GB-female-1",
+            "text": "Visitors can borrow study rooms free of charge, as long as they book at the help desk first."
+          }
+        ],
+        "items": [
+          {
+            "id": "room-fee",
+            "prompt": "Thông báo cho biết điều gì về phòng tự học?",
+            "answer": "no-fee-book",
+            "explanation": "“Free of charge” đồng nghĩa với “costs nothing” và “book at the help desk first” tương ứng “reserve it in advance”.",
+            "choices": [
+              {
+                "id": "pay-desk",
+                "label": "Visitors must pay a small fee at the help desk."
+              },
+              {
+                "id": "no-fee-book",
+                "label": "Using a study room costs nothing if you reserve it in advance."
+              },
+              {
+                "id": "no-booking",
+                "label": "Visitors can walk into any study room without booking."
+              }
+            ]
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/paraphrase/daily-notices-library.mp3"
+      },
+      {
+        "id": "clinic",
+        "script": [
+          {
+            "speaker": "David",
+            "voice": "en-US-male-1",
+            "text": "Our dental clinic will shut two hours earlier than usual this Friday for staff training."
+          }
+        ],
+        "items": [
+          {
+            "id": "closing-time",
+            "prompt": "Phòng khám có thay đổi gì vào thứ Sáu này?",
+            "answer": "close-early",
+            "explanation": "“Shut two hours earlier than usual” được diễn giải thành “close before its normal time”.",
+            "choices": [
+              {
+                "id": "open-late",
+                "label": "It will stay open two hours longer than normal."
+              },
+              {
+                "id": "closed-all-day",
+                "label": "It will not open at all on Friday."
+              },
+              {
+                "id": "close-early",
+                "label": "It will close before its normal time."
+              }
+            ]
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/paraphrase/daily-notices-clinic.mp3"
+      },
+      {
+        "id": "gym",
+        "script": [
+          {
+            "speaker": "Chloe",
+            "voice": "en-AU-female-1",
+            "text": "Please bring a clean towel to every exercise class, because we no longer lend them out at reception."
+          }
+        ],
+        "items": [
+          {
+            "id": "towel-rule",
+            "prompt": "Hội viên cần lưu ý điều gì khi đi tập?",
+            "answer": "own-towel",
+            "explanation": "“No longer lend them out” có nghĩa là quầy lễ tân không còn cho mượn khăn nữa, nên hội viên phải tự mang theo.",
+            "choices": [
+              {
+                "id": "own-towel",
+                "label": "Members need to take their own towel to class."
+              },
+              {
+                "id": "borrow-reception",
+                "label": "Members can borrow a clean towel at reception."
+              },
+              {
+                "id": "buy-towel",
+                "label": "Members must buy a new towel before each session."
+              }
+            ]
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/paraphrase/daily-notices-gym.mp3"
+      }
+    ]
+  },
+  {
+    "id": "spoken-traps",
+    "format": "trap-spotter",
+    "title": "Bẫy tự sửa và phủ định ẩn",
+    "level": "Band 6.0",
+    "instructions": "Nghe ba tình huống bẫy (tự sửa lời, phủ định ẩn, lặp từ khóa khi đổi ý). Với mỗi đoạn, chọn thông tin đúng cuối cùng và cụm từ báo hiệu.",
+    "clips": [
+      {
+        "id": "self-correction",
+        "script": [
+          {
+            "speaker": "Ben",
+            "voice": "en-GB-male-1",
+            "text": "Have you got the room number for the client workshop? I wrote down Room 214 on my calendar."
+          },
+          {
+            "speaker": "Rachel",
+            "voice": "en-US-female-1",
+            "text": "Yes, it's Room 214 — oh, wait, I'm looking at last month's sheet. Sorry, my mistake: they moved us upstairs to Room 318 because of the bigger projector."
+          }
+        ],
+        "items": [
+          {
+            "id": "workshop-room",
+            "prompt": "Buổi hội thảo cuối cùng diễn ra ở phòng nào?",
+            "answer": "room-318",
+            "explanation": "Người nói đọc nhầm tờ lịch tháng trước (Room 214) rồi tự đính chính sang Room 318.",
+            "choices": [
+              {
+                "id": "room-214",
+                "label": "Room 214"
+              },
+              {
+                "id": "room-318",
+                "label": "Room 318"
+              },
+              {
+                "id": "room-314",
+                "label": "Room 314"
+              }
+            ],
+            "role": "fact"
+          },
+          {
+            "id": "correction-cue",
+            "prompt": "Cụm từ báo hiệu người nói đang tự sửa sai",
+            "answer": "sorry-mistake",
+            "explanation": "“Oh, wait… Sorry, my mistake” báo hiệu thông tin trước đó bị nhầm và sắp có đáp án đúng.",
+            "choices": [
+              {
+                "id": "my-calendar",
+                "label": "On my calendar"
+              },
+              {
+                "id": "sorry-mistake",
+                "label": "Oh, wait / Sorry, my mistake"
+              },
+              {
+                "id": "bigger-projector",
+                "label": "Bigger projector"
+              }
+            ],
+            "role": "cue"
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/paraphrase/spoken-traps-self-correction.mp3"
+      },
+      {
+        "id": "hidden-negation",
+        "script": [
+          {
+            "speaker": "Tessa",
+            "voice": "en-AU-female-1",
+            "text": "Should I still drop my paper expense receipts into the blue tray at accounts?"
+          },
+          {
+            "speaker": "Oliver",
+            "voice": "en-GB-male-1",
+            "text": "We hardly ever process paper forms nowadays. Rather than leaving receipts in the tray, you'll need to scan and upload them through the staff portal."
+          }
+        ],
+        "items": [
+          {
+            "id": "expense-method",
+            "prompt": "Nhân viên hiện nộp hóa đơn chi phí bằng cách nào?",
+            "answer": "online-portal",
+            "explanation": "“Hardly ever” (hầu như không còn) và “Rather than” (thay vì) phủ định việc nộp bản giấy; cách đúng là tải lên cổng nhân viên.",
+            "choices": [
+              {
+                "id": "blue-tray",
+                "label": "Leave paper receipts in the blue tray"
+              },
+              {
+                "id": "online-portal",
+                "label": "Upload scanned receipts on the staff portal"
+              },
+              {
+                "id": "post-accounts",
+                "label": "Mail paper forms directly to accounts"
+              }
+            ],
+            "role": "fact"
+          },
+          {
+            "id": "negation-cue",
+            "prompt": "Cụm từ mang nghĩa phủ định ẩn loại bỏ cách cũ",
+            "answer": "hardly-rather",
+            "explanation": "“Hardly ever” và “Rather than” không dùng từ “not” nhưng bác bỏ lựa chọn nộp hóa đơn giấy.",
+            "choices": [
+              {
+                "id": "still-drop",
+                "label": "Still drop"
+              },
+              {
+                "id": "blue-tray-cue",
+                "label": "In the blue tray"
+              },
+              {
+                "id": "hardly-rather",
+                "label": "Hardly ever / Rather than"
+              }
+            ],
+            "role": "cue"
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/paraphrase/spoken-traps-hidden-negation.mp3"
+      },
+      {
+        "id": "keyword-echo",
+        "script": [
+          {
+            "speaker": "Sam",
+            "voice": "en-US-male-1",
+            "text": "Are we still booking express courier delivery for the trade-fair leaflets?"
+          },
+          {
+            "speaker": "Mia",
+            "voice": "en-GB-female-1",
+            "text": "I did ask for an express courier quote earlier, and express courier is still the default on the order form. On second thoughts, since the event was put back a week, standard post will get them there in plenty of time and save half the cost."
+          }
+        ],
+        "items": [
+          {
+            "id": "shipping-choice",
+            "prompt": "Nhóm quyết định chọn hình thức giao tài liệu nào?",
+            "answer": "regular-mail",
+            "explanation": "Dù cụm “express courier” được nhắc lại ba lần, người nói đổi ý sang “standard post” (tương đương regular mail service) vì sự kiện bị lùi một tuần.",
+            "choices": [
+              {
+                "id": "express-courier",
+                "label": "Express courier delivery"
+              },
+              {
+                "id": "regular-mail",
+                "label": "Regular mail service"
+              },
+              {
+                "id": "collect-person",
+                "label": "Collecting the leaflets in person"
+              }
+            ],
+            "role": "fact"
+          },
+          {
+            "id": "mind-change-cue",
+            "prompt": "Cụm từ cho thấy người nói đã đổi ý dù lặp lại từ khóa cũ",
+            "answer": "second-thoughts",
+            "explanation": "“On second thoughts” (nghĩ lại thì…) báo hiệu người nói bác bỏ phương án “express courier” vừa nhắc tới.",
+            "choices": [
+              {
+                "id": "order-form",
+                "label": "Default on the order form"
+              },
+              {
+                "id": "second-thoughts",
+                "label": "On second thoughts"
+              },
+              {
+                "id": "plenty-time",
+                "label": "In plenty of time"
+              }
+            ],
+            "role": "cue"
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/paraphrase/spoken-traps-keyword-echo.mp3"
+      }
+    ]
+  },
+  {
+    "id": "policy-highlights",
+    "format": "transcript-highlight",
+    "title": "Soi bẫy trong thông báo nội bộ",
+    "level": "Band 6.5",
+    "instructions": "Nghe hai đoạn thông báo và trao đổi ở công ty, chọn đáp án đúng rồi đối chiếu phần Đáp án và Bẫy được đánh dấu trong lời thoại.",
+    "clips": [
+      {
+        "id": "canteen",
+        "script": [
+          {
+            "speaker": "Oliver",
+            "voice": "en-GB-male-1",
+            "text": "A quick update on the staff canteen. Several people asked whether hot meals would be cut back during the kitchen refurbishment, and the cafe downstairs did stop serving hot lunches last week."
+          },
+          {
+            "speaker": "Oliver",
+            "voice": "en-GB-male-1",
+            "text": "In our canteen, however, the full hot menu stays available as usual; the only change is that takeaway boxes will carry a small charge unless you bring a reusable container."
+          }
+        ],
+        "items": [
+          {
+            "id": "canteen-change",
+            "prompt": "Điểm thay đổi thực sự ở căng-tin nhân viên là gì?",
+            "answer": "box-fee",
+            "explanation": "Thông tin cắt bữa nóng chỉ là tin đồn hoặc xảy ra ở quán cà phê tầng dưới; thay đổi duy nhất ở căng-tin là tính phí nhỏ cho hộp mang đi nếu không tự mang hộp dùng lại.",
+            "choices": [
+              {
+                "id": "no-hot-meals",
+                "label": "Hot lunches are no longer served in the staff canteen."
+              },
+              {
+                "id": "box-fee",
+                "label": "Staff pay extra for disposable takeaway boxes."
+              },
+              {
+                "id": "closed-refurb",
+                "label": "The canteen is shutting down for kitchen repairs."
+              }
+            ]
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "highlights": [
+          {
+            "line": 0,
+            "text": "hot meals would be cut back during the kitchen refurbishment",
+            "kind": "distractor"
+          },
+          {
+            "line": 0,
+            "text": "the cafe downstairs did stop serving hot lunches last week",
+            "kind": "distractor"
+          },
+          {
+            "line": 1,
+            "text": "takeaway boxes will carry a small charge unless you bring a reusable container",
+            "kind": "answer"
+          }
+        ],
+        "audio": "assets/audio/listening/methods/paraphrase/policy-highlights-canteen.mp3"
+      },
+      {
+        "id": "training",
+        "script": [
+          {
+            "speaker": "Rachel",
+            "voice": "en-US-female-1",
+            "text": "I'm thinking of signing up for the evening spreadsheet course, though I heard the company only funds courses that lead to a formal certificate."
+          },
+          {
+            "speaker": "Noah",
+            "voice": "en-AU-male-1",
+            "text": "That rule applies to external university diplomas, not short internal workshops. As long as your line manager confirms the skill is relevant to your role, HR covers the entire enrolment fee, even without an exam at the end."
+          }
+        ],
+        "items": [
+          {
+            "id": "funding-condition",
+            "prompt": "Điều kiện để công ty chi trả học phí khóa học ngắn hạn này là gì?",
+            "answer": "manager-approval",
+            "explanation": "Yêu cầu chứng chỉ chỉ áp dụng cho bằng đại học bên ngoài; với khóa ngắn hạn, nhân viên chỉ cần quản lý trực tiếp xác nhận kỹ năng đó phù hợp với công việc.",
+            "choices": [
+              {
+                "id": "formal-cert",
+                "label": "The course must end with an official certificate exam."
+              },
+              {
+                "id": "manager-approval",
+                "label": "A direct supervisor must confirm the course fits the employee's job."
+              },
+              {
+                "id": "partial-cost",
+                "label": "The employee must pay half of the enrolment fee."
+              }
+            ]
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "highlights": [
+          {
+            "line": 0,
+            "text": "only funds courses that lead to a formal certificate",
+            "kind": "distractor"
+          },
+          {
+            "line": 1,
+            "text": "applies to external university diplomas",
+            "kind": "distractor"
+          },
+          {
+            "line": 1,
+            "text": "your line manager confirms the skill is relevant to your role, HR covers the entire enrolment fee",
+            "kind": "answer"
+          }
+        ],
+        "audio": "assets/audio/listening/methods/paraphrase/policy-highlights-training.mp3"
+      }
+    ]
   }
 ]
