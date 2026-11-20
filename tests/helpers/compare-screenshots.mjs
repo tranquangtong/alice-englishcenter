@@ -3,6 +3,7 @@ import { mkdtemp, readFile, readdir, rm, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { browserChannel } from './browser.mjs';
 
 // Decode PNGs in the same browser used for QA, without another image package.
 export async function compareScreenshots(beforeDirectory, afterDirectory) {
@@ -11,7 +12,7 @@ export async function compareScreenshots(beforeDirectory, afterDirectory) {
   const watchdog = setTimeout(() => { void context?.close().catch(() => {}); }, 120000);
   watchdog.unref();
   try {
-    context = await chromium.launchPersistentContext(profile, { channel: 'msedge', headless: true, args: ['--no-sandbox'] });
+    context = await chromium.launchPersistentContext(profile, { channel: browserChannel, headless: true, args: ['--no-sandbox'] });
     const page = await context.newPage();
     const report = [];
     const names = (await readdir(beforeDirectory)).filter(name => name.endsWith('.png')).sort();

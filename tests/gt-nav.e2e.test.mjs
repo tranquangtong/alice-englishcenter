@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import { mkdir, readFile } from 'node:fs/promises';
 import test from 'node:test';
 import { chromium } from 'playwright-core';
+import { browserChannel } from './helpers/browser.mjs';
 import { serveFixture } from './helpers/static-server.mjs';
 
 const artifacts = 'test-artifacts/gt-nav';
@@ -53,7 +54,7 @@ function measureNavigation() {
 test('Edge: compact GT header and route-specific sidebar at 1600, 390 and 360px', { timeout: 90000 }, async t => {
   const server = await serveFixture({ real: true });
   t.after(() => server.close());
-  const browser = await chromium.launch({ channel: 'msedge', headless: true, args: ['--no-sandbox'], timeout: 15000 });
+  const browser = await chromium.launch({ channel: browserChannel, headless: true, args: ['--no-sandbox'], timeout: 15000 });
   t.after(() => browser.close());
   const page = await browser.newPage({ reducedMotion: 'reduce' });
   page.setDefaultTimeout(8000);

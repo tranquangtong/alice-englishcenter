@@ -21,6 +21,8 @@ node scripts/check.mjs
 node --check assets/js/app.js
 ```
 
+Sau khi cài các gói kiểm thử bằng `npm ci`, chạy `PW_CHANNEL=chrome node --test` trên macOS với Google Chrome. Trên Windows, `node --test` mặc định dùng Microsoft Edge.
+
 Khi sửa CSS, chỉnh `assets/css/style.css` hoặc `assets/css/listening.css`, rồi chạy
 `node scripts/build-css.mjs` (hoặc `npm run css`) để tạo lại các file `.min.css`
 mà `index.html` tải. Commit cả nguồn dễ đọc và file sinh ra; không sửa trực tiếp

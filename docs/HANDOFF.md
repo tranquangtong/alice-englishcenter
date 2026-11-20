@@ -25,8 +25,7 @@ Tài liệu bàn giao nhanh để tiếp tục dự án trên macOS trong phiên
    python3 -m http.server 8000
    # hoặc: npx serve
    ```
-3. **Trình duyệt cho E2E test:** Playwright đang mở trình duyệt với `channel: 'msedge'`.
-   - Cài **Microsoft Edge cho macOS**, *hoặc* đổi `channel` sang `'chrome'` trong `tests/*.e2e.test.mjs` và `tests/helpers/compare-screenshots.mjs`.
+3. **Trình duyệt cho E2E test.** Trên macOS có Google Chrome, chạy `PW_CHANNEL=chrome node --test`. Trên Windows, `node --test` mặc định dùng Microsoft Edge.
 
 ## 3. Quy trình bắt buộc trước mỗi commit
 

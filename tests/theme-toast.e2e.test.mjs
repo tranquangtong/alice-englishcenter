@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import test from 'node:test';
 import { chromium } from 'playwright-core';
+import { browserChannel } from './helpers/browser.mjs';
 import { serveFixture } from './helpers/static-server.mjs';
 
 const { hash: loaded } = JSON.parse(await readFile(new URL('../version.json', import.meta.url)));
@@ -13,7 +14,7 @@ const examWarning = /Đang trong lượt thi thử.*sẽ làm mất bài đang l
 async function openEdge(t, options = {}) {
   const server = await serveFixture();
   t.after(() => server.close());
-  const browser = await chromium.launch({ channel: 'msedge', headless: true, args: ['--no-sandbox'], timeout: 15000 });
+  const browser = await chromium.launch({ channel: browserChannel, headless: true, args: ['--no-sandbox'], timeout: 15000 });
   t.after(() => browser.close());
   const context = await browser.newContext({ viewport: { width: 1600, height: 1000 }, reducedMotion: 'reduce', ...options });
   const page = await context.newPage();

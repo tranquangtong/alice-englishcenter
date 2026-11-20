@@ -4,6 +4,7 @@ import { chromium } from 'playwright-core';
 import { mkdtemp, mkdir, readFile, rm, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import path from 'node:path';
+import { browserChannel } from './helpers/browser.mjs';
 import { serveFixture } from './helpers/static-server.mjs';
 
 const outputDirectory = process.env.CSS_QA_OUTPUT || 'test-artifacts/final';
@@ -80,7 +81,7 @@ test('Edge: final Aero QA, both schemes and widths, sticky player and accessible
   const profile = await mkdtemp(path.join(tmpdir(), 'alice-listening-final-'));
   let context;
   t.after(async () => { await context?.close(); await server.close(); await rm(profile, { recursive: true, force: true, maxRetries: 5, retryDelay: 200 }); });
-  context = await chromium.launchPersistentContext(profile, { channel: 'msedge', headless: true, args: ['--no-sandbox'], reducedMotion: 'reduce' });
+  context = await chromium.launchPersistentContext(profile, { channel: browserChannel, headless: true, args: ['--no-sandbox'], reducedMotion: 'reduce' });
   const page = await context.newPage(); page.setDefaultTimeout(10000);
   if (process.env.CSS_QA_STYLESHEETS === 'source') {
     await page.route('**/assets/css/*.min.css*', async route => {
