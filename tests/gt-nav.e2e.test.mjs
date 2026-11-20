@@ -40,12 +40,13 @@ function measureNavigation() {
       }
     }
   }
-  const controls = [...document.querySelectorAll('.brand, .menu-toggle, .top-menu__panel a, #site-nav a')]
+  const controls = [...document.querySelectorAll('.brand, .menu-toggle, .theme-toggle, .top-menu__panel a, #site-nav a')]
     .filter(node => node.getClientRects().length)
     .map(node => ({ label: node.textContent.trim(), box: node.getBoundingClientRect().toJSON() }));
   return {
     header, brand, mark, pill, fullHitArea, overlaps, controls,
     toggle: rect('.menu-toggle'),
+    theme: rect('.theme-toggle'),
     viewport: innerWidth,
     scrollWidth: Math.max(document.documentElement.scrollWidth, document.body.scrollWidth)
   };
@@ -199,4 +200,78 @@ test('Edge: compact GT header and route-specific sidebar at 1600, 390 and 360px'
   assert.equal(await sidebar.isVisible(), false);
   assert.equal(await gtButton.isVisible(), false);
   assert.deepEqual(pageErrors, []);
+});
+
+test('scrolled liquid glass header keeps its compact geometry over article text', { timeout: 60000 }, async t => {
+  const server = await serveFixture({ real: true });
+  t.after(() => server.close());
+  const browser = await chromium.launch({ channel: browserChannel, headless: true, args: ['--no-sandbox'], timeout: 15000 });
+  t.after(() => browser.close());
+  const page = await browser.newPage({ reducedMotion: 'reduce' });
+  page.setDefaultTimeout(8000);
+  await mkdir(artifacts, { recursive: true });
+  const paragraph = page.locator('#page-content > p').first();
+
+  for (const scheme of ['light', 'dark']) {
+    for (const width of [1600, 390, 360]) {
+      const mobile = width < 900;
+      const label = `${width}px ${scheme}`;
+      await page.setViewportSize({ width, height: mobile ? 844 : 1000 });
+      await page.emulateMedia({ colorScheme: scheme });
+      await page.goto(server.url + '#/syllabus', { timeout: 12000 });
+      await page.getByRole('heading', { level: 1, name: /^Lộ trình Tổng quan Ôn thi IELTS/ }).waitFor();
+      await page.evaluate(() => window.scrollTo({ top: 0, behavior: 'instant' }));
+      const before = await page.evaluate(measureNavigation);
+      const overArticle = await paragraph.evaluate(node => {
+        const header = document.querySelector('.site-header');
+        const initial = header.getBoundingClientRect();
+        const range = document.createRange();
+        range.selectNodeContents(node);
+        const firstLine = range.getClientRects()[0];
+        window.scrollBy({ top: firstLine.top - initial.top - 12, behavior: 'instant' });
+
+        const box = header.getBoundingClientRect();
+        const style = getComputedStyle(header);
+        return {
+          scrollY: window.scrollY,
+          top: box.top,
+          offset: parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop),
+          hasTextBehind: [...range.getClientRects()].some(line =>
+            line.top >= box.top && line.bottom <= box.bottom && line.left < box.right && line.right > box.left),
+          supportsFilter: CSS.supports('backdrop-filter', 'blur(1px)') ||
+            CSS.supports('-webkit-backdrop-filter', 'blur(1px)'),
+          filter: style.backdropFilter || style.webkitBackdropFilter
+        };
+      });
+      const after = await page.evaluate(measureNavigation);
+      assert.ok(overArticle.scrollY > 0 && overArticle.hasTextBehind, `${label}: article text behind header`);
+      assert.ok(Math.abs(overArticle.top - before.header.top) < 1, `${label}: sticky top`);
+      // Preserve the pre-restyle dimensions at the default 16px root size.
+      assert.ok(Math.abs(overArticle.offset - (mobile ? 76 : 94.4)) < .1, `${label}: header offset`);
+      assert.ok(Math.abs(after.header.height - (mobile ? 58.8 : 54.4)) < .1, `${label}: header height`);
+      for (const key of ['header', 'brand', 'mark', 'pill', 'toggle', 'theme']) {
+        assert.equal(after[key].width, before[key].width, `${label}: ${key} width after scroll`);
+        assert.equal(after[key].height, before[key].height, `${label}: ${key} height after scroll`);
+      }
+      const markSize = mobile ? 32 : 36;
+      assert.equal(after.mark.height, markSize, `${label}: brand mark height`);
+      assert.equal(after.pill.height, markSize, `${label}: GT button face height`);
+      assert.equal(after.brand.height, 44, `${label}: brand link height`);
+      assert.equal(after.theme.height, 44, `${label}: theme control height`);
+      assert.ok(after.pill.width >= 44 && after.fullHitArea, `${label}: GT button hit area`);
+      for (const { label: control, box } of after.controls) {
+        assert.ok(box.width >= 44 && box.height >= 44, `${label}: small target "${control}"`);
+      }
+      if (mobile) {
+        assert.equal(after.toggle.width, 44, `${label}: menu control width`);
+        assert.equal(after.toggle.height, 44, `${label}: menu control height`);
+        assert.equal(after.theme.width, 44, `${label}: theme control width`);
+      }
+      if (overArticle.supportsFilter) {
+        const blur = /\bblur\(([\d.]+)px\)/.exec(overArticle.filter);
+        assert.ok(blur && Number(blur[1]) <= 6, `${label}: backdrop filter ${overArticle.filter}`);
+      }
+      if (width !== 360) await page.screenshot({ path: `${artifacts}/scrolled-header-${width}-${scheme}.png` });
+    }
+  }
 });
