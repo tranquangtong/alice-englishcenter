@@ -51,7 +51,7 @@ function inspect() {
     }
     const fg = rgb(getComputedStyle(el).color);
     const worst = bgs.map(bg => ({ ratio: ratio(over(fg, bg), bg), background: bg })).sort((a, b) => a.ratio - b.ratio)[0];
-    return { selector: el.className || el.tagName, text: el.textContent.trim().slice(0, 65), foreground: fg, ...worst };
+    return { selector: el.className || el.tagName, text: el.innerText.trim().slice(0, 65), foreground: fg, ...worst };
   }
   const header = document.querySelector('.site-header').getBoundingClientRect();
   const heading = document.querySelector('#page-content h1').getBoundingClientRect();
@@ -65,7 +65,10 @@ function inspect() {
       text: el.textContent.trim().slice(0, 40) || el.getAttribute('aria-label'), width: r.width, height: r.height
     };
   });
-  const text = [...document.querySelectorAll('.site-header button, .top-menu__panel a, .sidebar h2, .sidebar a, .sidebar__soon, .sidebar__soon small, #page-content p, #page-content label, #page-content legend, #page-content a, #page-content button, .lt-distractors strong, .lt-transcript strong, mark.lt-hl')].filter(el => visible(el) && el.textContent.trim()).map(contrast);
+  // Use rendered text for labels. The menu and theme icons use the same foreground as their buttons.
+  const samples = [...document.querySelectorAll('.site-header button, .top-menu__panel a, .sidebar h2, .sidebar a, .sidebar__soon, .sidebar__soon small, #page-content p, #page-content label, #page-content legend, #page-content a, #page-content button, .lt-distractors strong, .lt-transcript strong, mark.lt-hl')]
+    .filter(el => visible(el) && (el.innerText.trim() || el.matches('.menu-toggle, .theme-toggle')))
+    .map(contrast);
   return {
     viewport: innerWidth, scrollWidth: Math.max(document.documentElement.scrollWidth, document.body.scrollWidth),
     header: header.toJSON(), heading: heading.toJSON(), audio: bar?.toJSON(),
@@ -73,7 +76,7 @@ function inspect() {
     headerControls: [...document.querySelectorAll('.site-header > *, .top-menu__btn')].filter(visible).map(el => el.getBoundingClientRect().toJSON()),
     smallTargets: targets.filter(r => r.width < 43.9 || r.height < 43.9),
     minTarget: { width: Math.min(...targets.map(r => r.width)), height: Math.min(...targets.map(r => r.height)) },
-    contrast: text, minContrast: Math.min(...text.map(t => t.ratio))
+    contrast: samples, minContrast: Math.min(...samples.map(sample => sample.ratio))
   };
 }
 

@@ -31,6 +31,7 @@
 
   /* 2. Derived Aero surface, gloss & state tokens (light) */
   --glass-blur: 14px;
+  --menu-glass-filter: blur(18px) saturate(180%);
   /* Floating liquid-glass header: <=1.5px blur, calm neutral tint, specular rim & edge lensing */
   --glass-header: linear-gradient(90deg, rgb(255 255 255 / .28), transparent 7% 93%, rgb(255 255 255 / .28)), linear-gradient(180deg, rgb(255 255 255 / .26), rgb(255 255 255 / .1));
   --glass-header-rim: inset 0 1px 0 #fff, inset 0 -1px 0 rgb(21 147 214 / .24), inset 8px 0 10px -8px rgb(11 42 60 / .16), inset -8px 0 10px -8px rgb(11 42 60 / .16);
@@ -481,7 +482,8 @@ main {
   box-shadow: inset 0 2px 4px rgb(0 25 50 / .35);
 }
 
-.menu-toggle {
+.menu-toggle,
+.menu-toggle__icon {
   display: none;
 }
 
@@ -1316,10 +1318,11 @@ body:has(.update-toast:not([hidden])) { padding-bottom: var(--toast-space, 0px);
     top: calc(var(--header-offset) + .25rem);
     right: .75rem;
     z-index: 29;
-    width: min(360px, 100vw - 1.5rem);
-    max-height: calc(100dvh - var(--header-offset) - 1rem);
-    background-image: var(--glass-card-bg);
-    --glass-blur: 18px;
+    width: min(360px, 100% - 1.5rem);
+    max-height: calc(100dvh - var(--header-offset) - 1rem - var(--toast-space, 0px));
+    background: var(--glass-card-bg) var(--glass-strong);
+    -webkit-backdrop-filter: var(--menu-glass-filter);
+    backdrop-filter: var(--menu-glass-filter);
     transform-origin: top right;
   }
 
@@ -1379,19 +1382,19 @@ body:has(.update-toast:not([hidden])) { padding-bottom: var(--toast-space, 0px);
     width: 44px;
     height: 44px;
     padding: 0;
-    gap: 0;
-    font-size: 0;
-    line-height: 0;
-    color: transparent;
   }
 
-  .menu-toggle::after {
+  .menu-toggle__label,
+  .menu-toggle::after { display: none; }
+
+  .menu-toggle__icon {
+    display: block;
+    position: absolute;
+    inset: 0;
     margin: auto;
     width: 18px;
     height: 14px;
-    transform: none;
-    transition: none;
-    z-index: 1;
+    pointer-events: none;
     border-radius: 1px;
     background: linear-gradient(
       180deg,
@@ -1401,11 +1404,7 @@ body:has(.update-toast:not([hidden])) { padding-bottom: var(--toast-space, 0px);
     );
   }
 
-  .menu-toggle:hover::after {
-    transform: none;
-  }
-
-  .menu-toggle[aria-expanded="true"]::after {
+  .menu-toggle[aria-expanded="true"] .menu-toggle__icon {
     width: 16px;
     height: 16px;
     background:
@@ -1458,10 +1457,18 @@ body:has(.update-toast:not([hidden])) { padding-bottom: var(--toast-space, 0px);
     -webkit-backdrop-filter: none;
     backdrop-filter: none;
   }
+
+  @media (max-width: 900px) {
+    .sidebar {
+      background-color: var(--sky-bottom);
+      -webkit-backdrop-filter: none;
+      backdrop-filter: none;
+    }
+  }
 }
 
 @media (forced-colors: active) and (max-width: 600px) {
-  .menu-toggle::after {
+  .menu-toggle__icon {
     /* The icon is drawn with gradients, which forced colors would otherwise hide. */
     forced-color-adjust: none;
     --gel-ink: ButtonText;
@@ -1471,10 +1478,11 @@ body:has(.update-toast:not([hidden])) { padding-bottom: var(--toast-space, 0px);
 @media print {
   :root {
     color-scheme: light;
-    --ink: #000;
+    /* Print tests require six-digit hex for these black tokens. */
+    --ink: #000000;
     --ink-soft: #333;
-    --aqua-ink: #000;
-    --grass-ink: #000;
+    --aqua-ink: #000000;
+    --grass-ink: #000000;
   }
 
   body {
@@ -1537,6 +1545,10 @@ body:has(.update-toast:not([hidden])) { padding-bottom: var(--toast-space, 0px);
     padding: 0;
   }
 
+  article {
+    max-width: none;
+  }
+
   article blockquote::before {
     display: none;
   }
@@ -1551,6 +1563,7 @@ body:has(.update-toast:not([hidden])) { padding-bottom: var(--toast-space, 0px);
     break-after: avoid;
   }
 
+  article a,
   a {
     color: #000;
   }

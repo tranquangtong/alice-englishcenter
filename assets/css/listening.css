@@ -108,14 +108,8 @@
   display: flex;
   flex-direction: column;
   gap: .25rem;
-}
-
-@supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
-  .top-menu__panel {
-    background-color: var(--glass);
-    -webkit-backdrop-filter: blur(18px) saturate(180%);
-    backdrop-filter: blur(18px) saturate(180%);
-  }
+  -webkit-backdrop-filter: var(--menu-glass-filter);
+  backdrop-filter: var(--menu-glass-filter);
 }
 
 .top-menu__panel a {
