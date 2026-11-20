@@ -84,7 +84,11 @@ test('Edge: theme keyboard cycling, persistence, first paint, and live system pr
   await expectTheme(page, 'system', 'dark');
   await page.emulateMedia({ media: 'print' });
   assert.equal(await theme.isVisible(), false);
-  assert.equal(await page.locator('html').evaluate(el => getComputedStyle(el).getPropertyValue('--ink').trim()), '#000000');
+  const printInk = await page.locator('html').evaluate(el => {
+    const style = getComputedStyle(el);
+    return ['--ink', '--aqua-ink', '--grass-ink'].map(token => style.getPropertyValue(token).trim());
+  });
+  assert.deepEqual(printInk, ['#000000', '#000000', '#000000']);
 
   const blocked = await page.context().newPage();
   const errors = [];

@@ -127,9 +127,14 @@ test('Edge: compact GT header and route-specific sidebar at 1600, 390 and 360px'
       async function openSidebar() {
         if (mobile) {
           await expectClosed();
+          assert.equal(await toggle.innerText(), '', `${label}: compact button label is visually hidden`);
           await expectIcon(false);
-          const before = await page.locator('main').evaluate(node => node.getBoundingClientRect().top);
-          await toggle.click();
+          const before = await page.locator('main').evaluate(node => ({
+            mainTop: node.getBoundingClientRect().top,
+            scroll: [window.scrollX, window.scrollY]
+          }));
+          // The sticky toggle is already visible. Playwright's auto-scroll can move the document.
+          await toggle.click({ scroll: 'none' });
           assert.equal(await toggle.getAttribute('aria-expanded'), 'true', label);
           await expectIcon(true);
           const panel = await sidebar.evaluate(node => {
@@ -139,11 +144,13 @@ test('Edge: compact GT header and route-specific sidebar at 1600, 390 and 360px'
               box: node.getBoundingClientRect().toJSON(),
               headerBottom: document.querySelector('.site-header').getBoundingClientRect().bottom,
               mainTop: document.querySelector('main').getBoundingClientRect().top,
+              scroll: [window.scrollX, window.scrollY],
               viewportWidth: document.documentElement.clientWidth,
               viewportHeight: document.documentElement.clientHeight
             };
           });
-          assert.equal(panel.mainTop, before, `${label}: opening shifted main content`);
+          assert.deepEqual(panel.scroll, before.scroll, `${label}: opening scrolled the page`);
+          assert.equal(panel.mainTop, before.mainTop, `${label}: opening shifted main content`);
           assert.equal(panel.position, 'fixed', label);
           assert.equal(panel.animationName, 'none', `${label}: reduced motion`);
           assert.ok(
@@ -353,6 +360,12 @@ test('scrolled liquid glass header keeps its compact geometry over article text'
         assert.ok(blur && Number(blur[1]) <= 2, `${label}: backdrop filter ${overArticle.filter}`);
       }
       if (width !== 360) await page.screenshot({ path: `${artifacts}/scrolled-header-${width}-${scheme}.png` });
+      if (mobile) {
+        const toggle = page.getByRole('button', { name: 'Danh mục học tập' });
+        await toggle.click({ scroll: 'none' });
+        assert.equal(await toggle.getAttribute('aria-expanded'), 'true', label);
+        assert.equal(await page.evaluate(() => window.scrollY), overArticle.scrollY, `${label}: opening over article text scrolled the page`);
+      }
     }
   }
 });

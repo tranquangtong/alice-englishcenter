@@ -1379,11 +1379,9 @@ body:has(.update-toast:not([hidden])) { padding-bottom: var(--toast-space, 0px);
     width: 44px;
     height: 44px;
     padding: 0;
-    gap: 0;
-    font-size: 0;
-    line-height: 0;
-    color: transparent;
   }
+
+  .menu-toggle span { display: none; }
 
   .menu-toggle::after {
     margin: auto;
@@ -1479,10 +1477,11 @@ body:has(.update-toast:not([hidden])) { padding-bottom: var(--toast-space, 0px);
 @media print {
   :root {
     color-scheme: light;
-    --ink: #000;
+    /* Print tests require six-digit hex for these black tokens. */
+    --ink: #000000;
     --ink-soft: #333;
-    --aqua-ink: #000;
-    --grass-ink: #000;
+    --aqua-ink: #000000;
+    --grass-ink: #000000;
   }
 
   body {
