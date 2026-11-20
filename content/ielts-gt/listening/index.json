@@ -57,6 +57,14 @@
         {
           "id": "everyday-tatoeba",
           "title": "Chép câu ngắn từ Tatoeba"
+        },
+        {
+          "id": "delivery-details",
+          "title": "Mã bưu điện, ngày và giá cước"
+        },
+        {
+          "id": "shift-briefing",
+          "title": "Điền cụm từ khi họp giao ca"
         }
       ]
     },
@@ -77,6 +85,18 @@
         {
           "id": "pickup-point",
           "title": "Địa điểm nhận đồng phục"
+        },
+        {
+          "id": "daily-notices",
+          "title": "Thông báo ngắn hằng ngày"
+        },
+        {
+          "id": "spoken-traps",
+          "title": "Bẫy tự sửa và phủ định ẩn"
+        },
+        {
+          "id": "policy-highlights",
+          "title": "Soi bẫy trong thông báo nội bộ"
         }
       ]
     },
@@ -101,6 +121,14 @@
         {
           "id": "word-endings",
           "title": "Phân biệt đuôi -s và -ed"
+        },
+        {
+          "id": "prices-and-teens",
+          "title": "Phân biệt giá và số -teen/-ty"
+        },
+        {
+          "id": "fast-workplace-speech",
+          "title": "Nghe dạng rút gọn và nối âm"
         }
       ]
     },
@@ -113,6 +141,26 @@
         {
           "id": "training-signup",
           "title": "Dự đoán khi đăng ký buổi hướng dẫn"
+        },
+        {
+          "id": "bike-repair-form",
+          "title": "Phiếu đặt lịch sửa xe đạp"
+        },
+        {
+          "id": "pottery-class-enquiry",
+          "title": "Ghi chú hỏi thông tin lớp gốm"
+        },
+        {
+          "id": "hall-hire-table",
+          "title": "Bảng so sánh thuê phòng họp"
+        },
+        {
+          "id": "rain-gardens-notes",
+          "title": "Ghi chú bài nói về vườn mưa"
+        },
+        {
+          "id": "tool-library-talk",
+          "title": "Bảng ghi chú thư viện dụng cụ"
         }
       ]
     }

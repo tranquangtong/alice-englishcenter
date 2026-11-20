@@ -72,7 +72,7 @@
     if (signal.aborted) return;
     const method = catalog?.methods?.find(entry => entry.id === testId);
     if (method) {
-      const { renderMethod } = await import('./listening-methods.js?v=1');
+      const { renderMethod } = await import('./listening-methods.js?v=2');
       if (!signal.aborted) await renderMethod({ method, exerciseId, content, signal });
       return;
     }
