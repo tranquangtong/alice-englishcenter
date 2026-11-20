@@ -4,6 +4,7 @@ import { chromium } from 'playwright-core';
 import { mkdtemp, mkdir, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import path from 'node:path';
+import { browserChannel } from './helpers/browser.mjs';
 import { serveFixture } from './helpers/static-server.mjs';
 
 test('Edge: listening player, exam guards, routing and responsive layout', { timeout: 120000 }, async t => {
@@ -11,7 +12,7 @@ test('Edge: listening player, exam guards, routing and responsive layout', { tim
   const profile = await mkdtemp(path.join(tmpdir(), 'alice-listening-edge-'));
   let context;
   t.after(async () => { await context?.close(); await server.close(); await rm(profile, { recursive: true, force: true, maxRetries: 5, retryDelay: 200 }); });
-  context = await chromium.launchPersistentContext(profile, { channel: 'msedge', headless: true, args: ['--no-sandbox', '--autoplay-policy=no-user-gesture-required'], viewport: { width: 1600, height: 1000 }, reducedMotion: 'reduce' });
+  context = await chromium.launchPersistentContext(profile, { channel: browserChannel, headless: true, args: ['--no-sandbox', '--autoplay-policy=no-user-gesture-required'], viewport: { width: 1600, height: 1000 }, reducedMotion: 'reduce' });
   const page = await context.newPage();
   page.setDefaultTimeout(10000);
   const errors = [];

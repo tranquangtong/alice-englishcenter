@@ -4,6 +4,7 @@ import { chromium } from 'playwright-core';
 import { mkdtemp, mkdir, readFile, rm, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import path from 'node:path';
+import { browserChannel } from './helpers/browser.mjs';
 import { serveFixture } from './helpers/static-server.mjs';
 
 const catalog = JSON.parse(await readFile(new URL('../content/ielts-gt/listening/index.json', import.meta.url)));
@@ -14,7 +15,7 @@ test('Edge: all four real tests, real MP3s, scoring, exam transitions and respon
   let context;
   t.after(async () => { await context?.close(); await server.close(); await rm(profile, { recursive: true, force: true, maxRetries: 5, retryDelay: 200 }); });
   context = await chromium.launchPersistentContext(profile, {
-    channel: 'msedge', headless: true, args: ['--no-sandbox', '--autoplay-policy=no-user-gesture-required'],
+    channel: browserChannel, headless: true, args: ['--no-sandbox', '--autoplay-policy=no-user-gesture-required'],
     viewport: { width: 1600, height: 1000 }, reducedMotion: 'reduce'
   });
   const page = await context.newPage();
