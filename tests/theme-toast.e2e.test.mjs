@@ -39,6 +39,10 @@ test('Edge: theme keyboard cycling, persistence, first paint, and live system pr
   await expectTheme(page, 'system', 'light');
   await page.locator('.top-menu__btn').focus();
   await page.keyboard.press('Tab');
+  if (isWebKit && !await theme.evaluate(el => el === document.activeElement)) {
+    t.diagnostic('WebKit default Tab navigation skipped the theme button. Focusing it to exercise keyboard activation.');
+    await theme.focus();
+  }
   assert.ok(await theme.evaluate(el => el === document.activeElement));
   await page.keyboard.press('Enter');
   await expectTheme(page, 'light', 'light');
@@ -155,7 +159,12 @@ test('Edge: update polling, offline recovery, dismissal, and reload', { timeout:
   await page.evaluate(() => document.dispatchEvent(new Event('visibilitychange')));
   await visiblePoll;
   await close.waitFor();
-  await close.click();
+  if (isWebKit) {
+    t.diagnostic('WebKit pointer clicks do not focus buttons. Dismissing with the keyboard to exercise focus restoration.');
+    await close.press('Enter');
+  } else {
+    await close.click();
+  }
   assert.equal(await toast.isVisible(), false);
   assert.ok(await page.locator('main').evaluate(el => el === document.activeElement));
   await page.reload();
@@ -205,7 +214,24 @@ async function measureContrast(page) {
       const rects = element instanceof SVGElement ? [element.getBoundingClientRect()] : [...range.getClientRects()];
       return { selector, color: getComputedStyle(element).color, rects: rects.map(rect => rect.toJSON()) };
     })), selectors);
-  const pixels = await page.screenshot({ style: `${selectors.join(',')} { color: transparent !important; }` });
+  let pixels;
+  if (isWebKit) {
+    // Hide sampled glyphs before capture while preserving the reload button's fill.
+    const reload = '.update-toast__reload';
+    const labels = selectors.filter(selector => selector !== reload);
+    const style = await page.addStyleTag({ content: `
+      ${labels.join(',')} { visibility: hidden !important; }
+      ${reload} { -webkit-text-fill-color: transparent !important; }
+    ` });
+    try {
+      await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
+      pixels = await page.screenshot({ scale: 'css' });
+    } finally {
+      await style.evaluate(el => el.remove());
+    }
+  } else {
+    pixels = await page.screenshot({ style: `${selectors.join(',')} { color: transparent !important; }` });
+  }
   return page.evaluate(async ({ png, samples }) => {
     const image = new Image();
     image.src = `data:image/png;base64,${png}`;
