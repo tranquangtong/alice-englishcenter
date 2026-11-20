@@ -47,5 +47,520 @@
         "audio": "assets/audio/listening/methods/prediction/training-signup-signup.mp3"
       }
     ]
+  },
+  {
+    "id": "bike-repair-form",
+    "format": "predict-verify",
+    "title": "Phiếu đặt lịch sửa xe đạp",
+    "level": "Band 4.0",
+    "instructions": "Đọc mẫu phiếu đăng ký, chọn loại thông tin cần điền rồi nghe hội thoại để kiểm chứng.",
+    "clips": [
+      {
+        "id": "booking",
+        "script": [
+          {
+            "speaker": "Staff",
+            "voice": "en-GB-female-1",
+            "text": "Good morning, Oakside Cycles. How can I help you today?"
+          },
+          {
+            "speaker": "Caller",
+            "voice": "en-GB-male-1",
+            "text": "Hi, I'd like to book my commuter bike in for a full service, please."
+          },
+          {
+            "speaker": "Staff",
+            "voice": "en-GB-female-1",
+            "text": "No problem. Could I take your surname first?"
+          },
+          {
+            "speaker": "Caller",
+            "voice": "en-GB-male-1",
+            "text": "Yes, it's Baxter. That's B-A-X-T-E-R."
+          },
+          {
+            "speaker": "Staff",
+            "voice": "en-GB-female-1",
+            "text": "Thanks, Mr Baxter. Which day would suit you to bring it in? We have space on the twelfth of May."
+          },
+          {
+            "speaker": "Caller",
+            "voice": "en-GB-male-1",
+            "text": "The twelfth of May works well. What time do you open for drop-offs?"
+          },
+          {
+            "speaker": "Staff",
+            "voice": "en-GB-female-1",
+            "text": "You can drop it off at eight thirty in the morning. Just bring it to the rear courtyard."
+          },
+          {
+            "speaker": "Caller",
+            "voice": "en-GB-male-1",
+            "text": "Great, and how much is the full service?"
+          },
+          {
+            "speaker": "Staff",
+            "voice": "en-GB-female-1",
+            "text": "It's forty-five pounds, payable when you collect the bike."
+          }
+        ],
+        "items": [
+          {
+            "id": "customer-surname",
+            "prompt": "Customer surname: ___",
+            "answer": "Baxter",
+            "explanation": "Cụm “Customer surname” báo trước cần điền tên riêng (họ). Khách hàng đọc và đánh vần là Baxter (B-A-X-T-E-R).",
+            "expectedType": "name"
+          },
+          {
+            "id": "service-date",
+            "prompt": "Service date: ___",
+            "answer": "12 May",
+            "variants": [
+              "12th May",
+              "May 12",
+              "May 12th",
+              "the 12th of May",
+              "12/05",
+              "12/5",
+              "twelfth of May"
+            ],
+            "explanation": "“Service date” yêu cầu ngày tháng. Nhân viên hẹn lịch bảo dưỡng vào ngày 12 tháng 5 (the twelfth of May).",
+            "expectedType": "date"
+          },
+          {
+            "id": "dropoff-time",
+            "prompt": "Drop-off time: ___",
+            "answer": "8:30 am",
+            "variants": [
+              "8:30 a.m.",
+              "8.30 am",
+              "8.30 a.m.",
+              "8:30",
+              "8.30",
+              "08:30",
+              "eight thirty",
+              "eight thirty am"
+            ],
+            "explanation": "“Drop-off time” báo trước cần điền giờ. Cửa hàng nhận xe lúc 8:30 sáng (eight thirty in the morning).",
+            "expectedType": "time"
+          },
+          {
+            "id": "service-fee",
+            "prompt": "Full service fee: £___",
+            "answer": "45",
+            "variants": [
+              "£45",
+              "45 pounds",
+              "45.00"
+            ],
+            "explanation": "Ký hiệu “£___” cho thấy chỗ trống cần con số. Phí bảo dưỡng trọn gói là 45 bảng (forty-five pounds).",
+            "expectedType": "number",
+            "rules": {
+              "numbers": "integer"
+            }
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/prediction/bike-repair-form-booking.mp3"
+      }
+    ]
+  },
+  {
+    "id": "pottery-class-enquiry",
+    "format": "predict-verify",
+    "title": "Ghi chú hỏi thông tin lớp gốm",
+    "level": "Band 4.5",
+    "instructions": "Xem trước mẫu ghi chú đăng ký lớp học tối, dự đoán loại thông tin ở mỗi chỗ trống rồi nghe để kiểm chứng.",
+    "clips": [
+      {
+        "id": "enquiry",
+        "script": [
+          {
+            "speaker": "Receptionist",
+            "voice": "en-AU-female-1",
+            "text": "Riverbank Arts Centre, Tessa speaking."
+          },
+          {
+            "speaker": "Caller",
+            "voice": "en-AU-male-1",
+            "text": "Hello, I'm calling about the beginners' pottery course on Thursday evenings."
+          },
+          {
+            "speaker": "Receptionist",
+            "voice": "en-AU-female-1",
+            "text": "Sure! Our next six-week term begins on the fourth of June."
+          },
+          {
+            "speaker": "Caller",
+            "voice": "en-AU-male-1",
+            "text": "Lovely. Where exactly is the class held? In the main building?"
+          },
+          {
+            "speaker": "Receptionist",
+            "voice": "en-AU-female-1",
+            "text": "Actually, pottery takes place in the Garden Studio, right behind the cafe."
+          },
+          {
+            "speaker": "Caller",
+            "voice": "en-AU-male-1",
+            "text": "Got it. Do I need to bring my own clay or tools?"
+          },
+          {
+            "speaker": "Receptionist",
+            "voice": "en-AU-female-1",
+            "text": "We supply all clay and tools, so you only need to bring an apron to keep your clothes clean."
+          },
+          {
+            "speaker": "Caller",
+            "voice": "en-AU-male-1",
+            "text": "Easy. And is there anything we should do at the end of each lesson?"
+          },
+          {
+            "speaker": "Receptionist",
+            "voice": "en-AU-female-1",
+            "text": "Yes, we ask all students to wash their tools before leaving the studio."
+          }
+        ],
+        "items": [
+          {
+            "id": "start-date",
+            "prompt": "Course start date: ___",
+            "answer": "4 June",
+            "variants": [
+              "4th June",
+              "June 4",
+              "June 4th",
+              "the 4th of June",
+              "4/06",
+              "4/6",
+              "fourth of June"
+            ],
+            "explanation": "“Course start date” cho biết cần nghe ngày tháng. Khóa học mới bắt đầu vào ngày 4 tháng 6 (the fourth of June).",
+            "expectedType": "date"
+          },
+          {
+            "id": "class-location",
+            "prompt": "Class location: ___",
+            "answer": "Garden Studio",
+            "variants": [
+              "the Garden Studio"
+            ],
+            "explanation": "“Class location” yêu cầu địa điểm. Lễ tân đính chính lớp không học ở tòa nhà chính mà ở Garden Studio.",
+            "expectedType": "place"
+          },
+          {
+            "id": "item-to-bring",
+            "prompt": "Item to bring: an ___",
+            "answer": "apron",
+            "explanation": "Mạo từ “an” trước chỗ trống báo hiệu một danh từ đếm được số ít. Đất sét và dụng cụ có sẵn; học viên chỉ cần mang tạp dề (apron).",
+            "expectedType": "noun"
+          },
+          {
+            "id": "end-routine",
+            "prompt": "End of class rule: students must ___ their tools",
+            "answer": "wash",
+            "explanation": "Sau động từ khuyết thiếu “must” và trước tân ngữ “their tools” là động từ nguyên mẫu. Học viên cần rửa dụng cụ (wash).",
+            "expectedType": "verb"
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/prediction/pottery-class-enquiry-enquiry.mp3"
+      }
+    ]
+  },
+  {
+    "id": "hall-hire-table",
+    "format": "predict-verify",
+    "title": "Bảng so sánh thuê phòng họp",
+    "level": "Band 5.5",
+    "instructions": "Đọc các dòng bảng so sánh hai phòng cho thuê, dự đoán loại thông tin ở từng ô trống rồi nghe để kiểm chứng.",
+    "clips": [
+      {
+        "id": "rooms",
+        "script": [
+          {
+            "speaker": "Coordinator",
+            "voice": "en-US-female-1",
+            "text": "Hi, I'm organising a staff workshop next month and want to compare your two hire rooms."
+          },
+          {
+            "speaker": "Manager",
+            "voice": "en-GB-male-1",
+            "text": "Of course. First, we have the Willow Room on the ground floor. It holds up to thirty-five people."
+          },
+          {
+            "speaker": "Coordinator",
+            "voice": "en-US-female-1",
+            "text": "That might fit us. What equipment comes with the Willow Room?"
+          },
+          {
+            "speaker": "Manager",
+            "voice": "en-GB-male-1",
+            "text": "It includes a ceiling projector and a whiteboard. If you want afternoon tea, there's an extra charge."
+          },
+          {
+            "speaker": "Coordinator",
+            "voice": "en-US-female-1",
+            "text": "Okay, and what about the larger option?"
+          },
+          {
+            "speaker": "Manager",
+            "voice": "en-GB-male-1",
+            "text": "That's the Cedar Hall. It seats sixty guests, and the room stays quiet even when the cafe is busy because of the double glazing."
+          },
+          {
+            "speaker": "Coordinator",
+            "voice": "en-US-female-1",
+            "text": "Sounds ideal. What's the earliest time we can get in to set up?"
+          },
+          {
+            "speaker": "Manager",
+            "voice": "en-GB-male-1",
+            "text": "Access to the Cedar Hall opens at seven forty-five in the morning. If you'd like to hold a provisional booking, ask for Mr Patel at the bookings desk. That's P-A-T-E-L."
+          }
+        ],
+        "items": [
+          {
+            "id": "willow-capacity",
+            "prompt": "Willow Room | Maximum capacity: ___ people",
+            "answer": "35",
+            "variants": [
+              "thirty-five",
+              "thirty five"
+            ],
+            "explanation": "Cụm “Maximum capacity: ___ people” yêu cầu con số. Phòng Willow chứa tối đa 35 người (thirty-five).",
+            "expectedType": "number",
+            "rules": {
+              "numbers": "integer"
+            }
+          },
+          {
+            "id": "willow-equipment",
+            "prompt": "Willow Room | Included equipment: ceiling ___ and whiteboard",
+            "answer": "projector",
+            "explanation": "Đứng sau danh từ bổ nghĩa “ceiling” và song song với “whiteboard” là danh từ chỉ thiết bị. Phòng có máy chiếu gắn trần (projector).",
+            "expectedType": "noun"
+          },
+          {
+            "id": "cedar-noise",
+            "prompt": "Cedar Hall | Noise level: room stays ___ during cafe hours",
+            "answer": "quiet",
+            "explanation": "Sau động từ nối “stays” cần một tính từ mô tả trạng thái phòng. Nhờ cửa kính hai lớp nên phòng luôn yên tĩnh (quiet).",
+            "expectedType": "adjective"
+          },
+          {
+            "id": "cedar-setup",
+            "prompt": "Cedar Hall | Earliest setup time: ___",
+            "answer": "7:45 am",
+            "variants": [
+              "7:45 a.m.",
+              "7.45 am",
+              "7.45 a.m.",
+              "7:45",
+              "7.45",
+              "07:45",
+              "seven forty-five",
+              "seven forty five"
+            ],
+            "explanation": "“Earliest setup time” cho biết cần nghe giờ. Phòng mở cửa chuẩn bị sớm nhất lúc 7:45 sáng (seven forty-five in the morning).",
+            "expectedType": "time"
+          },
+          {
+            "id": "booking-contact",
+            "prompt": "Bookings desk | Contact name: Mr ___",
+            "answer": "Patel",
+            "explanation": "Danh xưng “Mr” trước chỗ trống báo hiệu tên riêng (họ). Người phụ trách giữ chỗ là Mr Patel (P-A-T-E-L).",
+            "expectedType": "name"
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/prediction/hall-hire-table-rooms.mp3"
+      }
+    ]
+  },
+  {
+    "id": "rain-gardens-notes",
+    "format": "predict-verify",
+    "title": "Ghi chú bài nói về vườn mưa",
+    "level": "Band 6.0",
+    "instructions": "Đọc khung ghi chú bài nói ngắn, đoán loại từ còn thiếu theo ngữ cảnh và ngữ pháp rồi nghe để kiểm chứng.",
+    "clips": [
+      {
+        "id": "talk",
+        "script": [
+          {
+            "speaker": "Speaker",
+            "voice": "en-GB-narrator",
+            "text": "Good afternoon, everyone. Today I want to explain how urban rain gardens help neighbourhoods cope with heavy storms. First piloted along residential streets in Melbourne, a rain garden is designed as a shallow basin next to roads or car parks. When rain runs off roofs, the basin captures that runoff instead of sending it straight into city drains."
+          },
+          {
+            "speaker": "Speaker",
+            "voice": "en-GB-narrator",
+            "text": "Beneath the plants sits a thick layer of sandy soil mixed with coarse gravel. This layer acts like a sponge, allowing rainwater to sink into the ground within twenty-four hours. Because the soil drains quickly, standing water clears fast and mosquitoes cannot breed."
+          },
+          {
+            "speaker": "Speaker",
+            "voice": "en-GB-narrator",
+            "text": "Plant choice is equally important. Designers select native grasses whose deep roots absorb pollutants washed off passing vehicles. Once established, the beds need very little extra watering during dry months."
+          }
+        ],
+        "items": [
+          {
+            "id": "pilot-city",
+            "prompt": "Early trial location: ___",
+            "answer": "Melbourne",
+            "explanation": "Cụm “Early trial location” hỏi địa điểm thử nghiệm ban đầu. Bài nói nêu ví dụ thí điểm tại thành phố Melbourne.",
+            "expectedType": "place"
+          },
+          {
+            "id": "basin-shape",
+            "prompt": "Design · Shaped like a ___ basin to hold stormwater",
+            "answer": "shallow",
+            "explanation": "Giữa mạo từ “a” và danh từ “basin” cần một tính từ mô tả độ sâu/hình dạng. Vườn mưa được thiết kế như lòng chảo nông (shallow).",
+            "expectedType": "adjective"
+          },
+          {
+            "id": "drainage-material",
+            "prompt": "Soil layer · Sandy earth mixed with coarse ___",
+            "answer": "gravel",
+            "explanation": "Sau tính từ “coarse” cần danh từ chỉ vật liệu. Lớp đất cát được trộn thêm sỏi thô (gravel).",
+            "expectedType": "noun"
+          },
+          {
+            "id": "drainage-hours",
+            "prompt": "Drainage speed · Water filters down within ___ hours",
+            "answer": "24",
+            "explanation": "Cụm “within ___ hours” yêu cầu con số. Nước mưa thấm xuống đất trong vòng 24 giờ (twenty-four hours).",
+            "expectedType": "number",
+            "rules": {
+              "numbers": "integer"
+            }
+          },
+          {
+            "id": "root-function",
+            "prompt": "Role of native plants · Deep roots ___ road pollutants",
+            "answer": "absorb",
+            "explanation": "Giữa chủ ngữ “Deep roots” và tân ngữ “road pollutants” cần một động từ chính. Rễ sâu của cỏ bản địa giúp hấp thụ chất ô nhiễm (absorb).",
+            "expectedType": "verb"
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/prediction/rain-gardens-notes-talk.mp3"
+      }
+    ]
+  },
+  {
+    "id": "tool-library-talk",
+    "format": "predict-verify",
+    "title": "Bảng ghi chú thư viện dụng cụ",
+    "level": "Band 6.5",
+    "instructions": "Phân tích bảng tóm tắt bài thuyết trình, dự đoán loại thông tin ở từng dòng rồi nghe để kiểm chứng.",
+    "clips": [
+      {
+        "id": "overview",
+        "script": [
+          {
+            "speaker": "Lecturer",
+            "voice": "en-AU-female-1",
+            "text": "Welcome to our short seminar on community tool libraries. Instead of every household buying an electric drill that sits idle most of the year, members share a central collection for a modest annual fee. A well-known early model began as a neighbourhood project in Bristol, and today hundreds of towns run similar hubs."
+          },
+          {
+            "speaker": "Lecturer",
+            "voice": "en-AU-female-1",
+            "text": "Let's compare how two typical sections are managed. First, the gardening section lends items such as hedge trimmers and spades for a standard period of seven days. Before returning any outdoor tool, borrowers are expected to brush dried mud off the blades so rust does not form."
+          },
+          {
+            "speaker": "Lecturer",
+            "voice": "en-AU-female-1",
+            "text": "Second, the home-repair section stocks equipment like sewing machines and ladders. Because these items are in steady demand at weekends, staff inspect each piece carefully and keep a printed manual inside every storage case."
+          },
+          {
+            "speaker": "Lecturer",
+            "voice": "en-AU-female-1",
+            "text": "From a sustainability viewpoint, surveys show that shared inventories cut household spending and make DIY projects more affordable for young renters. Most branches stay open until six thirty on weekday evenings so commuters can collect tools on their way home."
+          }
+        ],
+        "items": [
+          {
+            "id": "early-model-city",
+            "prompt": "Background | Early neighbourhood model location: ___",
+            "answer": "Bristol",
+            "explanation": "Cụm “model location” yêu cầu địa điểm. Bài nói nhắc đến mô hình khu phố ban đầu tại thành phố Bristol.",
+            "expectedType": "place"
+          },
+          {
+            "id": "loan-days",
+            "prompt": "Gardening section | Standard loan period: ___ days",
+            "answer": "7",
+            "explanation": "Trước danh từ “days” chắc chắn là con số. Thời hạn mượn tiêu chuẩn cho dụng cụ làm vườn là 7 ngày (seven days).",
+            "expectedType": "number",
+            "rules": {
+              "numbers": "integer"
+            }
+          },
+          {
+            "id": "return-step",
+            "prompt": "Gardening section | Before returning: ___ dried mud off blades",
+            "answer": "brush",
+            "explanation": "Đứng đầu hướng dẫn trước tân ngữ “dried mud off blades” cần một động từ nguyên mẫu. Người mượn phải chải sạch bùn khô (brush).",
+            "expectedType": "verb"
+          },
+          {
+            "id": "case-item",
+            "prompt": "Home-repair section | Kept inside every case: a printed ___",
+            "answer": "manual",
+            "explanation": "Sau mạo từ và tính từ “a printed” là một danh từ đếm được số ít. Mỗi hộp dụng cụ đều có sẵn sách hướng dẫn in (manual).",
+            "expectedType": "noun"
+          },
+          {
+            "id": "diy-benefit",
+            "prompt": "Impact | Makes DIY projects more ___ for young renters",
+            "answer": "affordable",
+            "explanation": "Cấu trúc “make + tân ngữ + more ___” yêu cầu một tính từ. Thư viện dụng cụ giúp các dự án tự sửa chữa có chi phí hợp lý hơn (affordable).",
+            "expectedType": "adjective"
+          },
+          {
+            "id": "closing-time",
+            "prompt": "Weekday hours | Most branches stay open until: ___",
+            "answer": "6:30 pm",
+            "variants": [
+              "6:30 p.m.",
+              "6.30 pm",
+              "6.30 p.m.",
+              "6:30",
+              "6.30",
+              "18:30",
+              "six thirty",
+              "six thirty pm"
+            ],
+            "explanation": "Cụm “Weekday hours | stay open until” báo trước cần điền giờ. Phần lớn chi nhánh mở đến 6:30 tối (six thirty on weekday evenings).",
+            "expectedType": "time"
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/prediction/tool-library-talk-overview.mp3"
+      }
+    ]
   }
 ]

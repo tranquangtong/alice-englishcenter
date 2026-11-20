@@ -190,5 +190,307 @@
         "audio": "assets/audio/listening/methods/connected-speech/word-endings-ending-ed.mp3"
       }
     ]
+  },
+  {
+    "id": "prices-and-teens",
+    "format": "number-contrast",
+    "title": "Phân biệt giá và số -teen/-ty",
+    "level": "Band 4.0",
+    "instructions": "Nghe các câu ngắn trong đời sống và công việc, rồi chọn đúng con số hoặc mức giá bạn nghe được.",
+    "clips": [
+      {
+        "id": "coffee-bill",
+        "script": [
+          {
+            "speaker": "Hannah",
+            "voice": "en-GB-female-1",
+            "text": "Your lunch order comes to fifteen pounds fifty altogether."
+          }
+        ],
+        "items": [
+          {
+            "id": "lunch-price",
+            "prompt": "Tổng tiền bữa trưa",
+            "answer": "price-15-50",
+            "explanation": "Người nói đọc “fifteen pounds fifty” (£15.50), có âm /n/ cuối ở “fifteen” và nhấn rõ âm tiết -teen hơn so với “fifty”.",
+            "choices": [
+              {
+                "id": "price-15-50",
+                "label": "£15.50"
+              },
+              {
+                "id": "price-50-50",
+                "label": "£50.50"
+              }
+            ]
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/connected-speech/prices-and-teens-coffee-bill.mp3"
+      },
+      {
+        "id": "bus-pass",
+        "script": [
+          {
+            "speaker": "Liam",
+            "voice": "en-AU-male-1",
+            "text": "The monthly commuter pass is eighty dollars if you renew online."
+          }
+        ],
+        "items": [
+          {
+            "id": "pass-price",
+            "prompt": "Giá vé tháng",
+            "answer": "price-80",
+            "explanation": "“Eighty” ($80) nhấn âm tiết đầu /ˈeɪ.ti/ và không có âm mũi /n/ cuối như “eighteen”.",
+            "choices": [
+              {
+                "id": "price-18",
+                "label": "$18"
+              },
+              {
+                "id": "price-80",
+                "label": "$80"
+              }
+            ]
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/connected-speech/prices-and-teens-bus-pass.mp3"
+      },
+      {
+        "id": "delivery-wait",
+        "script": [
+          {
+            "speaker": "Chloe",
+            "voice": "en-US-female-1",
+            "text": "The courier said the boxes will arrive in thirty minutes."
+          }
+        ],
+        "items": [
+          {
+            "id": "wait-time",
+            "prompt": "Thời gian giao hàng",
+            "answer": "thirty",
+            "explanation": "“Thirty” nhấn âm tiết đầu và kết thúc bằng nguyên âm ngắn /i/, khác với “thirteen” kéo dài âm /iːn/.",
+            "choices": [
+              {
+                "id": "thirteen",
+                "label": "13 minutes"
+              },
+              {
+                "id": "thirty",
+                "label": "30 minutes"
+              }
+            ]
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/connected-speech/prices-and-teens-delivery-wait.mp3"
+      },
+      {
+        "id": "parking-receipt",
+        "script": [
+          {
+            "speaker": "David",
+            "voice": "en-GB-male-1",
+            "text": "I paid nineteen pounds twenty for all-day parking near the station."
+          }
+        ],
+        "items": [
+          {
+            "id": "parking-fee",
+            "prompt": "Phí gửi xe cả ngày",
+            "answer": "price-19-20",
+            "explanation": "“Nineteen pounds twenty” là £19.20; âm tiết -teen nghe dài hơn và có âm /n/ trước “pounds”.",
+            "choices": [
+              {
+                "id": "price-19-20",
+                "label": "£19.20"
+              },
+              {
+                "id": "price-90-20",
+                "label": "£90.20"
+              }
+            ]
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/connected-speech/prices-and-teens-parking-receipt.mp3"
+      }
+    ]
+  },
+  {
+    "id": "fast-workplace-speech",
+    "format": "reduced-cloze",
+    "title": "Nghe dạng rút gọn và nối âm",
+    "level": "Band 6.5",
+    "instructions": "Nghe từng câu và điền cụm từ bị khuyết. Hệ thống chấp nhận cả dạng đầy đủ lẫn dạng rút gọn.",
+    "clips": [
+      {
+        "id": "should-have",
+        "script": [
+          {
+            "speaker": "Claire",
+            "voice": "en-GB-female-1",
+            "text": "We should've confirmed the venue before sending out the invitations."
+          }
+        ],
+        "items": [
+          {
+            "id": "modal-should",
+            "prompt": "We ___ confirmed the venue before sending out the invitations.",
+            "answer": "should have",
+            "explanation": "Động từ khuyết thiếu “should have” rút gọn thành “should've”, trong đó “have” đọc nhẹ thành /əv/ nối liền sau “should”.",
+            "rules": {
+              "contractions": true
+            }
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/connected-speech/fast-workplace-speech-should-have.mp3"
+      },
+      {
+        "id": "gonna-drop",
+        "script": [
+          {
+            "speaker": "Mark",
+            "voice": "en-US-male-1",
+            "text": "I'm gonna drop the signed contract at reception before lunch."
+          }
+        ],
+        "items": [
+          {
+            "id": "reduced-gonna",
+            "prompt": "I'm ___ drop the signed contract at reception before lunch.",
+            "answer": "going to",
+            "variants": [
+              "gonna"
+            ],
+            "explanation": "Trong giao tiếp tự nhiên, “going to” thường bị nuốt âm và nối nhanh thành “gonna” /ˈɡʌnə/.",
+            "rules": {
+              "contractions": true
+            }
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/connected-speech/fast-workplace-speech-gonna-drop.mp3"
+      },
+      {
+        "id": "wanna-swap",
+        "script": [
+          {
+            "speaker": "Rachel",
+            "voice": "en-US-female-1",
+            "text": "Do you wanna swap the Friday afternoon shift with me?"
+          }
+        ],
+        "items": [
+          {
+            "id": "reduced-wanna",
+            "prompt": "Do you ___ swap the Friday afternoon shift with me?",
+            "answer": "want to",
+            "variants": [
+              "wanna"
+            ],
+            "explanation": "Hai âm /t/ giữa “want” và “to” gộp lại và đọc lướt thành “wanna” /ˈwɒnə/.",
+            "rules": {
+              "contractions": true
+            }
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/connected-speech/fast-workplace-speech-wanna-swap.mp3"
+      },
+      {
+        "id": "pass-em",
+        "script": [
+          {
+            "speaker": "Owen",
+            "voice": "en-AU-male-1",
+            "text": "If the new interns arrive early, just give 'em the welcome packs."
+          }
+        ],
+        "items": [
+          {
+            "id": "reduced-them",
+            "prompt": "If the new interns arrive early, just ___ the welcome packs.",
+            "answer": "give them",
+            "variants": [
+              "give 'em",
+              "give em"
+            ],
+            "explanation": "Đại từ “them” rơi âm đầu /ð/ thành “'em” /əm/ và nối trực tiếp với phụ âm /v/ cuối của “give”.",
+            "rules": {
+              "contractions": true
+            }
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/connected-speech/fast-workplace-speech-pass-em.mp3"
+      },
+      {
+        "id": "weak-of-linking",
+        "script": [
+          {
+            "speaker": "Tessa",
+            "voice": "en-AU-female-1",
+            "text": "We ran out of printer ink right before the client meeting."
+          }
+        ],
+        "items": [
+          {
+            "id": "linking-out-of",
+            "prompt": "We ___ printer ink right before the client meeting.",
+            "answer": "ran out of",
+            "variants": [
+              "ran outta"
+            ],
+            "explanation": "Cụm “ran out of” nối liền phụ âm cuối sang nguyên âm kế tiếp (/ræn aʊt əv/), trong đó “of” đọc dạng yếu thành /əv/ hoặc /ə/.",
+            "rules": {
+              "contractions": true
+            }
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/connected-speech/fast-workplace-speech-weak-of-linking.mp3"
+      }
+    ]
   }
 ]
