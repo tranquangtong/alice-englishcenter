@@ -95,18 +95,25 @@ export async function checkCSS(siteRoot = root) {
     if (!href || /^(?:[a-z][a-z\d+.-]*:|\/\/)/i.test(href)) continue;
     loaded.add(href.split(/[?#]/)[0]);
   }
-  const files = [];
-  for (const name of loaded) {
-    try {
-      const css = await readFile(path.join(siteRoot, name));
-      files.push({ name, raw: css.length, gzip: gzipSync(css).length });
-    } catch { errors.push(`Loaded stylesheet missing: ${name}`); }
+  const practice = /<meta name="aec-practice-css" content="([^"]+)">/.exec(html)?.[1].split(/[?#]/)[0];
+  if (practice && loaded.has(practice)) errors.push(`${practice} must load only on method routes`);
+  async function measure(names, label, rawLimit, gzipLimit) {
+    const files = [];
+    for (const name of names) {
+      try {
+        const css = await readFile(path.join(siteRoot, name));
+        files.push({ name, raw: css.length, gzip: gzipSync(css).length });
+      } catch { errors.push(`${label} stylesheet missing: ${name}`); }
+    }
+    const raw = files.reduce((sum, file) => sum + file.raw, 0);
+    const gzip = files.reduce((sum, file) => sum + file.gzip, 0);
+    if (raw >= rawLimit) errors.push(`${label} CSS exceeds the <${rawLimit.toLocaleString('en-US')}-byte raw budget: ${raw} bytes`);
+    if (gzip >= gzipLimit) errors.push(`${label} CSS exceeds the <${gzipLimit.toLocaleString('en-US')}-byte gzip budget: ${gzip} bytes`);
+    return { files, raw, gzip };
   }
-  const raw = files.reduce((sum, file) => sum + file.raw, 0);
-  const gzip = files.reduce((sum, file) => sum + file.gzip, 0);
-  if (raw >= 60_000) errors.push(`Loaded CSS exceeds the <60,000-byte raw budget: ${raw} bytes`);
-  if (gzip >= 15_000) errors.push(`Loaded CSS exceeds the <15,000-byte gzip budget: ${gzip} bytes`);
-  return { errors, files, raw, gzip };
+  const base = await measure(loaded, 'Base', 60_000, 15_000);
+  const methods = practice ? await measure(new Set([...loaded, practice]), 'Methods', 72_000, 18_000) : null;
+  return { errors, ...base, methods };
 }
 
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {

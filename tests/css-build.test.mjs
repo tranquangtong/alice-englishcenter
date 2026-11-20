@@ -70,3 +70,22 @@ test('CSS budgets enforce combined loaded raw bytes and separately compressed gz
   assert.equal(result.errors.length, 1);
   assert.match(result.errors[0], /<15,000-byte gzip budget/);
 });
+
+test('method route includes lazy styles and has a separate budget', async t => {
+  const root = await mkdtemp(path.join(tmpdir(), 'alice-css-method-budget-'));
+  t.after(() => rm(root, { recursive: true, force: true }));
+  await mkdir(path.join(root, 'assets/css'), { recursive: true });
+  const base = '<link rel="stylesheet" href="base.css?v=1">';
+  const practice = '<meta name="aec-practice-css" content="practice.css?v=2">';
+  const html = path.join(root, 'index.html');
+  await writeFile(html, base + practice);
+  await writeFile(path.join(root, 'base.css'), ' '.repeat(59_000));
+  await writeFile(path.join(root, 'practice.css'), ' '.repeat(13_000));
+  const result = await checkCSS(root);
+  assert.equal(result.raw, 59_000);
+  assert.equal(result.methods.raw, 72_000);
+  assert.equal(result.errors.length, 1);
+  assert.match(result.errors[0], /Methods CSS.*<72,000-byte raw budget/);
+  await writeFile(html, base + practice + '<link rel="stylesheet" href="practice.css">');
+  assert.match((await checkCSS(root)).errors.join('\n'), /must load only on method routes/);
+});

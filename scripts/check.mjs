@@ -4,6 +4,7 @@ import { fileURLToPath } from 'node:url';
 import { spawnSync } from 'node:child_process';
 import { existsSync } from 'node:fs';
 import { safePath, validateTest, validateExternal } from '../assets/js/listening-core.js';
+import { FORMATS, isSlug, validatePractice } from '../assets/js/listening-methods-core.js';
 import { checkCSS } from './build-css.mjs';
 import { checkVersion } from './build-version.mjs';
 
@@ -124,6 +125,35 @@ else {
         for (const issue of validateTest(test, { imageExists: image => existsSync(path.join(root, image)) })) report(`${entry.file}: ${issue}`);
       } catch (error) { report(`${entry.file}: ${error.message}`); }
     }
+    if (!Array.isArray(catalog.methods)) throw new Error('methods array required');
+    for (const method of catalog.methods) {
+      if (!method || !Object.hasOwn(FORMATS, method.id) || ids.has(method.id) || typeof method.title !== 'string' || !method.title.trim()
+        || !Array.isArray(method.exercises)) {
+        report('Listening index: invalid or duplicate method'); continue;
+      }
+      ids.add(method.id);
+      const directory = `${listeningDirectory}methods/${method.id}/`;
+      if (method.intro !== directory + 'intro.md' || method.file !== directory + 'exercises.json') {
+        report(`Listening method ${method.id}: invalid intro or exercise path`); continue;
+      }
+      try {
+        if (!await exists(path.join(root, method.intro))) report(`${method.intro}: missing intro`);
+        const exercises = JSON.parse(await readFile(path.join(root, method.file), 'utf8'));
+        if (!Array.isArray(exercises) || !exercises.length) throw new Error('expected a nonempty exercise array');
+        const index = exercises.map(exercise => ({ id: exercise.id, title: exercise.title }));
+        if (method.exercises.length !== index.length || new Set(index.map(entry => entry.id)).size !== index.length
+          || !index.every(({ id, title }, i) => isSlug(id) && method.exercises[i]?.id === id && method.exercises[i]?.title === title)) report(`${method.file}: exercise list differs from index or has duplicate IDs`);
+        for (const exercise of exercises) {
+          const issues = validatePractice(exercise, method.id);
+          for (const issue of issues) report(`${method.file}: ${exercise.id}: ${issue}`);
+          if (issues.length) continue;
+          for (const clip of exercise.clips) {
+            if (!await exists(path.join(root, clip.audio))) report(`${clip.audio}: missing method audio`);
+          }
+        }
+      } catch (error) { report(`${method.file}: ${error.message}`); }
+    }
+    for (const method of Object.keys(FORMATS)) if (!catalog.methods.some(entry => entry?.id === method)) report(`Listening index: missing method ${method}`);
   } catch (error) { report(`Listening index: ${error.message}`); }
 }
 const externalFile = path.join(root, listeningDirectory, 'external.json');
@@ -134,7 +164,8 @@ if (await exists(externalFile)) {
 try {
   const css = await checkCSS(root);
   for (const issue of css.errors) report(issue);
-  console.log(`Loaded CSS: ${css.raw} bytes raw, ${css.gzip} bytes gzip (files compressed separately).`);
+  console.log(`Base CSS: ${css.raw} bytes raw, ${css.gzip} bytes gzip (files compressed separately).`);
+  if (css.methods) console.log(`Method CSS: ${css.methods.raw} bytes raw, ${css.methods.gzip} bytes gzip (files compressed separately).`);
 } catch (error) { report(`CSS build: ${error.message}`); }
 try {
   if (!await checkVersion(root)) report('version.json or the index.html release stamp is missing or stale; run node scripts/build-version.mjs');

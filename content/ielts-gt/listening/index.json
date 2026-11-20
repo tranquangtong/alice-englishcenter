@@ -1,6 +1,9 @@
 {
   "groups": [
-    { "id": "practice-tests", "title": "Practice Tests" }
+    {
+      "id": "practice-tests",
+      "title": "Practice Tests"
+    }
   ],
   "tests": [
     {
@@ -30,6 +33,88 @@
       "file": "content/ielts-gt/listening/gt-l-04.json",
       "summary": "Part 1: Lost property on a train · Part 2: Supermarket staff induction · Part 3: Photography course project · Part 4: Coral reef restoration",
       "difficulty": "band 6–8"
+    }
+  ],
+  "methods": [
+    {
+      "id": "dictation",
+      "title": "Luyện nghe bắt từ",
+      "intro": "content/ielts-gt/listening/methods/dictation/intro.md",
+      "file": "content/ielts-gt/listening/methods/dictation/exercises.json",
+      "exercises": [
+        {
+          "id": "booking-details",
+          "title": "Tên và số điện thoại khi đặt chỗ"
+        },
+        {
+          "id": "office-gap",
+          "title": "Thông báo ở văn phòng"
+        },
+        {
+          "id": "workplace-sentence",
+          "title": "Một câu trong buổi bàn giao"
+        },
+        {
+          "id": "everyday-tatoeba",
+          "title": "Chép câu ngắn từ Tatoeba"
+        }
+      ]
+    },
+    {
+      "id": "paraphrase",
+      "title": "Nhận diện diễn giải & bẫy nghe",
+      "intro": "content/ielts-gt/listening/methods/paraphrase/intro.md",
+      "file": "content/ielts-gt/listening/methods/paraphrase/exercises.json",
+      "exercises": [
+        {
+          "id": "booking-change",
+          "title": "Thay đổi lịch đặt phòng"
+        },
+        {
+          "id": "parking-rule",
+          "title": "Quy định chỗ đỗ xe"
+        },
+        {
+          "id": "pickup-point",
+          "title": "Địa điểm nhận đồng phục"
+        }
+      ]
+    },
+    {
+      "id": "connected-speech",
+      "title": "Giải mã nối âm & âm lướt",
+      "intro": "content/ielts-gt/listening/methods/connected-speech/intro.md",
+      "file": "content/ielts-gt/listening/methods/connected-speech/exercises.json",
+      "exercises": [
+        {
+          "id": "count-the-words",
+          "title": "Đếm từ trong cụm nói nhanh"
+        },
+        {
+          "id": "weak-have",
+          "title": "Nghe dạng yếu của have"
+        },
+        {
+          "id": "teen-or-ty",
+          "title": "Phân biệt 14 và 40"
+        },
+        {
+          "id": "word-endings",
+          "title": "Phân biệt đuôi -s và -ed"
+        }
+      ]
+    },
+    {
+      "id": "prediction",
+      "title": "Dự đoán & kiểm chứng",
+      "intro": "content/ielts-gt/listening/methods/prediction/intro.md",
+      "file": "content/ielts-gt/listening/methods/prediction/exercises.json",
+      "exercises": [
+        {
+          "id": "training-signup",
+          "title": "Dự đoán khi đăng ký buổi hướng dẫn"
+        }
+      ]
     }
   ]
 }
