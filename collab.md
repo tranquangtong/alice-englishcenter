@@ -14,8 +14,9 @@
 - Build: `npm run css` (after CSS edits) → `node scripts/build-version.mjs` (after any change in `index.html`, `assets/`, `content/`)
 - Audio: `npm run audio` (needs network)
 - Run/dev: `python3 -m http.server 8000` → http://localhost:8000
-- E2E browser: `PW_CHANNEL` (default `msedge`); this Mac has Chrome only → `PW_CHANNEL=chrome node --test`.
-  Codex's `-w` sandbox can't bind localhost or launch Chrome → lead runs the E2E suite before merge.
+- E2E: `npm run test:chrome` + `npm run test:webkit` (Safari engine) on this Mac; `PW_BROWSER`/`PW_CHANNEL`
+  in `tests/helpers/browser.mjs` (default Chromium `msedge`). Codex's `-w` sandbox can't bind localhost or
+  launch browsers (and a crash pops a macOS dialog) → codex never launches browsers; lead runs both suites.
 
 ## Roles (overrides global routing)
 - lead: whoever the user is chatting with
@@ -44,7 +45,7 @@
 - **Every task ships with tests.** The prompt lists acceptance checks; not done until:
   1. builds re-run as needed, `node scripts/check.mjs` → 0 errors, `node --test` → all pass;
   2. UI changes: codex adds/updates a playwright-core E2E check (measure positions/sizes,
-     screenshots at 1600px + 390px, light + dark); the lead runs it on Chrome;
+     screenshots at 1600px + 390px, light + dark); the lead runs it on Chrome + WebKit;
   3. codex reviews the diff against the `docs/design-system.md` checklist.
   agy work → codex runs 1–3 afterwards.
 - Blocked teammate: give cause + workaround and try it; `NEEDS USER:` for user-only steps;
