@@ -46,7 +46,9 @@ Tránh: flat design phẳng lì, màu xám buồn, brutalism, neon cyberpunk, g�
 - **Gel button / pill:** gradient dọc aqua (sáng trên, đậm dưới), nửa trên có lớp bóng trắng
   (`::before`), bo pill, hover sáng hơn + nhấc nhẹ, active lún xuống.
 - **Nav item active:** dạng pill kính có vệt sáng, chữ aqua đậm.
-- **Header:** dải kính mỏng; logo dạng "giọt nước / bong bóng" bóng.
+- **Header:** dải kính lỏng (*liquid glass*) nổi dạng pill — `blur(4px)` + tăng bão hòa/sáng để nội dung cuộn
+  bên dưới vẫn rõ nét, phủ tint aqua-trắng mỏng, vệt sáng đỉnh, viền trong toàn chu vi và ánh caustic đáy
+  (fallback `--glass-strong` khi thiếu `backdrop-filter` / `prefers-reduced-transparency`); logo giọt nước bóng.
 - **Bảng:** khung kính, hàng tiêu đề gradient aqua nhạt, sọc ngựa vằn rất nhẹ. Ưu tiên đọc **không cuộn
   ngang**: `table-layout: auto`, ô tự xuống dòng, bảng nhiều cột (≥ 5) chữ/padding gọn hơn. Khi vùng
   nội dung hẹp (≤ 42rem, tức màn hình ~720px; bảng ≥ 7 cột từ ≤ 50rem) → **dạng thẻ xếp chồng**: mỗi
