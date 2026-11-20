@@ -65,6 +65,30 @@
         {
           "id": "shift-briefing",
           "title": "Điền cụm từ khi họp giao ca"
+        },
+        {
+          "id": "hotel-checkin",
+          "title": "Nhận phòng khách sạn"
+        },
+        {
+          "id": "repair-request",
+          "title": "Báo sửa chữa căn hộ"
+        },
+        {
+          "id": "clinic-appointment",
+          "title": "Đặt lịch khám tại phòng mạch"
+        },
+        {
+          "id": "safety-briefing",
+          "title": "Hướng dẫn an toàn tại kho hàng"
+        },
+        {
+          "id": "timetable-updates",
+          "title": "Đổi giờ chạy tàu và xe buýt"
+        },
+        {
+          "id": "recycling-rules",
+          "title": "Quy định phân loại rác tái chế"
         }
       ]
     },
@@ -97,6 +121,30 @@
         {
           "id": "policy-highlights",
           "title": "Soi bẫy trong thông báo nội bộ"
+        },
+        {
+          "id": "gym-membership",
+          "title": "Bẫy nghe khi đăng ký phòng gym"
+        },
+        {
+          "id": "car-rental-traps",
+          "title": "Bẫy so sánh và phủ định thuê xe"
+        },
+        {
+          "id": "online-return",
+          "title": "Đổi trả hàng mua trực tuyến"
+        },
+        {
+          "id": "volunteer-orientation",
+          "title": "Thông tin tình nguyện cộng đồng"
+        },
+        {
+          "id": "interview-schedule",
+          "title": "Soi bẫy trong thư mời phỏng vấn"
+        },
+        {
+          "id": "course-enrolment",
+          "title": "Soi bẫy khi ghi danh khóa học"
         }
       ]
     },
@@ -129,6 +177,30 @@
         {
           "id": "fast-workplace-speech",
           "title": "Nghe dạng rút gọn và nối âm"
+        },
+        {
+          "id": "car-rental-numbers",
+          "title": "Số, giờ và giá khi thuê xe"
+        },
+        {
+          "id": "timetable-word-count",
+          "title": "Đếm từ: thay đổi lịch trình"
+        },
+        {
+          "id": "returns-reduced-forms",
+          "title": "Dạng rút gọn khi đổi trả hàng"
+        },
+        {
+          "id": "safety-word-endings",
+          "title": "Đuôi -s/-es/-ed trong an toàn"
+        },
+        {
+          "id": "repair-fast-count",
+          "title": "Đếm từ trong câu sửa căn hộ"
+        },
+        {
+          "id": "interview-connected-speech",
+          "title": "Nối âm khi hẹn lịch phỏng vấn"
         }
       ]
     },
@@ -161,6 +233,30 @@
         {
           "id": "tool-library-talk",
           "title": "Bảng ghi chú thư viện dụng cụ"
+        },
+        {
+          "id": "hotel-checkin-form",
+          "title": "Phiếu nhận phòng khách sạn"
+        },
+        {
+          "id": "clinic-appointment-form",
+          "title": "Phiếu đặt lịch khám phòng mạch"
+        },
+        {
+          "id": "gym-membership-table",
+          "title": "Bảng gói hội viên phòng gym"
+        },
+        {
+          "id": "course-enrolment-notes",
+          "title": "Ghi chú hướng dẫn nhập học"
+        },
+        {
+          "id": "volunteering-lecture-notes",
+          "title": "Ghi chú bài giảng tình nguyện"
+        },
+        {
+          "id": "recycling-rules-lecture",
+          "title": "Ghi chú quy định tái chế rác"
         }
       ]
     }
