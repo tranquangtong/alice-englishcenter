@@ -1401,6 +1401,7 @@ body:has(.update-toast:not([hidden])) { padding-bottom: var(--toast-space, 0px);
     width: 18px;
     height: 14px;
     pointer-events: none;
+    transition: none;
     border-radius: 1px;
     background: linear-gradient(
       180deg,

@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import { mkdir, readFile } from 'node:fs/promises';
 import test from 'node:test';
+import { setTimeout as delay } from 'node:timers/promises';
 import { browserEngine, isWebKit, launchBrowser, webKitMobileOptions } from './helpers/browser.mjs';
 import { serveFixture } from './helpers/static-server.mjs';
 
@@ -116,10 +117,16 @@ test('Edge: compact GT header and route-specific sidebar at 1600, 390 and 360px'
       await heading(page, 'Học tiếng Anh, cùng nhau tiến bộ').waitFor();
 
       async function expectIcon(expanded) {
-        const icon = await toggle.evaluate(measureMenuIcon);
         const state = `${label} ${expanded ? 'close' : 'hamburger'} icon`;
+        const size = expanded ? [16, 16] : [18, 14];
+        const deadline = performance.now() + 1000;
+        let icon = await toggle.evaluate(measureMenuIcon);
+        while ((icon.width !== size[0] || icon.height !== size[1]) && performance.now() < deadline) {
+          await delay(16);
+          icon = await toggle.evaluate(measureMenuIcon);
+        }
         assert.match(icon.backgroundImage, /linear-gradient/, state);
-        assert.deepEqual([icon.width, icon.height], expanded ? [16, 16] : [18, 14], state);
+        assert.deepEqual([icon.width, icon.height], size, state);
         assert.ok(Math.abs(icon.dx) <= 1 && Math.abs(icon.dy) <= 1,
           `${state}: offset (${icon.dx}, ${icon.dy})`);
       }
