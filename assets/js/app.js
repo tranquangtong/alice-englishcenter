@@ -11,9 +11,13 @@
   const menu = document.querySelector('.menu-toggle');
   const gtHub = 'ielts-gt';
   const gtListening = `${gtHub}/listening`;
+  const practiceGroup = { id: 'practice-tests', title: 'Practice Tests' };
+  const sidebarItemLimit = 8;
+  const groupPreferences = new Map();
   let pages = [];
   let navSection;
   let navPage;
+  let navGroups = [];
   let request = 0;
   let listeningRequest;
   let previousHash = location.hash;
@@ -176,7 +180,7 @@
     const link = document.createElement('a');
     link.href = href;
     link.textContent = title;
-    link.dataset.page = id;
+    if (id) link.dataset.page = id;
     return link;
   }
 
@@ -199,9 +203,9 @@
     overview.className = 'sidebar__overview';
     const skills = document.createElement('ul');
     const listening = appendNavItem(skills, navLink(gtListening, 'Listening', `#/${gtListening}`));
-    const tests = document.createElement('ul');
-    tests.className = 'sidebar__sublist';
-    listening.append(tests);
+    const groups = document.createElement('ul');
+    groups.className = 'sidebar__groups';
+    listening.append(groups);
     for (const skill of ['Reading', 'Writing', 'Speaking']) {
       const entry = document.createElement('span');
       entry.className = 'sidebar__soon';
@@ -214,7 +218,56 @@
     nav.append(navLink('home', '← Danh mục học tập'), overview, skills);
   }
 
-  async function populateGtTests(list) {
+  function setGroupOpen({ button, items }, open) {
+    button.setAttribute('aria-expanded', String(open));
+    items.hidden = !open;
+  }
+
+  function syncGtGroups() {
+    for (const group of navGroups) {
+      setGroupOpen(group, group.routes.has(navPage) || groupPreferences.get(group.key) === true);
+    }
+  }
+
+  function appendGtGroup(list, { id, title }, entries) {
+    const items = document.createElement('ul');
+    items.id = `gt-listening-${id}`;
+    items.className = 'sidebar__sublist';
+    const key = `aec-sidebar:${base.pathname}:${items.id}`;
+    if (!groupPreferences.has(key)) {
+      try { groupPreferences.set(key, sessionStorage.getItem(key) === 'true'); } catch { /* Storage can be blocked. */ }
+    }
+
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.setAttribute('aria-controls', items.id);
+    const count = document.createElement('small');
+    count.textContent = entries.length;
+    const chevron = document.createElement('span');
+    chevron.textContent = '›';
+    chevron.setAttribute('aria-hidden', 'true');
+    button.append(`${title} `, count, chevron);
+
+    const group = { key, button, items, routes: new Set(entries.map(entry => `${gtListening}/${entry.id}`)) };
+    button.addEventListener('click', () => {
+      const open = items.hidden;
+      groupPreferences.set(key, open);
+      try { sessionStorage.setItem(key, String(open)); } catch { /* Storage can be blocked. */ }
+      setGroupOpen(group, open);
+    });
+
+    for (const { id, title } of entries.slice(0, sidebarItemLimit)) {
+      const href = `#/${gtListening}/${encodeURIComponent(id)}?mode=practice`;
+      appendNavItem(items, navLink(`${gtListening}/${id}`, title, href));
+    }
+    if (entries.length > sidebarItemLimit) {
+      appendNavItem(items, navLink(null, `Xem tất cả (${entries.length})`, `#/${gtListening}`));
+    }
+    appendNavItem(list, button).append(items);
+    navGroups.push(group);
+  }
+
+  async function populateGtGroups(list) {
     let catalog;
     try {
       catalog = await window.Listening?.loadCatalog();
@@ -223,11 +276,14 @@
       return;
     }
     if (!list.isConnected || list.childElementCount || !Array.isArray(catalog?.tests)) return;
-    for (const { id, title } of catalog.tests) {
-      const href = `#/${gtListening}/${encodeURIComponent(id)}?mode=practice`;
-      appendNavItem(list, navLink(`${gtListening}/${id}`, title, href));
+    // Catalog groups are ordered {id, title} entries. Each test's optional group names its group id.
+    // Older catalogs and tests without a group use the Practice Tests group.
+    for (const group of catalog.groups ?? [practiceGroup]) {
+      const entries = catalog.tests.filter(entry => (entry.group ?? practiceGroup.id) === group.id);
+      if (entries.length) appendGtGroup(list, group, entries);
     }
     markCurrentNav();
+    syncGtGroups();
   }
 
   function buildGlobalNav() {
@@ -247,17 +303,20 @@
   }
 
   function buildNav(id, inGt) {
+    const routeChanged = navPage !== id;
     navPage = id;
     if (navSection !== inGt) {
       navSection = inGt;
+      navGroups = [];
       nav.replaceChildren();
       nav.setAttribute('aria-label', inGt ? 'Danh mục IELTS General' : 'Tài liệu học tập');
       if (inGt) buildGtNav();
       else buildGlobalNav();
     }
     markCurrentNav();
-    const pendingTests = inGt && nav.querySelector('.sidebar__sublist:empty');
-    if (pendingTests) populateGtTests(pendingTests);
+    if (routeChanged) syncGtGroups();
+    const pendingGroups = inGt && nav.querySelector('.sidebar__groups:empty');
+    if (pendingGroups) populateGtGroups(pendingGroups);
   }
 
   function prepareContent(page) {
