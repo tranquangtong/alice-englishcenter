@@ -1,51 +1,56 @@
 # Collab config — alice-englishcenter
 
 ## Stack
-- Static site for GitHub Pages (plain HTML/CSS/JS, no build step; `.nojekyll`).
-- Content = Markdown in `content/` + `docs/`, rendered client-side (marked via pinned CDN).
-- Later: private repo + other hosting; teacher/student roles (see `docs/roadmap-teacher-student.md`).
+- Static site for GitHub Pages (plain HTML/CSS/JS, `.nojekyll`); no build step at deploy, but
+  generated files (`*.min.css`, `version.json`, `aec-version` meta) are committed.
+- Content = Markdown/JSON in `content/` (IELTS GT Listening: `content/ielts-gt/listening/`),
+  rendered client-side (marked + DOMPurify, pinned CDN). Internal docs in `docs/` (not on site).
+- Dev-only npm deps: playwright-core (E2E), msedge-tts + ffmpeg-static (listening audio).
+- Later: Supabase teacher/student platform (`docs/roadmap-teacher-student.md`).
 
-## Commands
-- Install: none (Node ≥ 20 only for checks)
-- Test: `node scripts/check.mjs` (links + manifest + Markdown files exist)
-- Run/dev: `python3 -m http.server 8000` (Windows: `python -m http.server 8000`) then open http://localhost:8000
+## Commands (macOS, Node ≥ 20)
+- Install: `npm ci`
+- Test: `node --test` (unit + E2E) and `node scripts/check.mjs` (links, manifest, min.css/version freshness, CSS budget)
+- Build: `npm run css` (after CSS edits) → `node scripts/build-version.mjs` (after any change in `index.html`, `assets/`, `content/`)
+- Audio: `npm run audio` (needs network)
+- Run/dev: `python3 -m http.server 8000` → http://localhost:8000
+- E2E browser: `PW_CHANNEL` (default `msedge`); this Mac has Chrome only → `PW_CHANNEL=chrome node --test`.
+  Codex's `-w` sandbox can't bind localhost or launch Chrome → lead runs the E2E suite before merge.
 
 ## Roles (overrides global routing)
 - lead: whoever the user is chatting with
-- codex: implementation with tests, build/CI fixes, review every diff before merge
-- agy: UI/HTML/CSS, content and copy (English-learning material), docs, research
-  - models: the newest Gemini Pro / Claude Opus/Sonnet from `agy models` (global rule: never Flash or Gemini 3.x Pro); no fixed ids here.
+- codex: JS, scripts, tests, build/audio, E2E runs, review every diff before merge
+- agy: UI/HTML/CSS, English-learning content and copy, docs, research
+  - models: newest Gemini Pro / Claude Opus/Sonnet from `agy models` (never Flash or Gemini 3.x Pro).
 
 ## Permissions
-- codex: may edit (worktree, -w)
-- agy: may edit (worktree, -w; file edits only)
-- Never touch: `.env*`, secrets. Never publish ielts.app test content verbatim (structure only; write original practice items).
+- codex: may edit (worktree, -w); must not `git commit` (bridge auto-commits)
+- agy: may edit (worktree, -w; file edits only, user choice)
+- Never touch: `.env*`, secrets; never hand-edit `*.min.css` or `version.json` (regenerate).
+- Never publish ielts.app test content verbatim (structure only; write original practice items).
 
 ## Project rules
-- Definition of done: `node scripts/check.mjs` passes with 0 errors; the lead verifies before reporting.
-- Keep learner-facing content accurate and consistent; Codex reviews code, the lead reviews content.
-- **UI design gene = Frutiger Aero (mandatory).** Every UI change — redesign, new page or feature
-  (login, teacher/student dashboards, quizzes…) — must follow `docs/design-system.md` (tokens,
-  glass panels, gel buttons, a11y rules) and pass its review checklist. Changing the gene needs
-  the user's approval and an update to that file first.
+- Definition of done: `node --test` all pass + `node scripts/check.mjs` 0 errors; lead re-runs both.
+- Edited CSS/JS → bump its `?v=` in `index.html`, rebuild CSS, then rebuild version.
+- CSS budget < 60 KB raw / < 15 KB gzip (≈59 KB used): new UI must trim or merge CSS first.
+- **UI design gene = Frutiger Aero (mandatory).** Every UI change follows `docs/design-system.md`
+  (tokens, glass panels, gel buttons, a11y) and passes its checklist. Changing the gene needs the
+  user's approval and an update to that file first.
+- Keep learner-facing content accurate and consistent; codex reviews code, lead reviews content.
 
 ## Collaboration
-- **Lead never implements, however small the task** (user rule). Every change (CSS tweak, copy
-  edit, one-liner) goes to a teammate: UI/CSS/content → agy `-w`; JS/scripts/tests → codex `-w`.
-  Lead steps in only if both teammates fail after fix-up rounds or the user asks; says why.
-- **Every task ships with tests.** The prompt lists acceptance checks; the result is not done until:
-  1. `node scripts/check.mjs` → 0 errors;
-  2. UI changes: codex serves the site with a tiny node static server (no Python installed) and
-     verifies in headless Edge (`--no-sandbox`, temp `--user-data-dir` outside the repo; or
-     `npx playwright-core` with channel msedge): measure positions/sizes, screenshot 1600px + 390px;
-  3. codex reviews the diff vs `docs/design-system.md` checklist.
-  agy work → codex runs 1–3 afterwards. Lead re-runs 1 before merge and reports results.
-- Blocked teammate: give the cause + a workaround and try it; `NEEDS USER:` for steps only the
-  user can do; `SUGGEST codex|agy:` when the other teammate has a better tool.
-- Fallbacks: agy edits UI/content (no shell) → codex runs lint/tests on it; content in Google
-  Docs/Sheets/Slides or Canva → agy (codex has no such plugins); bulk reading of lesson
-  material → agy. Codex has bash, node, npm/npx (network on), headless Edge; it must not
-  `git commit` (bridge auto-commits). agy stays file-edits only (user choice).
+- **Lead never implements, however small** (user rule): UI/CSS/content → agy `-w`;
+  JS/scripts/tests → codex `-w`. Lead steps in only if both fail after fix-up rounds or the user asks; says why.
+- **Every task ships with tests.** The prompt lists acceptance checks; not done until:
+  1. builds re-run as needed, `node scripts/check.mjs` → 0 errors, `node --test` → all pass;
+  2. UI changes: codex adds/updates a playwright-core E2E check (measure positions/sizes,
+     screenshots at 1600px + 390px, light + dark); the lead runs it on Chrome;
+  3. codex reviews the diff against the `docs/design-system.md` checklist.
+  agy work → codex runs 1–3 afterwards.
+- Blocked teammate: give cause + workaround and try it; `NEEDS USER:` for user-only steps;
+  `SUGGEST codex|agy:` when the other teammate has a better tool.
+- Fallbacks: agy has no shell → codex runs builds/tests on its diff; Google Docs/Sheets/Slides or
+  Canva content → agy; bulk reading of lesson material → agy.
 
 ## Workflow
-- Global workflow applies. Note: `-w` needs at least one commit on `main`.
+- Global workflow applies (`-w` needs a commit on `main`).
