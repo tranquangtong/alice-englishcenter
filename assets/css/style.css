@@ -1316,8 +1316,8 @@ body:has(.update-toast:not([hidden])) { padding-bottom: var(--toast-space, 0px);
     top: calc(var(--header-offset) + .25rem);
     right: .75rem;
     z-index: 29;
-    width: min(360px, 100vw - 1.5rem);
-    max-height: calc(100dvh - var(--header-offset) - 1rem);
+    width: min(360px, 100% - 1.5rem);
+    max-height: calc(100dvh - var(--header-offset) - 1rem - var(--toast-space, 0px));
     background-image: var(--glass-card-bg);
     --glass-blur: 18px;
     transform-origin: top right;
@@ -1458,6 +1458,14 @@ body:has(.update-toast:not([hidden])) { padding-bottom: var(--toast-space, 0px);
     -webkit-backdrop-filter: none;
     backdrop-filter: none;
   }
+
+  @media (max-width: 900px) {
+    .sidebar {
+      background-color: var(--sky-bottom);
+      -webkit-backdrop-filter: none;
+      backdrop-filter: none;
+    }
+  }
 }
 
 @media (forced-colors: active) and (max-width: 600px) {
@@ -1537,6 +1545,10 @@ body:has(.update-toast:not([hidden])) { padding-bottom: var(--toast-space, 0px);
     padding: 0;
   }
 
+  article {
+    max-width: none;
+  }
+
   article blockquote::before {
     display: none;
   }
@@ -1551,6 +1563,7 @@ body:has(.update-toast:not([hidden])) { padding-bottom: var(--toast-space, 0px);
     break-after: avoid;
   }
 
+  article a,
   a {
     color: #000;
   }

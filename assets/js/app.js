@@ -159,11 +159,16 @@
     menu.setAttribute('aria-expanded', String(open));
     nav.classList.toggle('is-open', open);
   });
+  document.addEventListener('pointerdown', event => {
+    if (nav.classList.contains('is-open') && !menu.contains(event.target) && !nav.contains(event.target)) {
+      closeMenu();
+    }
+  });
   document.addEventListener('keydown', event => {
     if (event.key === 'Escape' && !event.defaultPrevented && menu.getAttribute('aria-expanded') === 'true') {
       event.preventDefault();
       closeMenu();
-      menu.focus();
+      menu.focus({ preventScroll: true });
     }
   });
 

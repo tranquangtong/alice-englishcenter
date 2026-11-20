@@ -62,6 +62,27 @@ function measureNavigation() {
   };
 }
 
+function measureMenuIcon(button) {
+  // Mirror the ::after icon's resolved geometry in a measurable element.
+  const icon = getComputedStyle(button, '::after');
+  const probe = document.createElement('span');
+  for (const property of ['position', 'top', 'right', 'bottom', 'left', 'width', 'height',
+    'marginTop', 'marginRight', 'marginBottom', 'marginLeft', 'transform']) {
+    probe.style[property] = icon[property];
+  }
+  button.append(probe);
+  const face = button.getBoundingClientRect();
+  const box = probe.getBoundingClientRect();
+  probe.remove();
+  return {
+    position: icon.position,
+    width: box.width,
+    height: box.height,
+    dx: (box.left + box.right - face.left - face.right) / 2,
+    dy: (box.top + box.bottom - face.top - face.bottom) / 2
+  };
+}
+
 test('Edge: compact GT header and route-specific sidebar at 1600, 390 and 360px', { timeout: 90000 }, async t => {
   const server = await serveFixture({ real: true });
   t.after(() => server.close());
@@ -89,12 +110,49 @@ test('Edge: compact GT header and route-specific sidebar at 1600, 390 and 360px'
       await page.goto(server.url + '#/home', { timeout: 12000 });
       await heading(page, 'Học tiếng Anh, cùng nhau tiến bộ').waitFor();
 
+      async function expectIcon(expanded) {
+        const icon = await toggle.evaluate(measureMenuIcon);
+        const state = `${label} ${expanded ? 'close' : 'hamburger'} icon`;
+        assert.equal(icon.position, 'absolute', state);
+        assert.deepEqual([icon.width, icon.height], expanded ? [16, 16] : [18, 14], state);
+        assert.ok(Math.abs(icon.dx) <= 1 && Math.abs(icon.dy) <= 1,
+          `${state}: offset (${icon.dx}, ${icon.dy})`);
+      }
+
+      async function expectClosed() {
+        assert.equal(await toggle.getAttribute('aria-expanded'), 'false', label);
+        assert.equal(await sidebar.isVisible(), false, label);
+      }
+
       async function openSidebar() {
         if (mobile) {
-          assert.equal(await toggle.getAttribute('aria-expanded'), 'false', label);
-          assert.equal(await sidebar.isVisible(), false, label);
+          await expectClosed();
+          await expectIcon(false);
+          const before = await page.locator('main').evaluate(node => node.getBoundingClientRect().top);
           await toggle.click();
           assert.equal(await toggle.getAttribute('aria-expanded'), 'true', label);
+          await expectIcon(true);
+          const panel = await sidebar.evaluate(node => {
+            const { position, animationName } = getComputedStyle(node);
+            return {
+              position, animationName,
+              box: node.getBoundingClientRect().toJSON(),
+              headerBottom: document.querySelector('.site-header').getBoundingClientRect().bottom,
+              mainTop: document.querySelector('main').getBoundingClientRect().top,
+              viewportWidth: document.documentElement.clientWidth,
+              viewportHeight: document.documentElement.clientHeight
+            };
+          });
+          assert.equal(panel.mainTop, before, `${label}: opening shifted main content`);
+          assert.equal(panel.position, 'fixed', label);
+          assert.equal(panel.animationName, 'none', `${label}: reduced motion`);
+          assert.ok(
+            panel.box.left >= 0 && panel.box.right <= panel.viewportWidth &&
+            panel.box.top >= panel.headerBottom && panel.box.bottom <= panel.viewportHeight,
+            `${label}: panel outside its viewport bounds`
+          );
+        } else {
+          assert.equal(await sidebar.evaluate(node => getComputedStyle(node).position), 'sticky', label);
         }
         assert.ok(await sidebar.isVisible(), label);
       }
@@ -157,11 +215,19 @@ test('Edge: compact GT header and route-specific sidebar at 1600, 390 and 360px'
         assert.equal(await sidebar.getByRole('link', { name: skill }).count(), 0, label);
       }
       await inspect('hub');
-      await capture('ielts-gt');
+      await capture(mobile ? 'menu-open' : 'ielts-gt');
       if (mobile) {
+        await active.focus();
         await page.keyboard.press('Escape');
-        assert.equal(await toggle.getAttribute('aria-expanded'), 'false', label);
+        await expectClosed();
         assert.ok(await toggle.evaluate(el => el === document.activeElement), label);
+        await openSidebar();
+        if (isWebKit) await page.touchscreen.tap(6, 100);
+        else await page.mouse.click(6, 100);
+        await expectClosed();
+        await openSidebar();
+        await active.click(); // The current route has the same hash.
+        await expectClosed();
         await openSidebar();
       }
 
@@ -284,7 +350,7 @@ test('scrolled liquid glass header keeps its compact geometry over article text'
       }
       if (overArticle.supportsFilter) {
         const blur = /\bblur\(([\d.]+)px\)/.exec(overArticle.filter);
-        assert.ok(blur && Number(blur[1]) <= 6, `${label}: backdrop filter ${overArticle.filter}`);
+        assert.ok(blur && Number(blur[1]) <= 2, `${label}: backdrop filter ${overArticle.filter}`);
       }
       if (width !== 360) await page.screenshot({ path: `${artifacts}/scrolled-header-${width}-${scheme}.png` });
     }
