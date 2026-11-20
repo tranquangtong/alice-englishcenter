@@ -452,7 +452,7 @@ main,
 
 .menu-toggle::after,
 .aero-btn::after,
-.sidebar a[aria-current="page"]::after {
+.sidebar a[aria-current]::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -477,7 +477,7 @@ main,
 
 .menu-toggle:hover::after,
 .aero-btn:hover::after,
-.sidebar a[aria-current="page"]:hover::after {
+.sidebar a[aria-current]:hover::after {
   transform: translateX(130%);
 }
 
@@ -671,15 +671,7 @@ main,
   margin: .22rem 0;
 }
 
-.sidebar button {
-  width: 100%;
-  font: inherit;
-  background: none;
-  text-align: start;
-  cursor: pointer;
-}
-
-.sidebar :is(a, button, .sidebar__soon) {
+.sidebar :is(a, .sidebar__label, .sidebar__soon) {
   display: flex;
   align-items: center;
   min-height: 44px;
@@ -700,7 +692,7 @@ main,
   font-weight: 800;
 }
 
-.sidebar :is(.sidebar__groups, .sidebar__sublist) {
+.sidebar .sidebar__groups {
   padding-inline-start: .9rem;
 }
 
@@ -714,23 +706,14 @@ main,
   white-space: nowrap;
 }
 
-.sidebar button span {
-  margin-inline-start: .4rem;
-  transition: transform .18s;
-}
-
-.sidebar button[aria-expanded="true"] span {
-  transform: rotate(90deg);
-}
-
-.sidebar :is(a, button):hover {
+.sidebar a:hover {
   background: var(--surface-hover);
   border-color: var(--glass-edge);
   color: var(--ink);
   transform: translateX(2px);
 }
 
-.sidebar [aria-current="page"] {
+.sidebar [aria-current] {
   position: relative;
   overflow: hidden;
   background: var(--pill-active-bg);
@@ -741,7 +724,7 @@ main,
   box-shadow: var(--glass-highlight), 0 4px 12px rgb(21 147 214 / .16);
 }
 
-.sidebar [aria-current="page"]::before {
+.sidebar [aria-current]::before {
   content: "";
   width: .55rem;
   height: .55rem;
@@ -752,7 +735,7 @@ main,
   box-shadow: 0 0 8px rgb(69 182 73 / .55);
 }
 
-.sidebar a[aria-current="page"]::after {
+.sidebar a[aria-current]::after {
   background: linear-gradient(110deg, transparent 20%, rgb(255 255 255 / .42) 50%, transparent 80%);
 }
 

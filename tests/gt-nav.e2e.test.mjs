@@ -24,17 +24,6 @@ const { tests } = catalog;
 const practice = `${listening}/${tests[0].id}?mode=practice`;
 const catalogPath = '**/content/ielts-gt/listening/index.json';
 
-async function expectGroup(page, button, expanded) {
-  await button.waitFor();
-  assert.equal(await button.getAttribute('aria-expanded'), String(expanded));
-  const controls = await button.getAttribute('aria-controls');
-  assert.ok(controls);
-  const list = page.locator(`ul[id="${controls}"]`);
-  assert.equal(await list.evaluate(node => node.hidden), !expanded);
-  assert.equal(await list.isVisible(), expanded);
-  return list;
-}
-
 function measureNavigation() {
   const rect = selector => document.querySelector(selector).getBoundingClientRect().toJSON();
   const header = rect('.site-header');
@@ -48,7 +37,7 @@ function measureNavigation() {
   const fullHitArea = [centerY - 21.5, centerY + 21.5].every(y =>
     edges.every(x => button.contains(document.elementFromPoint(x, y))));
 
-  const sidebarEntries = [...document.querySelectorAll('#site-nav h2, #site-nav a, #site-nav button, .sidebar__soon')];
+  const sidebarEntries = [...document.querySelectorAll('#site-nav h2, #site-nav a, .sidebar__label, .sidebar__soon')];
   const boxes = sidebarEntries.map(entry => {
     const range = document.createRange();
     range.selectNodeContents(entry);
@@ -64,7 +53,7 @@ function measureNavigation() {
       }
     }
   }
-  const controls = [...document.querySelectorAll('.brand, .menu-toggle, .theme-toggle, .top-menu__panel a, #site-nav a, #site-nav button')]
+  const controls = [...document.querySelectorAll('.brand, .menu-toggle, .theme-toggle, .top-menu__panel a, #site-nav a')]
     .filter(node => node.getClientRects().length)
     .map(node => ({ label: node.textContent.trim(), box: node.getBoundingClientRect().toJSON() }));
   return {
@@ -120,8 +109,8 @@ test('Edge: compact GT header and route-specific sidebar at 1600, 390 and 360px'
       const mobile = width < 900;
       const page = mobile ? phone : desktop;
       const sidebar = page.locator('#site-nav');
-      const active = sidebar.locator('[aria-current="page"]');
-      const group = sidebar.getByRole('button', { name: `Practice Tests ${tests.length}`, exact: true });
+      const active = sidebar.locator('[aria-current]');
+      const practiceLink = sidebar.getByRole('link', { name: `Practice Tests ${tests.length}`, exact: true });
       const toggle = page.getByRole('button', { name: 'Danh mục học tập' });
       const gtButton = page.getByRole('button', { name: 'IELTS General', exact: true });
       const label = `${width}px ${scheme}`;
@@ -222,8 +211,8 @@ test('Edge: compact GT header and route-specific sidebar at 1600, 390 and 360px'
         if (width !== 360) await page.screenshot({ path: `${artifacts}/${route}-${width}-${scheme}.png` });
       }
 
-      async function expectCurrent(href) {
-        await active.and(sidebar.locator(`a[href="${href}"]`)).waitFor();
+      async function expectCurrent(href, kind = 'page') {
+        await sidebar.locator(`a[href="${href}"][aria-current="${kind}"]`).waitFor();
         assert.equal(await active.count(), 1, label);
       }
 
@@ -246,13 +235,15 @@ test('Edge: compact GT header and route-specific sidebar at 1600, 390 and 360px'
       assert.equal(await sidebar.getAttribute('aria-label'), 'Danh mục IELTS General', label);
       assert.equal(await sidebar.getByRole('heading', { name: 'Bắt đầu' }).count(), 0, label);
       await expectCurrent(hub);
-      const items = await expectGroup(page, group, false);
-      assert.equal(await items.getByRole('link').count(), 0, label);
-      await group.click();
-      await expectGroup(page, group, true);
-      assert.deepEqual(await items.getByRole('link').allTextContents(), tests.map(entry => entry.title), label);
-      await group.press('Enter');
-      await expectGroup(page, group, false);
+      await practiceLink.waitFor();
+      const sections = sidebar.locator('.sidebar__groups');
+      assert.deepEqual(await sections.locator('a').evaluateAll(links => links.map(link => [
+        link.getAttribute('href'), link.textContent.trim()
+      ])), [
+        [listening, `Practice Tests ${tests.length}`],
+        ...catalog.methods.map(method => [`${listening}/${method.id}`, `${method.title} ${method.exercises.length}`])
+      ], label);
+      assert.equal(await sections.locator('button, ul, [aria-expanded]').count(), 0, label);
       for (const skill of ['Reading', 'Writing', 'Speaking']) {
         assert.match(await sidebar.locator('.sidebar__soon').filter({ hasText: skill }).innerText(), /Sắp ra mắt/, label);
         assert.equal(await sidebar.getByRole('link', { name: skill }).count(), 0, label);
@@ -260,7 +251,7 @@ test('Edge: compact GT header and route-specific sidebar at 1600, 390 and 360px'
       await inspect('hub');
       await capture(mobile ? 'menu-open' : 'ielts-gt');
       if (mobile) {
-        await group.focus();
+        await practiceLink.focus();
         await page.keyboard.press('Escape');
         await expectClosed();
         assert.ok(await toggle.evaluate(el => el === document.activeElement), label);
@@ -274,36 +265,36 @@ test('Edge: compact GT header and route-specific sidebar at 1600, 390 and 360px'
         await openSidebar();
       }
 
-      await sidebar.getByRole('link', { name: 'Listening', exact: true }).click();
+      await practiceLink.press('Enter');
       await heading(page, 'IELTS General · Listening').waitFor();
       await openSidebar();
       await expectCurrent(listening);
-      await expectGroup(page, group, false);
       await inspect('list');
-      await group.press('Space');
-      await expectGroup(page, group, true);
-      assert.ok(await group.evaluate(node => node.matches(':focus-visible')), label);
-      await sidebar.getByRole('link', { name: tests[0].title, exact: true }).click();
+      await capture('list');
+      if (mobile) await toggle.click();
+      await page.locator(`.lt-card a[href="${practice}"]`).click();
       await heading(page, tests[0].title).waitFor();
       await openSidebar();
-      await expectCurrent(practice);
-      await expectGroup(page, group, true);
+      await expectCurrent(listening, 'location');
       await inspect('practice');
       await capture('practice');
       if (mobile) await toggle.click();
       await page.locator('[data-action="submit"]').click();
       await page.locator('.lt-score').waitFor();
       await openSidebar();
-      await expectCurrent(practice);
+      await expectCurrent(listening, 'location');
       await inspect('result');
 
       await page.evaluate(hash => { location.hash = hash; }, practice.replace('mode=practice', 'mode=exam'));
       await page.locator('.lt-mode--exam').waitFor();
       await openSidebar();
-      await expectCurrent(practice);
+      await expectCurrent(listening, 'location');
       await inspect('exam');
-      await group.click();
-      await expectGroup(page, group, false);
+      if (mobile) await toggle.click();
+      await page.getByRole('link', { name: 'Danh sách bài thi' }).click();
+      await heading(page, 'IELTS General · Listening').waitFor();
+      await openSidebar();
+      await expectCurrent(listening);
       await sidebar.getByRole('link', { name: /Danh mục học tập/ }).click();
       await heading(page, 'Học tiếng Anh, cùng nhau tiến bộ').waitFor();
       await openSidebar();
@@ -323,17 +314,17 @@ test('Edge: compact GT header and route-specific sidebar at 1600, 390 and 360px'
   await page.goto(`${server.url}?retry-catalog${hub}`);
   await failedCatalog;
   await heading(page, 'IELTS General').waitFor();
-  assert.equal(await sidebar.locator('.sidebar__sublist a').count(), 0);
-  await sidebar.getByRole('link', { name: 'Listening', exact: true }).click();
+  assert.equal(await sidebar.locator('.sidebar__groups a').count(), 1);
+  await sidebar.getByRole('link', { name: 'Practice Tests', exact: true }).click();
   await heading(page, 'IELTS General · Listening').waitFor();
-  await expectGroup(page, sidebar.getByRole('button', { name: /^Practice Tests/ }), false);
+  await sidebar.getByRole('link', { name: `Practice Tests ${tests.length}`, exact: true }).waitFor();
   await page.emulateMedia({ media: 'print' });
   assert.equal(await sidebar.isVisible(), false);
   assert.equal(await gtButton.isVisible(), false);
   assert.deepEqual(pageErrors, []);
 });
 
-test('Listening groups persist independently and cap the sidebar at eight items per group', { timeout: 60000 }, async t => {
+test('Practice Tests stays a single flat link with an extended or legacy catalog', { timeout: 60000 }, async t => {
   const server = await serveFixture({ real: true });
   t.after(() => server.close());
   const browser = await launchBrowser({ timeout: 15000 });
@@ -343,43 +334,28 @@ test('Listening groups persist independently and cap the sidebar at eight items 
     ...tests[0], id: `extra-${index}`, title: `Extra test ${index + 1}`
   }));
   const practiceTests = [...tests, ...extraTests];
-  await page.route(catalogPath, route => route.fulfill({ json: {
+  const groupedTest = { ...tests[0], id: 'dictation-01', title: 'Dictation 1', group: 'dictation' };
+  const extended = {
     groups: [...catalog.groups, { id: 'dictation', title: 'Dictation' }],
-    tests: [...practiceTests, { ...tests[0], id: 'dictation-01', title: 'Dictation 1', group: 'dictation' }]
-  } }));
-
+    tests: [...practiceTests, groupedTest]
+  };
   const sidebar = page.locator('#site-nav');
-  const group = sidebar.getByRole('button', { name: `Practice Tests ${practiceTests.length}`, exact: true });
-  const dictation = sidebar.getByRole('button', { name: 'Dictation 1', exact: true });
-  await page.goto(server.url + listening);
-  const items = await expectGroup(page, group, false);
-  await expectGroup(page, dictation, false);
-  await group.click();
-  await dictation.click();
-  await expectGroup(page, group, true);
-  await expectGroup(page, dictation, true);
-  const allLabel = `Xem tất cả (${practiceTests.length})`;
-  assert.deepEqual(await items.getByRole('link').allTextContents(), [
-    ...practiceTests.slice(0, 8).map(entry => entry.title), allLabel
-  ]);
-  assert.equal(await items.getByRole('link', { name: allLabel }).getAttribute('href'), listening);
-  assert.equal(await sidebar.locator('[aria-current="page"]').count(), 1);
-
-  await group.click();
-  await page.reload();
-  await expectGroup(page, group, false);
-  await expectGroup(page, dictation, true);
-
-  // Enter a test while its group has an explicitly saved collapsed state.
-  await page.goto(`${server.url}?direct-test${practice}`);
-  await page.getByRole('heading', { level: 1, name: tests[0].title }).waitFor();
-  await expectGroup(page, group, true);
-  assert.equal(await items.getByRole('link', { name: tests[0].title }).getAttribute('aria-current'), 'page');
-  await items.getByRole('link', { name: allLabel }).click();
-  await page.getByRole('heading', { level: 1, name: 'IELTS General · Listening' }).waitFor();
-  await page.getByRole('heading', { name: practiceTests.at(-1).title, exact: true }).waitFor();
-  await expectGroup(page, group, false);
-  await expectGroup(page, dictation, true);
+  for (const data of [extended, { tests }]) {
+    await page.route(catalogPath, route => route.fulfill({ json: data }), { times: 1 });
+    const testRoute = data === extended ? `${listening}/${groupedTest.id}` : practice;
+    await page.goto(`${server.url}?tests=${data.tests.length}${testRoute}`);
+    await page.getByRole('heading', { level: 1, name: tests[0].title }).waitFor();
+    const sections = sidebar.locator('.sidebar__groups');
+    const link = sections.getByRole('link', { name: `Practice Tests ${data.tests.length}`, exact: true });
+    await link.waitFor();
+    assert.equal(await sections.getByRole('link').count(), 1);
+    assert.equal(await link.getAttribute('href'), listening);
+    assert.equal(await link.getAttribute('aria-current'), 'location');
+    await link.click();
+    await page.getByRole('heading', { level: 1, name: 'IELTS General · Listening' }).waitFor();
+    await page.getByRole('heading', { name: data.tests.at(-1).title, exact: true }).waitFor();
+    assert.equal(await link.getAttribute('aria-current'), 'page');
+  }
 });
 
 test('scrolled liquid glass header keeps its compact geometry over article text', { timeout: 60000 }, async t => {
