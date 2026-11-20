@@ -12,7 +12,7 @@ const outputDirectory = path.join(process.env.CSS_QA_OUTPUT || 'test-artifacts/f
 // gradient stops through every ancestor, including the gel's white sheen.
 // Keep both sky extremes (plus white clouds in light mode). Blur/saturation and
 // inset shadows are not rasterised, so the report records an approximation.
-function inspect(identifyNativeSpeed) {
+function inspect() {
   const visible = el => el.getClientRects().length && getComputedStyle(el).visibility !== 'hidden';
   const rgb = value => {
     const numbers = value.match(/[\d.]+/g)?.map(Number) || [0, 0, 0, 0];
@@ -62,8 +62,7 @@ function inspect(identifyNativeSpeed) {
       el.matches('[type="checkbox"], [type="radio"]') ? el.closest('label') : el;
     const r = target.getBoundingClientRect();
     return {
-      text: el.textContent.trim().slice(0, 40) || el.getAttribute('aria-label'), width: r.width, height: r.height,
-      ...(identifyNativeSpeed && el.matches('select.lt-speed') ? { nativeSpeed: true } : {})
+      text: el.textContent.trim().slice(0, 40) || el.getAttribute('aria-label'), width: r.width, height: r.height
     };
   });
   const text = [...document.querySelectorAll('.site-header button, .top-menu__panel a, .sidebar h2, .sidebar a, .sidebar__soon, .sidebar__soon small, #page-content p, #page-content label, #page-content legend, #page-content a, #page-content button, .lt-distractors strong, .lt-transcript strong, mark.lt-hl')].filter(el => visible(el) && el.textContent.trim()).map(contrast);
@@ -110,12 +109,6 @@ test('Edge: final Aero QA, both schemes and widths, sticky player and accessible
     await page.locator('#page-content h1').waitFor();
   }
   const check = (condition, message) => { if (!condition) failures.push(message); };
-  const shortSpeedTargets = [];
-  function checkableTargets({ smallTargets }) {
-    if (!isWebKit) return smallTargets;
-    shortSpeedTargets.push(...smallTargets.filter(target => target.nativeSpeed && target.height < 43.9));
-    return smallTargets.filter(target => !target.nativeSpeed || target.width < 43.9);
-  }
   if (isWebKit) {
     t.diagnostic('Skipping the Tab round-trip focus outline on WebKit because default keyboard navigation can skip buttons.');
   }
@@ -125,12 +118,11 @@ test('Edge: final Aero QA, both schemes and widths, sticky player and accessible
     await page.mouse.move(0, 0);
     await page.evaluate(() => document.fonts.ready);
     await page.waitForTimeout(100);
-    const measurement = await page.evaluate(inspect, isWebKit);
+    const measurement = await page.evaluate(inspect);
     const name = `${label}-${measurement.viewport}-${await page.evaluate(() => matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')}`;
     report.push({ name, ...measurement });
     check(measurement.scrollWidth <= measurement.viewport, `${name}: overflow`);
-    const smallTargets = checkableTargets(measurement);
-    check(!smallTargets.length, `${name}: small targets ${JSON.stringify(smallTargets)}`);
+    check(!measurement.smallTargets.length, `${name}: small targets ${JSON.stringify(measurement.smallTargets)}`);
     check(measurement.minContrast >= 4.5, `${name}: contrast ${measurement.minContrast.toFixed(2)} ${JSON.stringify(measurement.contrast.filter(c => c.ratio < 4.5))}`);
     if (!scrolled) check(measurement.heading.top >= measurement.header.bottom, `${name}: heading covered`);
     check(measurement.headerControls.every(r => r.top >= measurement.header.top - 1 && r.bottom <= measurement.header.bottom + 1), `${name}: header row`);
@@ -183,9 +175,8 @@ test('Edge: final Aero QA, both schemes and widths, sticky player and accessible
       await page.setViewportSize({ width: 360, height: 800 });
       for (const hash of ['#/ielts-gt', '#/ielts-gt/listening', '#/ielts-gt/listening/gt-l-04?mode=practice']) {
         await route(page, hash);
-        const narrow = await page.evaluate(inspect, isWebKit);
-        const smallTargets = checkableTargets(narrow);
-        check(narrow.scrollWidth <= 360 && !smallTargets.length, `360-${colorScheme}: ${hash} overflow/targets`);
+        const narrow = await page.evaluate(inspect);
+        check(narrow.scrollWidth <= 360 && !narrow.smallTargets.length, `360-${colorScheme}: ${hash} overflow/targets`);
       }
       await page.locator('#lt-q-1').fill('wrong');
       await page.locator('[data-action="submit"]').click();
@@ -218,9 +209,6 @@ test('Edge: final Aero QA, both schemes and widths, sticky player and accessible
   await writeFile(`${outputDirectory}/measurements.json`, JSON.stringify({ approximation: 'Computed gradient-stop extrema and alpha compositing; glass blur/saturation and inset shadows not rasterised. Light includes white cloud and sky extremes; dark uses navy/teal extremes. Gloss caps above actual text bounds do not affect label contrast.', report, printReport, failures, errors }, null, 2));
   if (isWebKit) {
     t.diagnostic('WebKit print emulation reported screen ink and a transparent MAIN. MAIN colours are pending verification in Safari Print Preview. Inner print surfaces and the MAIN background image are still checked.');
-    await t.test('Safari playback speed select has a 44 px hit height', {
-      todo: 'Safari bug at assets/css/listening.css:906: native appearance renders the select at about 21 px despite min-height.'
-    }, () => assert.deepEqual(shortSpeedTargets, []));
   }
   assert.deepEqual(errors, []);
   assert.deepEqual(failures, []);

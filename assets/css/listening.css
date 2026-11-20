@@ -1533,6 +1533,12 @@ mark.lt-hl,
   }
 }
 
+@media (prefers-reduced-transparency: reduce) {
+  .lt-speed {
+    background-color: var(--sky-bottom);
+  }
+}
+
 @media (forced-colors: active) {
   .lt-speed {
     /* Preserve the gradient dropdown chevron when forced colors strip background images. */
