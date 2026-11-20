@@ -6,10 +6,12 @@ import { serveFixture } from './helpers/static-server.mjs';
 
 const home = '#/ielts-gt/listening';
 const catalog = JSON.parse(await readFile(new URL('../content/ielts-gt/listening/index.json', import.meta.url), 'utf8'));
-const methods = await Promise.all(catalog.methods.map(async method => ({
-  ...method,
-  exercises: JSON.parse(await readFile(new URL(`../${method.file}`, import.meta.url), 'utf8'))
-})));
+const methods = await Promise.all(catalog.methods.map(async method => {
+  const exercises = JSON.parse(await readFile(new URL(`../${method.file}`, import.meta.url), 'utf8'));
+  assert.deepEqual(method.exercises, exercises.map(({ id, title }) => ({ id, title })), method.id);
+  const byId = new Map(exercises.map(exercise => [exercise.id, exercise]));
+  return { ...method, exercises: method.exercises.map(({ id }) => byId.get(id)) };
+}));
 const cases = [
   ['dictation/booking-details', { surname: ' CLARKE ', phone: 'oh seven double two six one five' }],
   ['dictation/office-gap', { place: 'Reception Desk!' }],

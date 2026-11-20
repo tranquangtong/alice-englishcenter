@@ -1102,7 +1102,7 @@
             "id": "damaged-shipping",
             "prompt": "Khách hàng nên làm gì nếu nhận phải sản phẩm bị hỏng?",
             "answer": "free-label",
-            "explanation": "“Won't need to pay for return postage” và “download the prepaid parcel sticker” tương ứng với tải nhãn gửi hàng miễn phí từ tài khoản trực tuyến.",
+            "explanation": "“Won't need to pay for return postage” và “download the prepaid parcel sticker” cho biết khách tải nhãn trả hàng đã trả cước từ trang đơn hàng.",
             "choices": [
               {
                 "id": "pay-courier",
@@ -1110,7 +1110,7 @@
               },
               {
                 "id": "free-label",
-                "label": "Print a free shipping label from their online account."
+                "label": "Download a prepaid return label from the order page."
               },
               {
                 "id": "visit-store",
@@ -1387,7 +1387,7 @@
               },
               {
                 "id": "writing-samples",
-                "label": "Two brief examples of past work writing"
+                "label": "Two short writing samples from a previous job"
               }
             ]
           }
@@ -1456,7 +1456,7 @@
               },
               {
                 "id": "software-licence",
-                "label": "Buy an individual accounting software subscription"
+                "label": "Buy a licence for the accounting software"
               }
             ]
           }

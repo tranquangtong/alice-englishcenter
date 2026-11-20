@@ -1110,9 +1110,6 @@
             "id": "main-barrier",
             "prompt": "Barriers for working adults · Top obstacle is lack of ___",
             "answer": "transport",
-            "variants": [
-              "transportation"
-            ],
             "explanation": "Sau “lack of” chắc chắn là một danh từ. Trước khi nghe, dự đoán rất hợp lý là “time” (thiếu thời gian), nhưng dự đoán này sai: giảng viên giải thích thời gian chỉ đứng thứ ba trong khảo sát, còn rào cản lớn nhất thực tế là “transport” (phương tiện đi lại buổi tối). Cần luôn kiểm chứng lại giả định ban đầu theo dữ liệu trong bài nghe.",
             "expectedType": "noun"
           },
