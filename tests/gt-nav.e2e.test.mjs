@@ -76,11 +76,13 @@ function measureMenuIcon(button) {
 }
 
 async function tapStickyToggle(page, toggle) {
-  // Use viewport coordinates to exercise the sticky control without locator auto-scroll.
+  if (webKitMobileOptions.hasTouch) {
+    await toggle.tap();
+    return;
+  }
+  // Keep Chromium's pointer click in viewport coordinates to avoid locator auto-scroll.
   const { x, y, width, height } = await toggle.boundingBox();
-  const center = [x + width / 2, y + height / 2];
-  if (isWebKit) await page.touchscreen.tap(...center);
-  else await page.mouse.click(...center);
+  await page.mouse.click(x + width / 2, y + height / 2);
 }
 
 test('Edge: compact GT header and route-specific sidebar at 1600, 390 and 360px', { timeout: 90000 }, async t => {
@@ -361,8 +363,8 @@ test('scrolled liquid glass header keeps its compact geometry over article text'
         assert.equal(after.theme.width, 44, `${label}: theme control width`);
       }
       if (overArticle.supportsFilter) {
-        const blur = /\bblur\(([\d.]+)px\)/.exec(overArticle.filter);
-        assert.ok(blur && Number(blur[1]) <= 1.5, `${label}: backdrop filter ${overArticle.filter}`);
+        const blur = Number(/\bblur\(([\d.]+)px\)/.exec(overArticle.filter)?.[1]);
+        assert.ok(blur >= 2 && blur <= 3, `${label}: expected blur between 2px and 3px, got ${overArticle.filter}`);
       }
       if (width !== 360) await page.screenshot({ path: `${artifacts}/scrolled-header-${width}-${scheme}.png` });
       if (mobile) {
