@@ -31,9 +31,9 @@
 
   /* 2. Derived Aero surface, gloss & state tokens (light) */
   --glass-blur: 14px;
-  /* Floating liquid-glass header: low-blur lensing, specular top dome, rim & aqua caustic */
-  --glass-header: radial-gradient(64% 95% at 50% 0%, rgb(255 255 255 / .5), transparent 70%), linear-gradient(180deg, rgb(255 255 255 / .62), rgb(232 249 255 / .36) 46%, rgb(214 244 255 / .28) 56%, rgb(196 240 255 / .48));
-  --glass-header-rim: inset 0 1.5px 0 #fff, inset 0 0 0 1px rgb(255 255 255 / .45), inset 0 -3px 9px rgb(110 222 255 / .45), 0 1px 0 rgb(255 255 255 / .6);
+  /* Floating liquid-glass header: <=1.5px blur, calm neutral tint, specular rim & edge lensing */
+  --glass-header: linear-gradient(90deg, rgb(255 255 255 / .28), transparent 7% 93%, rgb(255 255 255 / .28)), linear-gradient(180deg, rgb(255 255 255 / .26), rgb(255 255 255 / .1));
+  --glass-header-rim: inset 0 1px 0 #fff, inset 0 -1px 0 rgb(21 147 214 / .24), inset 8px 0 10px -8px rgb(11 42 60 / .16), inset -8px 0 10px -8px rgb(11 42 60 / .16);
   --glass-header-halo: 0 0 10px #fff, 0 1px 3px rgb(255 255 255 / .65);
   /* Sticky offsets must equal the natural positions, or panels jump while scrolling */
   --header-top: 1.15rem;
@@ -107,8 +107,8 @@
   --grass-ink: #7ee07f;
   --glass: rgb(10 40 60 / .55);
   --glass-strong: rgb(10 40 60 / .78);
-  --glass-header: radial-gradient(64% 95% at 50% 0%, rgb(180 238 255 / .22), transparent 70%), linear-gradient(180deg, rgb(165 232 255 / .24), rgb(10 44 68 / .48) 46%, rgb(7 34 54 / .42) 56%, rgb(46 155 208 / .34));
-  --glass-header-rim: inset 0 1.5px 0 rgb(215 245 255 / .55), inset 0 0 0 1px rgb(165 232 255 / .2), inset 0 -3px 9px rgb(92 200 255 / .32), 0 1px 0 rgb(120 220 255 / .22);
+  --glass-header: linear-gradient(90deg, rgb(180 238 255 / .18), transparent 7% 93%, rgb(180 238 255 / .18)), linear-gradient(180deg, rgb(165 232 255 / .16), rgb(8 36 56 / .32));
+  --glass-header-rim: inset 0 1px 0 rgb(215 245 255 / .55), inset 0 -1px 0 rgb(92 200 255 / .28), inset 8px 0 10px -8px rgb(0 12 26 / .36), inset -8px 0 10px -8px rgb(0 12 26 / .36);
   --glass-header-halo: 0 0 10px #041624, 0 1px 3px rgb(4 22 36 / .7);
   --glass-edge: rgb(140 220 255 / .28);
   --ink: #e8f6ff;
@@ -197,7 +197,7 @@ a {
   color: var(--aqua-ink);
   text-underline-offset: .22em;
   text-decoration-thickness: 1.5px;
-  transition: color .18s ease, text-decoration-color .18s ease;
+  transition: color .18s, text-decoration-color .18s;
 }
 
 /* Headings (article, sidebar/TOC section titles) + brand name use the heading face */
@@ -257,7 +257,7 @@ article :focus:not(:focus-visible) {
   text-decoration: none;
   box-shadow: var(--gel-shadow);
   transform: translateY(-220%);
-  transition: transform .18s ease;
+  transition: transform .18s;
 }
 
 .skip-link:focus {
@@ -275,7 +275,7 @@ article :focus:not(:focus-visible) {
   z-index: -1;
   pointer-events: none;
   overflow: hidden;
-  background: linear-gradient(180deg, var(--sky-top) 0%, var(--sky-mid) 44%, var(--sky-bottom) 100%);
+  background: linear-gradient(180deg, var(--sky-top), var(--sky-mid) 44%, var(--sky-bottom));
 }
 
 .aero-flare {
@@ -357,9 +357,6 @@ article :focus:not(:focus-visible) {
 }
 
 @keyframes aero-float {
-  0% {
-    transform: translate3d(0, 0, 0) scale(1);
-  }
   /* amplitude +20% */
   50% {
     transform: translate3d(9.6px, -16.8px, 0) scale(1.036);
@@ -410,8 +407,8 @@ main {
   .site-header {
     background: var(--glass-header);
     box-shadow: var(--glass-header-rim), var(--shadow-soft);
-    -webkit-backdrop-filter: blur(4px) saturate(190%) brightness(1.06);
-    backdrop-filter: blur(4px) saturate(190%) brightness(1.06);
+    -webkit-backdrop-filter: blur(1px) saturate(125%);
+    backdrop-filter: blur(1px) saturate(125%);
   }
 }
 
@@ -438,7 +435,7 @@ main {
   text-decoration: none;
   box-shadow: var(--gel-shadow);
   cursor: pointer;
-  transition: transform .16s ease, box-shadow .18s ease, filter .18s ease;
+  transition: transform .16s, box-shadow .18s, filter .18s;
 }
 
 .menu-toggle::before,
@@ -448,7 +445,7 @@ main {
   /* Keep the bright gloss above the text so gel labels retain AA contrast. */
   inset: 2px 3px 75%;
   border-radius: var(--radius-pill);
-  background: linear-gradient(180deg, rgb(255 255 255 / .28) 0%, rgb(255 255 255 / .04) 100%);
+  background: linear-gradient(180deg, rgb(255 255 255 / .28), rgb(255 255 255 / .04));
   pointer-events: none;
   z-index: -1;
 }
@@ -462,7 +459,7 @@ main {
   transform: translateX(-130%);
   pointer-events: none;
   z-index: -1;
-  transition: transform .55s ease;
+  transition: transform .55s;
 }
 
 .menu-toggle:hover,
@@ -588,7 +585,7 @@ main {
   width: 48%;
   height: 24%;
   border-radius: 50%;
-  background: linear-gradient(180deg, rgb(255 255 255 / .82) 0%, rgb(255 255 255 / 0) 100%);
+  background: linear-gradient(180deg, rgb(255 255 255 / .82), rgb(255 255 255 / 0));
   transform: rotate(-18deg);
   pointer-events: none;
 }
@@ -680,7 +677,7 @@ main {
   font-weight: 600;
   line-height: 1.35;
   text-decoration: none;
-  transition: background .18s ease, color .18s ease, border-color .18s ease, box-shadow .18s ease, transform .18s ease;
+  transition: background .18s, color .18s, border-color .18s, box-shadow .18s, transform .18s;
 }
 
 .sidebar .sidebar__overview {
@@ -729,7 +726,7 @@ main {
   flex-shrink: 0;
   margin-inline-end: .55rem;
   border-radius: 50%;
-  background: radial-gradient(circle at 32% 28%, #c7ffc9 0%, var(--grass) 58%, var(--grass-ink) 100%);
+  background: radial-gradient(circle at 32% 28%, #c7ffc9, var(--grass) 58%, var(--grass-ink));
   box-shadow: 0 0 8px rgb(69 182 73 / .55);
 }
 
@@ -741,7 +738,7 @@ main {
   transform: translateX(-130%);
   pointer-events: none;
   z-index: -1;
-  transition: transform .55s ease;
+  transition: transform .55s;
 }
 
 .sidebar a[aria-current="page"]:hover::after {
@@ -760,7 +757,7 @@ main {
   color: var(--ink-soft);
   text-decoration: none;
   line-height: 1.48;
-  transition: background .16s ease, color .16s ease;
+  transition: background .16s, color .16s;
 }
 
 .toc-panel a:hover {
@@ -868,7 +865,7 @@ article hr {
   height: 2px;
   border: 0;
   margin: 2rem 0;
-  background: linear-gradient(90deg, transparent 0%, var(--aqua) 35%, var(--grass) 65%, transparent 100%);
+  background: linear-gradient(90deg, transparent, var(--aqua) 35%, var(--grass) 65%, transparent);
   opacity: .5;
 }
 
@@ -1053,8 +1050,7 @@ tr:last-child td {
     padding: .3rem 1.05rem;
     border: 1px solid var(--glass-edge);
     border-radius: var(--radius-m);
-    background-color: var(--glass-strong);
-    background-image: var(--glass-sheen);
+    background: var(--glass-sheen) var(--glass-strong);
     box-shadow: var(--glass-highlight), 0 4px 14px rgb(0 60 110 / .1);
   }
 
@@ -1119,8 +1115,7 @@ tr:last-child td {
     padding: .3rem 1.05rem;
     border: 1px solid var(--glass-edge);
     border-radius: var(--radius-m);
-    background-color: var(--glass-strong);
-    background-image: var(--glass-sheen);
+    background: var(--glass-sheen) var(--glass-strong);
     box-shadow: var(--glass-highlight), 0 4px 14px rgb(0 60 110 / .1);
   }
 
@@ -1230,7 +1225,10 @@ body:has(.update-toast:not([hidden])) { padding-bottom: var(--toast-space, 0px);
 
 @keyframes toast-in {
   from { opacity: 0; transform: translateY(12px); }
-  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes menu-in {
+  from { opacity: 0; transform: translateY(-6px) scale(.97); }
 }
 
 /* ==========================================================================
@@ -1305,23 +1303,29 @@ body:has(.update-toast:not([hidden])) { padding-bottom: var(--toast-space, 0px);
     padding: 1rem .75rem 1.25rem;
   }
 
-  .sidebar,
   .toc-panel {
     position: static;
     max-height: none;
     width: 100%;
+    font-size: .88rem;
   }
 
   .sidebar {
     display: none;
+    position: fixed;
+    top: calc(var(--header-offset) + .25rem);
+    right: .75rem;
+    z-index: 29;
+    width: min(360px, 100vw - 1.5rem);
+    max-height: calc(100dvh - var(--header-offset) - 1rem);
+    background-image: var(--glass-card-bg);
+    --glass-blur: 18px;
+    transform-origin: top right;
   }
 
   .sidebar.is-open {
     display: block;
-  }
-
-  .toc-panel {
-    font-size: .88rem;
+    animation: menu-in .18s ease-out both;
   }
 
   .toc-panel a {
@@ -1373,15 +1377,16 @@ body:has(.update-toast:not([hidden])) { padding-bottom: var(--toast-space, 0px);
   /* Keep one compact header row down to 360px while preserving accessible label */
   .menu-toggle {
     width: 44px;
-    min-width: 44px;
+    height: 44px;
     padding: 0;
+    gap: 0;
     font-size: 0;
     line-height: 0;
+    color: transparent;
   }
 
   .menu-toggle::after {
-    content: "";
-    position: static;
+    margin: auto;
     width: 18px;
     height: 14px;
     transform: none;
@@ -1437,6 +1442,7 @@ body:has(.update-toast:not([hidden])) { padding-bottom: var(--toast-space, 0px);
   }
 
   .aero-bubble,
+  .sidebar.is-open,
   .update-toast {
     animation: none !important;
   }
@@ -1465,10 +1471,10 @@ body:has(.update-toast:not([hidden])) { padding-bottom: var(--toast-space, 0px);
 @media print {
   :root {
     color-scheme: light;
-    --ink: #000000;
+    --ink: #000;
     --ink-soft: #333;
-    --aqua-ink: #000000;
-    --grass-ink: #000000;
+    --aqua-ink: #000;
+    --grass-ink: #000;
   }
 
   body {
@@ -1493,6 +1499,7 @@ body:has(.update-toast:not([hidden])) { padding-bottom: var(--toast-space, 0px);
   .site-header,
   main,
   .table-scroll,
+  .table-scroll tbody tr,
   article blockquote,
   article pre,
   article code,
@@ -1534,10 +1541,6 @@ body:has(.update-toast:not([hidden])) { padding-bottom: var(--toast-space, 0px);
     display: none;
   }
 
-  article {
-    max-width: none;
-  }
-
   article h1 {
     font-size: 22pt;
     border-bottom-color: #bbb;
@@ -1548,8 +1551,7 @@ body:has(.update-toast:not([hidden])) { padding-bottom: var(--toast-space, 0px);
     break-after: avoid;
   }
 
-  a,
-  article a {
+  a {
     color: #000;
   }
 
@@ -1594,10 +1596,7 @@ body:has(.update-toast:not([hidden])) { padding-bottom: var(--toast-space, 0px);
 
   /* Stacked table cards (if the page is narrow enough to trigger them) */
   .table-scroll tbody tr {
-    background: #fff !important;
-    box-shadow: none !important;
     border-color: #bbb !important;
-    border-radius: 0 !important;
     break-inside: avoid;
   }
 
