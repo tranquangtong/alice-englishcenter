@@ -492,5 +492,929 @@
         "audio": "assets/audio/listening/methods/connected-speech/fast-workplace-speech-weak-of-linking.mp3"
       }
     ]
+  },
+  {
+    "id": "car-rental-numbers",
+    "format": "number-contrast",
+    "title": "Số, giờ và giá khi thuê xe",
+    "level": "Band 4.5",
+    "instructions": "Nghe các đoạn thông báo tại quầy thuê xe và chọn đúng con số, mức giá hoặc khung giờ bạn nghe được.",
+    "clips": [
+      {
+        "id": "compact-rate",
+        "script": [
+          {
+            "speaker": "Hannah",
+            "voice": "en-GB-female-1",
+            "text": "The daily rate for a compact hatchback comes to sixty pounds before insurance."
+          }
+        ],
+        "items": [
+          {
+            "id": "daily-rate",
+            "prompt": "Giá thuê xe mỗi ngày",
+            "answer": "price-60",
+            "explanation": "Người nói đọc “sixty pounds” (£60), nhấn mạnh âm tiết đầu /ˈsɪk.sti/ và kết thúc gọn bằng nguyên âm /i/, không có âm mũi /n/ như “sixteen”.",
+            "choices": [
+              {
+                "id": "price-16",
+                "label": "£16"
+              },
+              {
+                "id": "price-60",
+                "label": "£60"
+              }
+            ]
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/connected-speech/car-rental-numbers-compact-rate.mp3"
+      },
+      {
+        "id": "child-seat-fee",
+        "script": [
+          {
+            "speaker": "Liam",
+            "voice": "en-AU-male-1",
+            "text": "Adding a booster seat costs thirteen dollars forty cents per rental."
+          }
+        ],
+        "items": [
+          {
+            "id": "seat-price",
+            "prompt": "Phí thuê ghế trẻ em",
+            "answer": "price-13-40",
+            "explanation": "Người nói đọc “thirteen dollars forty cents” ($13.40): “thirteen” có đuôi -teen kéo dài âm /iːn/, còn phần xu là “forty” nhấn âm đầu (không phải “fourteen”).",
+            "choices": [
+              {
+                "id": "price-13-40",
+                "label": "$13.40"
+              },
+              {
+                "id": "price-30-40",
+                "label": "$30.40"
+              },
+              {
+                "id": "price-13-14",
+                "label": "$13.14"
+              }
+            ]
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/connected-speech/car-rental-numbers-child-seat-fee.mp3"
+      },
+      {
+        "id": "fuel-surcharge",
+        "script": [
+          {
+            "speaker": "David",
+            "voice": "en-GB-male-1",
+            "text": "If you return the tank short, we charge two pounds eighteen pence per litre."
+          }
+        ],
+        "items": [
+          {
+            "id": "fuel-price",
+            "prompt": "Phí nhiên liệu mỗi lít",
+            "answer": "price-2-18",
+            "explanation": "Cụm “two pounds eighteen pence” tương ứng £2.18. Âm tiết -teen trong “eighteen” được nhấn rõ và kết thúc bằng âm /n/ trước từ “pence”.",
+            "choices": [
+              {
+                "id": "price-2-18",
+                "label": "£2.18"
+              },
+              {
+                "id": "price-2-80",
+                "label": "£2.80"
+              }
+            ]
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/connected-speech/car-rental-numbers-fuel-surcharge.mp3"
+      },
+      {
+        "id": "return-cutoff",
+        "script": [
+          {
+            "speaker": "Chloe",
+            "voice": "en-US-female-1",
+            "text": "Please bring the keys back to the terminal desk by seven fifteen to avoid an extra hour."
+          }
+        ],
+        "items": [
+          {
+            "id": "cutoff-time",
+            "prompt": "Hạn chót trả chìa khóa",
+            "answer": "time-7-15",
+            "explanation": "“Seven fifteen” là 7:15. Chú ý âm cuối /iːn/ ở “fifteen” khác với nguyên âm ngắn /i/ ở cuối “fifty” (7:50).",
+            "choices": [
+              {
+                "id": "time-7-15",
+                "label": "7:15"
+              },
+              {
+                "id": "time-7-50",
+                "label": "7:50"
+              }
+            ]
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/connected-speech/car-rental-numbers-return-cutoff.mp3"
+      },
+      {
+        "id": "shuttle-interval",
+        "script": [
+          {
+            "speaker": "Noah",
+            "voice": "en-AU-male-1",
+            "text": "Our free airport shuttle leaves from bay fourteen every forty minutes."
+          }
+        ],
+        "items": [
+          {
+            "id": "bay-and-wait",
+            "prompt": "Cổng đón và tần suất xe trung chuyển",
+            "answer": "bay-14-40",
+            "explanation": "Câu này đặt cặp -teen/-ty gần nhau: “bay fourteen” (cổng 14, có âm /n/) và “every forty minutes” (40 phút, nhấn âm đầu /ˈfɔː.ti/).",
+            "choices": [
+              {
+                "id": "bay-14-40",
+                "label": "Bay 14 · 40 mins"
+              },
+              {
+                "id": "bay-40-14",
+                "label": "Bay 40 · 14 mins"
+              },
+              {
+                "id": "bay-14-14",
+                "label": "Bay 14 · 14 mins"
+              }
+            ]
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/connected-speech/car-rental-numbers-shuttle-interval.mp3"
+      }
+    ]
+  },
+  {
+    "id": "timetable-word-count",
+    "format": "word-count",
+    "title": "Đếm từ: thay đổi lịch trình",
+    "level": "Band 5.0",
+    "instructions": "Nghe các thông báo thay đổi lịch trình nói nhanh và đếm số từ trong mỗi câu. Quy ước: tính mỗi dạng rút gọn (như we've, won't, they're) là một từ.",
+    "clips": [
+      {
+        "id": "bus-delay",
+        "script": [
+          {
+            "speaker": "Mia",
+            "voice": "en-GB-female-1",
+            "text": "We've moved the morning bus forward by ten minutes."
+          }
+        ],
+        "items": [
+          {
+            "id": "count-bus",
+            "prompt": "Câu này có bao nhiêu từ?",
+            "answer": "9",
+            "explanation": "We've / moved / the / morning / bus / forward / by / ten / minutes (9 từ). Tính “We've” là một từ; chú ý nối âm ở “moved the” và dạng yếu của “by”.",
+            "rules": {
+              "numbers": "integer"
+            }
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/connected-speech/timetable-word-count-bus-delay.mp3"
+      },
+      {
+        "id": "platform-switch",
+        "script": [
+          {
+            "speaker": "Sam",
+            "voice": "en-US-male-1",
+            "text": "That express train won't leave from platform four."
+          }
+        ],
+        "items": [
+          {
+            "id": "count-platform",
+            "prompt": "Câu này có bao nhiêu từ?",
+            "answer": "8",
+            "explanation": "That / express / train / won't / leave / from / platform / four (8 từ). “Won't” tính là một từ; giới từ “from” đọc lướt thành /frəm/.",
+            "rules": {
+              "numbers": "integer"
+            }
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/connected-speech/timetable-word-count-platform-switch.mp3"
+      },
+      {
+        "id": "room-change",
+        "script": [
+          {
+            "speaker": "Tessa",
+            "voice": "en-AU-female-1",
+            "text": "They're holding the Thursday workshop in a much larger room."
+          }
+        ],
+        "items": [
+          {
+            "id": "count-room",
+            "prompt": "Câu này có bao nhiêu từ?",
+            "answer": "10",
+            "explanation": "They're / holding / the / Thursday / workshop / in / a / much / larger / room (10 từ). Tính “They're” là một từ; cụm “in a” thường nối liền thành /ɪnə/.",
+            "rules": {
+              "numbers": "integer"
+            }
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/connected-speech/timetable-word-count-room-change.mp3"
+      },
+      {
+        "id": "ferry-cancel",
+        "script": [
+          {
+            "speaker": "David",
+            "voice": "en-GB-male-1",
+            "text": "It's too windy now, so we'll cancel the last evening ferry."
+          }
+        ],
+        "items": [
+          {
+            "id": "count-ferry",
+            "prompt": "Câu này có bao nhiêu từ?",
+            "answer": "11",
+            "explanation": "It's / too / windy / now / so / we'll / cancel / the / last / evening / ferry (11 từ). Hai dạng rút gọn “It's” và “we'll” mỗi từ tính là một từ; “last evening” nối phụ âm /t/ sang nguyên âm /iː/.",
+            "rules": {
+              "numbers": "integer"
+            }
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/connected-speech/timetable-word-count-ferry-cancel.mp3"
+      }
+    ]
+  },
+  {
+    "id": "returns-reduced-forms",
+    "format": "reduced-cloze",
+    "title": "Dạng rút gọn khi đổi trả hàng",
+    "level": "Band 5.5",
+    "instructions": "Nghe từng câu về quy trình đổi trả đơn hàng online và điền cụm từ bị khuyết. Hệ thống chấp nhận cả dạng đầy đủ lẫn dạng rút gọn.",
+    "clips": [
+      {
+        "id": "gotta-print",
+        "script": [
+          {
+            "speaker": "Chloe",
+            "voice": "en-US-female-1",
+            "text": "You've gotta print the return label before dropping the parcel off."
+          }
+        ],
+        "items": [
+          {
+            "id": "reduced-gotta",
+            "prompt": "You've ___ print the return label before dropping the parcel off.",
+            "answer": "got to",
+            "variants": [
+              "gotta"
+            ],
+            "explanation": "Trong lời nói tự nhiên, “got to” rút gọn thành “gotta” /ˈɡɒtə/ hoặc /ˈɡɑːɾə/ khi hai âm /t/ nhập làm một và “to” đọc lướt.",
+            "rules": {
+              "contractions": true
+            }
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/connected-speech/returns-reduced-forms-gotta-print.mp3"
+      },
+      {
+        "id": "could-have-packed",
+        "script": [
+          {
+            "speaker": "David",
+            "voice": "en-GB-male-1",
+            "text": "The warehouse could've sent the wrong size by mistake."
+          }
+        ],
+        "items": [
+          {
+            "id": "modal-could-have",
+            "prompt": "The warehouse ___ sent the wrong size by mistake.",
+            "answer": "could have",
+            "explanation": "“Could have” được rút gọn thành “could've” /ˈkʊdəv/, trong đó “have” bị giảm thành âm yếu /əv/ nối liền sau “could”.",
+            "rules": {
+              "contractions": true
+            }
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/connected-speech/returns-reduced-forms-could-have-packed.mp3"
+      },
+      {
+        "id": "send-em-back",
+        "script": [
+          {
+            "speaker": "Noah",
+            "voice": "en-AU-male-1",
+            "text": "If the boots feel tight, just send 'em back within thirty days."
+          }
+        ],
+        "items": [
+          {
+            "id": "reduced-send-them",
+            "prompt": "If the boots feel tight, just ___ back within thirty days.",
+            "answer": "send them",
+            "variants": [
+              "send 'em",
+              "send em"
+            ],
+            "explanation": "Đại từ “them” rơi âm đầu /ð/ thành “'em” /əm/, khiến “send them” nghe nối liền thành một cụm /sendəm/.",
+            "rules": {
+              "contractions": true
+            }
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/connected-speech/returns-reduced-forms-send-em-back.mp3"
+      },
+      {
+        "id": "gonna-issue",
+        "script": [
+          {
+            "speaker": "Mark",
+            "voice": "en-US-male-1",
+            "text": "We're gonna issue a full refund once the parcel reaches our depot."
+          }
+        ],
+        "items": [
+          {
+            "id": "reduced-gonna-refund",
+            "prompt": "We're ___ issue a full refund once the parcel reaches our depot.",
+            "answer": "going to",
+            "variants": [
+              "gonna"
+            ],
+            "explanation": "“Going to” khi nói nhanh thường bị nuốt âm /ŋ/ và /t/ thành “gonna” /ˈɡʌnə/.",
+            "rules": {
+              "contractions": true
+            }
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/connected-speech/returns-reduced-forms-gonna-issue.mp3"
+      },
+      {
+        "id": "put-it-back",
+        "script": [
+          {
+            "speaker": "Hannah",
+            "voice": "en-GB-female-1",
+            "text": "Please put it back in the original box with the receipt inside."
+          }
+        ],
+        "items": [
+          {
+            "id": "linking-put-it-back",
+            "prompt": "Please ___ in the original box with the receipt inside.",
+            "answer": "put it back",
+            "explanation": "Trong cụm “put it back”, âm /t/ cuối của “put” nối sang nguyên âm /ɪ/ của “it”, còn âm /t/ cuối của “it” thường bị nuốt (elision) trước phụ âm /b/ của “back”.",
+            "rules": {
+              "contractions": true
+            }
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/connected-speech/returns-reduced-forms-put-it-back.mp3"
+      }
+    ]
+  },
+  {
+    "id": "safety-word-endings",
+    "format": "ending-contrast",
+    "title": "Đuôi -s/-es/-ed trong an toàn",
+    "level": "Band 6.0",
+    "instructions": "Nghe từng câu trong buổi phổ biến an toàn lao động và chọn đúng dạng từ (số ít/số nhiều hoặc thì hiện tại/quá khứ) được nói.",
+    "clips": [
+      {
+        "id": "locked-cupboard",
+        "script": [
+          {
+            "speaker": "David",
+            "voice": "en-GB-male-1",
+            "text": "The night supervisor locked the chemical cupboard before leaving."
+          }
+        ],
+        "items": [
+          {
+            "id": "verb-locked",
+            "prompt": "Động từ chỉ hành động của giám sát ca đêm",
+            "answer": "locked",
+            "explanation": "Động từ quá khứ “locked” kết thúc bằng âm /t/ (/lɒkt/), đứng trước phụ âm /ð/ của “the” nên rất dễ nghe sót nếu không chú ý.",
+            "choices": [
+              {
+                "id": "lock",
+                "label": "lock"
+              },
+              {
+                "id": "locks",
+                "label": "locks"
+              },
+              {
+                "id": "locked",
+                "label": "locked"
+              }
+            ]
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/connected-speech/safety-word-endings-locked-cupboard.mp3"
+      },
+      {
+        "id": "fire-switches",
+        "script": [
+          {
+            "speaker": "Tessa",
+            "voice": "en-AU-female-1",
+            "text": "The workshop supervisor checks all fire switches every Monday morning."
+          }
+        ],
+        "items": [
+          {
+            "id": "noun-switches",
+            "prompt": "Danh từ chỉ công tắc báo cháy",
+            "answer": "switches",
+            "explanation": "“Switches” có thêm một âm tiết /ɪz/ ở cuối (/ˈswɪtʃɪz/) vì từ gốc kết thúc bằng âm /tʃ/, phù hợp với lượng từ “all”.",
+            "choices": [
+              {
+                "id": "switch",
+                "label": "switch"
+              },
+              {
+                "id": "switches",
+                "label": "switches"
+              }
+            ]
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/connected-speech/safety-word-endings-fire-switches.mp3"
+      },
+      {
+        "id": "reported-leak",
+        "script": [
+          {
+            "speaker": "Sam",
+            "voice": "en-US-male-1",
+            "text": "Two warehouse staff reported a coolant leak near loading bay three."
+          }
+        ],
+        "items": [
+          {
+            "id": "verb-reported",
+            "prompt": "Động từ trong câu",
+            "answer": "reported",
+            "explanation": "Động từ gốc “report” kết thúc bằng âm /t/ nên đuôi -ed trong “reported” tạo thành một âm tiết rõ /ɪd/ (/rɪˈpɔːr.tɪd/).",
+            "choices": [
+              {
+                "id": "report",
+                "label": "report"
+              },
+              {
+                "id": "reports",
+                "label": "reports"
+              },
+              {
+                "id": "reported",
+                "label": "reported"
+              }
+            ]
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/connected-speech/safety-word-endings-reported-leak.mp3"
+      },
+      {
+        "id": "helmet-strap",
+        "script": [
+          {
+            "speaker": "Hannah",
+            "voice": "en-GB-female-1",
+            "text": "Check that your helmet strap sits firmly under your chin before climbing."
+          }
+        ],
+        "items": [
+          {
+            "id": "noun-strap",
+            "prompt": "Danh từ chỉ dây mũ bảo hộ",
+            "answer": "strap",
+            "explanation": "Người nói đọc dạng số ít “strap” (không có âm /s/ cuối), đồng thời động từ theo sau là “sits” (số ít) cũng củng cố đáp án này.",
+            "choices": [
+              {
+                "id": "strap",
+                "label": "strap"
+              },
+              {
+                "id": "straps",
+                "label": "straps"
+              }
+            ]
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/connected-speech/safety-word-endings-helmet-strap.mp3"
+      },
+      {
+        "id": "cleared-aisle",
+        "script": [
+          {
+            "speaker": "Noah",
+            "voice": "en-AU-male-1",
+            "text": "The afternoon crew cleared the emergency aisle before the inspector arrived."
+          }
+        ],
+        "items": [
+          {
+            "id": "verb-cleared",
+            "prompt": "Động từ mô tả việc của ca chiều",
+            "answer": "cleared",
+            "explanation": "“Cleared” có đuôi -ed phát âm là /d/ (/klɪəd/), khá nhẹ trước từ “the” nên cần nghe kỹ cả đuôi âm lẫn mạch thì quá khứ (“arrived”).",
+            "choices": [
+              {
+                "id": "clear",
+                "label": "clear"
+              },
+              {
+                "id": "clears",
+                "label": "clears"
+              },
+              {
+                "id": "cleared",
+                "label": "cleared"
+              }
+            ]
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/connected-speech/safety-word-endings-cleared-aisle.mp3"
+      }
+    ]
+  },
+  {
+    "id": "repair-fast-count",
+    "format": "word-count",
+    "title": "Đếm từ trong câu sửa căn hộ",
+    "level": "Band 6.5",
+    "instructions": "Nghe các câu trao đổi nhanh về việc sửa chữa căn hộ và đếm số từ. Quy ước: mỗi dạng rút gọn (như I've, it's, he'll, we'd, wasn't) tính là một từ.",
+    "clips": [
+      {
+        "id": "leaky-tap",
+        "script": [
+          {
+            "speaker": "Chloe",
+            "voice": "en-US-female-1",
+            "text": "I've tried tightening the kitchen tap, but it's still dripping constantly."
+          }
+        ],
+        "items": [
+          {
+            "id": "count-tap",
+            "prompt": "Câu này có bao nhiêu từ?",
+            "answer": "11",
+            "explanation": "I've / tried / tightening / the / kitchen / tap / but / it's / still / dripping / constantly (11 từ). Hai dạng rút gọn “I've” và “it's” mỗi từ tính là một từ; cụm “but it's” thường nói nối rất nhanh.",
+            "rules": {
+              "numbers": "integer"
+            }
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/connected-speech/repair-fast-count-leaky-tap.mp3"
+      },
+      {
+        "id": "plumber-visit",
+        "script": [
+          {
+            "speaker": "David",
+            "voice": "en-GB-male-1",
+            "text": "He'll be here before noon unless he's held up in heavy traffic."
+          }
+        ],
+        "items": [
+          {
+            "id": "count-plumber",
+            "prompt": "Câu này có bao nhiêu từ?",
+            "answer": "12",
+            "explanation": "He'll / be / here / before / noon / unless / he's / held / up / in / heavy / traffic (12 từ). Tính “He'll” và “he's” mỗi từ là một từ; cụm “held up in” nối liền ba từ với nhau.",
+            "rules": {
+              "numbers": "integer"
+            }
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/connected-speech/repair-fast-count-plumber-visit.mp3"
+      },
+      {
+        "id": "boiler-reset",
+        "script": [
+          {
+            "speaker": "Tessa",
+            "voice": "en-AU-female-1",
+            "text": "We'd better not touch the boiler switch until the landlord calls us back."
+          }
+        ],
+        "items": [
+          {
+            "id": "count-boiler",
+            "prompt": "Câu này có bao nhiêu từ?",
+            "answer": "13",
+            "explanation": "We'd / better / not / touch / the / boiler / switch / until / the / landlord / calls / us / back (13 từ). “We'd” tính là một từ; “calls us” nối âm /z/ sang /ə/ và “not touch” gộp hai âm /t/.",
+            "rules": {
+              "numbers": "integer"
+            }
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/connected-speech/repair-fast-count-boiler-reset.mp3"
+      },
+      {
+        "id": "paint-damp",
+        "script": [
+          {
+            "speaker": "Sam",
+            "voice": "en-US-male-1",
+            "text": "There's a damp patch near the ceiling that wasn't here."
+          }
+        ],
+        "items": [
+          {
+            "id": "count-damp",
+            "prompt": "Câu này có bao nhiêu từ?",
+            "answer": "10",
+            "explanation": "There's / a / damp / patch / near / the / ceiling / that / wasn't / here (10 từ). “There's” và “wasn't” mỗi từ tính là một từ; “There's a” nối liền và “that” đọc dạng yếu /ðət/.",
+            "rules": {
+              "numbers": "integer"
+            }
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/connected-speech/repair-fast-count-paint-damp.mp3"
+      }
+    ]
+  },
+  {
+    "id": "interview-connected-speech",
+    "format": "reduced-cloze",
+    "title": "Nối âm khi hẹn lịch phỏng vấn",
+    "level": "Band 7.0",
+    "instructions": "Nghe các câu trao đổi nhanh khi sắp xếp lịch phỏng vấn và điền cụm từ bị khuyết. Hệ thống chấp nhận cả dạng đầy đủ lẫn dạng rút gọn.",
+    "clips": [
+      {
+        "id": "did-you-confirm",
+        "script": [
+          {
+            "speaker": "Sam",
+            "voice": "en-US-male-1",
+            "text": "Did you get the calendar invite for Tuesday's panel interview?"
+          }
+        ],
+        "items": [
+          {
+            "id": "assimilation-did-you",
+            "prompt": "___ get the calendar invite for Tuesday's panel interview?",
+            "answer": "Did you",
+            "variants": [
+              "didja",
+              "did ya"
+            ],
+            "explanation": "Ở tốc độ nói tự nhiên, âm /d/ cuối của “Did” đồng hóa với âm /j/ đầu của “you” thành /dɪdʒə/ (thường nghe giống “didja”).",
+            "rules": {
+              "contractions": true
+            }
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/connected-speech/interview-connected-speech-did-you-confirm.mp3"
+      },
+      {
+        "id": "would-have-called",
+        "script": [
+          {
+            "speaker": "Mia",
+            "voice": "en-GB-female-1",
+            "text": "I would've called earlier, but the hiring manager just confirmed the slot."
+          }
+        ],
+        "items": [
+          {
+            "id": "modal-would-have",
+            "prompt": "I ___ called earlier, but the hiring manager just confirmed the slot.",
+            "answer": "would have",
+            "explanation": "“Would have” rút gọn thành “would've” /ˈwʊdəv/, trong đó “have” mất âm /h/ và đọc yếu thành /əv/ nối ngay sau “would”.",
+            "rules": {
+              "contractions": true
+            }
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/connected-speech/interview-connected-speech-would-have-called.mp3"
+      },
+      {
+        "id": "wanna-reschedule",
+        "script": [
+          {
+            "speaker": "Chloe",
+            "voice": "en-US-female-1",
+            "text": "Let us know by noon if you wanna move the video call to Thursday."
+          }
+        ],
+        "items": [
+          {
+            "id": "reduced-wanna-move",
+            "prompt": "Let us know by noon if you ___ move the video call to Thursday.",
+            "answer": "want to",
+            "variants": [
+              "wanna"
+            ],
+            "explanation": "Cụm “want to” khi nói nhanh gộp âm /t/ và đọc lướt thành “wanna” /ˈwɒnə/ hoặc /ˈwɑːnə/.",
+            "rules": {
+              "contractions": true
+            }
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/connected-speech/interview-connected-speech-wanna-reschedule.mp3"
+      },
+      {
+        "id": "tell-em-names",
+        "script": [
+          {
+            "speaker": "Noah",
+            "voice": "en-AU-male-1",
+            "text": "When you reach the front desk, just tell 'em you're here for HR."
+          }
+        ],
+        "items": [
+          {
+            "id": "reduced-tell-them",
+            "prompt": "When you reach the front desk, just ___ you're here for HR.",
+            "answer": "tell them",
+            "variants": [
+              "tell 'em",
+              "tell em"
+            ],
+            "explanation": "Đại từ “them” rơi phụ âm đầu /ð/ thành “'em” /əm/ và nối mượt sau phụ âm /l/ của “tell” (/teləm/).",
+            "rules": {
+              "contractions": true
+            }
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/connected-speech/interview-connected-speech-tell-em-names.mp3"
+      },
+      {
+        "id": "arrive-early",
+        "script": [
+          {
+            "speaker": "David",
+            "voice": "en-GB-male-1",
+            "text": "Please arrive at least ten minutes early so reception can print your pass."
+          }
+        ],
+        "items": [
+          {
+            "id": "elision-at-least-ten",
+            "prompt": "Please arrive ___ minutes early so reception can print your pass.",
+            "answer": "at least ten",
+            "variants": [
+              "at least 10"
+            ],
+            "explanation": "Trong cụm “at least ten”, giới từ “at” đọc dạng yếu /ət/ nối sau “arrive”, còn âm /t/ cuối của “least” bị nuốt (elision) trước âm /t/ của “ten”, khiến cả cụm nghe liền như /ətliːsten/.",
+            "rules": {
+              "contractions": true
+            }
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/connected-speech/interview-connected-speech-arrive-early.mp3"
+      }
+    ]
   }
 ]
