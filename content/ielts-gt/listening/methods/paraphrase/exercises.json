@@ -634,5 +634,917 @@
         "audio": "assets/audio/listening/methods/paraphrase/policy-highlights-training.mp3"
       }
     ]
+  },
+  {
+    "id": "gym-membership",
+    "format": "trap-spotter",
+    "title": "Bẫy nghe khi đăng ký phòng gym",
+    "level": "Band 5.5",
+    "instructions": "Nghe ba đoạn trao đổi khi đăng ký gói tập gym (tự sửa lời, đổi ý và bẫy so sánh). Với mỗi đoạn, chọn thông tin đúng cuối cùng và cụm từ báo hiệu.",
+    "clips": [
+      {
+        "id": "joining-fee",
+        "script": [
+          {
+            "speaker": "Maya",
+            "voice": "en-GB-female-1",
+            "text": "If I sign up for the twelve-month gym plan today, how much is the registration fee?"
+          },
+          {
+            "speaker": "Luke",
+            "voice": "en-AU-male-1",
+            "text": "Normally it's forty-five dollars to set up your access card — hang on, I just remembered we're running our autumn promotion until Sunday, so the registration fee is completely waived this week."
+          }
+        ],
+        "items": [
+          {
+            "id": "fee-amount",
+            "prompt": "Khách phải trả bao nhiêu phí đăng ký trong tuần này?",
+            "answer": "nothing",
+            "explanation": "Nhân viên nêu mức phí thường ngày là 45 đô rồi tự đính chính rằng tuần này đang khuyến mãi nên miễn phí hoàn toàn (“completely waived”).",
+            "choices": [
+              {
+                "id": "forty-five",
+                "label": "$45"
+              },
+              {
+                "id": "half-price",
+                "label": "$22.50"
+              },
+              {
+                "id": "nothing",
+                "label": "$0 (free of charge)"
+              }
+            ],
+            "role": "fact"
+          },
+          {
+            "id": "fee-cue",
+            "prompt": "Cụm từ báo hiệu nhân viên đang tự sửa thông tin",
+            "answer": "hang-on",
+            "explanation": "“Hang on, I just remembered” báo hiệu thông tin $45 vừa nói không áp dụng lúc này.",
+            "choices": [
+              {
+                "id": "normally-card",
+                "label": "Set up your access card"
+              },
+              {
+                "id": "hang-on",
+                "label": "Hang on, I just remembered"
+              },
+              {
+                "id": "until-sunday",
+                "label": "Until Sunday"
+              }
+            ],
+            "role": "cue"
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/paraphrase/gym-membership-joining-fee.mp3"
+      },
+      {
+        "id": "plan-switch",
+        "script": [
+          {
+            "speaker": "Luke",
+            "voice": "en-AU-male-1",
+            "text": "So shall I put you down for the off-peak membership? That covers weekdays between nine and four."
+          },
+          {
+            "speaker": "Maya",
+            "voice": "en-GB-female-1",
+            "text": "I was going to go with off-peak to save a bit each month. Come to think of it, my office hours shift next month, so I'd better take the all-access pass instead."
+          }
+        ],
+        "items": [
+          {
+            "id": "chosen-plan",
+            "prompt": "Khách cuối cùng chọn gói hội viên nào?",
+            "answer": "all-access",
+            "explanation": "Khách ban đầu định chọn gói off-peak nhưng đổi ý sang gói “all-access pass” vì lịch làm việc tháng sau thay đổi.",
+            "choices": [
+              {
+                "id": "off-peak",
+                "label": "Off-peak weekday membership"
+              },
+              {
+                "id": "all-access",
+                "label": "All-access membership"
+              },
+              {
+                "id": "weekend-only",
+                "label": "Weekend-only pass"
+              }
+            ],
+            "role": "fact"
+          },
+          {
+            "id": "plan-cue",
+            "prompt": "Cụm từ báo hiệu khách đã đổi ý",
+            "answer": "come-to-think",
+            "explanation": "“Come to think of it” (nghĩ kỹ lại thì…) và “instead” (thay vào đó) báo hiệu sự thay đổi quyết định.",
+            "choices": [
+              {
+                "id": "save-month",
+                "label": "Save a bit each month"
+              },
+              {
+                "id": "weekdays-nine",
+                "label": "Weekdays between nine and four"
+              },
+              {
+                "id": "come-to-think",
+                "label": "Come to think of it / instead"
+              }
+            ],
+            "role": "cue"
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/paraphrase/gym-membership-plan-switch.mp3"
+      },
+      {
+        "id": "pool-price",
+        "script": [
+          {
+            "speaker": "Maya",
+            "voice": "en-GB-female-1",
+            "text": "Does adding the swimming pool cost much more on top of the sixty-dollar gym rate?"
+          },
+          {
+            "speaker": "Luke",
+            "voice": "en-AU-male-1",
+            "text": "People often expect to pay seventy-five dollars in total, which is what the sports centre in town charges, yet our combined gym-and-pool bundle is actually ten dollars less than that."
+          }
+        ],
+        "items": [
+          {
+            "id": "bundle-cost",
+            "prompt": "Giá trọn gói gym kèm hồ bơi ở phòng tập này là bao nhiêu?",
+            "answer": "sixty-five",
+            "explanation": "$75 là giá ở trung tâm trong phố; gói kết hợp ở đây rẻ hơn 10 đô (“ten dollars less than that”), tức là $65.",
+            "choices": [
+              {
+                "id": "sixty",
+                "label": "$60"
+              },
+              {
+                "id": "sixty-five",
+                "label": "$65"
+              },
+              {
+                "id": "seventy-five",
+                "label": "$75"
+              }
+            ],
+            "role": "fact"
+          },
+          {
+            "id": "price-cue",
+            "prompt": "Cụm từ so sánh giúp tính ra mức giá thực tế",
+            "answer": "ten-less",
+            "explanation": "Cụm so sánh “ten dollars less than that” yêu cầu lấy $75 trừ $10 để ra $65, tránh bẫy chọn ngay con số vừa nghe.",
+            "choices": [
+              {
+                "id": "often-expect",
+                "label": "People often expect"
+              },
+              {
+                "id": "ten-less",
+                "label": "Ten dollars less than that"
+              },
+              {
+                "id": "sixty-rate",
+                "label": "Sixty-dollar gym rate"
+              }
+            ],
+            "role": "cue"
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/paraphrase/gym-membership-pool-price.mp3"
+      }
+    ]
+  },
+  {
+    "id": "car-rental-traps",
+    "format": "trap-spotter",
+    "title": "Bẫy so sánh và phủ định thuê xe",
+    "level": "Band 6.5",
+    "instructions": "Nghe ba tình huống thuê xe (phủ định ẩn, lặp từ khóa gây nhiễu và bẫy so sánh). Chọn thông tin đúng cuối cùng và cụm từ báo hiệu.",
+    "clips": [
+      {
+        "id": "fuel-policy",
+        "script": [
+          {
+            "speaker": "Owen",
+            "voice": "en-GB-male-1",
+            "text": "Do I have to pay upfront for a full tank of petrol before I drive the rental car away?"
+          },
+          {
+            "speaker": "Tessa",
+            "voice": "en-AU-female-1",
+            "text": "That prepaid fuel option rarely saves drivers money unless they're doing a long motorway trip. You're far better off bringing the car back with the tank topped up yourself so you avoid any refuelling surcharge."
+          }
+        ],
+        "items": [
+          {
+            "id": "fuel-option",
+            "prompt": "Nhân viên khuyên khách chọn cách đổ xăng nào?",
+            "answer": "refill-return",
+            "explanation": "“Rarely saves drivers money” (hiếm khi tiết kiệm) là phủ định ẩn bác bỏ gói trả trước; nhân viên khuyên tự đổ đầy bình trước khi trả xe.",
+            "choices": [
+              {
+                "id": "prepay-tank",
+                "label": "Pay upfront for a full tank at pickup"
+              },
+              {
+                "id": "refill-return",
+                "label": "Refill the tank before returning the car"
+              },
+              {
+                "id": "empty-return",
+                "label": "Return the car empty and pay the surcharge"
+              }
+            ],
+            "role": "fact"
+          },
+          {
+            "id": "fuel-cue",
+            "prompt": "Cụm từ mang nghĩa phủ định ẩn bác bỏ gói trả trước",
+            "answer": "rarely-saves",
+            "explanation": "“Rarely” không dùng từ “not” nhưng mang nghĩa phủ định, kết hợp với “far better off” để hướng sang phương án tự đổ xăng.",
+            "choices": [
+              {
+                "id": "drive-away",
+                "label": "Drive the rental car away"
+              },
+              {
+                "id": "rarely-saves",
+                "label": "Rarely saves / far better off"
+              },
+              {
+                "id": "full-tank",
+                "label": "A full tank of petrol"
+              }
+            ],
+            "role": "cue"
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/paraphrase/car-rental-traps-fuel-policy.mp3"
+      },
+      {
+        "id": "vehicle-choice",
+        "script": [
+          {
+            "speaker": "Tessa",
+            "voice": "en-AU-female-1",
+            "text": "Are we sticking with the compact hatchback you reserved online?"
+          },
+          {
+            "speaker": "Owen",
+            "voice": "en-GB-male-1",
+            "text": "I did pick a compact hatchback at first, and a compact hatchback would have been fine for just two of us. Trouble is, my sister decided to join us with two huge suitcases, so we'll need a medium estate car with proper boot space."
+          }
+        ],
+        "items": [
+          {
+            "id": "car-type",
+            "prompt": "Khách quyết định thuê loại xe nào?",
+            "answer": "estate-car",
+            "explanation": "Cụm “compact hatchback” lặp lại ba lần để gây nhiễu, nhưng vì thêm người và hành lý nên khách đổi sang “medium estate car”.",
+            "choices": [
+              {
+                "id": "compact-hatchback",
+                "label": "A compact hatchback"
+              },
+              {
+                "id": "estate-car",
+                "label": "A medium estate car"
+              },
+              {
+                "id": "seven-seater",
+                "label": "A seven-seater van"
+              }
+            ],
+            "role": "fact"
+          },
+          {
+            "id": "car-cue",
+            "prompt": "Cụm từ báo hiệu lý do hủy lựa chọn cũ",
+            "answer": "trouble-is",
+            "explanation": "“Trouble is…” (vấn đề là…) mở ra trở ngại khiến phương án cũ bị loại bỏ.",
+            "choices": [
+              {
+                "id": "reserved-online",
+                "label": "Reserved online"
+              },
+              {
+                "id": "fine-two",
+                "label": "Fine for just two of us"
+              },
+              {
+                "id": "trouble-is",
+                "label": "Trouble is"
+              }
+            ],
+            "role": "cue"
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/paraphrase/car-rental-traps-vehicle-choice.mp3"
+      },
+      {
+        "id": "mileage-cap",
+        "script": [
+          {
+            "speaker": "Owen",
+            "voice": "en-GB-male-1",
+            "text": "How many kilometres a day are included in the standard tariff? Is it two hundred?"
+          },
+          {
+            "speaker": "Tessa",
+            "voice": "en-AU-female-1",
+            "text": "Two hundred kilometres applies to our city micro-cars. With the estate class you're taking, your daily allowance is fifty kilometres more than that before any distance fee kicks in."
+          }
+        ],
+        "items": [
+          {
+            "id": "daily-limit",
+            "prompt": "Giới hạn quãng đường mỗi ngày cho dòng xe khách thuê là bao nhiêu?",
+            "answer": "250-km",
+            "explanation": "200 km chỉ áp dụng cho xe cỡ nhỏ; xe estate được thêm 50 km (“fifty kilometres more than that”), tức 250 km/ngày.",
+            "choices": [
+              {
+                "id": "150-km",
+                "label": "150 kilometres"
+              },
+              {
+                "id": "200-km",
+                "label": "200 kilometres"
+              },
+              {
+                "id": "250-km",
+                "label": "250 kilometres"
+              }
+            ],
+            "role": "fact"
+          },
+          {
+            "id": "limit-cue",
+            "prompt": "Cụm từ so sánh quyết định đáp án cuối cùng",
+            "answer": "fifty-more",
+            "explanation": "Cụm “fifty kilometres more than that” báo hiệu phải cộng thêm 50 vào mốc 200 km vừa nêu.",
+            "choices": [
+              {
+                "id": "standard-tariff",
+                "label": "Standard tariff"
+              },
+              {
+                "id": "fifty-more",
+                "label": "Fifty kilometres more than that"
+              },
+              {
+                "id": "distance-fee",
+                "label": "Distance fee kicks in"
+              }
+            ],
+            "role": "cue"
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/paraphrase/car-rental-traps-mileage-cap.mp3"
+      }
+    ]
+  },
+  {
+    "id": "online-return",
+    "format": "paraphrase-match",
+    "title": "Đổi trả hàng mua trực tuyến",
+    "level": "Band 4.5",
+    "instructions": "Nghe ba đoạn thông báo về chính sách đổi trả hàng trực tuyến rồi chọn câu diễn đạt lại đúng ý nhất.",
+    "clips": [
+      {
+        "id": "return-window",
+        "script": [
+          {
+            "speaker": "Customer Care",
+            "voice": "en-US-female-1",
+            "text": "Unopened electronics can be sent back within thirty days of delivery for a full refund, provided the original barcode label is still attached."
+          }
+        ],
+        "items": [
+          {
+            "id": "refund-rule",
+            "prompt": "Chính sách hoàn tiền yêu cầu điều kiện gì?",
+            "answer": "intact-label",
+            "explanation": "“Unopened”, “original barcode label is still attached” và “full refund” được diễn giải thành “remain unopened with the original tag on to get all your money back”.",
+            "choices": [
+              {
+                "id": "intact-label",
+                "label": "Items must remain unopened with the original tag on to get all your money back."
+              },
+              {
+                "id": "store-credit",
+                "label": "Returned electronics can only be exchanged for store vouchers."
+              },
+              {
+                "id": "within-week",
+                "label": "Customers must send faulty items back within seven days."
+              }
+            ]
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/paraphrase/online-return-return-window.mp3"
+      },
+      {
+        "id": "postage-label",
+        "script": [
+          {
+            "speaker": "Support Agent",
+            "voice": "en-GB-male-1",
+            "text": "If an item arrives damaged, you won't need to pay for return postage — simply download the prepaid parcel sticker from your order page."
+          }
+        ],
+        "items": [
+          {
+            "id": "damaged-shipping",
+            "prompt": "Khách hàng nên làm gì nếu nhận phải sản phẩm bị hỏng?",
+            "answer": "free-label",
+            "explanation": "“Won't need to pay for return postage” và “download the prepaid parcel sticker” tương ứng với tải nhãn gửi hàng miễn phí từ tài khoản trực tuyến.",
+            "choices": [
+              {
+                "id": "pay-courier",
+                "label": "Pay the courier upfront and claim the fee later."
+              },
+              {
+                "id": "free-label",
+                "label": "Print a free shipping label from their online account."
+              },
+              {
+                "id": "visit-store",
+                "label": "Bring the broken item to a local branch in person."
+              }
+            ]
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/paraphrase/online-return-postage-label.mp3"
+      },
+      {
+        "id": "refund-timing",
+        "script": [
+          {
+            "speaker": "Returns Desk",
+            "voice": "en-AU-female-1",
+            "text": "Once our warehouse scans your returned parcel, please allow up to five working days for the funds to appear back on your bank card."
+          }
+        ],
+        "items": [
+          {
+            "id": "card-refund",
+            "prompt": "Khi nào tiền hoàn trả sẽ về thẻ của khách?",
+            "answer": "five-weekdays",
+            "explanation": "“Once our warehouse scans your returned parcel” là sau khi kho tiếp nhận gói hàng, và “up to five working days” đồng nghĩa “within five business days”.",
+            "choices": [
+              {
+                "id": "same-day",
+                "label": "Immediately after the customer drops the parcel at the post office."
+              },
+              {
+                "id": "five-weekdays",
+                "label": "Within five business days after the warehouse checks the package in."
+              },
+              {
+                "id": "next-month",
+                "label": "At the end of the following billing month."
+              }
+            ]
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/paraphrase/online-return-refund-timing.mp3"
+      }
+    ]
+  },
+  {
+    "id": "volunteer-orientation",
+    "format": "paraphrase-match",
+    "title": "Thông tin tình nguyện cộng đồng",
+    "level": "Band 6.0",
+    "instructions": "Nghe ba đoạn giới thiệu dành cho tình nguyện viên cộng đồng rồi chọn câu diễn giải sát nghĩa nhất (cẩn thận bẫy lặp từ khóa).",
+    "clips": [
+      {
+        "id": "food-bank",
+        "script": [
+          {
+            "speaker": "Hannah",
+            "voice": "en-GB-female-1",
+            "text": "You don't need prior retail or kitchen experience to sort donations at the food bank, though every new helper has to shadow an experienced team leader during their first shift."
+          }
+        ],
+        "items": [
+          {
+            "id": "helper-requirement",
+            "prompt": "Điều gì là bắt buộc đối với tình nguyện viên mới tại ngân hàng thực phẩm?",
+            "answer": "work-alongside",
+            "explanation": "“Shadow an experienced team leader during their first shift” được diễn giải thành “pairing up with a seasoned supervisor on their initial shift”.",
+            "choices": [
+              {
+                "id": "past-kitchen",
+                "label": "Having previous background in catering or retail."
+              },
+              {
+                "id": "work-alongside",
+                "label": "Pairing up with a seasoned supervisor on their initial shift."
+              },
+              {
+                "id": "run-shift",
+                "label": "Managing the donation table independently from day one."
+              }
+            ]
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/paraphrase/volunteer-orientation-food-bank.mp3"
+      },
+      {
+        "id": "travel-costs",
+        "script": [
+          {
+            "speaker": "Ben",
+            "voice": "en-AU-male-1",
+            "text": "While our charity can't offer a daily stipend, volunteers who commute by public transport can claim back their bus or train fares by handing in paper or digital tickets."
+          }
+        ],
+        "items": [
+          {
+            "id": "expense-claim",
+            "prompt": "Tổ chức hỗ trợ chi phí nào cho tình nguyện viên?",
+            "answer": "transit-reimbursed",
+            "explanation": "“Claim back their bus or train fares by handing in… tickets” đồng nghĩa với hoàn tiền vé phương tiện công cộng khi có chứng từ; “can't offer a daily stipend” bác bỏ khoản phụ cấp hằng ngày.",
+            "choices": [
+              {
+                "id": "daily-allowance",
+                "label": "A fixed cash payment for every day worked."
+              },
+              {
+                "id": "fuel-voucher",
+                "label": "Petrol vouchers for volunteers who drive to the site."
+              },
+              {
+                "id": "transit-reimbursed",
+                "label": "Reimbursement of public transit tickets with proof of travel."
+              }
+            ]
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/paraphrase/volunteer-orientation-travel-costs.mp3"
+      },
+      {
+        "id": "park-cleanup",
+        "script": [
+          {
+            "speaker": "Sam",
+            "voice": "en-US-male-1",
+            "text": "In the event of heavy rain, the riverside litter pick won't be called off altogether; instead, we'll switch to repairing bird boxes inside the community hall."
+          }
+        ],
+        "items": [
+          {
+            "id": "wet-weather",
+            "prompt": "Điều gì xảy ra nếu trời mưa lớn vào ngày dọn rác ven sông?",
+            "answer": "indoor-task",
+            "explanation": "“Won't be called off altogether” phủ định việc hủy buổi; “switch to repairing bird boxes inside the community hall” được diễn giải là chuyển vào trong nhà làm việc khác.",
+            "choices": [
+              {
+                "id": "cancelled-completely",
+                "label": "The volunteer session will be cancelled until next weekend."
+              },
+              {
+                "id": "raincoats-river",
+                "label": "Volunteers will still collect litter along the river in raincoats."
+              },
+              {
+                "id": "indoor-task",
+                "label": "The group will move indoors to work on a different project."
+              }
+            ]
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/paraphrase/volunteer-orientation-park-cleanup.mp3"
+      }
+    ]
+  },
+  {
+    "id": "interview-schedule",
+    "format": "transcript-highlight",
+    "title": "Soi bẫy trong thư mời phỏng vấn",
+    "level": "Band 6.0",
+    "instructions": "Nghe hai đoạn trao đổi sắp xếp lịch phỏng vấn việc làm, chọn đáp án đúng rồi đối chiếu phần Đáp án và Bẫy được đánh dấu trong transcript.",
+    "clips": [
+      {
+        "id": "location",
+        "script": [
+          {
+            "speaker": "Mia",
+            "voice": "en-GB-female-1",
+            "text": "Hi, I'm calling about my interview on Thursday. The automated email mentioned your main headquarters on Station Road, and I also saw a video link at the bottom."
+          },
+          {
+            "speaker": "David",
+            "voice": "en-US-male-1",
+            "text": "Good thing you checked. The video link is only for second-round candidates overseas, and our Station Road lobby is closed for painting this week, so we're holding all first-round interviews at our annex office beside the central library."
+          }
+        ],
+        "items": [
+          {
+            "id": "interview-venue",
+            "prompt": "Ứng viên cần đến đâu để tham gia vòng phỏng vấn đầu tiên?",
+            "answer": "annex-library",
+            "explanation": "Trụ sở chính ở Station Road đang đóng cửa sơn sửa và đường link video chỉ dành cho ứng viên vòng hai ở nước ngoài; vòng một tổ chức tại văn phòng phụ cạnh thư viện trung tâm.",
+            "choices": [
+              {
+                "id": "station-hq",
+                "label": "The main headquarters on Station Road"
+              },
+              {
+                "id": "video-call",
+                "label": "An online video call using the email link"
+              },
+              {
+                "id": "annex-library",
+                "label": "The annex office next to the central library"
+              }
+            ]
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "highlights": [
+          {
+            "line": 0,
+            "text": "your main headquarters on Station Road",
+            "kind": "distractor"
+          },
+          {
+            "line": 0,
+            "text": "a video link at the bottom",
+            "kind": "distractor"
+          },
+          {
+            "line": 1,
+            "text": "holding all first-round interviews at our annex office beside the central library",
+            "kind": "answer"
+          }
+        ],
+        "audio": "assets/audio/listening/methods/paraphrase/interview-schedule-location.mp3"
+      },
+      {
+        "id": "documents",
+        "script": [
+          {
+            "speaker": "Mia",
+            "voice": "en-GB-female-1",
+            "text": "Should I print out three copies of my CV and bring my university degree certificates as well?"
+          },
+          {
+            "speaker": "David",
+            "voice": "en-US-male-1",
+            "text": "The panel already has your CV on their tablets, and HR only asks for degree certificates once an offer is made. What we do want you to bring is two short writing samples you produced in a previous role."
+          }
+        ],
+        "items": [
+          {
+            "id": "what-to-bring",
+            "prompt": "Ứng viên thực sự cần mang theo thứ gì tới buổi phỏng vấn?",
+            "answer": "writing-samples",
+            "explanation": "Hội đồng đã có CV trên máy tính bảng và bằng đại học chỉ cần khi có đề nghị tuyển dụng; thứ cần mang là hai bài viết mẫu từ công việc trước.",
+            "choices": [
+              {
+                "id": "printed-cv",
+                "label": "Three printed copies of her CV"
+              },
+              {
+                "id": "degree-certs",
+                "label": "Original university degree certificates"
+              },
+              {
+                "id": "writing-samples",
+                "label": "Two brief examples of past work writing"
+              }
+            ]
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "highlights": [
+          {
+            "line": 1,
+            "text": "The panel already has your CV on their tablets",
+            "kind": "distractor"
+          },
+          {
+            "line": 1,
+            "text": "HR only asks for degree certificates once an offer is made",
+            "kind": "distractor"
+          },
+          {
+            "line": 1,
+            "text": "two short writing samples you produced in a previous role",
+            "kind": "answer"
+          }
+        ],
+        "audio": "assets/audio/listening/methods/paraphrase/interview-schedule-documents.mp3"
+      }
+    ]
+  },
+  {
+    "id": "course-enrolment",
+    "format": "transcript-highlight",
+    "title": "Soi bẫy khi ghi danh khóa học",
+    "level": "Band 7.0",
+    "instructions": "Nghe hai đoạn tư vấn ghi danh khóa học buổi tối, chọn đáp án chính xác rồi kiểm tra phần Đáp án và Bẫy được đánh dấu trong lời thoại.",
+    "clips": [
+      {
+        "id": "placement",
+        "script": [
+          {
+            "speaker": "Chloe",
+            "voice": "en-AU-female-1",
+            "text": "I'd like to enrol in the intermediate bookkeeping course, so I assume I'll need to take the entry exam before Friday and buy the printed workbook separately."
+          },
+          {
+            "speaker": "Oliver",
+            "voice": "en-GB-male-1",
+            "text": "Actually, anyone who completed our beginner module within the past two years is exempt from the entry exam, and the printed workbook is bundled into the tuition fee; however, you do have to purchase your own licence for the accounting software before the second lecture."
+          }
+        ],
+        "items": [
+          {
+            "id": "extra-requirement",
+            "prompt": "Học viên đã hoàn thành lớp cơ bản năm ngoái vẫn phải tự chuẩn bị khoản nào?",
+            "answer": "software-licence",
+            "explanation": "Người đã học lớp cơ bản trong vòng hai năm được miễn thi đầu vào (“exempt from the entry exam”) và sách bài tập đã gộp trong học phí (“bundled into the tuition fee”); chỉ có bản quyền phần mềm kế toán là phải tự mua.",
+            "choices": [
+              {
+                "id": "entry-exam",
+                "label": "Sit the entry placement exam before Friday"
+              },
+              {
+                "id": "printed-workbook",
+                "label": "Pay extra for the printed course workbook"
+              },
+              {
+                "id": "software-licence",
+                "label": "Buy an individual accounting software subscription"
+              }
+            ]
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "highlights": [
+          {
+            "line": 1,
+            "text": "exempt from the entry exam",
+            "kind": "distractor"
+          },
+          {
+            "line": 1,
+            "text": "the printed workbook is bundled into the tuition fee",
+            "kind": "distractor"
+          },
+          {
+            "line": 1,
+            "text": "purchase your own licence for the accounting software before the second lecture",
+            "kind": "answer"
+          }
+        ],
+        "audio": "assets/audio/listening/methods/paraphrase/course-enrolment-placement.mp3"
+      },
+      {
+        "id": "discount",
+        "script": [
+          {
+            "speaker": "Chloe",
+            "voice": "en-AU-female-1",
+            "text": "The brochure mentions a fifteen-percent early-bird discount for registrations paid before the tenth of March, plus a ten-percent reduction for local council library members."
+          },
+          {
+            "speaker": "Oliver",
+            "voice": "en-GB-male-1",
+            "text": "Both discounts exist, though our policy doesn't allow students to stack two offers together. Since today is already the twelfth of March, the early-bird deadline has passed, which means showing your valid library card at payment is the only discount we can apply."
+          }
+        ],
+        "items": [
+          {
+            "id": "applicable-discount",
+            "prompt": "Học viên đăng ký vào hôm nay sẽ được áp dụng mức ưu đãi nào?",
+            "answer": "library-ten",
+            "explanation": "Trường không cho cộng dồn hai ưu đãi (“doesn't allow students to stack two offers”) và hạn ưu đãi sớm 10/3 đã qua vì hôm nay là 12/3; do đó chỉ áp dụng được giảm 10% khi xuất trình thẻ thư viện còn hiệu lực.",
+            "choices": [
+              {
+                "id": "combined-twenty-five",
+                "label": "A combined 25% discount using both offers"
+              },
+              {
+                "id": "early-fifteen",
+                "label": "The 15% early-bird discount only"
+              },
+              {
+                "id": "library-ten",
+                "label": "The 10% reduction with a valid library card"
+              }
+            ]
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "highlights": [
+          {
+            "line": 0,
+            "text": "a fifteen-percent early-bird discount for registrations paid before the tenth of March",
+            "kind": "distractor"
+          },
+          {
+            "line": 1,
+            "text": "doesn't allow students to stack two offers together",
+            "kind": "distractor"
+          },
+          {
+            "line": 1,
+            "text": "showing your valid library card at payment is the only discount we can apply",
+            "kind": "answer"
+          }
+        ],
+        "audio": "assets/audio/listening/methods/paraphrase/course-enrolment-discount.mp3"
+      }
+    ]
   }
 ]

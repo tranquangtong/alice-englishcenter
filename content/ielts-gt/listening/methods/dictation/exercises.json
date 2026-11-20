@@ -829,5 +829,697 @@
         "audio": "assets/audio/listening/methods/dictation/shift-briefing-commute.mp3"
       }
     ]
+  },
+  {
+    "id": "hotel-checkin",
+    "format": "number-spelling",
+    "title": "Nhận phòng khách sạn",
+    "level": "Band 4.5",
+    "instructions": "Nghe hai đoạn hội thoại khi nhận phòng khách sạn rồi điền chính xác mã đặt phòng, email, giờ kết thúc bữa sáng và số tiền còn lại.",
+    "clips": [
+      {
+        "id": "registration",
+        "script": [
+          {
+            "speaker": "Claire",
+            "voice": "en-US-female-1",
+            "text": "Welcome to Harbourview Hotel. Could I confirm your booking reference and the email address for your digital receipt?"
+          },
+          {
+            "speaker": "Daniel",
+            "voice": "en-AU-male-1",
+            "text": "Sure, my reference code is H, K, seven, oh, four, nine, M. And my email is d dot brennan at coastalmail dot com — that's D, dot, B, R, E, double N, A, N, at coastalmail, spelled C, O, A, S, T, A, L, M, A, I, L, dot com."
+          }
+        ],
+        "items": [
+          {
+            "id": "booking-ref",
+            "prompt": "Mã đặt phòng",
+            "answer": "HK7049M",
+            "variants": [
+              "HK-7049M",
+              "HK-7049-M",
+              "HK 7049 M",
+              "HK 7049M"
+            ],
+            "explanation": "“Oh” là số 0, ghép lần lượt H, K, 7, 0, 4, 9, M thành mã HK7049M.",
+            "rules": {
+              "spelling": false
+            }
+          },
+          {
+            "id": "guest-email",
+            "prompt": "Địa chỉ email nhận hóa đơn",
+            "answer": "d.brennan@coastalmail.com",
+            "explanation": "Chú ý “double N” trong brennan và cách đánh vần tên miền coastalmail.com.",
+            "rules": {
+              "spelling": false
+            }
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/dictation/hotel-checkin-registration.mp3"
+      },
+      {
+        "id": "charges",
+        "script": [
+          {
+            "speaker": "Claire",
+            "voice": "en-US-female-1",
+            "text": "Everything is set for Room 512. Breakfast is served downstairs from six thirty until nine forty-five each morning."
+          },
+          {
+            "speaker": "Daniel",
+            "voice": "en-AU-male-1",
+            "text": "Great, thanks. How much is the remaining balance for the two nights?"
+          },
+          {
+            "speaker": "Claire",
+            "voice": "en-US-female-1",
+            "text": "With local tax included, your balance comes to two hundred and sixty-four dollars and eighty-five cents."
+          }
+        ],
+        "items": [
+          {
+            "id": "breakfast-end",
+            "prompt": "Giờ kết thúc bữa sáng",
+            "answer": "9:45",
+            "variants": [
+              "9.45",
+              "9:45 am",
+              "9:45 a.m.",
+              "9.45 am",
+              "9.45 a.m.",
+              "09:45",
+              "nine forty-five",
+              "nine forty five",
+              "quarter to ten"
+            ],
+            "explanation": "Bữa sáng phục vụ từ 6:30 đến “nine forty-five” (9:45 sáng)."
+          },
+          {
+            "id": "room-balance",
+            "prompt": "Số tiền còn lại cần thanh toán (đô la)",
+            "answer": "$264.85",
+            "variants": [
+              "264.85",
+              "264.85 dollars",
+              "264 dollars 85",
+              "264 dollars 85 cents",
+              "264 dollars and 85 cents",
+              "two hundred and sixty-four dollars and eighty-five cents",
+              "two hundred sixty-four dollars and eighty-five cents"
+            ],
+            "explanation": "“Two hundred and sixty-four dollars and eighty-five cents” là $264.85 (chấp nhận có hoặc không có ký hiệu $)."
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/dictation/hotel-checkin-charges.mp3"
+      }
+    ]
+  },
+  {
+    "id": "repair-request",
+    "format": "number-spelling",
+    "title": "Báo sửa chữa căn hộ",
+    "level": "Band 6.0",
+    "instructions": "Nghe cuộc gọi báo sửa ống nước căn hộ rồi điền chính xác địa chỉ, email, mã hồ sơ, giờ hẹn và tiền đặt cọc kiểm tra.",
+    "clips": [
+      {
+        "id": "address",
+        "script": [
+          {
+            "speaker": "Liam",
+            "voice": "en-AU-male-1",
+            "text": "City Lettings Maintenance, Liam speaking. Can I take your unit number, street address, and email for the plumber's job sheet?"
+          },
+          {
+            "speaker": "Priya",
+            "voice": "en-AU-female-1",
+            "text": "It's Unit 14B, seventy-six Aldridge Grove — that's A, L, D, R, I, D, G, E, Grove. My email is p dot nair at oakside dot org — P, dot, N, A, I, R, at O, A, K, S, I, D, E, dot O, R, G."
+          }
+        ],
+        "items": [
+          {
+            "id": "street-address",
+            "prompt": "Số nhà và tên đường (không cần số căn hộ)",
+            "answer": "76 Aldridge Grove",
+            "variants": [
+              "seventy-six Aldridge Grove",
+              "seventy six Aldridge Grove"
+            ],
+            "explanation": "Số nhà là 76 và tên đường được đánh vần từng chữ A-L-D-R-I-D-G-E Grove.",
+            "rules": {
+              "spelling": false
+            }
+          },
+          {
+            "id": "tenant-email",
+            "prompt": "Email người thuê nhà",
+            "answer": "p.nair@oakside.org",
+            "explanation": "Họ được đánh vần N-A-I-R và tên miền kết thúc bằng .org (oakside.org).",
+            "rules": {
+              "spelling": false
+            }
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/dictation/repair-request-address.mp3"
+      },
+      {
+        "id": "dispatch",
+        "script": [
+          {
+            "speaker": "Liam",
+            "voice": "en-AU-male-1",
+            "text": "Got it. Your repair reference is M, N, double three, eight, five, W. Our engineer can arrive at twenty past eleven tomorrow morning."
+          },
+          {
+            "speaker": "Priya",
+            "voice": "en-AU-female-1",
+            "text": "Twenty past eleven works fine. And just to check, is there an after-hours fee?"
+          },
+          {
+            "speaker": "Liam",
+            "voice": "en-AU-male-1",
+            "text": "Not for a weekday morning slot, just the standard inspection deposit of forty-nine dollars and ninety-five cents, which is refunded if it's a building fault."
+          }
+        ],
+        "items": [
+          {
+            "id": "repair-ref",
+            "prompt": "Mã hồ sơ sửa chữa",
+            "answer": "MN3385W",
+            "variants": [
+              "MN-3385W",
+              "MN-3385-W",
+              "MN 3385 W",
+              "MN 3385W"
+            ],
+            "explanation": "“Double three” là 33, ghép cùng M, N và 8, 5, W tạo thành MN3385W.",
+            "rules": {
+              "spelling": false
+            }
+          },
+          {
+            "id": "plumber-time",
+            "prompt": "Giờ kỹ thuật viên đến",
+            "answer": "11:20",
+            "variants": [
+              "11.20",
+              "11:20 am",
+              "11:20 a.m.",
+              "11.20 am",
+              "11.20 a.m.",
+              "twenty past eleven",
+              "eleven twenty"
+            ],
+            "explanation": "“Twenty past eleven” là 11 giờ 20 sáng (11:20)."
+          },
+          {
+            "id": "inspection-fee",
+            "prompt": "Tiền đặt cọc kiểm tra (đô la)",
+            "answer": "$49.95",
+            "variants": [
+              "49.95",
+              "49.95 dollars",
+              "49 dollars 95",
+              "49 dollars 95 cents",
+              "49 dollars and 95 cents",
+              "forty-nine dollars and ninety-five cents",
+              "forty nine dollars and ninety five cents"
+            ],
+            "explanation": "“Forty-nine dollars and ninety-five cents” tương ứng $49.95."
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/dictation/repair-request-dispatch.mp3"
+      }
+    ]
+  },
+  {
+    "id": "clinic-appointment",
+    "format": "gap-dictation",
+    "title": "Đặt lịch khám tại phòng mạch",
+    "level": "Band 5.5",
+    "instructions": "Nghe ba đoạn trao đổi tại phòng khám sức khỏe rồi điền chính xác cụm từ còn thiếu vào chỗ trống.",
+    "clips": [
+      {
+        "id": "registration",
+        "script": [
+          {
+            "speaker": "Sophie",
+            "voice": "en-GB-female-1",
+            "text": "Since this is your first visit, please arrive fifteen minutes early and bring photo identification along with your current prescription list."
+          },
+          {
+            "speaker": "Marcus",
+            "voice": "en-US-male-1",
+            "text": "No problem, I'll bring my passport and the list from my pharmacist."
+          }
+        ],
+        "items": [
+          {
+            "id": "bring-id",
+            "prompt": "First-time patients must bring ___ and their current medication details.",
+            "answer": "photo identification",
+            "explanation": "Cụm danh từ “photo identification” nghĩa là giấy tờ tùy thân có ảnh."
+          },
+          {
+            "id": "prescription",
+            "prompt": "Please also bring your ___.",
+            "answer": "current prescription list",
+            "variants": [
+              "prescription list"
+            ],
+            "explanation": "“Current prescription list” là danh sách đơn thuốc hiện tại (chấp nhận “prescription list”)."
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/dictation/clinic-appointment-registration.mp3"
+      },
+      {
+        "id": "blood-test",
+        "script": [
+          {
+            "speaker": "Sophie",
+            "voice": "en-GB-female-1",
+            "text": "For your fasting blood test on Thursday morning, you shouldn't eat anything after midnight, though plain water is completely fine."
+          }
+        ],
+        "items": [
+          {
+            "id": "fasting-rule",
+            "prompt": "Before the blood test, patients ___ after midnight.",
+            "answer": "shouldn't eat anything",
+            "variants": [
+              "should not eat anything"
+            ],
+            "explanation": "Nghe dạng phủ định rút gọn “shouldn't eat anything” (cũng chấp nhận “should not eat anything”).",
+            "rules": {
+              "contractions": true
+            }
+          },
+          {
+            "id": "allowed-drink",
+            "prompt": "Drinking ___ before the appointment is allowed.",
+            "answer": "plain water",
+            "explanation": "“Plain water” là nước lọc không pha thêm đường hay hương vị."
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/dictation/clinic-appointment-blood-test.mp3"
+      },
+      {
+        "id": "referral",
+        "script": [
+          {
+            "speaker": "Dr. Patel",
+            "voice": "en-AU-male-1",
+            "text": "I'll upload your specialist referral directly to the hospital portal, and our receptionist will text you once the lab results are reviewed."
+          }
+        ],
+        "items": [
+          {
+            "id": "specialist-referral",
+            "prompt": "The doctor will upload the ___ to the hospital portal.",
+            "answer": "specialist referral",
+            "explanation": "Chú ý hai chữ r ở giữa từ “referral” (giấy giới thiệu khám chuyên khoa)."
+          },
+          {
+            "id": "lab-results",
+            "prompt": "The clinic will send a text once ___.",
+            "answer": "the lab results are reviewed",
+            "variants": [
+              "lab results are reviewed"
+            ],
+            "explanation": "Chú ý số nhiều “results” và động từ bị động có đuôi -ed “are reviewed”."
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/dictation/clinic-appointment-referral.mp3"
+      }
+    ]
+  },
+  {
+    "id": "safety-briefing",
+    "format": "gap-dictation",
+    "title": "Hướng dẫn an toàn tại kho hàng",
+    "level": "Band 6.5",
+    "instructions": "Nghe ba đoạn hướng dẫn an toàn lao động trong kho hàng rồi điền chính xác cụm từ còn thiếu (chú ý số nhiều, đuôi -ed và danh từ không đếm được).",
+    "clips": [
+      {
+        "id": "protective-gear",
+        "script": [
+          {
+            "speaker": "Greg",
+            "voice": "en-AU-male-1",
+            "text": "Anyone entering the loading bay must wear reflective vests and steel-capped boots, even if you're only collecting a clipboard."
+          }
+        ],
+        "items": [
+          {
+            "id": "vests",
+            "prompt": "Staff entering the loading bay must wear ___.",
+            "answer": "reflective vests",
+            "explanation": "Chú ý dạng số nhiều “vests” (áo bảo hộ phản quang)."
+          },
+          {
+            "id": "boots",
+            "prompt": "Protective footwear required in this zone is ___.",
+            "answer": "steel-capped boots",
+            "variants": [
+              "steel capped boots"
+            ],
+            "explanation": "“Steel-capped boots” là giày bảo hộ mũi thép; chú ý âm cuối /t/ ở “capped” và số nhiều “boots”."
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/dictation/safety-briefing-protective-gear.mp3"
+      },
+      {
+        "id": "chemicals",
+        "script": [
+          {
+            "speaker": "Helen",
+            "voice": "en-GB-female-1",
+            "text": "All cleaning solvents must be returned to the ventilated cabinet immediately after use, and damaged containers should be reported before the end of your shift."
+          }
+        ],
+        "items": [
+          {
+            "id": "storage-unit",
+            "prompt": "Cleaning solvents must be placed back in the ___ right after use.",
+            "answer": "ventilated cabinet",
+            "explanation": "“Ventilated cabinet” là tủ có thông gió; chú ý đuôi -ed trong “ventilated”."
+          },
+          {
+            "id": "damaged-items",
+            "prompt": "Workers must report any ___ before their shift ends.",
+            "answer": "damaged containers",
+            "explanation": "Nghe rõ âm cuối ở “damaged” và dạng số nhiều “containers”."
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/dictation/safety-briefing-chemicals.mp3"
+      },
+      {
+        "id": "assembly",
+        "script": [
+          {
+            "speaker": "Derek",
+            "voice": "en-US-male-1",
+            "text": "If the evacuation alarm sounds, switch off nearby machinery and walk briskly to the marked assembly point across from the security gate."
+          }
+        ],
+        "items": [
+          {
+            "id": "turn-off",
+            "prompt": "When the alarm rings, workers should switch off ___.",
+            "answer": "nearby machinery",
+            "explanation": "“Machinery” là danh từ không đếm được chỉ máy móc nên không thêm -s."
+          },
+          {
+            "id": "meeting-spot",
+            "prompt": "Everyone must head to the ___ opposite the security gate.",
+            "answer": "marked assembly point",
+            "variants": [
+              "assembly point"
+            ],
+            "explanation": "“Marked assembly point” là điểm tập kết có đánh dấu (chú ý đuôi -ed ở “marked”)."
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/dictation/safety-briefing-assembly.mp3"
+      }
+    ]
+  },
+  {
+    "id": "timetable-updates",
+    "format": "sentence-dictation",
+    "title": "Đổi giờ chạy tàu và xe buýt",
+    "level": "Band 6.0",
+    "instructions": "Nghe bốn thông báo thay đổi lịch chạy tàu và xe buýt rồi gõ lại đầy đủ từng câu. Chú ý nối âm giữa phụ âm cuối và nguyên âm đầu.",
+    "clips": [
+      {
+        "id": "express-train",
+        "script": [
+          {
+            "speaker": "Announcer",
+            "voice": "en-GB-narrator",
+            "text": "Because of overnight track maintenance, the express train into central London will depart from platform eight instead of platform three."
+          }
+        ],
+        "items": [
+          {
+            "id": "sentence-express",
+            "prompt": "Câu đầy đủ",
+            "answer": "Because of overnight track maintenance, the express train into central London will depart from platform eight instead of platform three.",
+            "variants": [
+              "Because of overnight track maintenance, the express train into central London will depart from platform 8 instead of platform 3."
+            ],
+            "explanation": "Chú ý nối âm ở “because of overnight” và “eight instead of”, cùng chính tả từ “maintenance” (bảo trì)."
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/dictation/timetable-updates-express-train.mp3"
+      },
+      {
+        "id": "replacement-bus",
+        "script": [
+          {
+            "speaker": "Transit Announcer",
+            "voice": "en-AU-female-1",
+            "text": "A replacement bus picks up passengers outside the east exit every twenty minutes until regular rail services resume at noon."
+          }
+        ],
+        "items": [
+          {
+            "id": "sentence-replacement",
+            "prompt": "Câu đầy đủ",
+            "answer": "A replacement bus picks up passengers outside the east exit every twenty minutes until regular rail services resume at noon.",
+            "variants": [
+              "A replacement bus picks up passengers outside the east exit every 20 minutes until regular rail services resume at noon."
+            ],
+            "explanation": "Chú ý nối âm trong “picks up”, “east exit every” và “resume at noon” (hoạt động lại vào buổi trưa)."
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/dictation/timetable-updates-replacement-bus.mp3"
+      },
+      {
+        "id": "commuter-pass",
+        "script": [
+          {
+            "speaker": "Station Agent",
+            "voice": "en-US-male-1",
+            "text": "Commuters who hold a weekly travel pass can switch onto the coastal tram at no extra charge during the evening peak."
+          }
+        ],
+        "items": [
+          {
+            "id": "sentence-pass",
+            "prompt": "Câu đầy đủ",
+            "answer": "Commuters who hold a weekly travel pass can switch onto the coastal tram at no extra charge during the evening peak.",
+            "explanation": "Chú ý nối âm “hold a”, “switch onto”, “tram at” và cụm cố định “at no extra charge” (không mất thêm phí)."
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/dictation/timetable-updates-commuter-pass.mp3"
+      },
+      {
+        "id": "night-route",
+        "script": [
+          {
+            "speaker": "Bus Controller",
+            "voice": "en-GB-male-1",
+            "text": "We've moved the final airport coach forward by ten minutes, so please check in at the ticket desk before boarding."
+          }
+        ],
+        "items": [
+          {
+            "id": "sentence-coach",
+            "prompt": "Câu đầy đủ",
+            "answer": "We've moved the final airport coach forward by ten minutes, so please check in at the ticket desk before boarding.",
+            "variants": [
+              "We've moved the final airport coach forward by 10 minutes, so please check in at the ticket desk before boarding."
+            ],
+            "explanation": "Chú ý dạng rút gọn “We've moved”, cụm “move … forward” (đẩy giờ sớm lên) và chuỗi nối âm “check in at”.",
+            "rules": {
+              "contractions": true
+            }
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/dictation/timetable-updates-night-route.mp3"
+      }
+    ]
+  },
+  {
+    "id": "recycling-rules",
+    "format": "sentence-dictation",
+    "title": "Quy định phân loại rác tái chế",
+    "level": "Band 7.0",
+    "instructions": "Nghe bốn thông báo chi tiết của hội đồng địa phương về phân loại rác tái chế rồi chép lại đầy đủ từng câu. Chú ý nối âm, dạng bị động và từ nối.",
+    "clips": [
+      {
+        "id": "cardboard",
+        "script": [
+          {
+            "speaker": "Council Officer",
+            "voice": "en-GB-female-1",
+            "text": "Residents are asked to flatten all cardboard boxes and keep out greasy food cartons so the paper stream isn't contaminated."
+          }
+        ],
+        "items": [
+          {
+            "id": "sentence-cardboard",
+            "prompt": "Câu đầy đủ",
+            "answer": "Residents are asked to flatten all cardboard boxes and keep out greasy food cartons so the paper stream isn't contaminated.",
+            "explanation": "Chú ý nối âm “Residents are asked”, “flatten all”, “keep out” và từ “contaminated” (bị nhiễm bẩn).",
+            "rules": {
+              "contractions": true
+            }
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/dictation/recycling-rules-cardboard.mp3"
+      },
+      {
+        "id": "glass-jars",
+        "script": [
+          {
+            "speaker": "Waste Coordinator",
+            "voice": "en-AU-male-1",
+            "text": "Although metal lids can go straight into the yellow bin, glass jars should be rinsed out thoroughly before collection day."
+          }
+        ],
+        "items": [
+          {
+            "id": "sentence-glass",
+            "prompt": "Câu đầy đủ",
+            "answer": "Although metal lids can go straight into the yellow bin, glass jars should be rinsed out thoroughly before collection day.",
+            "explanation": "Chú ý nối âm “straight into”, “rinsed out” và chính tả trạng từ “thoroughly” (kỹ lưỡng)."
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/dictation/recycling-rules-glass-jars.mp3"
+      },
+      {
+        "id": "garden-waste",
+        "script": [
+          {
+            "speaker": "Council Spokesperson",
+            "voice": "en-AU-female-1",
+            "text": "If you put out an overflowing bin with the lid propped open, our crew won't empty it until the following fortnight."
+          }
+        ],
+        "items": [
+          {
+            "id": "sentence-garden",
+            "prompt": "Câu đầy đủ",
+            "answer": "If you put out an overflowing bin with the lid propped open, our crew won't empty it until the following fortnight.",
+            "explanation": "Chú ý chuỗi nối âm “put out an overflowing”, “propped open”, “empty it until” và danh từ “fortnight” (hai tuần).",
+            "rules": {
+              "contractions": true
+            }
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/dictation/recycling-rules-garden-waste.mp3"
+      },
+      {
+        "id": "batteries",
+        "script": [
+          {
+            "speaker": "Recycling Advisor",
+            "voice": "en-US-female-1",
+            "text": "Household batteries must never be thrown away with regular trash because they can spark a fire inside the sorting truck."
+          }
+        ],
+        "items": [
+          {
+            "id": "sentence-batteries",
+            "prompt": "Câu đầy đủ",
+            "answer": "Household batteries must never be thrown away with regular trash because they can spark a fire inside the sorting truck.",
+            "explanation": "Chú ý nối âm “thrown away”, “spark a fire inside” và động từ “spark” (gây ra tia lửa/hỏa hoạn)."
+          }
+        ],
+        "source": {
+          "kind": "original",
+          "attribution": "Alice English Center · giọng tổng hợp Microsoft",
+          "licence": "Kịch bản gốc của Alice English Center"
+        },
+        "audio": "assets/audio/listening/methods/dictation/recycling-rules-batteries.mp3"
+      }
+    ]
   }
 ]
