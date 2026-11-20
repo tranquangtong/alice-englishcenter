@@ -21,7 +21,8 @@ node scripts/check.mjs
 node --check assets/js/app.js
 ```
 
-Sau khi cài các gói kiểm thử bằng `npm ci`, chạy `PW_CHANNEL=chrome node --test` trên macOS với Google Chrome. Trên Windows, `node --test` mặc định dùng Microsoft Edge.
+Sau khi chạy `npm ci`, dùng `npm run test:chrome` với Google Chrome hoặc `npm run test:webkit` với WebKit (engine của Safari). Cài WebKit bằng `npx playwright-core install webkit` nếu máy chưa có.
+Lệnh `node --test` mặc định dùng Microsoft Edge cho E2E.
 
 Khi sửa CSS, chỉnh `assets/css/style.css` hoặc `assets/css/listening.css`, rồi chạy
 `node scripts/build-css.mjs` (hoặc `npm run css`) để tạo lại các file `.min.css`

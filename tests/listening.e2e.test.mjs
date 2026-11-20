@@ -1,18 +1,23 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { chromium } from 'playwright-core';
 import { mkdtemp, mkdir, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import path from 'node:path';
-import { browserChannel } from './helpers/browser.mjs';
+import { browserEngine, launchPersistentContext, webKitMobileOptions } from './helpers/browser.mjs';
 import { serveFixture } from './helpers/static-server.mjs';
+
+const artifacts = `test-artifacts/listening/${browserEngine}`;
 
 test('Edge: listening player, exam guards, routing and responsive layout', { timeout: 120000 }, async t => {
   const server = await serveFixture();
   const profile = await mkdtemp(path.join(tmpdir(), 'alice-listening-edge-'));
   let context;
   t.after(async () => { await context?.close(); await server.close(); await rm(profile, { recursive: true, force: true, maxRetries: 5, retryDelay: 200 }); });
-  context = await chromium.launchPersistentContext(profile, { channel: browserChannel, headless: true, args: ['--no-sandbox', '--autoplay-policy=no-user-gesture-required'], viewport: { width: 1600, height: 1000 }, reducedMotion: 'reduce' });
+  // Keep the same exam and results alive when resizing to the phone viewport.
+  context = await launchPersistentContext(profile, {
+    args: ['--no-sandbox', '--autoplay-policy=no-user-gesture-required'],
+    viewport: { width: 1600, height: 1000 }, reducedMotion: 'reduce', ...webKitMobileOptions
+  });
   const page = await context.newPage();
   page.setDefaultTimeout(10000);
   const errors = [];
@@ -63,8 +68,8 @@ test('Edge: listening player, exam guards, routing and responsive layout', { tim
   assert.match(await page.locator('.lt-band').innerText(), /2.5.*ước tính/);
   assert.equal(await page.locator('.lt-feedback').count(), 10); assert.equal(await page.locator('.lt-explain').count(), 10);
   assert.equal(await page.locator('.lt-distractors').count(), 10); assert.ok(await page.locator('.lt-transcript .lt-hl').count());
-  await mkdir('test-artifacts', { recursive: true });
-  await noOverflow('desktop result'); await page.evaluate(() => { document.activeElement.blur(); window.scrollTo(0, 0); }); await page.screenshot({ path: 'test-artifacts/listening-1600.png', fullPage: true });
+  await mkdir(artifacts, { recursive: true });
+  await noOverflow('desktop result'); await page.evaluate(() => { document.activeElement.blur(); window.scrollTo(0, 0); }); await page.screenshot({ path: `${artifacts}/listening-1600.png`, fullPage: true });
   await page.locator('[data-action="reset"]').click(); assert.equal(await page.locator('#lt-q-1').inputValue(), ''); assert.equal(await page.locator('.lt-transcript').count(), 0);
   await page.route('**/scripts/fixtures/audio/part2.mp3', request => request.fulfill({ status: 200, contentType: 'audio/mpeg', body: 'invalid audio fixture' }));
   await page.locator('[data-part="1"]').click(); await page.getByText('Chưa có audio cho phần này', { exact: true }).waitFor();
@@ -96,7 +101,7 @@ test('Edge: listening player, exam guards, routing and responsive layout', { tim
   await noOverflow('mobile result');
   await page.locator('.top-menu__btn').click(); await noOverflow('mobile dropdown');
   await page.keyboard.press('Escape');
-  await page.evaluate(() => { document.activeElement.blur(); window.scrollTo(0, 0); }); await page.screenshot({ path: 'test-artifacts/listening-390.png', fullPage: true });
+  await page.evaluate(() => { document.activeElement.blur(); window.scrollTo(0, 0); }); await page.screenshot({ path: `${artifacts}/listening-390.png`, fullPage: true });
   await route('#/home'); assert.equal(await page.locator('#page-content').innerText(), home);
   await noOverflow('mobile Markdown');
   await page.setViewportSize({ width: 360, height: 800 });

@@ -1,20 +1,19 @@
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import test from 'node:test';
-import { chromium } from 'playwright-core';
-import { browserChannel } from './helpers/browser.mjs';
+import { browserEngine, isWebKit, launchBrowser, webKitMobileOptions } from './helpers/browser.mjs';
 import { serveFixture } from './helpers/static-server.mjs';
 
 const { hash: loaded } = JSON.parse(await readFile(new URL('../version.json', import.meta.url)));
 const versionRoute = /\/version\.json\?ts=\d+$/;
-const artifacts = 'test-artifacts/theme-toast';
+const artifacts = `test-artifacts/theme-toast/${browserEngine}`;
 const examRoute = '#/ielts-gt/listening/sample-listening?mode=exam';
 const examWarning = /Đang trong lượt thi thử.*sẽ làm mất bài đang làm/;
 
-async function openEdge(t, options = {}) {
+async function openPage(t, options = {}) {
   const server = await serveFixture();
   t.after(() => server.close());
-  const browser = await chromium.launch({ channel: browserChannel, headless: true, args: ['--no-sandbox'], timeout: 15000 });
+  const browser = await launchBrowser({ timeout: 15000 });
   t.after(() => browser.close());
   const context = await browser.newContext({ viewport: { width: 1600, height: 1000 }, reducedMotion: 'reduce', ...options });
   const page = await context.newPage();
@@ -33,7 +32,7 @@ async function expectTheme(page, mode, theme) {
 }
 
 test('Edge: theme keyboard cycling, persistence, first paint, and live system preference', { timeout: 60000 }, async t => {
-  const { page, url } = await openEdge(t, { colorScheme: 'light' });
+  const { page, url } = await openPage(t, { colorScheme: 'light' });
   await page.goto(url);
   const theme = page.locator('.theme-toggle');
   await page.locator('#page-content h1').waitFor();
@@ -47,7 +46,7 @@ test('Edge: theme keyboard cycling, persistence, first paint, and live system pr
   await page.emulateMedia({ colorScheme: 'dark' });
   await expectTheme(page, 'light', 'light');
 
-  // Hold the deferred controller while Edge paints, giving it no chance to set the theme.
+  // Hold the deferred controller while the browser paints the saved theme.
   for (const [saved, os] of [['light', 'dark'], ['dark', 'light']]) {
     if (saved === 'dark') await theme.press('Space');
     await page.emulateMedia({ colorScheme: os });
@@ -57,8 +56,13 @@ test('Edge: theme keyboard cycling, persistence, first paint, and live system pr
     await page.route(app, async route => { await held; await route.continue(); }, { times: 1 });
     try {
       await page.reload({ waitUntil: 'commit' });
-      const paint = await page.waitForFunction(() => performance.getEntriesByName('first-contentful-paint')[0]?.startTime);
-      assert.ok(await paint.jsonValue() > 0);
+      if (isWebKit && !await page.evaluate(() => globalThis.PerformanceObserver?.supportedEntryTypes?.includes('paint'))) {
+        t.diagnostic('WebKit exposes no Paint Timing entries here. Checking the saved theme with the deferred controller still blocked.');
+        await page.waitForFunction(() => document.readyState !== 'loading');
+      } else {
+        const paint = await page.waitForFunction(() => performance.getEntriesByName('first-contentful-paint')[0]?.startTime);
+        assert.ok(await paint.jsonValue() > 0);
+      }
       await expectTheme(page, saved, saved);
       assert.ok(await theme.locator(`[data-theme-option="${saved}"]`).isVisible());
       assert.equal(await page.locator('.menu-toggle').getAttribute('hidden'), '');
@@ -92,7 +96,7 @@ test('Edge: theme keyboard cycling, persistence, first paint, and live system pr
 });
 
 test('Edge: update polling, offline recovery, dismissal, and reload', { timeout: 60000 }, async t => {
-  const { page, url } = await openEdge(t, { viewport: { width: 390, height: 844 } });
+  const { page, url } = await openPage(t, { viewport: { width: 390, height: 844 }, ...webKitMobileOptions });
   const errors = [];
   page.on('pageerror', error => errors.push(error.message));
   await page.addInitScript(() => {
@@ -206,7 +210,9 @@ async function measureContrast(page) {
     const image = new Image();
     image.src = `data:image/png;base64,${png}`;
     await image.decode();
-    const canvas = new OffscreenCanvas(image.width, image.height);
+    const canvas = typeof OffscreenCanvas === 'function'
+      ? new OffscreenCanvas(image.width, image.height)
+      : Object.assign(document.createElement('canvas'), { width: image.width, height: image.height });
     const context = canvas.getContext('2d');
     context.drawImage(image, 0, 0);
     const luminance = (r, g, b) => [r, g, b].map(channel => channel / 255)
@@ -227,8 +233,8 @@ async function measureContrast(page) {
   }, { png: pixels.toString('base64'), samples });
 }
 
-test('Edge: header and toast across widths, both palettes, and a real exam', { timeout: 90000 }, async t => {
-  const { page, url } = await openEdge(t);
+async function checkHeaderAndToast(t, widths, options) {
+  const { page, url } = await openPage(t, options);
   let served = 'd'.repeat(64);
   await page.route(versionRoute, route => route.fulfill({ json: { hash: served } }));
   const dialogs = [];
@@ -253,7 +259,7 @@ test('Edge: header and toast across widths, both palettes, and a real exam', { t
     for (const scheme of ['light', 'dark']) {
       await page.emulateMedia({ colorScheme: scheme });
       await expectTheme(page, 'system', scheme);
-      for (const width of [1600, 390, 360]) {
+      for (const width of widths) {
         const height = width === 1600 ? 1000 : 844;
         const caseName = `${exam ? 'exam' : 'normal'}-${width}-${scheme}`;
         await page.setViewportSize({ width, height });
@@ -296,21 +302,32 @@ test('Edge: header and toast across widths, both palettes, and a real exam', { t
       }
     }
   }
-  await toast.getByRole('button', { name: 'Đóng thông báo cập nhật' }).click();
-  const answer = page.locator('#lt-q-1');
-  await answer.fill('exam answer');
-  await answer.evaluate(el => window.scrollBy(0, el.getBoundingClientRect().bottom - innerHeight + 10));
-  served = 'e'.repeat(64);
-  await page.evaluate(() => dispatchEvent(new Event('focus')));
-  await text.filter({ hasText: examWarning }).waitFor();
-  assert.ok(await answer.evaluate(el => el === document.activeElement));
-  assert.equal(await answer.inputValue(), 'exam answer');
-  await page.waitForFunction(() => document.querySelector('#lt-q-1').getBoundingClientRect().bottom <= document.querySelector('#update-toast').offsetTop);
-  await page.locator('[data-action="submit"]').click();
-  await text.filter({ hasText: 'xem bản mới nhất' }).waitFor();
-  assert.equal(await page.evaluate(() => window.Listening.isExamRunning()), false);
-  await page.emulateMedia({ media: 'print' });
-  assert.equal(await toast.isVisible(), false);
+  if (widths.includes(360)) {
+    await toast.getByRole('button', { name: 'Đóng thông báo cập nhật' }).click();
+    const answer = page.locator('#lt-q-1');
+    await answer.fill('exam answer');
+    await answer.evaluate(el => window.scrollBy(0, el.getBoundingClientRect().bottom - innerHeight + 10));
+    served = 'e'.repeat(64);
+    await page.evaluate(() => dispatchEvent(new Event('focus')));
+    await text.filter({ hasText: examWarning }).waitFor();
+    assert.ok(await answer.evaluate(el => el === document.activeElement));
+    assert.equal(await answer.inputValue(), 'exam answer');
+    await page.waitForFunction(() => document.querySelector('#lt-q-1').getBoundingClientRect().bottom <= document.querySelector('#update-toast').offsetTop);
+    await page.locator('[data-action="submit"]').click();
+    await text.filter({ hasText: 'xem bản mới nhất' }).waitFor();
+    assert.equal(await page.evaluate(() => window.Listening.isExamRunning()), false);
+    await page.emulateMedia({ media: 'print' });
+    assert.equal(await toast.isVisible(), false);
+  }
   t.diagnostic(`Header geometry ${JSON.stringify(headers)}`);
   t.diagnostic(`Minimum rendered contrast light ${minimum.light.toFixed(2)}:1, dark ${minimum.dark.toFixed(2)}:1`);
+}
+
+test('Edge: header and toast across widths, both palettes, and a real exam', { timeout: isWebKit ? 180000 : 90000 }, async t => {
+  if (isWebKit) {
+    await checkHeaderAndToast(t, [1600]);
+    await checkHeaderAndToast(t, [390, 360], { viewport: { width: 390, height: 844 }, ...webKitMobileOptions });
+  } else {
+    await checkHeaderAndToast(t, [1600, 390, 360]);
+  }
 });

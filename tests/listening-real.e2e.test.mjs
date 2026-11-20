@@ -1,22 +1,23 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { chromium } from 'playwright-core';
 import { mkdtemp, mkdir, readFile, rm, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import path from 'node:path';
-import { browserChannel } from './helpers/browser.mjs';
+import { browserEngine, launchPersistentContext, webKitMobileOptions } from './helpers/browser.mjs';
 import { serveFixture } from './helpers/static-server.mjs';
 
 const catalog = JSON.parse(await readFile(new URL('../content/ielts-gt/listening/index.json', import.meta.url)));
+const artifacts = `test-artifacts/listening-real/${browserEngine}`;
 
 test('Edge: all four real tests, real MP3s, scoring, exam transitions and responsive pages', { timeout: 180000 }, async t => {
   const server = await serveFixture({ real: true });
   const profile = await mkdtemp(path.join(tmpdir(), 'alice-listening-real-edge-'));
   let context;
   t.after(async () => { await context?.close(); await server.close(); await rm(profile, { recursive: true, force: true, maxRetries: 5, retryDelay: 200 }); });
-  context = await chromium.launchPersistentContext(profile, {
-    channel: browserChannel, headless: true, args: ['--no-sandbox', '--autoplay-policy=no-user-gesture-required'],
-    viewport: { width: 1600, height: 1000 }, reducedMotion: 'reduce'
+  // Keep answers, results and the audio element intact during viewport changes.
+  context = await launchPersistentContext(profile, {
+    args: ['--no-sandbox', '--autoplay-policy=no-user-gesture-required'],
+    viewport: { width: 1600, height: 1000 }, reducedMotion: 'reduce', ...webKitMobileOptions
   });
   const page = await context.newPage();
   page.setDefaultTimeout(10000);
@@ -24,7 +25,7 @@ test('Edge: all four real tests, real MP3s, scoring, exam transitions and respon
   const errors = [], metrics = [];
   page.on('pageerror', error => errors.push(error.message));
   page.on('console', message => { if (message.type() === 'error') errors.push(message.text()); });
-  await mkdir('test-artifacts', { recursive: true });
+  await mkdir(artifacts, { recursive: true });
   async function route(hash) {
     await page.goto(server.url + hash);
     await page.locator('main:not([aria-busy])').waitFor();
@@ -52,7 +53,7 @@ test('Edge: all four real tests, real MP3s, scoring, exam transitions and respon
       await page.setViewportSize({ width, height: width === 1600 ? 1000 : 844 });
       await page.evaluate(() => { document.activeElement?.blur(); window.scrollTo(0, 0); });
       await layout(`${name}-${width}`);
-      await page.screenshot({ path: `test-artifacts/listening-real-${name}-${width}.png`, fullPage: true });
+      await page.screenshot({ path: `${artifacts}/listening-real-${name}-${width}.png`, fullPage: true });
     }
     await page.setViewportSize({ width: 1600, height: 1000 });
   }
@@ -181,6 +182,6 @@ test('Edge: all four real tests, real MP3s, scoring, exam transitions and respon
   await layout('360-dark-result');
   await page.emulateMedia({ media: 'print' });
   assert.equal(await page.locator('.lt-audio').isVisible(), false);
-  await writeFile('test-artifacts/listening-real-layout.json', JSON.stringify(metrics, null, 2));
+  await writeFile(`${artifacts}/listening-real-layout.json`, JSON.stringify(metrics, null, 2));
   assert.deepEqual(errors, []);
 });

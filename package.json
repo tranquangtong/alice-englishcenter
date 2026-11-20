@@ -4,6 +4,8 @@
   "type": "module",
   "scripts": {
     "test": "node --test",
+    "test:chrome": "PW_CHANNEL=chrome node --test",
+    "test:webkit": "PW_BROWSER=webkit node --test",
     "check": "node scripts/check.mjs",
     "css": "node scripts/build-css.mjs",
     "audio": "node scripts/build-listening-audio.mjs"

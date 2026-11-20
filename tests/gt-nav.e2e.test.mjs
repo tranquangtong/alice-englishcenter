@@ -1,11 +1,21 @@
 import assert from 'node:assert/strict';
 import { mkdir, readFile } from 'node:fs/promises';
 import test from 'node:test';
-import { chromium } from 'playwright-core';
-import { browserChannel } from './helpers/browser.mjs';
+import { browserEngine, isWebKit, launchBrowser, webKitMobileOptions } from './helpers/browser.mjs';
 import { serveFixture } from './helpers/static-server.mjs';
 
-const artifacts = 'test-artifacts/gt-nav';
+const artifacts = `test-artifacts/gt-nav/${browserEngine}`;
+
+async function layoutPages(browser) {
+  const desktop = await browser.newPage({ reducedMotion: 'reduce' });
+  desktop.setDefaultTimeout(8000);
+  if (!isWebKit) return { desktop, mobile: desktop };
+  const mobile = await browser.newPage({
+    reducedMotion: 'reduce', viewport: { width: 390, height: 844 }, ...webKitMobileOptions
+  });
+  mobile.setDefaultTimeout(8000);
+  return { desktop, mobile };
+}
 const hub = '#/ielts-gt';
 const listening = `${hub}/listening`;
 const { tests } = JSON.parse(await readFile(new URL('../content/ielts-gt/listening/index.json', import.meta.url)));
@@ -55,27 +65,29 @@ function measureNavigation() {
 test('Edge: compact GT header and route-specific sidebar at 1600, 390 and 360px', { timeout: 90000 }, async t => {
   const server = await serveFixture({ real: true });
   t.after(() => server.close());
-  const browser = await chromium.launch({ channel: browserChannel, headless: true, args: ['--no-sandbox'], timeout: 15000 });
+  const browser = await launchBrowser({ timeout: 15000 });
   t.after(() => browser.close());
-  const page = await browser.newPage({ reducedMotion: 'reduce' });
-  page.setDefaultTimeout(8000);
+  const { desktop, mobile: phone } = await layoutPages(browser);
   await mkdir(artifacts, { recursive: true });
-  const sidebar = page.locator('#site-nav');
-  const active = sidebar.locator('[aria-current="page"]');
-  const toggle = page.getByRole('button', { name: 'Danh mục học tập' });
-  const gtButton = page.getByRole('button', { name: 'IELTS General', exact: true });
-  const heading = name => page.getByRole('heading', { level: 1, name, exact: true });
+  const heading = (page, name) => page.getByRole('heading', { level: 1, name, exact: true });
   const pageErrors = [];
-  page.on('pageerror', error => pageErrors.push(error.message));
+  for (const page of new Set([desktop, phone])) {
+    page.on('pageerror', error => pageErrors.push(error.message));
+  }
 
   for (const scheme of ['light', 'dark']) {
     for (const width of [1600, 390, 360]) {
       const mobile = width < 900;
+      const page = mobile ? phone : desktop;
+      const sidebar = page.locator('#site-nav');
+      const active = sidebar.locator('[aria-current="page"]');
+      const toggle = page.getByRole('button', { name: 'Danh mục học tập' });
+      const gtButton = page.getByRole('button', { name: 'IELTS General', exact: true });
       const label = `${width}px ${scheme}`;
       await page.setViewportSize({ width, height: mobile ? 844 : 1000 });
       await page.emulateMedia({ colorScheme: scheme });
       await page.goto(server.url + '#/home', { timeout: 12000 });
-      await heading('Học tiếng Anh, cùng nhau tiến bộ').waitFor();
+      await heading(page, 'Học tiếng Anh, cùng nhau tiến bộ').waitFor();
 
       async function openSidebar() {
         if (mobile) {
@@ -133,7 +145,7 @@ test('Edge: compact GT header and route-specific sidebar at 1600, 390 and 360px'
       await page.getByRole('link', { name: 'Tổng quan IELTS General' }).waitFor();
       await inspect('dropdown');
       await page.getByRole('link', { name: 'Tổng quan IELTS General' }).click();
-      await heading('IELTS General').waitFor();
+      await heading(page, 'IELTS General').waitFor();
       await openSidebar();
       assert.equal(await sidebar.getAttribute('aria-label'), 'Danh mục IELTS General', label);
       assert.equal(await sidebar.getByRole('heading', { name: 'Bắt đầu' }).count(), 0, label);
@@ -154,12 +166,12 @@ test('Edge: compact GT header and route-specific sidebar at 1600, 390 and 360px'
       }
 
       await sidebar.getByRole('link', { name: 'Listening', exact: true }).click();
-      await heading('IELTS General · Listening').waitFor();
+      await heading(page, 'IELTS General · Listening').waitFor();
       await openSidebar();
       await expectCurrent(listening);
       await inspect('list');
       await sidebar.getByRole('link', { name: tests[0].title, exact: true }).click();
-      await heading(tests[0].title).waitFor();
+      await heading(page, tests[0].title).waitFor();
       await openSidebar();
       await expectCurrent(practice);
       await inspect('practice');
@@ -176,7 +188,7 @@ test('Edge: compact GT header and route-specific sidebar at 1600, 390 and 360px'
       await expectCurrent(practice);
       await inspect('exam');
       await sidebar.getByRole('link', { name: /Danh mục học tập/ }).click();
-      await heading('Học tiếng Anh, cùng nhau tiến bộ').waitFor();
+      await heading(page, 'Học tiếng Anh, cùng nhau tiến bộ').waitFor();
       await openSidebar();
       await expectCurrent('#/home');
       assert.equal(await sidebar.getByRole('link', { name: 'IELTS General', exact: true }).count(), 0, label);
@@ -185,16 +197,19 @@ test('Edge: compact GT header and route-specific sidebar at 1600, 390 and 360px'
     }
   }
 
+  const page = desktop;
+  const sidebar = page.locator('#site-nav');
+  const gtButton = page.getByRole('button', { name: 'IELTS General', exact: true });
   await page.setViewportSize({ width: 1600, height: 1000 });
   const catalogPath = '**/content/ielts-gt/listening/index.json';
   await page.route(catalogPath, route => route.fulfill({ status: 503 }), { times: 1 });
   const failedCatalog = page.waitForResponse(response => response.status() === 503 && response.url().endsWith('/listening/index.json'));
   await page.goto(`${server.url}?retry-catalog${hub}`);
   await failedCatalog;
-  await heading('IELTS General').waitFor();
+  await heading(page, 'IELTS General').waitFor();
   assert.equal(await sidebar.locator('.sidebar__sublist a').count(), 0);
   await sidebar.getByRole('link', { name: 'Listening', exact: true }).click();
-  await heading('IELTS General · Listening').waitFor();
+  await heading(page, 'IELTS General · Listening').waitFor();
   await sidebar.getByRole('link', { name: tests.at(-1).title }).waitFor();
   await page.emulateMedia({ media: 'print' });
   assert.equal(await sidebar.isVisible(), false);
@@ -205,16 +220,16 @@ test('Edge: compact GT header and route-specific sidebar at 1600, 390 and 360px'
 test('scrolled liquid glass header keeps its compact geometry over article text', { timeout: 60000 }, async t => {
   const server = await serveFixture({ real: true });
   t.after(() => server.close());
-  const browser = await chromium.launch({ channel: browserChannel, headless: true, args: ['--no-sandbox'], timeout: 15000 });
+  const browser = await launchBrowser({ timeout: 15000 });
   t.after(() => browser.close());
-  const page = await browser.newPage({ reducedMotion: 'reduce' });
-  page.setDefaultTimeout(8000);
+  const { desktop, mobile: phone } = await layoutPages(browser);
   await mkdir(artifacts, { recursive: true });
-  const paragraph = page.locator('#page-content > p').first();
 
   for (const scheme of ['light', 'dark']) {
     for (const width of [1600, 390, 360]) {
       const mobile = width < 900;
+      const page = mobile ? phone : desktop;
+      const paragraph = page.locator('#page-content > p').first();
       const label = `${width}px ${scheme}`;
       await page.setViewportSize({ width, height: mobile ? 844 : 1000 });
       await page.emulateMedia({ colorScheme: scheme });
