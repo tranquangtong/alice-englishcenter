@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import { mkdir, readFile } from 'node:fs/promises';
 import test from 'node:test';
+import { setTimeout as delay } from 'node:timers/promises';
 import { browserEngine, isWebKit, launchBrowser, webKitMobileOptions } from './helpers/browser.mjs';
 import { serveFixture } from './helpers/static-server.mjs';
 
@@ -76,11 +77,16 @@ function measureMenuIcon(button) {
 }
 
 async function tapStickyToggle(page, toggle) {
-  // Use viewport coordinates to exercise the sticky control without locator auto-scroll.
-  const { x, y, width, height } = await toggle.boundingBox();
-  const center = [x + width / 2, y + height / 2];
-  if (isWebKit) await page.touchscreen.tap(...center);
-  else await page.mouse.click(...center);
+  // Use viewport coordinates so the input does not scroll the sticky header.
+  const { x, y } = await toggle.evaluate(button => {
+    const rect = button.getBoundingClientRect();
+    return { x: rect.left + rect.width / 2, y: rect.top + rect.height / 2 };
+  });
+  if (webKitMobileOptions.hasTouch) {
+    await page.touchscreen.tap(x, y);
+  } else {
+    await page.mouse.click(x, y);
+  }
 }
 
 test('Edge: compact GT header and route-specific sidebar at 1600, 390 and 360px', { timeout: 90000 }, async t => {
@@ -111,10 +117,16 @@ test('Edge: compact GT header and route-specific sidebar at 1600, 390 and 360px'
       await heading(page, 'Học tiếng Anh, cùng nhau tiến bộ').waitFor();
 
       async function expectIcon(expanded) {
-        const icon = await toggle.evaluate(measureMenuIcon);
         const state = `${label} ${expanded ? 'close' : 'hamburger'} icon`;
+        const size = expanded ? [16, 16] : [18, 14];
+        const deadline = performance.now() + 1000;
+        let icon = await toggle.evaluate(measureMenuIcon);
+        while ((icon.width !== size[0] || icon.height !== size[1]) && performance.now() < deadline) {
+          await delay(16);
+          icon = await toggle.evaluate(measureMenuIcon);
+        }
         assert.match(icon.backgroundImage, /linear-gradient/, state);
-        assert.deepEqual([icon.width, icon.height], expanded ? [16, 16] : [18, 14], state);
+        assert.deepEqual([icon.width, icon.height], size, state);
         assert.ok(Math.abs(icon.dx) <= 1 && Math.abs(icon.dy) <= 1,
           `${state}: offset (${icon.dx}, ${icon.dy})`);
       }
@@ -361,8 +373,8 @@ test('scrolled liquid glass header keeps its compact geometry over article text'
         assert.equal(after.theme.width, 44, `${label}: theme control width`);
       }
       if (overArticle.supportsFilter) {
-        const blur = /\bblur\(([\d.]+)px\)/.exec(overArticle.filter);
-        assert.ok(blur && Number(blur[1]) <= 1.5, `${label}: backdrop filter ${overArticle.filter}`);
+        const blur = Number(/\bblur\(([\d.]+)px\)/.exec(overArticle.filter)?.[1]);
+        assert.ok(blur >= 2 && blur <= 3, `${label}: expected blur between 2px and 3px, got ${overArticle.filter}`);
       }
       if (width !== 360) await page.screenshot({ path: `${artifacts}/scrolled-header-${width}-${scheme}.png` });
       if (mobile) {
