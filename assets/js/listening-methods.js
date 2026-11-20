@@ -1,6 +1,7 @@
 import { gradePractice, isChoice, isDictation, PREDICTIONS, validatePractice, wordDiff } from './listening-methods-core.js?v=1';
 
 const home = '#/ielts-gt/listening';
+const exerciseListId = 'bai-luyen';
 const progressKey = (method, exercise) => `aec-listening-method:${location.pathname}:${method}:${exercise}`;
 const esc = value => String(value ?? '').replace(/[&<>"']/g, char =>
   ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
@@ -20,21 +21,24 @@ export async function renderMethod({ method, exerciseId, content, signal }) {
     exerciseId ? null : read(method.intro, signal, 'text')
   ]);
   if (signal.aborted) return;
-  const exercise = exerciseId ? exercises.find(entry => entry.id === exerciseId) : null;
-  if (exerciseId && !exercise) throw new Error('Không tìm thấy bài luyện');
+  const index = exerciseId ? exercises.findIndex(entry => entry.id === exerciseId) : -1;
+  const exercise = exercises[index];
+  if (exerciseId && index === -1) throw new Error('Không tìm thấy bài luyện');
   if (exercise && validatePractice(exercise, method.id).length) throw new Error('Dữ liệu bài luyện không hợp lệ');
 
   const root = document.createElement('section');
   root.className = 'practice';
   if (exercise) {
-    root.innerHTML = `<header class="lt-head"><a class="practice-back" href="${href}">${esc(method.title)}</a><h1>${esc(exercise.title)}</h1><p>${esc(exercise.level)} · ${esc(exercise.instructions)}</p></header>`;
-    mount(root, method.id, exercise, signal);
+    root.innerHTML = `<header class="lt-head"><a class="practice-back" href="${href}">Về trang giới thiệu</a><h1>${esc(exercise.title)}</h1><p>${esc(exercise.level)} · ${esc(exercise.instructions)}</p></header>`;
+    const next = exercises[index + 1];
+    const nextHref = next && `${href}/${encodeURIComponent(next.id)}`;
+    mount(root, method.id, exercise, { signal, nextHref, listHref: `${href}?section=${exerciseListId}` });
   } else {
     root.innerHTML = `<a class="practice-back" href="${home}">Về Listening</a>`;
     const outline = document.createElement('div');
     outline.innerHTML = window.DOMPurify.sanitize(window.marked.parse(intro), { SANITIZE_NAMED_PROPS: true });
     root.append(outline);
-    root.insertAdjacentHTML('beforeend', `<h2>Bài luyện</h2><ul class="practice-list">${exercises.map((entry, index) => {
+    root.insertAdjacentHTML('beforeend', `<h2 id="${exerciseListId}" tabindex="-1">Bài luyện</h2><ul class="practice-list">${exercises.map((entry, index) => {
       const predict = entry.format === 'predict-verify';
       const state = readProgress(progressKey(method.id, entry.id), entry.clips.flatMap(clip => clip.items), predict);
       const started = (predict && state.stage === 'answer')
@@ -52,9 +56,19 @@ export async function renderMethod({ method, exerciseId, content, signal }) {
   style.rel = 'stylesheet';
   style.id = 'practice-css';
   style.href = document.querySelector('meta[name="aec-practice-css"]').content;
-  document.head.append(style);
-  signal.addEventListener('abort', () => style.remove(), { once: true });
   content.replaceChildren(root);
+  // Settle layout before the router scrolls to the exercise list.
+  await new Promise(resolve => {
+    function ready() {
+      style.removeEventListener('load', ready);
+      style.removeEventListener('error', ready);
+      resolve();
+    }
+    style.addEventListener('load', ready);
+    style.addEventListener('error', ready);
+    signal.addEventListener('abort', () => { style.remove(); ready(); }, { once: true });
+    document.head.append(style);
+  });
 }
 
 function readProgress(key, items, predict) {
@@ -118,7 +132,7 @@ function credits(exercise) {
       : `<li>${esc(source.attribution)} · ${esc(source.licence)}</li>`).join('')}</ul></details>`;
 }
 
-function mount(root, methodId, exercise, signal) {
+function mount(root, methodId, exercise, { signal, nextHref, listHref }) {
   const predict = exercise.format === 'predict-verify';
   const items = exercise.clips.flatMap(clip => clip.items);
   const byId = new Map(items.map(item => [item.id, item]));
@@ -154,6 +168,11 @@ function mount(root, methodId, exercise, signal) {
     score.textContent = result
       ? `${predict ? `Dự đoán đúng ${result.predictionCorrect}/${result.predictionTotal} · ` : ''}Đáp án đúng ${result.correct}/${result.total}`
       : predict ? (predicting ? 'Bước 1 · Dự đoán' : 'Bước 2 · Nghe và kiểm chứng') : '';
+    const actions = done
+      ? `${button('retry', 'Làm lại')}
+        <a class="lt-btn aero-btn" href="${listHref}">Chọn bài khác</a>
+        ${nextHref ? `<a class="lt-btn lt-btn--primary aero-btn" href="${nextHref}">Bài tiếp theo →</a>` : ''}`
+      : predicting ? button('verify', 'Sang bước nghe', true) : button('submit', 'Kiểm tra', true);
     form.innerHTML = exercise.clips.map((clip, index) => {
       const heading = exercise.clips.length > 1 ? `<h2>Đoạn ${index + 1}</h2>` : '';
       const audio = predicting ? '' : `<div class="lt-audio practice-audio">
@@ -178,7 +197,7 @@ function mount(root, methodId, exercise, signal) {
           ? `${button('hint', 'Gợi ý ký tự đầu')} <span class="practice-hint" role="status"></span>` : '';
         return `<fieldset class="practice-item" data-question="${item.id}"><legend id="${inputId}-label">${prompt}</legend>${control}${hint}${done ? feedback(exercise, item, state, result.outcomes.find(outcome => outcome.id === item.id)) : ''}</fieldset>`;
       }).join('')}${done ? transcript(clip) : ''}</div>`;
-    }).join('') + `<div class="lt-submit">${done ? button('retry', 'Làm lại') : predicting ? button('verify', 'Sang bước nghe', true) : button('submit', 'Kiểm tra', true)}</div>`;
+    }).join('') + `<div class="lt-submit">${actions}</div>`;
   }
 
   form.addEventListener('input', event => {

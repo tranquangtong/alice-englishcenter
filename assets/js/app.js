@@ -11,13 +11,10 @@
   const menu = document.querySelector('.menu-toggle');
   const gtHub = 'ielts-gt';
   const gtListening = `${gtHub}/listening`;
-  const practiceGroup = { id: 'practice-tests', title: 'Practice Tests' };
-  const sidebarItemLimit = 8;
-  const groupPreferences = new Map();
+  const listeningSections = new Map();
   let pages = [];
   let navSection;
   let navPage;
-  let navGroups = [];
   let request = 0;
   let listeningRequest;
   let previousHash = location.hash;
@@ -180,7 +177,7 @@
     const link = document.createElement('a');
     link.href = href;
     link.textContent = title;
-    if (id) link.dataset.page = id;
+    link.dataset.page = id;
     return link;
   }
 
@@ -192,8 +189,10 @@
   }
 
   function markCurrentNav() {
+    const currentSection = listeningSections.get(navPage);
     for (const entry of nav.querySelectorAll('[data-page]')) {
       if (entry.dataset.page === navPage) entry.setAttribute('aria-current', 'page');
+      else if (entry.dataset.page === currentSection) entry.setAttribute('aria-current', 'location');
       else entry.removeAttribute('aria-current');
     }
   }
@@ -202,9 +201,13 @@
     const overview = navLink(gtHub, 'IELTS General');
     overview.className = 'sidebar__overview';
     const skills = document.createElement('ul');
-    const listening = appendNavItem(skills, navLink(gtListening, 'Listening', `#/${gtListening}`));
+    const label = document.createElement('span');
+    label.className = 'sidebar__label';
+    label.textContent = 'Listening';
+    const listening = appendNavItem(skills, label);
     const groups = document.createElement('ul');
     groups.className = 'sidebar__groups';
+    appendNavItem(groups, navLink(gtListening, 'Practice Tests', `#/${gtListening}`));
     listening.append(groups);
     for (const skill of ['Reading', 'Writing', 'Speaking']) {
       const entry = document.createElement('span');
@@ -218,53 +221,12 @@
     nav.append(navLink('home', '← Danh mục học tập'), overview, skills);
   }
 
-  function setGroupOpen({ button, items }, open) {
-    button.setAttribute('aria-expanded', String(open));
-    items.hidden = !open;
-  }
-
-  function syncGtGroups() {
-    for (const group of navGroups) {
-      setGroupOpen(group, group.routes.has(navPage) || groupPreferences.get(group.key) === true);
-    }
-  }
-
-  function appendGtGroup(list, { id, title }, entries, method = false) {
-    const parent = `${gtListening}/${id}`;
-    const items = document.createElement('ul');
-    items.id = `gt-listening-${id}`;
-    items.className = 'sidebar__sublist';
-    const key = `aec-sidebar:${base.pathname}:${items.id}`;
-    if (!groupPreferences.has(key)) {
-      try { groupPreferences.set(key, sessionStorage.getItem(key) === 'true'); } catch { /* Storage can be blocked. */ }
-    }
-
-    const button = document.createElement('button');
-    button.type = 'button';
-    button.setAttribute('aria-controls', items.id);
+  function setListeningCount(link, entries) {
+    const route = link.dataset.page;
     const count = document.createElement('small');
-    count.textContent = entries.length - Number(method);
-    const chevron = document.createElement('span');
-    chevron.textContent = '›';
-    chevron.setAttribute('aria-hidden', 'true');
-    button.append(`${title} `, count, chevron);
-
-    const group = { key, button, items, routes: new Set(entries.map(entry => entry.route)) };
-    button.addEventListener('click', () => {
-      const open = items.hidden;
-      groupPreferences.set(key, open);
-      try { sessionStorage.setItem(key, String(open)); } catch { /* Storage can be blocked. */ }
-      setGroupOpen(group, open);
-    });
-
-    for (const { route, title } of entries.slice(0, sidebarItemLimit + Number(method))) {
-      appendNavItem(items, navLink(route, title, `#/${route}${method ? '' : '?mode=practice'}`));
-    }
-    if (entries.length > sidebarItemLimit + Number(method)) {
-      appendNavItem(items, navLink(null, `Xem tất cả (${entries.length - Number(method)})`, `#/${method ? parent : gtListening}`));
-    }
-    appendNavItem(list, button).append(items);
-    navGroups.push(group);
+    count.textContent = entries.length;
+    link.append(' ', count);
+    for (const entry of entries) listeningSections.set(`${route}/${entry.id}`, route);
   }
 
   async function populateGtGroups(list) {
@@ -272,25 +234,19 @@
     try {
       catalog = await window.Listening?.loadCatalog();
     } catch {
-      // Keep the skill links usable and retry on the next IELTS General route.
+      // Keep the test list link usable and retry on the next IELTS General route.
       return;
     }
-    if (!list.isConnected || list.childElementCount || !Array.isArray(catalog?.tests)) return;
-    // Catalog groups are ordered {id, title} entries. Each test's optional group names its group id.
-    // Older catalogs and tests without a group use the Practice Tests group.
-    for (const group of catalog.groups ?? [practiceGroup]) {
-      const entries = catalog.tests.filter(entry => (entry.group ?? practiceGroup.id) === group.id)
-        .map(entry => ({ title: entry.title, route: `${gtListening}/${encodeURIComponent(entry.id)}` }));
-      if (entries.length) appendGtGroup(list, group, entries);
-    }
+    if (!list.isConnected || list.hasAttribute('data-loaded') || !Array.isArray(catalog?.tests)) return;
+    list.setAttribute('data-loaded', '');
+    setListeningCount(list.querySelector('a'), catalog.tests);
     for (const method of catalog.methods ?? []) {
       const route = `${gtListening}/${method.id}`;
-      const intro = { title: 'Giới thiệu', route };
-      const exercises = method.exercises.map(entry => ({ title: entry.title, route: `${route}/${entry.id}` }));
-      appendGtGroup(list, method, [intro, ...exercises], true);
+      const link = navLink(route, method.title, `#/${route}`);
+      setListeningCount(link, method.exercises);
+      appendNavItem(list, link);
     }
     markCurrentNav();
-    syncGtGroups();
   }
 
   function buildGlobalNav() {
@@ -310,20 +266,30 @@
   }
 
   function buildNav(id, inGt) {
-    const routeChanged = navPage !== id;
     navPage = id;
     if (navSection !== inGt) {
       navSection = inGt;
-      navGroups = [];
+      listeningSections.clear();
       nav.replaceChildren();
       nav.setAttribute('aria-label', inGt ? 'Danh mục IELTS General' : 'Tài liệu học tập');
       if (inGt) buildGtNav();
       else buildGlobalNav();
     }
     markCurrentNav();
-    if (routeChanged) syncGtGroups();
-    const pendingGroups = inGt && nav.querySelector('.sidebar__groups:empty');
+    const pendingGroups = inGt && nav.querySelector('.sidebar__groups:not([data-loaded])');
     if (pendingGroups) populateGtGroups(pendingGroups);
+  }
+
+  function focusContent(query) {
+    const section = new URLSearchParams(query).get('section');
+    const heading = section && Array.from(content.querySelectorAll('[id]')).find(node => node.id === section);
+    if (heading) {
+      heading.scrollIntoView();
+      heading.focus({ preventScroll: true });
+    } else {
+      window.scrollTo(0, 0);
+      main.focus({ preventScroll: true });
+    }
   }
 
   function prepareContent(page) {
@@ -432,8 +398,7 @@
         await window.Listening.render({ id, query, content, signal: listeningRequest.signal });
         if (current !== request) return;
         status.textContent = 'IELTS General';
-        window.scrollTo(0, 0);
-        main.focus({ preventScroll: true });
+        focusContent(query);
       } catch (error) {
         if (current !== request || error.name === 'AbortError') return;
         message('Chưa tải được nội dung Listening', error.message);
@@ -465,15 +430,7 @@
         prepareContent(page);
       }
       status.textContent = page.group;
-      const section = new URLSearchParams(query).get('section');
-      const heading = section && Array.from(content.querySelectorAll('[id]')).find(node => node.id === section);
-      if (heading) {
-        heading.scrollIntoView();
-        heading.focus({ preventScroll: true });
-      } else {
-        window.scrollTo(0, 0);
-        main.focus({ preventScroll: true });
-      }
+      focusContent(query);
     } catch (error) {
       if (current !== request) return;
       message('Chưa tải được tài liệu', 'Hãy kiểm tra kết nối rồi tải lại trang. Nếu bạn đang mở file trực tiếp, vui lòng chạy website qua máy chủ HTTP.');

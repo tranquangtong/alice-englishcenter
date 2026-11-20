@@ -43,6 +43,10 @@ test('Listening methods navigation, playback, grading, retry, persistence and la
   const check = page.getByRole('button', { name: 'Kiểm tra' });
   const retry = page.getByRole('button', { name: 'Làm lại' });
   const audio = page.locator('.practice audio');
+  const back = page.getByRole('link', { name: 'Về trang giới thiệu' });
+  const next = page.getByRole('link', { name: 'Bài tiếp theo →' });
+  const choose = page.getByRole('link', { name: 'Chọn bài khác' });
+  const methodLink = id => nav.locator(`a[href="${home}/${id}"]`);
   async function go(part = '') {
     await page.goto(server.url + home + (part ? '/' + part : ''));
     const [methodId, exerciseId] = part.split('/');
@@ -53,18 +57,17 @@ test('Listening methods navigation, playback, grading, retry, persistence and la
   }
 
   await go();
-  await nav.locator('[aria-controls="gt-listening-practice-tests"]').waitFor();
-  assert.equal(await page.locator('.lt-card').count(), 4);
-  assert.equal(await nav.locator('.sidebar__groups > li > button').count(), 5);
+  await nav.locator(`a[href="${home}"] small`).waitFor();
+  assert.equal(await page.locator('.lt-card').count(), catalog.tests.length);
+  assert.equal(await nav.locator('.sidebar__groups > li > a').count(), methods.length + 1);
   assert.equal(await css.count(), 0);
   assert.deepEqual(stylesheetRequests, []);
-  for (const method of ['dictation', 'paraphrase', 'connected-speech', 'prediction']) {
-    const disclosure = nav.locator(`[aria-controls="gt-listening-${method}"]`);
-    await disclosure.click();
-    assert.equal(await disclosure.getAttribute('aria-expanded'), 'true');
-    await nav.locator(`#gt-listening-${method}`).getByRole('link', { name: 'Giới thiệu' }).click();
+  for (const method of methods) {
+    const link = methodLink(method.id);
+    assert.equal(await link.textContent(), `${method.title} ${method.exercises.length}`);
+    await link.click();
     await page.locator('.practice-list').waitFor();
-    assert.equal(await nav.locator(`[href="${home}/${method}"]`).getAttribute('aria-current'), 'page');
+    assert.equal(await link.getAttribute('aria-current'), 'page');
     assert.match(await css.getAttribute('href'), /practice\.min\.css\?v=\d+/);
     await go();
     assert.equal(await css.count(), 0);
@@ -74,14 +77,18 @@ test('Listening methods navigation, playback, grading, retry, persistence and la
     await go(method.id);
     for (const exercise of method.exercises) {
       const route = `${method.id}/${exercise.id}`;
-      assert.equal(await nav.locator(`[href="${home}/${route}"]`).textContent(), exercise.title);
+      assert.equal(await nav.locator(`[href="${home}/${route}"]`).count(), 0);
       const card = page.locator(`.practice-list a[href="${home}/${route}"]`);
       await card.waitFor();
       assert.ok((await card.innerText()).includes(exercise.level), route);
     }
-    for (const exercise of method.exercises) {
+    for (const [index, exercise] of method.exercises.entries()) {
       const route = `${method.id}/${exercise.id}`;
       await go(route);
+      await methodLink(method.id).and(nav.locator('[aria-current="location"]')).waitFor();
+      assert.equal(await nav.locator('[aria-current]').count(), 1);
+      assert.equal(await back.getAttribute('href'), `${home}/${method.id}`);
+      assert.equal(await next.count(), 0);
       const items = exercise.clips.flatMap(clip => clip.items);
       if (method.id === 'prediction') {
         for (const item of items) await page.locator(`#practice-${item.id}`).selectOption(item.expectedType);
@@ -101,6 +108,10 @@ test('Listening methods navigation, playback, grading, retry, persistence and la
       assert.deepEqual(broken, [], route);
       await check.click();
       assert.ok((await score.innerText()).endsWith(`Đáp án đúng 0/${items.length}`), route);
+      assert.equal(await choose.getAttribute('href'), `${home}/${method.id}?section=bai-luyen`);
+      const following = method.exercises[index + 1];
+      if (following) assert.equal(await next.getAttribute('href'), `${home}/${method.id}/${following.id}`);
+      else assert.equal(await next.count(), 0);
       await retry.click();
     }
   }
@@ -185,7 +196,14 @@ test('Listening methods navigation, playback, grading, retry, persistence and la
   await page.locator('.practice-text').first().fill('Clark');
   await check.click();
   await page.locator('.practice-diff del').waitFor();
-  await go('dictation');
+  const dictation = methods.find(method => method.id === 'dictation');
+  const following = dictation.exercises[dictation.exercises.findIndex(entry => entry.id === 'booking-details') + 1];
+  await next.click();
+  await page.getByRole('heading', { level: 1, name: following.title, exact: true }).waitFor();
+  await back.click();
+  await page.locator('.practice-list').waitFor();
+  assert.equal(new URL(page.url()).hash, `${home}/dictation`);
+  assert.equal(await methodLink('dictation').getAttribute('aria-current'), 'page');
   assert.match(await page.locator('.practice-list a[href$="/booking-details"]').innerText(), /Đã kiểm tra/);
   for (const width of [1600, 390]) {
     await page.setViewportSize({ width, height: 1000 });
@@ -222,6 +240,33 @@ test('Listening methods navigation, playback, grading, retry, persistence and la
       assert.ok(layout.documentWidth <= layout.viewport && layout.playHeight >= 44 && layout.answerHeight >= 44
         && layout.playBeforeAnswer && layout.answerFits, JSON.stringify({ width, theme, layout }));
       await page.screenshot({ path: `${artifacts}/feedback-${width}-${theme}.png`, fullPage: true });
+      for (const link of [back, next, choose]) {
+        const box = await link.boundingBox();
+        assert.ok(box.width >= 44 && box.height >= 44 && box.x >= 0 && box.x + box.width <= width,
+          `Exercise link layout at ${width}px in ${theme}`);
+      }
+      if (width === 390) {
+        const toggle = page.getByRole('button', { name: 'Danh mục học tập' });
+        await toggle.click();
+        await methodLink('dictation').waitFor();
+        assert.equal(await methodLink('dictation').getAttribute('aria-current'), 'location');
+        await methodLink('paraphrase').click();
+        await page.getByRole('heading', { level: 1, name: methods.find(method => method.id === 'paraphrase').title }).waitFor();
+        assert.equal(await toggle.getAttribute('aria-expanded'), 'false');
+        assert.equal(await nav.isVisible(), false);
+        await go('dictation/booking-details');
+      }
+      await choose.click();
+      const listHeading = page.getByRole('heading', { name: 'Bài luyện', exact: true });
+      await listHeading.waitFor();
+      await page.locator('#bai-luyen:focus').waitFor();
+      assert.equal(new URL(page.url()).hash, `${home}/dictation?section=bai-luyen`);
+      assert.equal(await methodLink('dictation').getAttribute('aria-current'), 'page');
+      assert.ok(await listHeading.evaluate(heading => {
+        const box = heading.getBoundingClientRect();
+        const header = document.querySelector('.site-header').getBoundingClientRect();
+        return box.top >= header.bottom - 1 && box.bottom <= innerHeight;
+      }), `Exercise list anchor visible at ${width}px in ${theme}`);
     }
   }
   assert.deepEqual(errors, []);
